@@ -1,0 +1,880 @@
+%\documentclass[a4paper,10pt]{scrartcl}
+\documentclass{acm_proc_article-sp}
+\usepackage[latin1] {inputenc}
+
+%\textwidth 15cm
+%\textheight 20cm
+%\oddsidemargin -0.5cm
+
+%\topmargin -2.0cm
+
+\title{Proyecto de Trabajo Final
+\\\LARGE{SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impesión}}
+\author{Muzzulini, Regina y Vidal, Erica}
+\date{}
+
+%\usepackage{natbib}
+\usepackage[numbers]{natbib} 
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+\hilight{síntesis y presentación del trabajo}
+
+
+\section{Sistemas Expertos}
+
+Los términos sistema experto, sistema basado en conocimiento o sistema experto basado en conocimiento
+a menudo se usan como sinónimos.
+
+Los sistemas expertos son una rama de la Inteligencia Artificial que hace un amplio 
+uso del conocimiento especializado para resolver problemas como un especialista humano.\cite{Riley}
+Un experto es una persona que tiene experiencia en cierta área, tiene ciertas habilidades que la mayoria de 
+no y/o puede resolver problemas que la mayoria de las personas no pueden o lo pueden hacer de una 
+manera más eficiente. 
+
+El conocimiento en un sistema esperto puede ser experiencia o conocimiento que está disponible
+de libros revistas y personas.
+
+
+%\hilight{ssss}
+
+
+
+\subsection{Breve historia de los Sistemas Expertos}
+
+\hilight{completar}
+
+\subsection{Estructura básica de un Sistema Experto}
+
+
+
+La estructura básica de un sistema experto consta de una base de conocimiento que es el conjunto de 
+conocimiento alamacenados (factual y heurístico) y un motor de inferencias que es el programa que gestiona y controla la base de
+de conocimiento. Una característica relevante es que la base de conocimiento y el motor de inferencias se encuentran separados.
+En la figuraN se ilustra la estructura básica de un sistema esperto.
+
+\hilight{Agregar figura}
+
+ Otros componentes importantes son la base de hechos, la interfaz con el usuario y 
+el módulo de explicación. La base de hechos o memoria de trabajo es el conjunto de datos 
+de un determinado problema y se almacena en forma separada de la base de conocimiento.
+ El módulo de explicación o justificación explica el razonamiento utilizado por el sistema para 
+llegar a una conclusión. 
+
+\subsection{Representación del conocimiento}
+La "experiencia" de un experto puede ser representada de diversas maneras. 
+%La representación del conocimiento es un esquema o dispositivo utilizado para capturar los elementos 
+esenciales del dominio de un %problema.
+Existen varios sistemas para la representación del conocimiento. Entre los principales sistemas se tienen: 
+\begin{itemize}
+ \item Formalismos lógicos (lógica propocicional, lógica de primer orden, logicas multivaluadas)
+ \item Sistemas de producción 
+ \item Formalismos estructurados (Redes semánticas, Frames, Objetos y Ontologías )
+\end{itemize}
+
+En este trabajo la representación del conocimiento se hará mediante reglas de producción. 
+Una regla de producción tiene la siguiente forma: 
+
+
+\begin{quote}
+
+SI $<$antecedente$>$ ENTONCES $<$consecuente$>$\end{quote} 
+
+
+
+donde el antecedente y el consecuente son frases en lenguaje coloquial. 
+El nombre de producción se debe al hecho de que el consecuente 
+describe el estado de cosas que viene producto de que el antecedente sea satisfecho. 
+
+La base de conocimiento de un sistema experto basado en reglas es un conjunto de reglas. 
+
+%{Reglas de producción} fundamentar elección 
+
+%{Métodos de de inferencia}
+\subsection{Forward y Backward chain}
+Una inferencia es ....
+\hilight{completar}
+
+
+Un grupo de multiples inferencias que conecta un problema con una solución se llama cadena.
+Una cadena que va desde los hechos a una objetivo se llama forward chain y una cadena 
+que va de una hipotesis u objetivo hacia los hechos que soportan dicha hipótesis se llama 
+backward chain. 
+
+\hilight{Agregar ejemplos}
+
+
+Ayuda visualizar los forward y backward chaining en terminos de la busqueda de un path 
+a través de un espacio de búsqueda. 
+FC es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
+nivel de conclusiones que están basadas en los hechos. El razonamiento desde el nivel más alto, 
+la hipotesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
+backward chaining. 
+Buenas aplicaciones para FC son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
+porque el FC produce una búsqueda a lo ancho. 
+En cambio el BC produce una búsqueda en profundidad. Un buen árbol para una busqueda en profundidad
+es uno angosto y profundo. 
+
+\subsection{El algoritmo de Rete}
+\hilight{completar}
+
+
+
+\section{Presentación del problema} 
+La elección de una determinada tecnología de impresión 
+ a la hora de comprar está sujeta a numerosas cuestiones 
+relacionacionadas con el uso que se le va a dar al equipo, 
+la velocidad de respuesta deseada, la calidad esperada, factores económicos, etc.
+ Requiere tiempo y esfuerzo investigar las tecnologías 
+disponibles en el mercado y decidir en base a las características
+ que posee cada equipo, aquel que resulte más conveniente según las necesidades. 
+
+Los sitios web de las diferentes marcas de impresión a menudo preclasifican sus productos para
+ayudar al cliente a encontrar el equipo que se necesita, otros simplemente listan los productos 
+disponibles. 
+Para facilitar la tarea  de elección, lo más común es consultar con un vendedor competente en la materia. 
+
+Una distinción importante es que existen equipos de impresión para usos muy especificos, como impresoras de 
+etiquetas u CDs. Inicialmente este trabajo esta orientado a la recomendación de impresoras o multifunciones
+para el público en general, considerando sólo el uso más convencional de los mismos. Pero el diseño del sistema
+se hará de forma tal que puedan ser contemplados otros usos más especificos en el futuro. 
+ 
+
+\subsection{Objetivos} 
+El principal objetivo del presente trabajo es diseñar y desarrollar un Sistema Experto que 
+emule un vendedor de sistemas de impresión y copiado que aconseja a 
+un cliente sobre las impresoras o fotocopiadoras de las que dispone. 
+
+Un segundo objetivo es la confección de un paquete de software open source con la implementación
+del sistema para ponerlo a disposición de la comunidad. Para que por ejemplo pueda ser utilizado de 
+empresas de ventas de equipos de impresión para facilitar la consulta a sus clientes a través de la web, 
+o adaptado a nuevas necesidades. 
+
+
+A pesar de que hemos reducimos el dominio de aplicación concentrandonos sólo en impresoras o multifunsiones
+sigue siendo un problema bastante complejo si quisieramos
+encararlo desarrollando una aplicación convencional.  
+Por eso afirmamos que la elección de hacerlo con 
+un sistema experto fue la más adecuada. 
+
+
+\subsection{Metodología de trabajo} 
+
+
+Nuestro  sistema es un poco particular porque por un lado es un sistema expero al que podría verse
+que se le agrega una interfaz web, pero también se lo puede pensar como una aplicación web que provee
+el servicio de recomendar equipos de impresión para lo cúal incorpora un módulo de sistema experto. 
+
+En el último tiempo se han desarrollado nuevas [..metodologías..] para el desarrollo de aplicaciones
+web, algunas consisten en adaptar a las antiguas que provienen de la IS a las nuevas necesidades, mientras
+que otro grupo provienen de las metodologías orientadas a servicios . 
+
+
+Nuestra forma de trabajo consistió usar ambos enfoques antes mencionados para diseñar cada parte del sistema.
+Vimos al sistema como un SE que luego tendría una interfaz web y vimos las interfaces web como una aplicación 
+que provee cierto servicio. 
+
+En una primera instancia la tarea fue armar una estructura general de lo que esperabamos
+fuera el sistema terminado. En ese sentido en la figura se presenta la una arquitectura de tres niveles\footnote{
+Una arquitectura de tres niveles es una especialización de la arquitectura 
+cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
+ una capa para la presentación (interfaz de usuario), otra para el cálculo 
+ y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
+del sistema. 
+
+Una vez que tubimos claro cúales serían los principales componentes del sistema y 
+la forma en la que interaccionan unos con otros fue más sencillo concentrarnos en 
+el diseño de cada parte por separado.
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics{arquitecturaSEBREI.png}
+ % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+\caption{}
+\label{arq}
+\end{figure}
+\end{center}
+
+
+
+
+Lo primero fue crear un pequeño sistema experto que funcione, luego de lo cúal 
+diseñaríamos las insterfaces web e integraríamos todo el sistema. A este primer sistema
+experto lo pasaremos a llamar stand alone para diferenciarlo del sistema completo.
+
+Luego de hacer una pequeña
+investigación sobre los sistemas expertos definimos las siguientes etapas para
+el desarrollo de una primera versión de nuestro sistema stand alone: 
+
+
+\begin{itemize}
+
+
+\item ingenieria de requerimientos
+\item adquisición del conocimiento 
+\item diseño
+\item implementación 
+\item testing 
+\item documentación
+
+\end{itemize}
+
+
+Con respecto a las interfaces web las etapas fueron: ingenieria de requerimientos, diseño, implementación, testing 
+y documentación.   
+
+
+
+%\hilight{ explicar mejor esta parte, citando las fuentes}
+
+%\hilight{Todo esto hay que cambiarlo, pero me gustaría hablar un poco de}
+
+
+%\hilight{diseño/planeo el 
+%sistema a lo mejor conviene llevar todo esto al final o en un apendice}
+
+
+%A lo largo de los años varios modelos de desarrollo de software se han propuesto para proveer una 
+%metodología que fuera util en la construcción de grandes sistemas de software, ejemplos de ellos
+% son el modelo de cascada, el modelo incremental, el modelo de espiral, el modelo lineal. 
+
+%"Los modelos de procesos son en realidad metametodologías porque determina el orden y la duración
+%en el cúal los métodos de software comunes son aplicados. Los métodos comunes de desarrollo de software 
+%muestran métodos específicos para llevar a cabo una las siguientes etapas"\cite{Riley2}
+
+
+
+\section{Desarrollo del sistema experto} 
+
+\subsection{Requerimientos}
+
+\subsubsection{Uso}
+
+El sistema debe recomendar los equipos de impresión que más se ajusten a la necesidades del cliente.
+Para determinar las necesidades del cliente el sistema se vale de preguntas en español.
+El sistema debe explicar las razones de sus recomendaciones.  
+
+\subsubsection{Actualización y Mantenimiento}
+
+El sistema debe permitir agregar nuevos equipos o modificar los ya exixtente. 
+Se debe permitir agregar o modificar las características técnicas posibles de los equipos de
+impresión.
+
+\subsubsection{Cambios futuros}
+Se debe preveer la posibilidad de extender la base de conocimiento (reglas) sin afectar
+la estructura del sistema. 
+El sistema debe poder ser traducido a distintos idiomas sin necesidad de alterar su
+estructura. 
+
+ 
+
+\subsection{Adquisición del conocimiento} 
+  
+\subsubsection{Fuentes de conocimiento} 
+
+Para adquirir el conocimiento nos valimos de las especificaciones técnicas publicadas por 
+los fabricantes de equipos de impresión, intercaciones con un experto en el rubro de venta de
+equipos de impresión para oficina y el hogar, la página web de la empresa del esperto y la web de 
+varias marcas de impresoras y multifunsión.\footnote{www.jeanmco.com.ar, http://www8.hp.com} 
+
+\subsubsection{Entrevista con el experto}
+Lo que sigue es el contenido de los intercambios de mails con el experto (vendedor), que han sido
+dispuestos en forma de entrevista. 
+
+\begin{quote}
+
+\textbf{IC}- \textit{¿Qué tipo de información se le pide a un cliente cuando se acerca con intenciones de comprar un equipo
+de impresión?.}
+
+\textbf{Experto}- \textit{Hay varias consideraciones cuando un interesado con consulta por impresoras, las relevantes son:}
+
+\textit{\begin{enumerate}
+ \item Qué tipo de uso le va a dar a la impresora, también el trabajo o profesión del cliente es un dato orientativo.
+ \item Producción de trabajo diario o mensual.
+ \item Si es para grupos de trabajo o para usar solo junto a una PC.
+ \item Si también escanean documentos, sacan fotocopias y/o usan fax
+\end{enumerate}}
+
+\textit{
+Con estos primeros datos ya tenemos para prepararle un abanico de soluciones de impresión.
+Es decir, si es para poco uso y una sola persona puede sugerirse una impresora chica, 
+si también escanea se amplía a una multifunción.
+Si ya es corporativa conviene una impresora en RED, con print server interno.
+A veces el cliente para su hogar ya está pidiendo impresoras WIRELESS ya que no quiere cables dando vuelta por su casa, 
+también hoy hay estos equipos.
+Además para los fanáticos de la tecnología tenemos las nuevas máquinas que imprimen desde un iPOD, etc.
+También hoy el asesoramiento va por el costo de los toner que al momento de la elección puede 
+ser importante sobre todo para altos volúmenes.}
+
+\textbf{IC}-\textit{ ¿Cúal debe ser aproximadamente el volumen de impresiones diario o mensual 
+para que se concidere que se necesita una impresora chica?, o sino ¿cuándo considero que una impresora es chica?}
+
+\textbf{Experto}- \textit{Normalmente el fabricante especifica en la folletería el volumen de trabajo, 
+normalmente si el volumen mensual es de hasta 1.500 a 2.000 páginas por mes, 
+en Argentina se estila comprar una máquina chica.}
+
+\textbf{IC}- \textit{Mencionaste que la profesión de un cliente es un dato orientativo para la recomendación de un equipo, 
+en ese sentido necesitaríamos un poco más de detalle. ¿Qué tipos de profesiones indican qué tipos de equipos?}
+
+\textbf{Experto}- \textit{Por ejemplo, para una oficina lo más común es usar impresoras láser monocromo.
+Si es un estudio de arquitectura es probable que usen chorro de tinta ya sea formato pequeño o bien A3 (297 x 432 mm.) o bien plotter.
+Un diseñador gráfico o fotógrafo pude elegir una impresora HP Photosmart con 6 tintas de colores diferentes.
+Para el hogar una ultifunción ink jet línea barata.
+Si entrás a la página de HP vas a encontrar que las impresoras las categorizan para:
+\begin{itemize}
+ \item mercado hogareño
+ \item mercado de diseño
+ \item  mercado corporativo
+\end{itemize}     }        \end{quote} 
+
+
+Guiandonos por el experto hay cuatro características mínimas que conciderar para un usuario común y son
+\medskip
+
+\begin{quote}
+\begin{tabular}{l}
+%\hline
+ uso (copiar, imprimir, etc)  \\
+ color  \\
+ volumen mensual  \\
+ conectividad requerida  \\
+%\hline
+\end{tabular}\end{quote} 
+ \medskip
+
+\subsubsection{Datos de la web: Volúmen mensual}
+
+Con respecto al volumen mensual usamos para guiarnos la clasificación que hace HP en su página web\footnote{Agregar
+webpage}. 
+ HP clasifica sus productos en 5 categorías y guia al 
+cliente que visita su página en busca de impresoras o multifinciones en esta clasificación
+de acuerdo al uso que tiene intensiones de darle el cliente.
+
+
+\bigskip 
+\begin{tabular}{|l|l|l|}
+\hline
+ \textbf{Volumen mensual}  &  \textbf{Uso pretendido} \\
+\hline
+\hline
+ Hasta 500 páginas mensuales  &  Fotos y Documentos \\
+\hline
+ Entre 500 y 1000 páginas mensuales & Impresión de documentos profesional\\
+\hline
+ Entre 1000 y 5000 páginas mensuales & Empresa en crecimiento\\
+\hline
+ Entre 5000 y 10000 páginas mensuales  & Impresión de volumen para medianas empresas\\
+\hline
+ Más de 10000 páginas mensuales & Soluciones para organizaciones Empresariales\\
+\hline
+\end{tabular} 
+
+\bigskip
+
+De acuerdo a este criterio de volumen mensual podemos usar las siguientes categorías para clasificar los 
+equipos:
+\begin{quote}
+\begin{itemize}
+ \item hogareña
+ \item profesional
+ \item pyme
+ \item pyme+
+ \item empresarial
+\end{itemize}
+\end{quote} 
+
+
+\subsubsection{Datos de la web: Tamaño del grupo de trabajo }
+
+En la página de Xerox\footnote{http://www.office.xerox.com/small-business/esuy.html} dentro de
+los equipos ofrecidos para la pequeña y mediana empresa hay una clasificación 
+de acuerdo al tamaño del grupo
+de trabajo. Dicha clasificación se compone de las catgorías de  \textit{peronal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
+\textit{grupo mediano} (de 4 a 10), y 
+\textit{grupo grande de trabajo} (más de 10). 
+Al revisar las especificaciones de los productos de las distintas categorías encontramos una relación entre dichas
+categorías y el ciclo mensual de trabajo.
+
+\bigskip 
+\begin{tabular}{|l|l|l|}
+\hline
+ \textbf{Categoría}  &  \textbf{Ciclo mensual de trabajo} &  \textbf{Volumen mensual}\\
+\hline
+\hline
+ personal  & 10000 páginas/mes &  hasta 1000 páginas\\
+\hline
+ grupo pequeño & hasta 50000 páginas/mes & hasta 4000 páginas\\
+\hline
+ grupo mediano & hasta 60000 páginas/mes & hasta 5000 páginas \\
+\hline
+  grupo grande  & hatsa 85000 páginas/mes & hasta 8500 páginas \\
+
+\hline
+\end{tabular} 
+
+\bigskip
+
+\subsubsection{Datos de la web: Especificaciones técnicas }
+
+A continuación listamos las características técnicas de los equipos de impresión 
+que pueden ser encontrados en los folletos de especificaciones provista por los
+distintos fabricantes. Dichas características son fundamentales para seleccionar
+que modelo de equipo se necesita.
+
+\begin{quote}
+\begin{itemize}
+%\item Marca
+%\item Modelo
+\item Tipo (impresora / multifunsión)
+\item Tecnología de impresión (laser / inyección de tinta / matriz de punto)
+\item Color 
+\item Funciones (imprimir / escanear /copiar /envio de fax /envío digital)
+\item Volumen de impresión recomendado 
+   \begin{itemize}
+    \item Los fabricantes de equipos de impresión, normalmete idican el ciclo de trabajo mensual, 
+que es la cantidad máxima de páginas en un determinado 
+formato que el equipo puede imprimir en un mes sin deteriorarse.
+Paralelamente también idican un volumen de páginas mensuales recomendado. 
+   \end{itemize}
+
+\item Conectividad  (usb / puerto paralelo / red ethernet / wifi)
+\item Lenguajes de Impresión Soportados  (GDI / PCL / PostSCript / ESC/Page)
+     \begin{itemize}
+      \item Esta característica es importante porque no todos los lenguajes están soportados por todos 
+los sistemas operativos.
+     \end{itemize}
+
+\end{itemize}
+\end{quote} 
+
+%Algunas consideraciones sobre estas características:
+
+
+
+
+%Un formato de salida para la impresión viene representado por un flujo de datos 
+%que es enviado a la impresora de forma que puede ser interpretado por el 
+%dispositivo de salida sin necesidad de ningún proceso de conversión previo. 
+%Dicho flujo de datos viene escrito en un "lenguaje" que la impresora es capaz de entender.
+
+
+%Una impresora que se basa en el procesador del host para generar las páginas.
+% La mayoría de impresoras host- base printers del mercado hoy en día utilizan el
+% GDI otra variante que utiliza la interfaz incorporada en Windows para generar la imagen 
+%de la página (impresoras GDI) y la línea de impresoras PPA (Arquitectura para Rendimiento de Impresión)
+% de Hewlett-Packard. Debido a que no necesita un potente procesador propio, 
+%tienden a ser más baratas que las impresoras convencionales. Sin embargo, debido a que comparten
+% el procesador del ordenador, pueden ralentizar su equipo de trabajo.
+% La velocidad de estas depende de la 'potencia' del equipo y de lo ocupado que este pueda estar,
+%por lo que no deben instalarse en servidores.
+\medskip
+
+Otras características que pueden ser encontradas en los folletos de especificaciones técnicas
+pero que no las consideramos tan decisivas (al menos en los casos más generales) son las siguientes:
+
+\begin{quote}
+\begin{itemize}
+\item Tipo de papel  (normal, fotográfico)
+\item Tamaño de papel (A4, A5, etc)
+\item Velocidad de impresión
+\begin{itemize}
+ \item La velocidad exacta varía según la configuración del sistema,
+ la aplicación de software, el driver y la complejidad del documento.
+\end{itemize}
+
+\item Calidad de Impresión
+\item Cantidad de Memoria
+\item Duplex automático 
+\item Pantalla táctil
+\item Impresión en A3
+\item Adicionales (bandejas adicionales)
+\end{itemize}
+\end{quote} 
+
+
+
+ 
+
+
+\subsection{Diseño}
+
+
+
+\subsubsection{Representación del conocimiento:Reglas} 
+
+
+\hilight{completar, definir las reglas y el arbol de búsqueda}
+
+Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista de reglas
+
+
+    \begin{itemize}
+	    \item Lista de reglas\hfill \\
+		  \begin{itemize}
+	           \item Si es para poco uso $\wedge$ una sola persona $\Rightarrow$ necesita impresora chica
+	           \item Si es para imprimir $\wedge$ escanear $\Rightarrow$ necesita multifunsión
+	           \item Si es para uso corporativo  $\Rightarrow$ necesita impresora de Red
+	           \item Si no quiere cables  $\Rightarrow$ necesita conexión wireless
+	           \item Si es fanático de la tecnología $\Rightarrow$ puede querer imprimir desde el iPod
+	           \item Si es para altos volúmenes $\Rightarrow$ el costo del toner es importante
+	           \item Si el volumen mensual del equipo es menor a 2000 páginas $\Rightarrow$ la impresora es chica
+	           \item Si es para una oficina $\Rightarrow$ necesita laser monocromo
+	           \item Si es un estudio de arquitectura $\Rightarrow$ necesita chorro de tinta para A4 o A3 o un plotter
+	           \item Si es diseñador gráfico o fotografo $\Rightarrow$ puede queres HP Photosmart con 6 tintas 
+	           \item Si es para el hogar $\Rightarrow$ puede necesitar multifunsión barata
+
+          \end{itemize}      
+    \end{itemize}
+
+Hay algunos conceptos a precisar, como impresora chica, alto volumen, poco uso. En 
+el contexto utilizado todos los terminos se están refiriendo a la cantidad de páginas mensuales. 
+
+
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=1]{conjuntosCrips.png}
+\caption{Clasificación según volumen de impresiones mensuales}
+\label{conjuntos}
+\end{figure}
+\end{center}  
+
+La clasificación de HP ya mencionada, define 5 conjuntos para esta característica,
+el experto nos habla de impresoras chica como aquella que no 
+superara las 2000 páginas de impresiones al mes. Dentro de la categoría \textquotedblleft chica"
+del experto están contenidas las dos primeras categorías de HP y parte de la tercera. 
+
+
+Vamos a utilizar conjuntos fuzzy\footnote{ Ver apendice A: Fuzzy Set} para representar 
+los valores de las variable linguística \textit{tamaño} 
+que está relacionada con el volumen de páginas mensuales, estos valores son:
+\textit{chica},\textit{ mediana}, \textit{grande}, 
+\textit{de alto volumen}
+
+
+Las respectivas funciones de pertenencia para cada conjunto son las siguientes: 
+\bigskip
+
+$chica (x) = \begin{cases}
+              1 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+              
+               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \; 1000 < x \leq 2000\\
+               
+               0   \qquad \qquad \qquad \qquad si \; x \geq 2000
+             \end{cases}
+ $ 
+ 
+ \bigskip
+ 
+ $mediana (x) = \begin{cases}
+              0 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+              
+               \dfrac{x - 1000}{1000} \qquad \qquad \; \, si \; 1000 < x \leq 2000 \\
+               
+                1 \qquad \qquad \qquad \qquad si \;  \; 2000 < x \leq 5000 \\
+              1-  \dfrac{x - 1000}{1000} \; \; \,\qquad si \;5000 < x \leq 6000 \\
+               
+               0   \qquad \qquad \qquad \qquad si \; x \geq 6000
+             \end{cases}
+ $ 
+ 
+ \bigskip
+ 
+ $grande (x) = \begin{cases}
+                 0 \qquad \qquad \qquad \qquad si \; x \leq 5000 \\
+              
+               \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 5000 < x \leq 6000 \\
+               
+                1 \qquad \qquad \qquad \qquad si \;  \; 6000 < x \leq 9000 \\
+               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \;9000 < x \leq 10000 \\
+               
+               0   \qquad \qquad \qquad \qquad si \; x \geq 10000
+             \end{cases}
+ $ 
+ 
+ \bigskip
+ 
+ $alto\_volumen (x) = \begin{cases}
+              0 \qquad \qquad \qquad \qquad si \; x \leq 9000 \\
+              
+                \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 9000 < x \leq 10000 \\
+               
+               1   \qquad \qquad \qquad \qquad si \; x \geq 10000
+             \end{cases}
+ $ 
+
+
+%12000/20 = 600/6 , 100 por hora  
+
+\bigskip
+¿Para qué nos sirve todo esto?
+
+%Nuestra tarea consistirá recomendar los equipos que se ajusten más a la necesidad del cliente. 
+%Lo primero es tratar de determinar el valor de páginas mensuales promedio que utilizará, el cliente
+%puede tener una idea o no de cuanto va a necesitar imprimir sobre todo si va a reemplazar un equipo
+%que ya estaba usando. 
+
+Los equipos van a estar clasificados las 5 categorías mensionadas: hogareño, profesional,
+pyme, pyme+, empresarial. 
+
+Factores de certeza 
+
+Usaremos los conjuntos fuzzy de dos formas una para determinar cual es el tamaño de equipo necesitado
+y el otro para ayudarnos a definir factores de certeza de la siguiente manera. 
+
+\begin{quote}
+\begin{verbatim}
+
+For T in tamaño
+ i := 0
+   For U in uso
+       p(U) := calcular la probabilidad a priori de ocurrir dado que el tamaño es T
+       a(U) := calcular el procentaje del área U alcanzado por el tamaño T.
+       s(U) := p(U)*100 + a(U)
+       sum := sum + s(U)
+   For U in uso 
+      CF(U) := (s(U) / sum) * 100   
+   
+\end{verbatim} \end{quote} 
+
+
+
+Por ejemplo si se ha determinado que el tamaño es chico, entonces hay un
+1/3 de probabilidad de que el uso sea 100 horareño, 100 profesional y 20 pyme. 
+\bigskip
+
+CF(hogareño) $ := ( 33+100 / 319 ) * 100 = 42  $\textdiscount 
+
+CF(profesional) $:= ( 33+100 / 319 ) * 100 = 42  $\textdiscount 
+
+CF(pyme) $:= ( 33+20 / 319 ) * 100 = 17 $\textdiscount 
+
+\bigskip
+
+Tendremos entonces reglas como las que siguen 
+
+
+    \begin{itemize}
+	    \item Lista de reglas\hfill \\
+		  \begin{itemize}
+	           \item Si chica $\Rightarrow$ uso hogareño con 42\textdiscount  de certeza $\wedge$  
+uso profesional con 42\textdiscount de certeza $\wedge$  uso pyme con 17\textdiscount  de certeza
+
+	           \item Si es mediana  $\Rightarrow$ uso pyme con 85\textdiscount de certeza $\wedge$ 
+ uso pyme+ con 15\textdiscount de certeza
+	           \item Si es grande  $\Rightarrow$ uso pyme+ con 90\textdiscount de certeza
+	           \item Si es de  alto volumen $\Rightarrow$ uso empresarial con 85\textdiscount de certeza $\wedge$ 
+ uso pyme+ con 15\textdiscount de certeza
+	         
+
+          \end{itemize}      
+    \end{itemize}
+
+
+
+
+
+Falta sólo determinar cómo precisar el tamaño de la impresora. Una primera aproximación podría ser 
+preguntarle al cliente cuantas páginas cree que en promedio imprimirá en un mes, haciendo la aclaración
+que 1000 páginas es el equivalente a una resma de hojas. 
+
+Si el cliente no lo sabe o no está seguro que es lo más probable, podemos usar la aproximación que 
+usa Xerox preguntandole el número de usuarios/pc simultáneos del grupo de trabajo. Si el usuario ingresa
+un valor para las páginas mensuales podemos todavía validar dicho valor con respecto al tamaño del grupo 
+de trabajo. 
+
+
+\bigskip 
+\begin{quote}
+\begin{tabular}{|l|l|}
+\hline
+ \textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
+\hline
+\hline
+ personal   &  hasta 2000 p.\\
+\hline
+ hasta 4 personas/pc & hasta 5000 p.\\
+\hline
+ hasta 12 personas/pc & hasta 8000 p.\\
+\hline
+ más de 12 personas & mas de 8000 p.\\
+
+\hline
+\end{tabular} \end{quote} 
+
+\bigskip
+
+Para el caso en que el cliente facilita un valor $v$ para el volumen mensual, 
+el valor definitivo utilizado $vd$ sera $vd = v + vg$, donde $vg$ es el valor
+correspondiente al tamaño del grupo de trabajo. 
+
+
+
+
+¿Cuando recomendar laser o tinta?
+¿?
+
+
+\hilight{definir valores para la variable linguistica precio + resumen de variables linguisticas}
+
+
+The backward chaining algorithm
+
+    Express associations between a goal (consequent) and the conditions it 
+depends on (antecedents) as facts, and name this fact domain-rule.
+    The consequents of a domain-rule are the goals for be resolved.
+    If a domain-rule has an antecedent then each antecedent becomes a sub-goal.
+    Each sub goal is resolved by affirming or negated it based on the facts called answer.
+    If a sub-goal is affirmed then this antecedent is removed from the domain-rule's antecedents.
+    Repeat step 3 and 4 until there are no antecedents left.
+    When a domain-rule has no antecedent then fire the rule to create of a new fact called conclusion.
+    The conclusion consists of the goal along with certainty rating called confidence-factor .
+    If two goals resolve to same conclusion then combine their certainties 
+(confidence-factors) using the function ((100* (cf1 + cf2))-(cf1 * cf2))/100
+
+
+
+
+\subsubsection{Representación del conocimiento:Base de datos}
+
+Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
+utilizamos un base de datos relacional para mantener las características de los equipos de impesión. 
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=1]{db.png}
+\caption{Modelo EER de la base de datos}
+\label{db}
+\end{figure}
+\end{center}
+
+
+%\subsection{Sistema completo}   
+
+
+\subsection{Implementación}
+
+\subsubsection{Herramienta utilizada}
+
+\subsection{Testing}
+
+
+
+\section{Desarrollo de las interfaces web}   
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=1.7]{universe.jpg}
+%\caption{The Universe}
+%\label{threadsVsSync}
+%\end{figure}
+
+\hilight{Agregar diseños de las interfaces web en WEBML}
+
+
+\section{Integración del sistema} 
+
+\section{Notas sobre la implementación}  
+
+\subsection{Clips} 
+
+\subsection{Base de datos} 
+
+\subsection{Interfaces web} 
+
+\subsection{Otras herramientas} 
+
+
+
+\section{Testing}  
+\hilight{Pruebas de las distintas componentes}
+
+
+\section{Documentación}  
+\hilight{Notas sobre las Herramientas utilizadas??}
+
+\subsubsection*{Clips} 
+
+Clipseg: Editor para clips
+
+
+\subsubsection*{Base de datos} 
+
+
+Workbench: 
+
+phpmyadmin
+
+\subsubsection*{Interfaces web} 
+
+Webratio: WebML
+
+Eclipse 
+
+
+\subsubsection*{Otras herramientas} 
+
+clientes svn: tortoise (cliente svn para Windows), svn para linux 
+
+
+LibreOffice: Calc, Draw
+
+
+Gimp: Editor de imágenes
+
+Inkscape: editor de imágenes vectorial
+
+Editor de Latex
+
+
+
+\section{Conclusión y notas finales}
+
+
+%\bibliographystyle{plain}
+%\bibliography{references}
+
+
+\newpage
+\section*{Apéndice A - Fuzzy Set}
+\hilight{Completar hablando de que son los conjuntos fuzzy, las funciones y los operadores de OR y AND}
+
+
+
+\newpage
+
+\begin{thebibliography}{9}
+
+\bibitem{Riley} 
+Giarratano Riley. Sistemas Expertos, Principios y Programación.  2003
+
+\bibitem{Riley2} 
+Giarratano Riley. Sistemas Expertos, Principios y Programación.  2003. pag 318-319
+%\   Ingenieria del conocimientos. Aspectos metodolo
+
+Russell, Stuart J.; Norvig, Peter (2003), Artificial Intelligence: 
+A Modern Approach (2nd ed.), Upper Saddle River, New Jersey: Prentice Hall, ISBN 0-13-790395-2
+
+\end{thebibliography}
+
+
+
+
+\end{document}

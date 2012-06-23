@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: report2.aux
+The style file: nature.bst
+Database file #1: references.bib
+You're missing a field name---line 2 of file references.bib
+ : 
+ : %  title={The Hitchhiker's Guide to the Galaxy},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 14 of file references.bib
+ :     
+ :     url = "http://www.mailxmail.com/curso-impresoras"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 20 of file references.bib
+ :     
+ :     url = "http://marina-otero-spagnuolo.suite101.net/consejos-para-comprar-una-impresora-a29960"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 28 of file references.bib
+ :     
+ :     url = "http://www.redusers.com/noticias/impresoras-consejos-antes-de-comprar/"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 37 of file references.bib
+ :     
+ :     url = "http://tecnologia.iprofesional.com/notas/115886-Consejos-para-tener-en-cuenta-antes-de-comprar-una-nueva-impresora"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 54 of file references.bib
+ : 
+ : %  author =       {K.S.Narendra and K.Parthsarathy},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Illegal end of database file---line 75 of file references.bib
+ : %@phdthesis
+ :            
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Riley"
+Warning--I didn't find a database entry for "garcia"
+Warning--I didn't find a database entry for "feigenbaum"
+Warning--I didn't find a database entry for "waterman"
+Warning--I didn't find a database entry for "Carrillo"
+Warning--I didn't find a database entry for "cammarata"
+Warning--I didn't find a database entry for "shells"
+Warning--I didn't find a database entry for "charniak"
+Warning--empty title in otero
+Warning--empty journal in otero
+Warning--empty year in otero
+Warning--empty title in redusers
+Warning--empty journal in redusers
+Warning--empty year in redusers
+Warning--empty publisher in curso
+Warning--empty year in curso
+Warning--empty title in consejos
+Warning--empty journal in consejos
+Warning--empty year in consejos
+Warning--empty title in iso
+Warning--empty journal in iso
+(There were 7 error messages)

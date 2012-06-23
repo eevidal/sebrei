@@ -29,8 +29,8 @@ echo("<input type=\"hidden\" name=\"table\" value=\"$t\">");
 echo("<input type=\"hidden\" name=\"id\" value=\"$id\">");
 
 
-if($t=='tag'||$t=='cartridge' ){
-        if($t=='tag')
+if($t=='tag'||$t=='cartridge' ||$t=='tagp'){
+        if($t=='tag'||$t=='tagp' )
         {
                 echo("<p>Nombre del tag");
                 echo("<input type=\"text\" name=\"new\" class=\"input\" value=".$row[$t.'_name']." size=\"20\" style=\"margin-left: 40px;\" /></p>");
@@ -38,9 +38,9 @@ if($t=='tag'||$t=='cartridge' ){
 		$min1=explode('{' , $a[0]);
 		$max1=explode('}' , $a[1]);
 
-                echo("<p>Volumen mínimo de páginas al mes recomendado");
+                echo("<p>Valor mínimo:");
                 echo("<input type=\"text\" name=\"min\" class=\"input\"  value=".$min1[1]." size=\"10\" style=\"margin-left: 40px;\" /></p>");
-                echo("<p>Volumen máximo de páginas al mes recomendado");
+                echo("<p>Valor máximo:");
                 echo("<input type=\"text\" name=\"max\" class=\"input\" value=".$max1[0]."  size=\"10\" style=\"margin-left: 40px;\" /></p>");
         }
         else // es cartridge

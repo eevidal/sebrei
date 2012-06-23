@@ -15,9 +15,9 @@ $m="No ha ingresado ningún valor";
 if (empty($new))  header("Location: error.php?mes=".$m); 
 
 else {
-	if ($t=='tag'||$t=='cartridge'|| $t=='quality') 
+	if ($t=='tag'||$t=='cartridge'|| $t=='quality'||$t=='tagp') 
 	{
-		if($t=='tag') 
+		if($t=='tag'||$t=='tagp') 
 		{
 			$min=pg_escape_string($_GET['min']);
 			$max=pg_escape_string($_GET['max']);

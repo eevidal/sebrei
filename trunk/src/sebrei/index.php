@@ -45,7 +45,7 @@ include('header.php');
 		
 
 		<li><a href="alter.php?table=tag">Tag</a></li>
-
+		 <li><a href="alter.php?table=tagp">Tag precio</a></li>
 		<li><a href="alter.php?table=sheet">Tamaños de papel</a></li>
 
                 <li><a href="alter.php?table=tecnology">Tecnología</a></li>

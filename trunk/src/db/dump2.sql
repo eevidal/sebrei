@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -179,7 +179,7 @@ ALTER TABLE public.vendors OWNER TO sebrei;
 --
 
 COPY cartridge (cartridge_id, cartridge_name, cartridge_duration) FROM stdin;
-\.
+
 
 
 --
@@ -187,7 +187,7 @@ COPY cartridge (cartridge_id, cartridge_name, cartridge_duration) FROM stdin;
 --
 
 COPY conectivity (conectivity_id, conectivity_name) FROM stdin;
-\.
+
 
 
 --

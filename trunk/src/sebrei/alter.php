@@ -32,14 +32,14 @@ include('header.php');
 	echo("<form action=\"add.php\" method=\"GET\">");
 	echo("<input type=\"hidden\" name=\"table\" value=\"$t\">");
 
-if($t=='tag'||$t=='cartridge' || $t=='quality' ){ 
-	if($t=='tag')
+if($t=='tag'||$t=='cartridge' || $t=='quality' ||$t=='tagp'){ 
+	if($t=='tag'||$t=='tagp')
 	{
 		echo("<p>Nombre del tag"); 
 		echo("<input type=\"text\" name=\"ad\" class=\"input\"  size=\"20\" style=\"margin-left: 60px;\" /></p>");
-		echo("<p>Volumen mínimo de páginas al mes recomendado");
+		echo("<p>Valor mínimo: ");
 		echo("<input type=\"text\" name=\"min\" class=\"input\"  size=\"10\" style=\"margin-left: 40px;\" /></p>");
-		echo("<p>Volumen máximo de páginas al mes recomendado");
+		echo("<p>Valor máximo:");
 		echo("<input type=\"text\" name=\"max\" class=\"input\"  size=\"10\" style=\"margin-left: 40px;\" /></p>");
 	}
 	else  {

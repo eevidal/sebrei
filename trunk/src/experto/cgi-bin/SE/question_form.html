@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Pregunta</title>
+</head>
+<body>
+    <h4>Necesito Saber</h4>
+	<h4>{{pregunta}}</h4>
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="/respuesta" method="get">
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+

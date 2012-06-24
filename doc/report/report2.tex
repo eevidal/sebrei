@@ -25,7 +25,7 @@
 \title{ SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impesión
 \titlenote{Trabajo final de la asignatura Introducción a la Inteligencia Artificial
 de la carrera Licenciatura en Cs. de la Computación.} }
-\subtitle{}
+%:w\subtitle{}
 \numberofauthors{1}
 
 \author{
@@ -68,6 +68,9 @@ manera más eficiente.
 El conocimiento en un sistema esperto puede representar experiencia o conocimiento que está disponible
 en libros, revistas y personas.
 
+Todo sistema experto está especializado en cierto campo o area del conocimento.
+El área de conocimiento que es capturado por un sistema experto se llama dominio de tarea o aplicación.
+
 
 %\hilight{ssssmm}
 
@@ -82,7 +85,7 @@ en libros, revistas y personas.
 \smallskip 
 
 La estructura básica de un sistema experto consta de una base de conocimiento que es el conjunto de 
-hechos o heurísticas debidamente alamacenadas y un motor de inferencias que es el programa que gestiona y controla la base de
+hechos y heurísticas debidamente alamacenadas y un motor de inferencias que es el programa que gestiona y controla la base de
 de conocimiento. Una característica relevante es que la base de conocimiento y el motor de inferencias se encuentran separados.
 En la figura 1 se ilustra la estructura básica de un sistema experto.
 
@@ -107,6 +110,8 @@ llegar a una conclusión.
 \smallskip 
 ``En IA, la representación del conocimiento es una combinación de estructura de datos y procedimientos de
 interpretación, que si se usan de una forma adecuada en un programa se tendrá un comportamiento experto."\cite{feigenbaum}
+
+La representación del conocimento formaliza y ordena el conocimento.
 %La "experiencia" de un experto puede ser representada de diversas maneras. 
 %La representación del conocimiento es un esquema o dispositivo utilizado para capturar los elementos 
 %esenciales del dominio de un %problema.
@@ -151,10 +156,11 @@ relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una ase
 Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
 
 \subsection*{Chains}
-Un grupo de múltiples inferencias que conecta un problema con una solución se llama cadena (chain).
+Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
 
-Una cadena que va desde los hechos  a un objetivo se llama Forward Chain, mientras que una cadena 
-que va de una hipótesis u objetivo hacia los hechos que soportan dicha hipótesis se llama 
+Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
+mientras que un encadenamiento 
+que va desde una hipótesis u objetivo hacia los hechos que soportan dicha hipótesis se llama encadenamiento hacia atraz.
 Backward Chain. 
 
 Debido a que los datos determinan que reglas se usarán el Fordward Chaining es llamado inferencia data-driven en contraste 
@@ -245,6 +251,27 @@ Además de estas, el desarrollo de un sistema experto debe incluir las etapas de
 
 \section*{Adquisición del conocimiento}
 
+Uno de los aspectos más importantes
+en el proceso de construcción de un sistema informático basado en el
+conocimiento es el de la adquisición y validación de conocimiento. 
+
+"Dentro de los métodos de adquisición de
+conocimiento se pueden citar los métodos basados en interaccion humana
+tales como tareas familiares, entrevistas, tareas de proceso restringido y tareas
+de información limitada y los basados en técnicas de aprendizaje automático."\cite{garcia}
+
+En \cite{Carrillo} el autor en el desarrollo de su metodología integreal para el
+desarollo de sistemas basados en conocimiento,
+explora, recopila y analiza varias técnicas para la adquisición del
+conocimiento y la elección adecuada de su representación.
+
+En reglas generales la adquisición del conocimento consta de identificar las fuentes del 
+conocimento, extraer el conocimiento de dichas las fuentes, ordenarlo, construir definiciones 
+claves del dominio de aplicación.   
+
+
+
+
 \section*{Herramientas}
 \smallskip 
 
@@ -257,6 +284,7 @@ Un shell es un programa preparado para la generación de sistemas expertos, incor
 ingeniero del cnocimiento se limita a  crear la base de conocimiento. CLIPS es un ejemplo de shell o entorno de desarrollo
 para la producción de sistemas expertos. En \cite{shells} hay una extensa referencia a los distintas herramientas y shell 
 disponibles hacia la década de los '90.
+
 
 
 
@@ -280,9 +308,35 @@ LOGique) es un lenguaje de programación lógico e interpretado.
 herramienta para el desarrollo de sistemas expertos (SE) creada
 por la Software Technology Branch (STB), NASA / Lyndon B.
 Johnson Space Center. Los orígenes de CLIPS se remontan a
-1984.
+1984. En la actualidad, entre los paradigmas de programación que
+soporta CLIPS se encuentran la Programación lógica, la Programación imperativa y
+la Programación Orientada a Objetos. Aunque ahora es de
+dominio público (license public domain), aún es actualizado y mantenido por su autor original, Gary Riley.
+En la actualidad se encuentra en su versión 6.3.
+Existen derivados de CLIPS para ser usados en otros lenguajes como por ejemplo:
 
-SOAR
+\begin{itemize}
+ \item JESS: implementación de CLIPS en Java+.
+ \item FuzzyCLIPS: incorpora a CLIPS la posibilidad de usar razonamiento difuso.
+ \item CLIPSMM: una interfaz libre de CLIPS con C++.
+ \item PHLIPS: extensión para PHP.  (PHP License V3)
+ \item PyCLIPS: interfaz libre para Python., (utilizada en este trabajo).(License (LGPL))
+ \item CLIPSNET: librería de C\#
+\end{itemize}
+
+Hay una extensa lista de softwares y variates derivadas de Clips y aplicacaciones desarrolladas con
+Clips en el sitio web de la herramienta\footnote{http://clipsrules.sourceforge.net/OtherWeb.html}.
+
+
+\textbf{SOAR (State, Operator And Result)}
+Soar es una arquitectura general de desarrollo de agentes inteligentes. Es usada tanto por investigadores de inteligencia
+artificial como de ciencias cognitivas para una variedad de tareas.
+SOAR se usa desde 1983 y en la actualidad a evolucionado hasta su versión actual 9.3.
+Se destribuye bajo licencia BSD.
+ 
+
+
+
 
 
 \begin{thebibliography}{1}
@@ -339,16 +393,19 @@ Giarratano, Joseph; Riley, Gary.
 %\bibliography{references1}
 \newpage
 
-\section{Desarrollo del sistema experto} 
+
+
+\part{Desarrollo del sistema experto} 
+\label{sec: }
 \smallskip 
 \addtocounter{section}{-1}
 
-\section*{Presentación del problema} 
+\section{Presentación del problema} 
 
 \smallskip 
 La elección de una determinada tecnología de impresión 
  a la hora de comprar está sujeta a numerosas cuestiones 
-relacionacionadas con el uso que se le va a dar al equipo, 
+relacionadas con el uso que se le va a dar al equipo, 
 la velocidad de respuesta deseada, la calidad esperada, factores económicos, etc.
  Requiere tiempo y esfuerzo investigar las tecnologías 
 disponibles en el mercado y decidir en base a las características
@@ -356,7 +413,7 @@ disponibles en el mercado y decidir en base a las características
 
 Los sitios web de las diferentes marcas de impresión a menudo preclasifican sus productos para
 ayudar al cliente a encontrar el equipo que se necesita, otros simplemente listan los productos 
-disponibles. En todos los casos, el cliente debe saber que está buscando.
+disponibles. En todos los casos, el cliente debe saber qué está buscando.
 Para facilitar la tarea  de elección, lo más común es consultar con un vendedor competente en la materia. 
 
 Emular un vendedor o recomendador de impresoras es un problema bastante complejo si se lo quisiera
@@ -378,11 +435,11 @@ satisfacer al cliente.
 El principal objetivo del presente trabajo es diseñar y desarrollar un Sistema Experto online que 
 emule un vendedor de sistemas de impresión, que aconseja a 
 un cliente sobre las características necesarias en impresora o multifinción de acuerdo a las necesidades
-que el cliente exprese tener, y en base a las características recomendadas ofrezca de un conjunto de productos
+que el cliente exprese tener, y en base a las características recomendadas, ofrezca de un conjunto de productos
 disponibles aquellos que más se ajusten.
 
-Un segundo objetivo es la confección de un paquete de software open source con la implementación
-del sistema para ponerlo a disposición de la comunidad. 
+Un segundo objetivo es la confección de un paquete de software de código abierto con la implementación
+del sistema. 
 %Para que por ejemplo pueda ser utilizado de 
 %empresas de ventas de equipos de impresión para facilitar la consulta a sus clientes a través de la web, 
 %o adaptado a nuevas necesidades. 
@@ -410,13 +467,13 @@ del sistema para ponerlo a disposición de la comunidad.
 \smallskip 
 \subsubsection{Uso}
 
-El sistema debe recomendar los equipos de impresión que más se ajusten a la necesidades del cliente.
+El sistema debe recomendar los equipos de impresión que más se ajusten a las necesidades del cliente.
 Para determinar las necesidades del cliente el sistema se vale de preguntas en español.
 El sistema debe explicar las razones de sus recomendaciones.  
 
 \subsubsection{Actualización y Mantenimiento}
 
-El sistema debe permitir a un usuario autenticado agregar nuevos equipos o modificar los ya exixtente. 
+El sistema debe permitir a un usuario autenticado agregar nuevos equipos o modificar los ya existentes. 
 También se debe permitir agregar o modificar las características técnicas posibles de los equipos de
 impresión.
 
@@ -430,81 +487,81 @@ la estructura del sistema.
 
 
 
-\section*{Adquisición del conocimiento} 
+\section{Adquisición del conocimiento} 
 \smallskip 
-  \addtocounter{section}{1}
-  \addtocounter{subsection}{-2}
+  %\addtocounter{section}{1}
+  %\addtocounter{subsection}{-2}
 \subsection{Fuentes de conocimiento} 
 
-La adquicisión del conocimiento se llevo a cabo consultando las especificaciones técnicas publicadas por 
+La adquicisión del conocimiento se llevó a cabo consultando las especificaciones técnicas publicadas por 
 los fabricantes de equipos de impresión y  a través de, las intercaciones con un experto en el rubro de venta de
-equipos de impresión para oficina y el hogar, la página web de la empresa del esperto\footnote{\textit{http://www.jeanmco.com.ar}} y 
+equipos de impresión para oficina y el hogar, la página web de la empresa del experto\footnote{\textit{http://www.jeanmco.com.ar}} y 
 la web de 
 varias marcas de impresoras y multifunsión\footnote{\textit{http://www8.hp.com}}, \footnote{\textit{http://global.latin.epson.com/}},
  \footnote{\textit{http://www.xerox.com}}, \footnote{\textit{http://www.brother.es/}}. 
-También se consultaron foros, noticias de técnología y recomendaciones onlines publicadas 
+También se consultaron foros, noticias de tecnología y recomendaciones onlines publicadas 
 por expertos en medios digitales\cite{otero},\cite{redusers},\cite{curso},
 \cite{consejos}.
 
 
-\subsection{Definiciones y conceptos claves del dominio}
+\subsection{Definiciones y conceptos clave del dominio de tarea}
 
-\subsubsection{Impresora - Multifunción}
+\subsubsection{Impresora - Multifunción:}
 Una impresora es un periférico de ordenador que permite producir una gama permanente de textos o gráficos de
 documentos almacenados en formato electrónico, imprimiéndolos en medios físicos, 
 normalmente en papel o transparencias, utilizando cartuchos de tinta o tecnología láser.
 Si además de imprimir el equipo cuenta con un escáner y/o fax incorporados, el equipo se denomina multifunción.
 
 \subsubsection{Funciones:}
-Una impresora posse la función de imprimir, pero si el equipo es una multifinción
-significa que ademas posee una o más de las siguientes funciones: escanear, copiar, envío de fax, envío digital. 
+Una impresora posse la función de imprimir, pero si el equipo es una multifunción
+significa que ademas posee una o más de las siguientes funciones: escanear, copiar, envío de fax, envío digital.
+El envío digital es la capacidad enviar por mail un documento digital que el equipo tenga en memoria, por lo general como 
+resultado de haber escaneado algo. 
 
 \subsubsection{Tecnologías de impresión:} 
-\textbf{Matriz de punto}
+\textbf{Matriz de punto.}
 Las impresoras de matriz de puntos usan un conjunto de agujas de cabeza redonda que 
 presionan una cinta entintada contra una página. Las agujas (por lo general 9 o 24) están dispuestas en una 
 cuadrícula rectangular llamada matriz;
-diferentes combinaciones de agujas forman los distintos caracteres e imágenes. Siguen siendo las únicas capaces a inprimir 
+diferentes combinaciones de agujas forman los distintos caracteres e imágenes. Siguen siendo las únicas capaces de imprimir 
 en formulario continuo. 
 No procesan los documentos una página a la vez. En su lugar, trabajan principalmente con un flujo de caracteres
-ASCII hasta una línea a la vez y, pon lo tanto, requieren de búferes de memoria muy reducidos. Como resultado,
+ASCII hasta una línea a la vez y, por lo tanto, requieren de búferes de memoria muy reducidos. Como resultado,
 su velocidad se mide en caracteres por segundo (cps) en vez de en páginas pon minuto.
 
-\textbf{Inyeccion de tinta} 
+\textbf{Inyección de tinta.} 
 Las impresoras de inyección de tinta tienen boquillas diminutas situadas en lo que se llama cabezal de impresión,
 que esparcen tinta 
-especialmente formulada sobre una página. Existen dos métodos de impresión con inyección de tointa, 
-uno es térmico como la que usa la línea Bubblejet de Canon y HP, en los que diminutos elemnetos calentadores
+especialmente formulada sobre una página. Existen dos métodos de impresión con inyección de tinta, 
+uno es térmico como la que usa la línea Bubblejet de Canon y HP, en los que diminutos elementos calentadores
 son usados para expulsar gotitas de tinta desde las boquillas del cabezal.
 El otro método utiliza la tecnología piezoeléctrica desarrollada por Epson.
 
-\textbf{Láser}. Las impresoras láser funcionan creando una imagen electrostática de una página completa sobre un tambor 
-fotosensible con un haz de luz láser. Cuando se aplica al tambor el polvo ultrafino de color denominado tóner, 
+\textbf{Láser:}. Las impresoras láser funcionan creando una imagen electrostática de una página completa sobre un tambor 
+fotosensible con un haz de luz láser. Cuando se aplica al tambor el polvo ultrafino de color, denominado tóner, 
 éste se adhiere sólo a las áreas sensibilizadas correspondientes a las letras o imágenes sobre la página. 
 El tambor gira y se presiona contra una hoja de papel, transfiriendo el tóner a la página y creando la imagen.
-Esta tecnología es similar a la que utilizan las fotocopiadora.
-Muchas de las llamadas impresoras laser son actualmente del tipo LED. Estas impresoras reemplazan el haz de luz 
+Esta tecnología es similar a la que utilizan las fotocopiadoras.
+Muchas de las llamadas impresoras láser son actualmente del tipo LED. Estas impresoras reemplazan el haz de luz 
 láser con una disposición fija de diodos emisores de luz (LEDs) para 
 crear la imagen; por lo demás, son similares en desempeño aunque más económicas. %http://www.okiuruguay.com.uy
 
 
 
-\textbf{Tinta Sólida}
-las impresoras de tinta sólida son impresoras de página completa que usan varillas de tinta encerada sólida en 
-un proceso "phase-change" (cambio de fase). Trabajan licuando las varillas en depósitos, y luego volcando 
-la tinta dentro de un tambor de transferencia, desde donde es fusionada en frío en el papel en una sola pasada.
+\textbf{Tinta Sólida:}
+Las impresoras de tinta sólida son impresoras de página completa que usan varillas de tinta encerada sólida en 
+un proceso ''phase-change" (cambio de fase). Trabajan licuando las varillas en depósitos, y luego volcando 
+la tinta en un tambor de transferencia, desde donde es fusionada en frío en el papel en una sola pasada.
 Es una técnología exclusiva de Xerox. %www.okiuruguay.com.uy/REVOLUCION.PDF
 
-\textbf{Sublimación de tinta}
+\textbf{Sublimación de tinta:}
 Las impresoras de sublimación de tinta son dispositivos especializados ampliamente usados en aplicaciones
  fotográficas y de artes gráficas. Estas impresoras trabajan calentando la tinta hasta convertirla en gas. 
 El elemento térmico puede generar diferentes temperaturas, lo que permite controlar la cantidad de tinta 
 que es ubicada en una mancha. En la práctica, esto significa que el color es aplicado como un tono 
 continuo más que como puntos.
 Un color por vez es depositado en toda la hoja, comenzando con el amarillo y terminando con el negro. 
-La tinta forma largos rollos de película, las cuales contienen hojas de cada color, así que la impresión 
-de una hoja A4 tendrá una hoja del tamaño A4 de amarillo, seguida de una hoja de cian, una de magenta y 
-una de negro. La sublimación de tinte requiere de un papel especial particularmente caro, y los tintes 
+La sublimación de tinta requiere de un papel especial particularmente caro, y los tintes 
 están diseñados para difuminarse en la superficie del papel, mezclándose para crear sombras de colores 
 precisas. 
 
@@ -515,19 +572,19 @@ es decir, la cantidad de páginas que puede imprimir en un minuto en determinadas
 Otro parámetro que se utiliza es el de \textit{cps} (caracteres por segundo) 
 adecuado para las impresoras matriciales que aún se fabrican.
 La velocidad exacta varía según la configuración del sistema,
- la aplicación de software, el driver y la complejidad del documento
+ la aplicación de software, el driver y la complejidad del documento.
 Para poder comparar impresoras de distintos fabricantes basándose en las ppm se definio el 
 estandar ISO/IEC 24734$:$2009 \cite{iso} aplicables tanto a impresoras como 
-multifunsiones que pueden imprimir en formato A4.  
+multifunciones que pueden imprimir en formato A4.  
 
 \subsubsection{Calidad de impresión:} %http://www.monografias.com/trabajos11/trimpres/trimpres.shtm
 Uno de los determinantes de la calidad de la impresión realizada, es la resolución que se usa
 para describir la agudeza y claridad de la salida impresa. La resolución de impresión se mide en dpi 
 (dots per inch) o en español, ppp (puntos por pulgada). 
- Una resolución de "300 dpi" se refiere a que en cada pulgada (2.54 cm) cuadrada, la impresora puede situar 300
- puntos horizontales y 300 verticales. Una expresión del tipo "600 x 300 dpi" , significa que el primer 
+ Una resolución de   ``300 dpi" se refiere a que en cada pulgada (2.54 cm) cuadrada, la impresora puede situar 300
+ puntos horizontales y 300 verticales. Una expresión del tipo  ``600 x 300 dpi" , significa que el primer 
 valor se asume a la línea horizontal y el segundo a la vertical.
-Otro determinante de la calidad de impresión es el del número de niveles o graduaciones que pueden ser impresos por punto, 
+Otro determinante de la calidad de impresión es el  número de niveles o graduaciones que pueden ser impresos por punto, 
 una técnica de capas de color que hace que la oscilación en los gráficos y fotografías sea más difícil de ver.
  Las impresoras sin niveles de impresión por punto, 
 imprimen cada punto de color en una de sólo dos intensidades (encendido o apagado), 
@@ -537,14 +594,14 @@ verde y morada, y pueden crear la ilusión de otros colores al distribuir puntos 
 intensidades para cada punto que se imprime, así permite que la impresora utilice menos puntos para crear colores esfumados y
  hace que sea más difícil ver los patrones.
 
-En máquinas con la misma resolución pueden ofrecer resultados dispares, 
+Máquinas con la misma resolución pueden ofrecer resultados dispares, 
 porque hay que tener en cuenta el tamaño de las gotas que generarán esos puntos por pulgada y ésta varía según 
 la tecnología empleada para llevar a cabo la impresión.
-Las gotas de tinta se miden en picolitros (1 picolitro es la billonésima parte de un litro).
+Las gotas de tinta se miden en picolitros (1 picolitro es la billonésima parte de un litro 10$^{-12}$).
 
 
 \subsubsection{Memoria:}
-La mayoria de las impresoras contienen una cantidad de memoria para almacenar parte de la información 
+La mayoría de las impresoras contienen una cantidad de memoria para almacenar parte de la información 
 que se les va enviando, de forma que la computadora no tiene que estar esperando a la impresora. 
 
 
@@ -553,31 +610,31 @@ que se les va enviando, de forma que la computadora no tiene que estar esperando
 \subsubsection{Conectividad / Interfaces:}
 La conectividad o conexión refiere a la forma en que la impresora se comunica con el medio, mientras que las interfaces
 son los conectores que permiten la existencia de una conexión. 
-La forma más antigua de conexión era mediante puerto serie en donde la transferencia se hacia bit a bit, 
+La forma más antigua de conexión era mediante puerto serie en donde la transferencia se hacía bit a bit, 
 permitía distancias largas con velocidades lentas que no superaban los 19.200 bytes/segundo.
-Actualmente una de las formas de conexión puede establecerso mediante puerto paralelo en la que las transferencias 
+Actualmente una de las formas de conexión puede establecerse mediante puerto paralelo en la que las transferencias 
 eran byte a byte permitiendo 8 
 conexiones paralelas consiguiendo una velocidad más rápida entre los 0.5 MB/segundo hasta los 4MB/segundo. 
 La longitud del cable  que une la impresora con el computador o print server no puede ser mayor a 2 metros.
 
 Otra método de conexión más actual es por medio de puertos USB (Universal Serial Bus). 
 
-Otra forma de conexión es poniendo la impresora en red Ethernet mediante conexiones RJ 45 basadas en 
-el estándar IEEE 802.3. o vía wifi, mediante el protocolo IEEE 802.11. Otra forma de conexión sin cables es a través 
-de Bluetooth
+A algunas impresoras se las puede conectar poniendolas en red Ethernet mediante conexiones RJ 45 basadas en 
+el estándar IEEE 802.3 o vía wifi, mediante el protocolo IEEE 802.11. También como forma de conexión sin cables es a través 
+de Bluetooth.
 
 Los equipos que pueden enviar fax cuentan con una interfaz RJ 11 para poder ser conectados a la línea telefónica. 
 
-Existen otro tipo de conexión que se denomina directa y esta relacionado con las interfaces para conectar pendrives, 
-tarjetas de memoria o cámaras de fotográficas sin la intervención de la computadora. 
+Existe otro tipo de conexión que se denomina directa y está relacionado con las interfaces para conectar pendrives, 
+tarjetas de memoria o cámaras fotográficas sin la intervención de la computadora. 
 
 
 
 \subsubsection{Lenguajes de descripción de páginas:}
 Hace unos años el texto a imprimir en un impresora era enviado en código ASCII con un caracter indicando
 bold, itálica, tamaño, etc; y los gráficos eran producidos línea por línea. El problema es que este proceso era
-muy dependiente del dispositivo y los caracteres raramente estaban en la misma posición con que ,aparecían en pantalla.
-Actualmente se usa un lenguaje de descripción de página (PDL), el cúal describe el formato de las páginas,
+muy dependiente del dispositivo y los caracteres raramente estaban en la misma posición con que, aparecían en pantalla.
+Actualmente se usa un lenguaje de descripción de página (PDL), el cual describe el formato de las páginas,
 la colocación del texto y los elementos gráficos como mapas de bits
 o como objetos vectoriales.
 
@@ -585,7 +642,7 @@ Existen muy variados PDLs\footnote{\textit{http://www.undocprint.org/formats/
 page\_description\_languages}}, los más 
 conocidos son  PCL\footnote{\textit{Printer Command Languaje.}} de Hewlett Packard y Postscript de Adobe. 
 
-Postscript fue uno de los primeros PDL estandar y muktiplataforma; describe las páginas en forma vectorial en outline, 
+Postscript fue uno de los primeros PDL estandar y multiplataforma; describe las páginas en forma vectorial en outline, 
 las cuales son enviadas a la impresora para ser
 rasterizadas\footnote{Convertidas en puntos.} en el mismo dispositivo. 
 
@@ -594,8 +651,8 @@ para sus impresoras. El PCL se ha convertido en un estándar emulado por muchos o
 Además del texto real que se imprime, el PCL consta en gran medida de comandos diseñados para 
 accionar diversas características y capacidades de la impresora. 
 
-"Lenguajes GDI: Algunas impresoras de inyección de tinta o de matriz de puntos no usan ninguno de los PDL 
-"clásicos" (PostScript o HP-PCL), sino que recurren a la computadora para producir la página a imprimir.
+Lenguajes GDI: Algunas impresoras de inyección de tinta o de matriz de puntos no usan ninguno de los PDL 
+``clásicos" (PostScript o HP-PCL), sino que recurren a la computadora para producir la página a imprimir.
 A estas impresoras se les llama impresoras basadas en el host o servidor de impresora.
 Algunas variantes de este tipo de impresión incluyen impresoras que usan el motor de la interfaz de dispositivo gráfico 
 (GDI) de Windows para generar la imagen de la página (impresoras GDI) y la
@@ -624,10 +681,13 @@ sistemas operativos distintos a Windows.
 
 
 \subsubsection{Ciclo mensual de trabajo - Volumen de impresiones mensuales recomendados:} 
- Los fabricantes de equipos de impresión, normalmete idican el ciclo de trabajo mensual, 
+ Los fabricantes de equipos de impresión, normalmente idican el ciclo de trabajo mensual, 
 que es la cantidad máxima de páginas en un determinado 
 formato que el equipo puede imprimir en un mes sin deteriorarse.
-Paralelamente también idican un volumen de páginas mensuales recomendado. 
+Lo recomendado es que al momento de elegir un equipo el cliente elija uno cuyo ciclo de trabajo
+mensual exeda por mucho a la cantidad de impresiones que se van a hacer por mes. Por
+eso es que paralelamente, los fabricantes, también idican un volumen de páginas mensuales recomendado
+que es el que debe usarse para determinar cúal es el tamaño que se necesita.
 
 
 \subsubsection{Insumos - Consumibles}
@@ -655,85 +715,10 @@ etc. Podemos considerar gran formato a todo aquello que vaya más alla de un hoja
 
 %\subsubsection{Usos:}
 
+\subsection{El proceso de elección de un equipo de impresión}
 
 
-\subsection{Datos de la web: Volúmen mensual}
-
-
- HP Argentina, en su pámgina web\footnote{\textit{http://www8.hp.com}
-} clasifica sus productos en 5 categorías y guía al cliente que 
- visita su página en busca de impresoras 
-o multifinciones en esta clasificación
-de acuerdo al uso que tiene intensiones de darle el cliente.
-
-\begin{table*}
-\caption{Volumen mensual según uso pretendido.}
-\begin{tabular}{|l|l|l|}
-\hline
- \textbf{Volumen mensual}  &  \textbf{Uso pretendido} \\
-\hline
-\hline
- Hasta 500 páginas mensuales  &  Fotos y Documentos \\
-\hline
- Entre 500 y 1000 páginas mensuales & Impresión de documentos profesional\\
-\hline
- Entre 1000 y 5000 páginas mensuales & Empresa en crecimiento\\
-\hline
- Entre 5000 y 10000 páginas mensuales  & Impresión de volumen para medianas empresas\\
-\hline
- Más de 10000 páginas mensuales & Soluciones para organizaciones Empresariales\\
-\hline
-\end{tabular} 
-\end{table*}
-
-
-%De acuerdo a este criterio de volumen mensual se puede usar las siguientes categorías para clasificar los 
-%equipos:
-%\begin{quote}
-%begin{itemize}
-% \item hogareña
-% \item profesional
-% \item pyme
-% \item pyme+
-% \item empresarial
-%\end{itemize}
-%\end{quote} 
-
-
-\subsection{Datos de la web: Tamaño del grupo de trabajo }
-
-En la página de Xerox\footnote{\textit{http://www.office.xerox.com/small-business/esuy.html}} dentro de
-los equipos ofrecidos para la pequeña y mediana empresa hay una clasificación 
-de acuerdo al tamaño del grupo
-de trabajo. Dicha clasificación se compone de las catgorías de  \textit{peronal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
-\textit{grupo mediano} (de 4 a 10), y \textit{grupo grande de trabajo} (más de 10). 
-Al revisar las especificaciones de los productos de las distintas categorías se observa una relación entre dichas
-categorías y el ciclo mensual de trabajo.
-
-
-\begin{table*}
- \caption{Correspondencia entre volumen mensual y tamaño del grupo de trabajo }
-
-
-\begin{tabular}{|l|l|l|l|}
-\hline
- \textbf{Categoría}  & \textbf{Tamaño del grupo} &  \textbf{Ciclo mensual de trabajo} &  \textbf{Volumen mensual}\\
-\hline
-\hline
- personal  & 1 persona & 10000 páginas/mes &  hasta 1000 páginas\\
-\hline
- grupo pequeño & 1  a 3 usuarios & hasta 50000 páginas/mes & hasta 4000 páginas\\
-\hline
- grupo mediano & 4 a 10 usuarios& hasta 60000 páginas/mes & hasta 5000 páginas \\
-\hline
-  grupo grande  &  más de 10 usuarios & hatsa 85000 páginas/mes & hasta 8000 páginas \\
-
-\hline
-\end{tabular} 
-\end{table*}
-
-
-\subsection{Datos de la web: Especificaciones técnicas }
+\subsubsection{Lista de especificaciones técnicas }
 
 
 A continuación se listan las características técnicas de los equipos de impresión 
@@ -778,20 +763,10 @@ Otras características a tener en cuenta son:
 \item Servicio tecnico local
 \end{itemize}
 
-\subsection{Acotación del dominio}
-
-Artes gráficas, grandes formatos 
-
-\subsection{Qué tener en cuenta a la hora de elegir el equipo adecuado}
-
-Quedo claro que cúales de todas las características que posee un equipo hay que tener en cuenta depende principalemente del 
-uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
-Porque el uso determina varios del resto de las características. El tipo de cliente también influye en que característica
-tendrá más peso a la hora de elegir.   
 
 
 
-\subsection{Entrevista con el experto}
+\subsubsection{Entrevista con el experto}
 En el \textit{Apendice A} se encuentra el contenido de los intercambios de mails con el experto (vendedor), que han sido
 dispuestos en forma de entrevista. 
 Usando como guía lo manifestado por el experto hay cuatro características mínimas que conciderar para un usuario común y son
@@ -810,7 +785,7 @@ Usando como guía lo manifestado por el experto hay cuatro características mínima
 \end{tabular}\end{quote} 
  
 
-\subsection{Heurísticas}
+\subsubsection{Heurísticas}
 Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista de reglas
 
 
@@ -882,28 +857,145 @@ se prefiere de más de 200 hojas.
 Si se requiere escanear en un estudio contable o de abogados $\Rightarrow$ conviene chequear la superifie del escaner admite
 tamaño legal. 
 
+\subsubsection{Perfil de usuario}
+
+Está claro que cúales de todas las características que posee un equipo hay que tener en cuenta depende principalemente del 
+uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
+Porque el uso determina varios del resto de las características. Por ejemplo, para una compañia el período de garantía o saber
+si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
+que un usuario hogareño presta atención a otros aspectos. 
 
 
-\section*{Representación del conocimiento} 
+
+\subsubsection{Notas sobre volúmen mensual}
+
+
+ HP Argentina, en su pámgina web\footnote{\textit{http://www8.hp.com}
+} clasifica sus productos en 5 categorías y guía al cliente que 
+ visita su página en busca de impresoras 
+o multifinciones en esta clasificación
+de acuerdo al uso que tiene intensiones de darle el cliente.
+
+\begin{table*}
+\caption{Volumen mensual según uso pretendido.}
+\begin{tabular}{|l|l|l|}
+\hline
+ \textbf{Volumen mensual}  &  \textbf{Uso pretendido} \\
+\hline
+\hline
+ Hasta 500 páginas mensuales  &  Fotos y Documentos \\
+\hline
+ Entre 500 y 1000 páginas mensuales & Impresión de documentos profesional\\
+\hline
+ Entre 1000 y 5000 páginas mensuales & Empresa en crecimiento\\
+\hline
+ Entre 5000 y 10000 páginas mensuales  & Impresión de volumen para medianas empresas\\
+\hline
+ Más de 10000 páginas mensuales & Soluciones para organizaciones Empresariales\\
+\hline
+\end{tabular} 
+\end{table*}
+
+
+%De acuerdo a este criterio de volumen mensual se puede usar las siguientes categorías para clasificar los 
+%equipos:
+%\begin{quote}
+%begin{itemize}
+% \item hogareña
+% \item profesional
+% \item pyme
+% \item pyme+
+% \item empresarial
+%\end{itemize}
+%\end{quote} 
+
+
+
+
+En la página de Xerox\footnote{\textit{http://www.office.xerox.com/small-business/esuy.html}} dentro de
+los equipos ofrecidos para la pequeña y mediana empresa hay una clasificación 
+de acuerdo al tamaño del grupo
+de trabajo. Dicha clasificación se compone de las catgorías de  \textit{peronal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
+\textit{grupo mediano} (de 4 a 10), y \textit{grupo grande de trabajo} (más de 10). 
+Al revisar las especificaciones de los productos de las distintas categorías se observa una relación entre dichas
+categorías y el ciclo mensual de trabajo.
+
+
+\begin{table}
+ \caption{Correspondencia entre volumen mensual y tamaño del grupo de trabajo }
+
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Tamaño del grupo} &  \textbf{Ciclo mensual} &  \textbf{Volumen}\\
+\hline
+\hline
+ 1 persona & 10000 p./mes &  hasta 1000 p.\\
+\hline
+1  a 3 usuarios & hasta 50000 p./mes & hasta 4000 p.\\
+\hline
+ 4 a 10 usuarios& hasta 60000 p./mes & hasta 5000 p. \\
+\hline
+   más de 10 usuarios & hatsa 85000 p./mes & hasta 8000 p. \\
+
+\hline
+\end{tabular} 
+\end{table}
+
+\section{Diseño}
+
+La figura se presenta la una arquitectura de tres niveles\footnote{
+Una arquitectura de tres niveles es una especialización de la arquitectura 
+cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
+ una capa para la presentación (interfaz de usuario), otra para el cálculo 
+ y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
+del sistema. 
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
+ % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+\caption{}
+\label{arq}
+\end{figure}
+\end{center}
+
+
+\subsection{Desiciones de Diseño}
+
+
+\subsubsection{Acotación del dominio de tarea}
+
+El mercado de equipos de impresión es bastante grande. Por una cuestión de practicidad y tiempo
+el sistema desarrollado recomendará quiepos para los segmentos de mercados desde el hogar a empresas, 
+pero siempre equipos que admitan imprimir en formato A4. 
+Inicialmente el sistema no recomendará equipos para lo que se conocen como las artes gráficas, ni equipos
+que se encuentran dentro de la categoría de grandes formatos. 
+De todas formas el diseño del sistema se plateará de forma tal que puedan ser incorporadas nuevas reglas 
+que cubran estas categorías. 
+
+
+\subsubsection{Selección de las herramientas}
+
+CLIPS, Pyclips
+
+\subsubsection{Representación del conocimiento} 
 \smallskip 
 La principal tarea del sistema experto es determinar cúales del conjunto de características que describen a un equipo 
 son relevantes y que valores deben tener para satisfaces las necesidades del cliente. 
 Una vez determinadas cuales son las características deseadas en un equipo se procede a ofrecen los modelos
 que cumplen los requerimientos.
 
-Para determinar las características deseadas se usaran las reglas de inferencia.
+Para determinar las características deseadas se usarán reglas de inferencia.
 Mientras que los distintos modelos seran hechos factuales en la base de conocimiento. 
-  
-
-
-  \addtocounter{section}{1}
-  \addtocounter{subsection}{-9}
 
 
 
 %\subsection{Base de datos relacional} 
 
-\subsection{Determinación de las reglas} 
+
+\subsubsection{Determinación de las reglas} 
 %n CLIPS environment,
 %ules can be defined by using the defrule construct
 
@@ -922,9 +1014,9 @@ Mientras que los distintos modelos seran hechos factuales en la base de conocimi
 
 
 %\sunsubsection{Volumen mensual} 
-Pata el volumen mensual la clasificación de HP ,
+Para el volumen mensual la clasificación de HP ,
 define 5 conjuntos crips para el volumen mensual de impresión,
-se usaran dichos conjuntos para los valores del literal \textit{uso}, los valores
+se usarán dichos conjuntos para los valores del literal \textit{uso}, los valores
 de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme+} y \textit{empresarial}.
 
 %Por otro lado el experto nos habla de impresoras \textit{chica} como aquella que no 
@@ -947,8 +1039,8 @@ de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme
 El uso vendrá determinado a través de consultar con el cliente
  cuantas páginas cree que en promedio imprimirá en un mes.
 
-
-Si el cliente no lo sabe o no está seguro, se puede utilizará la aproximación que 
+También se usará
+ la aproximación que 
 usa Xerox y preguntando por el tamaño del grupo de trabajo. En la tabla 3 se encuentra la relación
 tamaño del grupo - tamaño impresora.
 
@@ -961,43 +1053,43 @@ máximo de impresiones de acuerdo a la tabla. %Si el usuario ingresa
 %el valor definitivo utilizado $vd$ será $vd = max (v , vg$), donde $vg$ es el valor
 %correspondiente al tamaño del grupo de trabajo.
 
-\begin{table}
-\caption{}
-\begin{tabular}{|l|l|l|}
-\hline
- \textbf{Tamaño} &\textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
-\hline
-\hline
-chica & personal   &  hasta 2000 p.\\
-\hline
-mediana & hasta 4 personas/pc & hasta 6000 p.\\
-\hline
-grande & hasta 12 personas/pc & hasta 10000 p.\\
-\hline
-alto volumen & más de 12 personas & mas de 10000 p.\\
+%\begin{table}
+%\caption{}
+%\begin{tabular}{|l|l|l|}
+%\hline
+% \textbf{Tamaño} &\textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
+%\hline
+%\hline
+%chica & personal   &  hasta 2000 p.\\
+%\hline
+%mediana & hasta 4 personas/pc & hasta 6000 p.\\
+%\hline
+%grande & hasta 12 personas/pc & hasta 10000 p.\\
+%\hline
+%alto volumen & más de 12 personas & mas de 10000 p.\\
 
-\hline
-\end{tabular}
-\end{table}
+%\hline
+%\end{tabular}
+%\end{table}
 
 
-Los valores de los rangos del volumen de impresiones mensuales para la variable tamaño y uso no coinciden.
-Se han definido conjuntos fuzzy\footnote{ Ver apendice B: Fuzzy Set} para representar 
-los valores de las variable linguística \textit{tamaño} 
-que también está relacionada con el volumen de páginas mensuales, estos valores son:
-\textit{chica},\textit{ mediana}, \textit{grande}, 
-\textit{de alto volumen}
+%Los valores de los rangos del volumen de impresiones mensuales para la variable tamaño y uso no coinciden.
+%Se han definido conjuntos fuzzy\footnote{ Ver apendice B: Fuzzy Set} para representar 
+%los valores de las variable linguística \textit{tamaño} 
+%que también está relacionada con el volumen de páginas mensuales, estos valores son:
+%\textit{chica},\textit{ mediana}, \textit{grande}, 
+%\textit{de alto volumen}
 
-En la figura 4 se puede apreciar la correspondencia entre ambos conjuntos.
+%En la figura 4 se puede apreciar la correspondencia entre ambos conjuntos.
 
-\begin{center}
-\begin{figure}[!ht]
-\centering
- \includegraphics[scale=0.6]{conjuntosCrips.png}
-\caption{Clasificación según volumen de impresiones mensuales}
-\label{conjuntos}
-\end{figure}
-\end{center}  
+%\begin{center}
+%\begin{figure}[!ht]
+%\centering
+% \includegraphics[scale=0.6]{conjuntosCrips.png}
+%\caption{Clasificación según volumen de impresiones mensuales}
+%\label{conjuntos}
+%\end{figure}
+%\end{center}  
 
 Ahora al preguntar por el tamaño del grupo, al recibir la respuesta se seteará el valor de la variable
 tamaño en chica, mediana, etc.
@@ -1015,120 +1107,120 @@ tamaño en chica, mediana, etc.
 
 %\paragraph{Factores de certeza }
 
-Las respectivas funciones de pertenencia para cada conjunto son las siguientes: 
-\bigskip
+%Las respectivas funciones de pertenencia para cada conjunto son las siguientes: 
+%\bigskip%
 
-$chica (x) = \begin{cases}
-              1 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+%$chica (x) = \begin{cases}
+%              1 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
               
-               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \; 1000 < x \leq 2000\\
+               %1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \; 1000 < x \leq 2000\\
                
-               0   \qquad \qquad \qquad \qquad si \; x \geq 2000
-             \end{cases}
- $ 
+               %0   \qquad \qquad \qquad \qquad si \; x \geq 2000
+             %\end{cases}
+ %$ 
  
- \bigskip
+ %\bigskip
  
- $mediana (x) = \begin{cases}
-              0 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
-              
-               \dfrac{x - 1000}{1000} \qquad \qquad \; \, si \; 1000 < x \leq 2000 \\
-               
-                1 \qquad \qquad \qquad \qquad si \;  \; 2000 < x \leq 5000 \\
-              1-  \dfrac{x - 1000}{1000} \; \; \,\qquad si \;5000 < x \leq 6000 \\
-               
-               0   \qquad \qquad \qquad \qquad si \; x \geq 6000
-             \end{cases}
- $ 
- 
- \bigskip
- 
- $grande (x) = \begin{cases}
-                 0 \qquad \qquad \qquad \qquad si \; x \leq 5000 \\
-              
-               \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 5000 < x \leq 6000 \\
-               
-                1 \qquad \qquad \qquad \qquad si \;  \; 6000 < x \leq 9000 \\
-               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \;9000 < x \leq 10000 \\
-               
-               0   \qquad \qquad \qquad \qquad si \; x \geq 10000
-             \end{cases}
- $ 
- 
- \bigskip
- 
- $alto\_volumen (x) = \begin{cases}
-              0 \qquad \qquad \qquad \qquad si \; x \leq 9000 \\
-              
-                \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 9000 < x \leq 10000 \\
-               
-               1   \qquad \qquad \qquad \qquad si \; x \geq 10000
-             \end{cases}
- $ 
-
-
-Los conjuntos fuzzy serviran %de dos formas una para ayudarnos a determinar 
-%cúal es el \textit{tamaño} de equipo necesitado
-%y el otro 
-para ayudar a definir factores de certeza\footnote{Sobre los factores de Certeza} 
-sobre el \textit{uso} de los
-equipos de la siguiente manera. 
-
-\begin{quote}
-\begin{verbatim}
-
-For T in tamaño
- i := 0
-   For U in uso
-       p(U) := calcular la probabilidad
-               a priori de ocurrir dado 
-               que el tamaño es T
-       a(U) := calcular el procentaje 
-              del área U alcanzado 
-               por el tamaño T.
-       s(U) := p(U)*100 + a(U)
-       sum := sum + s(U)
-   For U in uso 
-      CF(U) := (s(U) / sum) * 100   
-   
-\end{verbatim} \end{quote} 
-
-
-
-Por ejemplo si se ha determinado que el tamaño es chico, entonces hay un
-$1/3$ de probabilidad de que el uso sea 100\textdiscount $\,$ horareño, 
-100\textdiscount $\,$ profesional y 20\textdiscount $\,$ pyme. 
-
-
-CF(hogareño) $ := ( 33+100 / 319 ) * 100$\textdiscount $\;  = 42  $\textdiscount 
-
-CF(profesional) $:= ( 33+100 / 319 ) * 100$\textdiscount $\; = 42  $\textdiscount 
-
-CF(pyme) $:= ( 33+20 / 319 ) * 100$\textdiscount $\; = 17 $\textdiscount 
-
-
-
-Se tendrá entonces reglas como las que siguen 
-
-   \begin{itemize}
-	    \item Lista de reglas\hfill \\
-		  \begin{itemize}
-	           \item Si chica $\Rightarrow$ uso hogareño con 42\textdiscount $\,$ de certeza $\wedge$  
-uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\textdiscount $\,$  de certeza
-
-	           \item Si es mediana  $\Rightarrow$ uso pyme con 85\textdiscount$\,$ de certeza $\wedge$ 
- uso pyme+ con 15\textdiscount $\,$ de certeza
-	           \item Si es grande  $\Rightarrow$ uso pyme+ con 90\textdiscount$\,$ de certeza
-	           \item Si es de  alto volumen $\Rightarrow$ uso empresarial con 85\textdiscount$\,$ de certeza $\wedge$ 
- uso pyme+ con 15\textdiscount$\,$ de certeza
-	         
-
-          \end{itemize}      
-    \end{itemize}
-
- 
- 
- 
+ %$mediana (x) = \begin{cases}
+ %             0 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+%               
+%                \dfrac{x - 1000}{1000} \qquad \qquad \; \, si \; 1000 < x \leq 2000 \\
+%                
+%                 1 \qquad \qquad \qquad \qquad si \;  \; 2000 < x \leq 5000 \\
+%               1-  \dfrac{x - 1000}{1000} \; \; \,\qquad si \;5000 < x \leq 6000 \\
+%                
+%                0   \qquad \qquad \qquad \qquad si \; x \geq 6000
+%              \end{cases}
+%  $ 
+%  
+%  \bigskip
+%  
+%  $grande (x) = \begin{cases}
+%                  0 \qquad \qquad \qquad \qquad si \; x \leq 5000 \\
+%               
+%                \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 5000 < x \leq 6000 \\
+%                
+%                 1 \qquad \qquad \qquad \qquad si \;  \; 6000 < x \leq 9000 \\
+%                1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \;9000 < x \leq 10000 \\
+%                
+%                0   \qquad \qquad \qquad \qquad si \; x \geq 10000
+%              \end{cases}
+%  $ 
+%  
+%  \bigskip
+%  
+%  $alto\_volumen (x) = \begin{cases}
+%               0 \qquad \qquad \qquad \qquad si \; x \leq 9000 \\
+%               
+%                 \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 9000 < x \leq 10000 \\
+%                
+%                1   \qquad \qquad \qquad \qquad si \; x \geq 10000
+%              \end{cases}
+%  $ 
+% 
+% 
+% Los conjuntos fuzzy serviran %de dos formas una para ayudarnos a determinar 
+% %cúal es el \textit{tamaño} de equipo necesitado
+% %y el otro 
+% para ayudar a definir factores de certeza\footnote{Sobre los factores de Certeza} 
+% sobre el \textit{uso} de los
+% equipos de la siguiente manera. 
+% 
+% \begin{quote}
+% \begin{verbatim}
+% 
+% For T in tamaño
+%  i := 0
+%    For U in uso
+%        p(U) := calcular la probabilidad
+%                a priori de ocurrir dado 
+%                que el tamaño es T
+%        a(U) := calcular el procentaje 
+%               del área U alcanzado 
+%                por el tamaño T.
+%        s(U) := p(U)*100 + a(U)
+%        sum := sum + s(U)
+%    For U in uso 
+%       CF(U) := (s(U) / sum) * 100   
+%    
+% \end{verbatim} \end{quote} 
+% 
+% 
+% 
+% Por ejemplo si se ha determinado que el tamaño es chico, entonces hay un
+% $1/3$ de probabilidad de que el uso sea 100\textdiscount $\,$ horareño, 
+% 100\textdiscount $\,$ profesional y 20\textdiscount $\,$ pyme. 
+% 
+% 
+% CF(hogareño) $ := ( 33+100 / 319 ) * 100$\textdiscount $\;  = 42  $\textdiscount 
+% 
+% CF(profesional) $:= ( 33+100 / 319 ) * 100$\textdiscount $\; = 42  $\textdiscount 
+% 
+% CF(pyme) $:= ( 33+20 / 319 ) * 100$\textdiscount $\; = 17 $\textdiscount 
+% 
+% 
+% 
+% Se tendrá entonces reglas como las que siguen 
+% 
+%    \begin{itemize}
+% 	    \item Lista de reglas\hfill \\
+% 		  \begin{itemize}
+% 	           \item Si chica $\Rightarrow$ uso hogareño con 42\textdiscount $\,$ de certeza $\wedge$  
+% uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\textdiscount $\,$  de certeza
+% 
+% 	           \item Si es mediana  $\Rightarrow$ uso pyme con 85\textdiscount$\,$ de certeza $\wedge$ 
+%  uso pyme+ con 15\textdiscount $\,$ de certeza
+% 	           \item Si es grande  $\Rightarrow$ uso pyme+ con 90\textdiscount$\,$ de certeza
+% 	           \item Si es de  alto volumen $\Rightarrow$ uso empresarial con 85\textdiscount$\,$ de certeza $\wedge$ 
+%  uso pyme+ con 15\textdiscount$\,$ de certeza
+% 	         
+% 
+%           \end{itemize}      
+%     \end{itemize}
+% 
+%  
+%  
+%  
 
  % Una vez obtenidos el valor $vd$ 
 %calculamos la pertenencia a los conjuntos fuzzy y nos quedamos con el valor de \textit{tamaño} 
@@ -1220,25 +1312,6 @@ uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\te
 
  
 
-\newpage
-\section{Diseño}
-
-La figura se presenta la una arquitectura de tres niveles\footnote{
-Una arquitectura de tres niveles es una especialización de la arquitectura 
-cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
- una capa para la presentación (interfaz de usuario), otra para el cálculo 
- y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
-del sistema. 
-
-\begin{center}
-\begin{figure}[!ht]
-\centering
- \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
- % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
-\caption{}
-\label{arq}
-\end{figure}
-\end{center}
 
 
 
@@ -1266,7 +1339,7 @@ del sistema.
 
 
 
-\subsubsection{Base de datos}
+\subsection{Base de datos}
 
 Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
 utilizamos un base de datos relacional para mantener las características de los equipos de impesión. 
@@ -1279,6 +1352,8 @@ utilizamos un base de datos relacional para mantener las características de los 
 \label{db}
 \end{figure*}
 \end{center}
+
+\section{Implementación} 
 
 
 \section{Desarrollo de las interfaces web}  

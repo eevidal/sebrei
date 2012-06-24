@@ -102,6 +102,22 @@ def calcula_pregunta(f):		#la pregunta
 	else: 
 		return ""
 
+
+def calcula_modelo(f):                
+        a=f.PPForm()
+        b=a.split('(')
+#	print b
+	if (b[1] == 'models '):
+		mod = b[2].split('model')
+
+		mod = mod[1].split(')')
+		
+		mod = mod[0] 
+                return 1,mod
+        else:
+                return 0,""
+
+
 def calcula_type(f):   #calculo el tipo de una pregunta
         a=f.PPForm()
         b=a.split('(')
@@ -203,7 +219,19 @@ def print_result(sfile):
 	clips.Reset()
 	clips.BatchStar(sfile+"facts.clp")
 	clips.Run()
-	print clips.PrintFacts()
+#	print clips.PrintFacts()
+	f = clips.FactList()
+	l= len (f)
+	models=[]	
+	for i in range(l):
+                m=calcula_modelo(f[i-1])
+                if (m[0]==1): 
+         		models.append(m[1])
+		
+	print models	
+
+       
+	
 
 
 def main():

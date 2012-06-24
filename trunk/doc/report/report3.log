@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  23 JUN 2012 20:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  23 JUN 2012 21:01
 entering extended mode
  %&-line parsing enabled.
-**report2.tex
-(./report2.tex
+**report3.tex
+(./report3.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, spanish, galician, catalan, loaded.
@@ -268,12 +268,8 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
-) (./report2.aux
-
-LaTeX Warning: Label `conjuntos' multiply defined.
-
-)
-\openout1 = `report2.aux'.
+) (./report3.aux)
+\openout1 = `report3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -289,7 +285,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 24.
- (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 24.
@@ -434,7 +431,12 @@ Overfull \hbox (9.15147pt too wide) in paragraph at lines 1029--1030
  []
 
 [8 <./arquitecturaSEBREI.png (PNG copy)> <./conjuntosCrips2.png (PNG copy)>]
-Overfull \hbox (10.5367pt too wide) in paragraph at lines 1344--1346
+Overfull \hbox (11.2309pt too wide) in paragraph at lines 1058--1073
+[][] 
+ []
+
+
+Overfull \hbox (10.5367pt too wide) in paragraph at lines 1085--1087
 \T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuevos
  equipos
  []
@@ -442,12 +444,12 @@ Overfull \hbox (10.5367pt too wide) in paragraph at lines 1344--1346
 <BD2.png, id=41, 915.42pt x 918.43124pt>
 File: BD2.png Graphic file (type png)
  <use BD2.png>
-Overfull \hbox (17.38353pt too wide) in paragraph at lines 1357--1357
+Overfull \hbox (17.38353pt too wide) in paragraph at lines 1107--1107
 []\secfnt DESARROLLO DE LAS IN-TER-FACES WEB 
  []
 
 
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1361--1363
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1111--1113
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
@@ -460,7 +462,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1388 “
+l.1138 “
         económica”, “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -474,7 +476,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1388 “económica”
+l.1138 “económica”
                   , “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -488,7 +490,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1388 “económica”, “
+l.1138 “económica”, “
                      moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -502,44 +504,40 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1388 “económica”, “moderado”
+l.1138 “económica”, “moderado”
                                varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-[9] (./report2.bbl) [10 <./BD2.png (PNG copy)>]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1538--1539
+[9] [10 <./BD2.png (PNG copy)>]
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 1314--1315
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
 [11
 
-] (./report2.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./report3.aux) ) 
 Here is how much of TeX's memory you used:
- 3106 strings out of 494999
- 37689 string characters out of 1180817
- 93704 words of memory out of 3000000
+ 3103 strings out of 494999
+ 37661 string characters out of 1180817
+ 93665 words of memory out of 3000000
  6231 multiletter control sequences out of 15000+50000
  50604 words of font info for 68 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
  39i,11n,28p,254b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/font
-s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helve
-tic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr
-/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report2.pdf (11 pages, 379128 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/t
+exmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times
+/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report3.pdf (11 pages, 380020 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

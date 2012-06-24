@@ -942,12 +942,30 @@ categorías y el ciclo mensual de trabajo.
 \end{tabular} 
 \end{table}
 
+\section{Diseño}
+
+La figura se presenta la una arquitectura de tres niveles\footnote{
+Una arquitectura de tres niveles es una especialización de la arquitectura 
+cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
+ una capa para la presentación (interfaz de usuario), otra para el cálculo 
+ y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
+del sistema. 
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
+ % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+\caption{}
+\label{arq}
+\end{figure}
+\end{center}
 
 
-\section{Desiciones de Diseño}
+\subsection{Desiciones de Diseño}
 
 
-\subsection{Acotación del dominio de tarea}
+\subsubsection{Acotación del dominio de tarea}
 
 El mercado de equipos de impresión es bastante grande. Por una cuestión de practicidad y tiempo
 el sistema desarrollado recomendará quiepos para los segmentos de mercados desde el hogar a empresas, 
@@ -958,9 +976,11 @@ De todas formas el diseño del sistema se plateará de forma tal que puedan ser in
 que cubran estas categorías. 
 
 
+\subsubsection{Selección de las herramientas}
 
+CLIPS, Pyclips
 
-\subsection{Representación del conocimiento} 
+\subsubsection{Representación del conocimiento} 
 \smallskip 
 La principal tarea del sistema experto es determinar cúales del conjunto de características que describen a un equipo 
 son relevantes y que valores deben tener para satisfaces las necesidades del cliente. 
@@ -975,7 +995,7 @@ Mientras que los distintos modelos seran hechos factuales en la base de conocimi
 %\subsection{Base de datos relacional} 
 
 
-\subsection{Determinación de las reglas} 
+\subsubsection{Determinación de las reglas} 
 %n CLIPS environment,
 %ules can be defined by using the defrule construct
 
@@ -996,7 +1016,7 @@ Mientras que los distintos modelos seran hechos factuales en la base de conocimi
 %\sunsubsection{Volumen mensual} 
 Para el volumen mensual la clasificación de HP ,
 define 5 conjuntos crips para el volumen mensual de impresión,
-se usaran dichos conjuntos para los valores del literal \textit{uso}, los valores
+se usarán dichos conjuntos para los valores del literal \textit{uso}, los valores
 de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme+} y \textit{empresarial}.
 
 %Por otro lado el experto nos habla de impresoras \textit{chica} como aquella que no 
@@ -1019,8 +1039,8 @@ de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme
 El uso vendrá determinado a través de consultar con el cliente
  cuantas páginas cree que en promedio imprimirá en un mes.
 
-
-Si el cliente no lo sabe o no está seguro, se puede utilizará la aproximación que 
+También se usará
+ la aproximación que 
 usa Xerox y preguntando por el tamaño del grupo de trabajo. En la tabla 3 se encuentra la relación
 tamaño del grupo - tamaño impresora.
 
@@ -1053,23 +1073,23 @@ máximo de impresiones de acuerdo a la tabla. %Si el usuario ingresa
 %\end{table}
 
 
-Los valores de los rangos del volumen de impresiones mensuales para la variable tamaño y uso no coinciden.
-Se han definido conjuntos fuzzy\footnote{ Ver apendice B: Fuzzy Set} para representar 
-los valores de las variable linguística \textit{tamaño} 
-que también está relacionada con el volumen de páginas mensuales, estos valores son:
-\textit{chica},\textit{ mediana}, \textit{grande}, 
-\textit{de alto volumen}
+%Los valores de los rangos del volumen de impresiones mensuales para la variable tamaño y uso no coinciden.
+%Se han definido conjuntos fuzzy\footnote{ Ver apendice B: Fuzzy Set} para representar 
+%los valores de las variable linguística \textit{tamaño} 
+%que también está relacionada con el volumen de páginas mensuales, estos valores son:
+%\textit{chica},\textit{ mediana}, \textit{grande}, 
+%\textit{de alto volumen}
 
-En la figura 4 se puede apreciar la correspondencia entre ambos conjuntos.
+%En la figura 4 se puede apreciar la correspondencia entre ambos conjuntos.
 
-\begin{center}
-\begin{figure}[!ht]
-\centering
- \includegraphics[scale=0.6]{conjuntosCrips.png}
-\caption{Clasificación según volumen de impresiones mensuales}
-\label{conjuntos}
-\end{figure}
-\end{center}  
+%\begin{center}
+%\begin{figure}[!ht]
+%\centering
+% \includegraphics[scale=0.6]{conjuntosCrips.png}
+%\caption{Clasificación según volumen de impresiones mensuales}
+%\label{conjuntos}
+%\end{figure}
+%\end{center}  
 
 Ahora al preguntar por el tamaño del grupo, al recibir la respuesta se seteará el valor de la variable
 tamaño en chica, mediana, etc.
@@ -1087,120 +1107,120 @@ tamaño en chica, mediana, etc.
 
 %\paragraph{Factores de certeza }
 
-Las respectivas funciones de pertenencia para cada conjunto son las siguientes: 
-\bigskip
+%Las respectivas funciones de pertenencia para cada conjunto son las siguientes: 
+%\bigskip%
 
-$chica (x) = \begin{cases}
-              1 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+%$chica (x) = \begin{cases}
+%              1 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
               
-               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \; 1000 < x \leq 2000\\
+               %1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \; 1000 < x \leq 2000\\
                
-               0   \qquad \qquad \qquad \qquad si \; x \geq 2000
-             \end{cases}
- $ 
+               %0   \qquad \qquad \qquad \qquad si \; x \geq 2000
+             %\end{cases}
+ %$ 
  
- \bigskip
+ %\bigskip
  
- $mediana (x) = \begin{cases}
-              0 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
-              
-               \dfrac{x - 1000}{1000} \qquad \qquad \; \, si \; 1000 < x \leq 2000 \\
-               
-                1 \qquad \qquad \qquad \qquad si \;  \; 2000 < x \leq 5000 \\
-              1-  \dfrac{x - 1000}{1000} \; \; \,\qquad si \;5000 < x \leq 6000 \\
-               
-               0   \qquad \qquad \qquad \qquad si \; x \geq 6000
-             \end{cases}
- $ 
- 
- \bigskip
- 
- $grande (x) = \begin{cases}
-                 0 \qquad \qquad \qquad \qquad si \; x \leq 5000 \\
-              
-               \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 5000 < x \leq 6000 \\
-               
-                1 \qquad \qquad \qquad \qquad si \;  \; 6000 < x \leq 9000 \\
-               1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \;9000 < x \leq 10000 \\
-               
-               0   \qquad \qquad \qquad \qquad si \; x \geq 10000
-             \end{cases}
- $ 
- 
- \bigskip
- 
- $alto\_volumen (x) = \begin{cases}
-              0 \qquad \qquad \qquad \qquad si \; x \leq 9000 \\
-              
-                \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 9000 < x \leq 10000 \\
-               
-               1   \qquad \qquad \qquad \qquad si \; x \geq 10000
-             \end{cases}
- $ 
-
-
-Los conjuntos fuzzy serviran %de dos formas una para ayudarnos a determinar 
-%cúal es el \textit{tamaño} de equipo necesitado
-%y el otro 
-para ayudar a definir factores de certeza\footnote{Sobre los factores de Certeza} 
-sobre el \textit{uso} de los
-equipos de la siguiente manera. 
-
-\begin{quote}
-\begin{verbatim}
-
-For T in tamaño
- i := 0
-   For U in uso
-       p(U) := calcular la probabilidad
-               a priori de ocurrir dado 
-               que el tamaño es T
-       a(U) := calcular el procentaje 
-              del área U alcanzado 
-               por el tamaño T.
-       s(U) := p(U)*100 + a(U)
-       sum := sum + s(U)
-   For U in uso 
-      CF(U) := (s(U) / sum) * 100   
-   
-\end{verbatim} \end{quote} 
-
-
-
-Por ejemplo si se ha determinado que el tamaño es chico, entonces hay un
-$1/3$ de probabilidad de que el uso sea 100\textdiscount $\,$ horareño, 
-100\textdiscount $\,$ profesional y 20\textdiscount $\,$ pyme. 
-
-
-CF(hogareño) $ := ( 33+100 / 319 ) * 100$\textdiscount $\;  = 42  $\textdiscount 
-
-CF(profesional) $:= ( 33+100 / 319 ) * 100$\textdiscount $\; = 42  $\textdiscount 
-
-CF(pyme) $:= ( 33+20 / 319 ) * 100$\textdiscount $\; = 17 $\textdiscount 
-
-
-
-Se tendrá entonces reglas como las que siguen 
-
-   \begin{itemize}
-	    \item Lista de reglas\hfill \\
-		  \begin{itemize}
-	           \item Si chica $\Rightarrow$ uso hogareño con 42\textdiscount $\,$ de certeza $\wedge$  
-uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\textdiscount $\,$  de certeza
-
-	           \item Si es mediana  $\Rightarrow$ uso pyme con 85\textdiscount$\,$ de certeza $\wedge$ 
- uso pyme+ con 15\textdiscount $\,$ de certeza
-	           \item Si es grande  $\Rightarrow$ uso pyme+ con 90\textdiscount$\,$ de certeza
-	           \item Si es de  alto volumen $\Rightarrow$ uso empresarial con 85\textdiscount$\,$ de certeza $\wedge$ 
- uso pyme+ con 15\textdiscount$\,$ de certeza
-	         
-
-          \end{itemize}      
-    \end{itemize}
-
- 
- 
- 
+ %$mediana (x) = \begin{cases}
+ %             0 \qquad \qquad \qquad \qquad si \; x \leq 1000 \\
+%               
+%                \dfrac{x - 1000}{1000} \qquad \qquad \; \, si \; 1000 < x \leq 2000 \\
+%                
+%                 1 \qquad \qquad \qquad \qquad si \;  \; 2000 < x \leq 5000 \\
+%               1-  \dfrac{x - 1000}{1000} \; \; \,\qquad si \;5000 < x \leq 6000 \\
+%                
+%                0   \qquad \qquad \qquad \qquad si \; x \geq 6000
+%              \end{cases}
+%  $ 
+%  
+%  \bigskip
+%  
+%  $grande (x) = \begin{cases}
+%                  0 \qquad \qquad \qquad \qquad si \; x \leq 5000 \\
+%               
+%                \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 5000 < x \leq 6000 \\
+%                
+%                 1 \qquad \qquad \qquad \qquad si \;  \; 6000 < x \leq 9000 \\
+%                1 - \dfrac{x - 1000}{1000} \; \; \,\qquad si \;9000 < x \leq 10000 \\
+%                
+%                0   \qquad \qquad \qquad \qquad si \; x \geq 10000
+%              \end{cases}
+%  $ 
+%  
+%  \bigskip
+%  
+%  $alto\_volumen (x) = \begin{cases}
+%               0 \qquad \qquad \qquad \qquad si \; x \leq 9000 \\
+%               
+%                 \dfrac{x - 1000}{1000} \qquad \qquad \; \,  si \; 9000 < x \leq 10000 \\
+%                
+%                1   \qquad \qquad \qquad \qquad si \; x \geq 10000
+%              \end{cases}
+%  $ 
+% 
+% 
+% Los conjuntos fuzzy serviran %de dos formas una para ayudarnos a determinar 
+% %cúal es el \textit{tamaño} de equipo necesitado
+% %y el otro 
+% para ayudar a definir factores de certeza\footnote{Sobre los factores de Certeza} 
+% sobre el \textit{uso} de los
+% equipos de la siguiente manera. 
+% 
+% \begin{quote}
+% \begin{verbatim}
+% 
+% For T in tamaño
+%  i := 0
+%    For U in uso
+%        p(U) := calcular la probabilidad
+%                a priori de ocurrir dado 
+%                que el tamaño es T
+%        a(U) := calcular el procentaje 
+%               del área U alcanzado 
+%                por el tamaño T.
+%        s(U) := p(U)*100 + a(U)
+%        sum := sum + s(U)
+%    For U in uso 
+%       CF(U) := (s(U) / sum) * 100   
+%    
+% \end{verbatim} \end{quote} 
+% 
+% 
+% 
+% Por ejemplo si se ha determinado que el tamaño es chico, entonces hay un
+% $1/3$ de probabilidad de que el uso sea 100\textdiscount $\,$ horareño, 
+% 100\textdiscount $\,$ profesional y 20\textdiscount $\,$ pyme. 
+% 
+% 
+% CF(hogareño) $ := ( 33+100 / 319 ) * 100$\textdiscount $\;  = 42  $\textdiscount 
+% 
+% CF(profesional) $:= ( 33+100 / 319 ) * 100$\textdiscount $\; = 42  $\textdiscount 
+% 
+% CF(pyme) $:= ( 33+20 / 319 ) * 100$\textdiscount $\; = 17 $\textdiscount 
+% 
+% 
+% 
+% Se tendrá entonces reglas como las que siguen 
+% 
+%    \begin{itemize}
+% 	    \item Lista de reglas\hfill \\
+% 		  \begin{itemize}
+% 	           \item Si chica $\Rightarrow$ uso hogareño con 42\textdiscount $\,$ de certeza $\wedge$  
+% uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\textdiscount $\,$  de certeza
+% 
+% 	           \item Si es mediana  $\Rightarrow$ uso pyme con 85\textdiscount$\,$ de certeza $\wedge$ 
+%  uso pyme+ con 15\textdiscount $\,$ de certeza
+% 	           \item Si es grande  $\Rightarrow$ uso pyme+ con 90\textdiscount$\,$ de certeza
+% 	           \item Si es de  alto volumen $\Rightarrow$ uso empresarial con 85\textdiscount$\,$ de certeza $\wedge$ 
+%  uso pyme+ con 15\textdiscount$\,$ de certeza
+% 	         
+% 
+%           \end{itemize}      
+%     \end{itemize}
+% 
+%  
+%  
+%  
 
  % Una vez obtenidos el valor $vd$ 
 %calculamos la pertenencia a los conjuntos fuzzy y nos quedamos con el valor de \textit{tamaño} 
@@ -1292,25 +1312,6 @@ uso profesional con 42\textdiscount $\,$ de certeza $\wedge$  uso pyme con 17\te
 
  
 
-\newpage
-\section{Diseño}
-
-La figura se presenta la una arquitectura de tres niveles\footnote{
-Una arquitectura de tres niveles es una especialización de la arquitectura 
-cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
- una capa para la presentación (interfaz de usuario), otra para el cálculo 
- y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
-del sistema. 
-
-\begin{center}
-\begin{figure}[!ht]
-\centering
- \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
- % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
-\caption{}
-\label{arq}
-\end{figure}
-\end{center}
 
 
 
@@ -1338,7 +1339,7 @@ del sistema.
 
 
 
-\subsubsection{Base de datos}
+\subsection{Base de datos}
 
 Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
 utilizamos un base de datos relacional para mantener las características de los equipos de impesión. 

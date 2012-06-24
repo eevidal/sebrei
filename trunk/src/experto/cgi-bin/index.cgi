@@ -30,7 +30,7 @@ import random
 def get_history_file():
 	r=random.random()*123456789
 	r=str(r)
-	path = "../history/"+r
+	path = "../history/prueba"
 	sfile = open(path, 'w')	
 	return sfile,path
 
@@ -75,6 +75,10 @@ def generate_form2(quest,slot,facts,b,sfile):
 	print "<input type=\"hidden\" name=\"action\" value=\"preg\">"
         print "<input type=\"submit\" name=\"submit\"/>"
 	print "</form></td></tr></table></div></boby></html>"
+
+
+
+
 
 
 
@@ -161,9 +165,11 @@ def find_question(f):
 
 
 def iterate(sfile):
+	clips.Clear()
 	clips.BatchStar(sfile)
 	clips.Run()
 	f=clips.FactList()
+#	print clips.PrintFacts()
 	result = find_question(f)
 	
 	if(result[0]):
@@ -172,16 +178,33 @@ def iterate(sfile):
                 else:
                 	generate_form2(result[1],result[2],result[4],result[3],sfile)  # formularion con texto
         else:
- 		generate_result(f,sfile)
-
+	 	generate_result(f,sfile)
+		print_result(sfile)
 
 
 def generate_result(f,sfile):
 	clips.BatchStar(sfile)
         clips.Run()
+#	print clips.PrintFacts()
+#	clips.Clear()
+	ffile=sfile+"facts"
+	clips.SaveFacts(ffile)
+	clfile=open(ffile+".clp", 'w')
+	ofile = open(ffile, 'r')
+	for line in ofile:
+		clfile.write("(assert "+line+")\n")	
+	
+	clfile.close()
+	ofile.close()
+
+def print_result(sfile):
+	clips.Clear()
+	clips.Load("../../ClipsFiles/printers.clp") 
+	clips.Reset()
+	clips.BatchStar(sfile+"facts.clp")
+	clips.Run()
 	print clips.PrintFacts()
-	
-	
+
 
 def main():
 	form = cgi.FieldStorage()
@@ -199,14 +222,16 @@ def main():
 		clips.Clear()
 		clips.Load("../../ClipsFiles/SE_FC3.CLP")
 		clips.Reset()
+		clips.Assert("(browser)")
 		clips.Run()
 		sfile.write("(clear)\n")
 		sfile.write("(load \"../../ClipsFiles/SE_FC3.CLP\")\n")
-		sfile.write("(assert (browser))\n")
 		sfile.write("(reset)\n")
+		sfile.write("(assert (browser))\n")
 		sfile.write("(run)\n")
 		sfile.close()
 		f=clips.FactList()
+	#	print clips.PrintFacts()
 		result = find_question(f)
 		if(result[0]):
 			if(result[3]=='bool'):
@@ -216,7 +241,7 @@ def main():
 				generate_form2(result[1],result[2],result[4],result[3],sfile1[1]  )  # formularion con texto
 
 		else:	
-			generate_result(f,sfile[1])	
+			generate_result(f,sfile1[1])	
 			#		clips.Run() 
 			
 

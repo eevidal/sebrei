@@ -155,7 +155,7 @@ Una regla de inferencia es un esquema para construir inferencias válidas. Estos 
 relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una aserción llamada conclusión. 
 Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
 
-\subsection*{Chains}
+\subsection*{Encadenamientos}
 Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
 
 Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
@@ -173,14 +173,14 @@ Suele resulta útil visualizar los Forward y Backward Chaining en términos de la 
 a través de un espacio de búsqueda. 
 
 
-!!!!!!
-Fordward Chaining es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
-nivel de conclusiones que están basadas en los hechos.
+%!!!!!!
+%Fordward Chaining es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
+%nivel de conclusiones que están basadas en los hechos.
 
-El razonamiento desde el nivel más alto, 
-la hipótesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
-backward chaining. 
-!!!!!!!!!!
+%El razonamiento desde el nivel más alto, 
+%la hipótesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
+%backward chaining. 
+%!!!!!!!!!!
 
 Buenas aplicaciones para Fordward Chaining son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
 porque el Fordward Chaining produce una búsqueda a lo ancho. 
@@ -690,9 +690,9 @@ eso es que paralelamente, los fabricantes, también idican un volumen de páginas 
 que es el que debe usarse para determinar cúal es el tamaño que se necesita.
 
 
-\subsubsection{Insumos - Consumibles}
+%\subsubsection{Insumos - Consumibles}
 
-\subsubsection{Color}
+%\subsubsection{Color}
 
 \subsubsection{Rendimiento - Consumibles}
 El rendimiento por página indica la cantidad total de páginas que pueden imprimirse con un cartucho. 
@@ -724,14 +724,14 @@ etc. Podemos considerar gran formato a todo aquello que vaya más alla de un hoja
 A continuación se listan las características técnicas de los equipos de impresión 
 que pueden ser encontrados en los folletos de especificaciones provista por los
 distintos fabricantes. Dichas características son fundamentales para seleccionar
-que modelo de equipo se necesita.
+qué modelo de equipo se necesita.
 Dependiendo del uso que se le va a dar al equipo las distintas características van 
 adquiriendo más o menos relevancia. 
 
 \begin{itemize}
 %\item Marca
 %\item Modelo
-\item Tipo (impresora / multifunsión)
+\item Tipo (impresora / multifunción)
 \item Tecnología de impresión (laser / inyección de tinta / matriz de punto)
 \item Color 
 \item Funciones (imprimir / escanear /copiar /envio de fax /envío digital)
@@ -760,7 +760,7 @@ Otras características a tener en cuenta son:
 %\item Modelo
 \item Período de garantía
 \item Precio de los insumos
-\item Servicio tecnico local
+\item Servicio técnico local
 \end{itemize}
 
 
@@ -786,14 +786,15 @@ Usando como guía lo manifestado por el experto hay cuatro características mínima
  
 
 \subsubsection{Heurísticas}
-Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista de reglas
+Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista preliminares 
+de reglas que luego deben ser validadas.
 
 
  \begin{quote}
  
-	        Si es para poco uso $\wedge$ una sola persona $\Rightarrow$ necesita impresora chica
+	        Si es para poco uso y una sola persona $\Rightarrow$ necesita impresora chica
 	        
-	          Si es para imprimir $\wedge$ escanear $\Rightarrow$ necesita multifunsión
+	          Si es para imprimir y escanear $\Rightarrow$ necesita multifunsión
 	        
 	        Si es para uso corporativo  $\Rightarrow$ necesita impresora de Red
 	       
@@ -812,20 +813,20 @@ Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las s
 	      Si es para el hogar $\Rightarrow$ puede necesitar multifunsión barata \end{quote} 
 
  
-\paragraph{Uso}
+\textbf{Uso}
     
     
 Hay ciertos conceptos impresisos como \textit{impresora chica, alto volumen, poco uso}. En 
 el contexto utilizado todos los términos se están refiriendo a la cantidad de páginas mensuales. 
 Algo más con respecto a la palabra \textit{uso} se la puede emplear para manifestar frecuencia de impresión, 
-como para referise a tipo de docuemntos a imprimir (fotos, textos, etc).
+como para referise a tipo de documentos a imprimir (fotos, textos, etc).
 
 %http://thales.cica.es/rd/Recursos/rd99/ed99-0646-02/impresora.html#laser    
     
 
 
 
-Otras posibles reglas extraídas de noticias y recomendaciones online. 
+Otras posibles reglas extraídas de noticias y recomendaciones online podrían ser las siguientes. 
 
 Si se imprimen menos de 30 pag a color  $\Rightarrow$ cartucho único.
 
@@ -841,13 +842,13 @@ Si se quieren imprimir fotografías $\Rightarrow$ no se recomienda una impresora 
 
 Si no se quieren imprimir fotografías $\Rightarrow$ una resolución de 600 dpi alcanza.
 
-Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresara laser y velocidad de impresión superior  a 30 ppm
+Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresora láser y velocidad de impresión superior  a 30 ppm
 
 Si es una empresa de publicidad $\Rightarrow$ se recomienda laser color u otras tecnologías
 
-Si es para formularios continups $\Rightarrow$ se recomienda matriz de punto
+Si es para formularios continuos $\Rightarrow$ se recomienda matriz de punto
 
-Si es para el hogar o pequeña oficina $\Rightarrow$ inyeccion de tinta 
+Si es para el hogar o pequeña oficina $\Rightarrow$ inyección de tinta 
 
 Si es para el hogar o pequeña oficina y se necesita calidad fotográfica $\Rightarrow$ inyeccion de tinta con 4 cartuchos.
 
@@ -861,9 +862,9 @@ tamaño legal.
 
 Está claro que cúales de todas las características que posee un equipo hay que tener en cuenta depende principalemente del 
 uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
-Porque el uso determina varios del resto de las características. Por ejemplo, para una compañia el período de garantía o saber
-si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
-que un usuario hogareño presta atención a otros aspectos. 
+Porque el uso determina varios del resto de las características. % Por ejemplo, para una compañia el período de garantía o saber
+%si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
+%que un usuario hogareño presta atención a otros aspectos. 
 
 
 
@@ -1079,6 +1080,8 @@ tamaño en chica, mediana, etc.
 
 \subsubsection{Clasificación económica de los equipos}
 
+Para 
+
 
 \subsection{Base de datos}
 
@@ -1095,7 +1098,7 @@ utilizamos un base de datos relacional para mantener las características de los 
 \end{center}
 
 
-a clasificación de los equipos
+La clasificación de los equipos
 
 \section{Implementación} 
 

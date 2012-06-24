@@ -155,7 +155,7 @@ Una regla de inferencia es un esquema para construir inferencias válidas. Estos 
 relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una aserción llamada conclusión. 
 Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
 
-\subsection*{Chains}
+\subsection*{Encadenamientos}
 Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
 
 Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
@@ -173,14 +173,14 @@ Suele resulta útil visualizar los Forward y Backward Chaining en términos de la 
 a través de un espacio de búsqueda. 
 
 
-!!!!!!
-Fordward Chaining es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
-nivel de conclusiones que están basadas en los hechos.
+%!!!!!!
+%Fordward Chaining es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
+%nivel de conclusiones que están basadas en los hechos.
 
-El razonamiento desde el nivel más alto, 
-la hipótesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
-backward chaining. 
-!!!!!!!!!!
+%El razonamiento desde el nivel más alto, 
+%la hipótesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
+%backward chaining. 
+%!!!!!!!!!!
 
 Buenas aplicaciones para Fordward Chaining son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
 porque el Fordward Chaining produce una búsqueda a lo ancho. 
@@ -1079,6 +1079,8 @@ tamaño en chica, mediana, etc.
 
 \subsubsection{Clasificación económica de los equipos}
 
+Para 
+
 
 \subsection{Base de datos}
 
@@ -1095,7 +1097,7 @@ utilizamos un base de datos relacional para mantener las características de los 
 \end{center}
 
 
-a clasificación de los equipos
+La clasificación de los equipos
 
 \section{Implementación} 
 

@@ -111,6 +111,10 @@ else
         $tag1p=$sql1p[0];
         $tag2p=$sql2p[0];
 
+	     //prepararo los valores booleanos
+        if (!isset($color) || $color!=1) $color="false"; else $color="true";
+        if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
+        if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
 
 
 
@@ -119,21 +123,21 @@ else
 	$con=make_arr($con); $pap=make_arr($pap);
 	$dir=make_arr($dir); $vel=make_arr_vel($vel); $vel1=make_arr_vel($vel1);
 	$she=make_arr($she); $sos=make_arr($sos);
-	if($color) $qua=make_arr($qua); 
+	if(($color=="true")&&(!(empty($qua)))) $qua=make_arr($qua); 
 	$lan=make_arr($lan); $quan=make_arr($quan);
 	$prot=make_arr($prot); $sprot=make_arr($sprot);
 	$fun=make_arr($fun);
 
 	//prepararo los valores booleanos
-	if (!isset($color) || $color!=1) $color='false'; else $color='true';
-	if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
-	if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
+//	if (!isset($color) || $color!=1) $color='false'; else $color='true';
+//	if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
+//	if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
 
 	//me aseguro que los valores obligatorios esten todos
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");
 	if (!empty($pap)) $pap="ARRAY[$pap]" ; else die("Error, debe haber al menos una tipo de papel");
 	if (!empty($she)) $she="ARRAY[$she]"; else die("Error, debe haber al menos un tamaño de papel");
-	if($color) { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
+	if($color=="true") { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
 		else $qua="ARRAY[0]";
 	if (!empty($fun)) $fun="ARRAY[$fun]" ; else die("Error, debe haber al menos una funcion");
 
@@ -189,8 +193,8 @@ include('header.php');
         echo("<input type=\"hidden\" name=\"table\" value=\"printer\">");
 	echo("<input type=\"hidden\" name=\"id\" value=\"$id\">");
 	while ($car = pg_fetch_array($sql_car))
-                echo($car['cartridge_name']."   <input type=\"checkbox\" name=\"car[]\" value=\"".$car['cartridge_id']."\">");
-        echo("</p></fieldset>");
+                echo($car['cartridge_name']."   <input type=\"checkbox\" name=\"car[]\" value=\"".$car['cartridge_id']."\"><br>");
+        echo("</fieldset>");
 	?>
 	<input type="submit" name="sendc" class="button-primary" value="Siguiente" />
         </fieldset></form>

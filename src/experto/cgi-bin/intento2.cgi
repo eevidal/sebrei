@@ -22,7 +22,7 @@ def generate_form(quest,slot,facts,b,sfile):
         print quest
 	print sfile
  	print " </h4>"
-       	print "<form action=\"intento1.cgi\" method=\"get\">"
+       	print "<form action=\"intento2.cgi\" method=\"get\">"
        	print "<select name=\"respuesta\">"
        	print "<option value=\"si\">Si</option>"
        	print "<option value=\"No\">No</option>"
@@ -42,7 +42,7 @@ def generate_form2(quest,slot,facts,b,sfile):
 	print quest
 	print sfile
         print " </h4>"
-        print "<form action=\"intento1.cgi\" method=\"get\">"
+        print "<form action=\"intento2.cgi\" method=\"get\">"
         print "<input type=\"text\" name=\"respuesta\"/>"
 	print "<input type=\"hidden\" name=\"facts\" value=",facts,">"
 	print "<input type=\"hidden\" name=\"file\" value=",sfile,">"

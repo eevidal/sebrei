@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  23 JUN 2012 21:01
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  24 JUN 2012 15:23
 entering extended mode
  %&-line parsing enabled.
 **report3.tex
@@ -396,29 +396,23 @@ Overfull \hbox (11.50926pt too wide) in paragraph at lines 777--785
  []
 
 
-Overfull \hbox (2.55322pt too wide) in paragraph at lines 808--809
+Overfull \hbox (2.55322pt too wide) in paragraph at lines 809--810
 []\T1/aer/m/n/9 Si es para una ofic-ina $\OMS/cmsy/m/n/9 )$ \T1/aer/m/n/9 nece-
 sita laser monocromo 
  []
 
 
-Overfull \hbox (1.31091pt too wide) in paragraph at lines 810--811
+Overfull \hbox (1.31091pt too wide) in paragraph at lines 811--812
 []\T1/aer/m/n/9 Si es un es-tu-dio de ar-qui-tec-tura $\OMS/cmsy/m/n/9 )$ \T1/a
 er/m/n/9 nece-sita chorro
  []
 
 
-Overfull \hbox (4.3562pt too wide) in paragraph at lines 818--822
-[]  \subsecfnt Uso[]. \T1/aer/m/n/9 Hay cier-tos con-cep-tos im-pre-sisos como 
-\T1/aer/m/it/9 im-pre-sora chica,
- []
-
-[7]
-Overfull \hbox (9.89018pt too wide) in paragraph at lines 928--943
+Overfull \hbox (9.89018pt too wide) in paragraph at lines 929--944
 [][] 
  []
 
-<arquitecturaSEBREI.png, id=36, 264.59508pt x 279.60197pt>
+[7] <arquitecturaSEBREI.png, id=36, 264.59508pt x 279.60197pt>
 File: arquitecturaSEBREI.png Graphic file (type png)
 
 <use arquitecturaSEBREI.png>
@@ -426,17 +420,17 @@ File: arquitecturaSEBREI.png Graphic file (type png)
 File: conjuntosCrips2.png Graphic file (type png)
 
 <use conjuntosCrips2.png>
-Overfull \hbox (9.15147pt too wide) in paragraph at lines 1029--1030
+Overfull \hbox (9.15147pt too wide) in paragraph at lines 1030--1031
  [][] 
  []
 
 [8 <./arquitecturaSEBREI.png (PNG copy)> <./conjuntosCrips2.png (PNG copy)>]
-Overfull \hbox (11.2309pt too wide) in paragraph at lines 1058--1073
+Overfull \hbox (11.2309pt too wide) in paragraph at lines 1059--1074
 [][] 
  []
 
 
-Overfull \hbox (10.5367pt too wide) in paragraph at lines 1085--1087
+Overfull \hbox (10.5367pt too wide) in paragraph at lines 1088--1090
 \T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuevos
  equipos
  []
@@ -444,12 +438,12 @@ Overfull \hbox (10.5367pt too wide) in paragraph at lines 1085--1087
 <BD2.png, id=41, 915.42pt x 918.43124pt>
 File: BD2.png Graphic file (type png)
  <use BD2.png>
-Overfull \hbox (17.38353pt too wide) in paragraph at lines 1107--1107
+Overfull \hbox (17.38353pt too wide) in paragraph at lines 1113--1113
 []\secfnt DESARROLLO DE LAS IN-TER-FACES WEB 
  []
 
 
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1111--1113
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1117--1119
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
@@ -462,7 +456,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 “
+l.1146 “
         económica”, “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -476,7 +470,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 “económica”
+l.1146 “económica”
                   , “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -490,7 +484,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 “económica”, “
+l.1146 “económica”, “
                      moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -504,14 +498,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 “económica”, “moderado”
+l.1146 “económica”, “moderado”
                                varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 [9] [10 <./BD2.png (PNG copy)>]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1314--1315
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 1322--1323
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
@@ -522,7 +516,7 @@ as
 Here is how much of TeX's memory you used:
  3103 strings out of 494999
  37661 string characters out of 1180817
- 93665 words of memory out of 3000000
+ 94665 words of memory out of 3000000
  6231 multiletter control sequences out of 15000+50000
  50604 words of font info for 68 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
@@ -537,7 +531,7 @@ c/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 exmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/font
 s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times
 /utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report3.pdf (11 pages, 380020 bytes).
+Output written on report3.pdf (11 pages, 378935 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -74,4 +74,10 @@
 
 )
 
+(defrule print-recom
+ (models (model ?model))
+=>
+ (printout t crlf ?model "\n")
+)
+
 

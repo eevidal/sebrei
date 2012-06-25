@@ -40,12 +40,14 @@ def generate_form(quest,slot,facts,b,sfile):
         print "<html>\n<head>\n<title>Preguntas</title>"
 	print "<link rel=StyleSheet href=\"style.css\"> "
 	print "</head><body><div id=\"page\">"
-	print "<img =>"
-        print "<h4>Necesito saber:</h4>"
+	print "<div id=\"header\" ><img src=\"../images/printers.png\"   height=50/></div>"
+        print "<h4><img src=\"../images/happy.png\"  width=50 height=50/>  Necesito saber:</h4>"
        	print " <h5> "
         print quest
  	print " </h5>"
-	print "<table><tr><td><img =></td></tr><tr><td>"
+	print "<table><tr><td>"
+#	print "<img src=\"../images/happy.png\"  width=50 height=50/>"
+	print"</td></tr><tr><td>"
        	print "<form action=\"index.cgi\" method=\"get\">"
        	print "<select name=\"respuesta\">"
        	print "<option value=\"si\">Si</option>"
@@ -56,17 +58,21 @@ def generate_form(quest,slot,facts,b,sfile):
 	print "<input type=\"hidden\" name=\"slot\" value=",slot,">"
 	print "<input type=\"hidden\" name=\"action\" value=\"preg\">"
        	print "<input type=\"submit\" name=\"submit\"/>"
-   	print "</form></td></tr></table></div></boby></html>"
+   	print "</form></td></tr></table><div id=\"footer\">"
+	print "<p>Desarrollado por Erica Vidal.</p></div></div></boby></html>"
 
 def generate_form2(quest,slot,facts,b,sfile):
 	print "<html>\n<head>\n<title>Preguntas</title>"
         print "<link rel=StyleSheet href=\"style.css\"> "
         print "</head><body><div id=\"page\">"
-        print "<h4>Necesito saber:</h4>"
+	print "<img =\"../images/prinnters.png\"\>"
+        print "<h4> <img src=\"../images/happy.png\"  width=50 height=50/> Necesito saber:</h4>"
         print " <h5> "
 	print quest
         print " </h5>"
-	print "<table><tr><td><img =></td></tr><tr><td>"
+	print "<table><tr><td>"
+#	print "<img src=\"../images/happy.png\"  width=50 height=50/>"
+	print "</td></tr><tr><td>"
         print "<form action=\"index.cgi\" method=\"get\">"
         print "<input type=\"text\" name=\"respuesta\"/>"
 	print "<input type=\"hidden\" name=\"facts\" value=",facts,">"
@@ -249,11 +255,14 @@ def main():
 		sfile = sfile1[0]
 		clips.Clear()
 		clips.Load("../../ClipsFiles/SE_FC3.CLP")
+		clips.Load("../../ClipsFiles/regla_uso.clp")
+
 		clips.Reset()
 		clips.Assert("(browser)")
 		clips.Run()
 		sfile.write("(clear)\n")
 		sfile.write("(load \"../../ClipsFiles/SE_FC3.CLP\")\n")
+		sfile.write("(load \"../../ClipsFiles/regla_uso.clp\")\n")
 		sfile.write("(reset)\n")
 		sfile.write("(assert (browser))\n")
 		sfile.write("(run)\n")

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  24 JUN 2012 15:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  25 JUN 2012 19:32
 entering extended mode
  %&-line parsing enabled.
 **report3.tex
@@ -268,7 +268,14 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
-) (./report3.aux)
+) (./report3.aux
+
+LaTeX Warning: Label `db' multiply defined.
+
+
+Package natbib Warning: Citation `riley' multiply defined.
+
+)
 \openout1 = `report3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -285,8 +292,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 24.
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 24.
@@ -329,125 +335,167 @@ File: SE.png Graphic file (type png)
 
 
  <./SE.png (PNG copy)>]
-Overfull \hbox (1.85036pt too wide) in paragraph at lines 220--227
+Overfull \hbox (8.95149pt too wide) in paragraph at lines 171--176
+\T1/aer/m/n/9 el con-texto, el com-po-nente del mo-tor de in-fer-en-cia que mat
+chea
+ []
+
+
+Overfull \hbox (1.85036pt too wide) in paragraph at lines 262--269
 \T1/aer/m/n/9 es-pi-ral, etc); tam-bién se han de-sar-rol-lado varias metodolog
 ías
  []
 
-
-Overfull \hbox (4.78607pt too wide) in paragraph at lines 254--257
+[2]
+Overfull \hbox (4.78607pt too wide) in paragraph at lines 296--299
 \T1/aer/m/n/9 struc-ción de un sis-tema in-for-mático basado en el conocimiento
 
  []
 
-[2]
-Overfull \hbox (6.74612pt too wide) in paragraph at lines 268--271
+
+Overfull \hbox (6.74612pt too wide) in paragraph at lines 310--313
 \T1/aer/m/n/9 iden-ti-ficar las fuentes del conoci-mento, ex-traer el conocimie
 nto
  []
 
 
-Overfull \hbox (6.01013pt too wide) in paragraph at lines 283--287
+Overfull \hbox (6.01013pt too wide) in paragraph at lines 325--329
 \T1/aer/m/n/9 niero del cnocimiento se limita a crear la base de conocimiento.
  []
 
 [3]
-Overfull \hbox (2.3385pt too wide) in paragraph at lines 414--418
+Underfull \hbox (badness 2035) in paragraph at lines 431--434
+[]\T1/aer/m/n/9 Silveira, Lu-ciano.  \T1/aer/m/it/9 Dis-e-nio en im-ple-mentaci
+ón de
+ []
+
+
+Overfull \hbox (2.3385pt too wide) in paragraph at lines 468--472
 []\T1/aer/m/n/9 Los sitios web de las difer-entes mar-cas de im-pre-sión a menu
 do
  []
 
 
-Overfull \hbox (19.63548pt too wide) in paragraph at lines 481--483
+Overfull \hbox (19.63548pt too wide) in paragraph at lines 536--538
 \T1/aer/m/n/9 Se debe pre-veer la posi-bil-i-dad de ex-ten-der la base de conoc
 imiento
  []
 
-
-Overfull \hbox (1.95996pt too wide) in paragraph at lines 532--539
+[4]
+Overfull \hbox (1.95996pt too wide) in paragraph at lines 590--599
 \T1/aer/m/n/9 tienen bo-quil-las dimin-u-tas situ-adas en lo que se llama cabez
 al
  []
 
-[4]
-Overfull \hbox (2.93233pt too wide) in paragraph at lines 570--579
+
+Overfull \hbox (2.93233pt too wide) in paragraph at lines 636--645
 \T1/aer/m/n/9 La ve-loci-dad de una im-pre-sora suele medirse con el parámetro
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 642--642
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
 [][]\T1/aer/m/it/9 http://www.undocprint.org/formats/
  []
 
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 770--770
+[][]\T1/aer/m/n/9 Extraído de \T1/aer/m/it/9 http://www.duiops.net/hardware/imp
+resor
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--705
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--794
 [][]\T1/aer/m/it/9 http://www1.lexmark.com/es_MX/cartridges-ink-
  []
 
 
-Overfull \hbox (30.4891pt too wide) in paragraph at lines 698--706
+Overfull \hbox (30.4891pt too wide) in paragraph at lines 787--795
 \T1/aer/m/n/9 rendimiento ISO/IEC 19752 para car-tu-chos de tóner monocromático
 
  []
 
-[6]
-Overfull \hbox (11.50926pt too wide) in paragraph at lines 777--785
+
+Overfull \hbox (11.50926pt too wide) in paragraph at lines 866--874
 [][] 
  []
 
-
-Overfull \hbox (2.55322pt too wide) in paragraph at lines 809--810
+[7]
+Overfull \hbox (2.55322pt too wide) in paragraph at lines 898--899
 []\T1/aer/m/n/9 Si es para una ofic-ina $\OMS/cmsy/m/n/9 )$ \T1/aer/m/n/9 nece-
 sita laser monocromo 
  []
 
 
-Overfull \hbox (1.31091pt too wide) in paragraph at lines 811--812
+Overfull \hbox (1.31091pt too wide) in paragraph at lines 900--901
 []\T1/aer/m/n/9 Si es un es-tu-dio de ar-qui-tec-tura $\OMS/cmsy/m/n/9 )$ \T1/a
 er/m/n/9 nece-sita chorro
  []
 
 
-Overfull \hbox (9.89018pt too wide) in paragraph at lines 929--944
+Overfull \hbox (9.89018pt too wide) in paragraph at lines 1018--1033
 [][] 
  []
 
-[7] <arquitecturaSEBREI.png, id=36, 264.59508pt x 279.60197pt>
+<arquitecturaSEBREI.png, id=36, 264.59508pt x 279.60197pt>
 File: arquitecturaSEBREI.png Graphic file (type png)
 
-<use arquitecturaSEBREI.png>
-<conjuntosCrips2.png, id=37, 276.83754pt x 63.97672pt>
+<use arquitecturaSEBREI.png> [8]
+<conjuntosCrips2.png, id=40, 276.83754pt x 63.97672pt>
 File: conjuntosCrips2.png Graphic file (type png)
 
 <use conjuntosCrips2.png>
-Overfull \hbox (9.15147pt too wide) in paragraph at lines 1030--1031
+Overfull \hbox (9.15147pt too wide) in paragraph at lines 1117--1118
  [][] 
  []
 
-[8 <./arquitecturaSEBREI.png (PNG copy)> <./conjuntosCrips2.png (PNG copy)>]
-Overfull \hbox (11.2309pt too wide) in paragraph at lines 1059--1074
-[][] 
- []
 
-
-Overfull \hbox (10.5367pt too wide) in paragraph at lines 1088--1090
+Overfull \hbox (10.5367pt too wide) in paragraph at lines 1175--1178
 \T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuevos
  equipos
  []
 
-<BD2.png, id=41, 915.42pt x 918.43124pt>
+[9 <./arquitecturaSEBREI.png (PNG copy)> <./conjuntosCrips2.png (PNG copy)>]
+<BD2.png, id=44, 915.42pt x 918.43124pt>
 File: BD2.png Graphic file (type png)
  <use BD2.png>
-Overfull \hbox (17.38353pt too wide) in paragraph at lines 1113--1113
+LaTeX Font Info:    Try loading font information for T1+aett on input line 1214
+.
+
+(/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 1244--1244
+ []  \T1/aett/m/n/9 (question "¾Será necesario imprimir a color?")[] 
+ []
+
+
+Overfull \hbox (2.18422pt too wide) in paragraph at lines 1248--1250
+[]\T1/aer/m/n/9 Las re-glas en CLIPS es-tán for-madas por: Una parte izquierda
+ []
+
+<arbol.png, id=45, 326.018pt x 133.298pt>
+File: arbol.png Graphic file (type png)
+ <use arbol.png> [10 <./arbol.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (17.38353pt too wide) in paragraph at lines 1336--1336
 []\secfnt DESARROLLO DE LAS IN-TER-FACES WEB 
  []
 
 
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1117--1119
+Overfull \hbox (13.3993pt too wide) in paragraph at lines 1339--1342
+\T1/aer/m/n/9 La in-ster-faz ad-min-is-tra-tiva per-mite agre-gar nuevo equipam
+iento
+ []
+
+
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1345--1347
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
 
+[11 <./BD2.png (PNG copy)>]
 
 ! Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
@@ -456,7 +504,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1146 “
+l.1385 “
         económica”, “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -470,7 +518,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1146 “económica”
+l.1385 “económica”
                   , “moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -484,7 +532,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1146 “económica”, “
+l.1385 “económica”, “
                      moderado” varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
@@ -498,42 +546,64 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1146 “económica”, “moderado”
+l.1385 “económica”, “moderado”
                                varien sus límites de acuerdo a la realidad e...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-[9] [10 <./BD2.png (PNG copy)>]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1322--1323
+<./AdminSite.png, id=55, 791.95876pt x 552.0625pt>
+File: ./AdminSite.png Graphic file (type png)
+ <use ./AdminSite.png>
+Overfull \hbox (6.32512pt too wide) in paragraph at lines 1450--1451
+\T1/aer/m/n/9 La her-ramien-tas nece-sarias para el de-sar-rollo y doc-u-mentac
+ión
+ []
+
+[12]
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 1597--1598
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
-[11
+[13 <./AdminSite.png (PNG copy)>]
 
-] (./report3.aux) ) 
+Package natbib Warning: There were multiply defined citations.
+
+[14
+
+] (./report3.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3103 strings out of 494999
- 37661 string characters out of 1180817
- 94665 words of memory out of 3000000
- 6231 multiletter control sequences out of 15000+50000
- 50604 words of font info for 68 fonts, out of 3000000 for 9000
+ 3143 strings out of 494999
+ 38287 string characters out of 1180817
+ 94784 words of memory out of 3000000
+ 6264 multiletter control sequences out of 15000+50000
+ 51092 words of font info for 70 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 39i,11n,28p,254b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/t
-exmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times
-/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report3.pdf (11 pages, 378935 bytes).
+ 39i,11n,28p,254b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/
+helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.p
+fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report3.pdf (14 pages, 449007 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

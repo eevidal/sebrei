@@ -155,8 +155,35 @@ Una regla de inferencia es un esquema para construir inferencias válidas. Estos 
 relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una aserción llamada conclusión. 
 Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
 
+\subsection*{Agenda}
+La lista de reglas que se encuentran en la base de conocimento que son portencialmente ejecutables se almacenan
+en lo que se denomina agenda. Una regla es potencialmente ejecutable si su parte izquierda se satisface. 
+Al conjunto de reglas que pueden ser ejecutadas se las denomina grupo de conflicto de reglas y al preoceso de ordernarlas
+para ser ejecutadas se lo denomina resolución de conflictos. 
+
+
+
+
+\subsection*{El algoritmo de Rete}
+\smallskip 
+
+
+El motor de inferencias debe decidir que regla disparar según el contexto, el componente del motor 
+de inferencia que matchea (compara patrones) hechos con patrones en reglas
+para determinar que reglas tienen sus condiciones satisfechas deberá buscar entre posiblimente miles
+de reglas. Existen un conjunto de algoritmos que abordan esta problematica de manera muy eficiente, el más
+conocido es el algoritmo de Rete. 
+
+Los lenguajes basados en reglas tienen lo que se llama redundancia temporal, que significa que en 
+cada ciclo de ejecución sólo pocos hechos se agregan a la lista de hechos y los mismos afectan a pocas reglas; 
+por lo que el sistema cambia muy lentamente. El algortimo de Rete toma ventaja de esto, salvando el estado
+del matching ciclo a ciclo y reconstruyendo los cambios en el estado solo para los cambios que ocurrieron en la 
+fact list. 
+
 \subsection*{Encadenamientos}
+
 Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
+
 
 Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
 mientras que un encadenamiento 
@@ -188,23 +215,38 @@ porque el Fordward Chaining produce una búsqueda a lo ancho.
 En cambio el Backward Chaining produce una búsqueda en profundidad y un buen árbol para una búsqueda en profundidad
 es uno angosto y profundo.\cite{Riley}
 
-\section*{El algoritmo de Rete}
-\smallskip 
+De acuerdo al tipo de encadenamiento que use un motor de inferencia se los denomina también Fordward o Backward Chaninig.
 
-Los lenguajes basados en reglas usan un algoritmo para matchear hechos con patrones en reglas
-para determinar que reglas tienen sus condiciones satisfechas. Este algoritmo es el algoritmo de 
-Rete. 
+El algoritmo de Fordward Chaining trabaja de la siguiente manera:
 
-Los lenguajes basados en reglas tienen lo que se llama redundancia temporal, que significa que en 
-cada ciclo de ejecución sólo pocos hechos se agregan a la lista de hechos y los mismos afectan a pocas reglas; 
-por lo que el sistema cambia muy lentamente. El algortimo de Rete toma ventaja de esto, salvando el estado
-del matching ciclo a ciclo y reconstruyendo los cambios en el estado solo para los cambios que ocurrieron en la 
-fact list. 
+procesa un hecho en la memoria de trabajo, verifica
+su base de reglas para ver si alguna de las condiciones es verdadera. Si alguna lo es,
+las acciones del lado derecho de las reglas son procesadas, pudiendo cambiar la información
+de la memoria de trabajo.
+Cuando se completa la acción, el motor chequea si la condición de alguna otra regla
+es verdadera y el proceso se repite hasta que no existan reglas que sean verdaderas.
+
+!!algoritmo
+
+
+El algoritmo de Backward Chaining en cambio:
+
+Se comienza con una conclusión que el motor trata de satisfacer.
+Si no se puede satisfacer, se buscan conclusiones intermedias que sí se puedan
+satisfacer (sub goals), lo que permite satisfacer alguna parte del objetivo actual
+(current goal).
+Se continúa con este proceso hasta que se prueban las conclusiones iniciales o
+no hay más sub-conclusiones (sub goals) para analizar. \cite{silverira}
+
+!!algoritmo
 
 %\section*{Incertidumbre}
 %Se han desarrollado varias técnicas para utilizarlas ante casos de  incertidumbre, y que forman un 
 %componente estandar de los sistemas expertos, así por ejemplo, una técnica es asociar factores de certeza con hechos
 %y reglas, y propagar la incertidumbre junto con la inferencia. 
+
+
+
 
 
 \section*{Metodología para el desarollo de sistemas expertos}
@@ -312,7 +354,12 @@ Johnson Space Center. Los orígenes de CLIPS se remontan a
 soporta CLIPS se encuentran la Programación lógica, la Programación imperativa y
 la Programación Orientada a Objetos. Aunque ahora es de
 dominio público (license public domain), aún es actualizado y mantenido por su autor original, Gary Riley.
+Permite representar reglas de producción y frames.
+El motor de inferencias es de tipo Fordward Chaining, y hay X formas de resolución de conflicto
+(depth, breadth, LEX, MEA, complexity, simplicity y random).
+Está escrito en C, por lo que es portable a varios sistemas operativos.
 En la actualidad se encuentra en su versión 6.3.
+
 Existen derivados de CLIPS para ser usados en otros lenguajes como por ejemplo:
 
 \begin{itemize}
@@ -378,6 +425,13 @@ Garcia Martinez, Ramon; Britos, Paola Veronica.
 Giarratano, Joseph; Riley, Gary.
 \newblock {\em Sistemas Expertos, Principios y Programacion.}
 \newblock PWS Publishing Company, third edition, 1998.
+
+  
+\bibitem{silverira}
+Silveira, Luciano.
+\newblock {\em Disenio en implementación de un motor de reglas din'amicos usando especificaciones GeneXus: Tesis de Maestr'ia}
+\newblock UNIVERSIDAD DE LA REPUBLICA, Uruguay - Montevideo, 2010.
+
 
 
 \bibitem{waterman}
@@ -467,6 +521,7 @@ del sistema.
 \smallskip 
 \subsubsection{Uso}
 
+El sistema debe poder ser accedido a través de un browser.
 El sistema debe recomendar los equipos de impresión que más se ajusten a las necesidades del cliente.
 Para determinar las necesidades del cliente el sistema se vale de preguntas en español.
 El sistema debe explicar las razones de sus recomendaciones.  
@@ -478,8 +533,11 @@ También se debe permitir agregar o modificar las características técnicas posibl
 impresión.
 
 \subsubsection{Cambios futuros}
-Se debe preveer la posibilidad de extender la base de conocimiento (reglas) sin afectar
+Se debe preveer la posibilidad de extender la base de conocimiento (hechos y reglas) sin afectar
 la estructura del sistema. 
+
+%\subsubsection{Particularidad}
+
 
 
 
@@ -564,6 +622,12 @@ Un color por vez es depositado en toda la hoja, comenzando con el amarillo y ter
 La sublimación de tinta requiere de un papel especial particularmente caro, y los tintes 
 están diseñados para difuminarse en la superficie del papel, mezclándose para crear sombras de colores 
 precisas. 
+
+\textbf{Móvil:} Las impresoras portátiles suministran muchos de los recursos que ofrecen sus similares,
+ pero son lo suficientemente ligeras como para llevarlas 
+a cualquier parte. Por lo general incluyen una bateria recargable, y pueden ser térmicas o a inyección
+de tinta.
+ %También pueden hacer doble tarea, como las impresoras de escritorio de bajo volumen, cuando te encuentras en la oficina.
 
 
 \subsubsection{Velocidad de impresión:}
@@ -690,9 +754,9 @@ eso es que paralelamente, los fabricantes, también idican un volumen de páginas 
 que es el que debe usarse para determinar cúal es el tamaño que se necesita.
 
 
-\subsubsection{Insumos - Consumibles}
+%\subsubsection{Insumos - Consumibles}
 
-\subsubsection{Color}
+%\subsubsection{Color}
 
 \subsubsection{Rendimiento - Consumibles}
 El rendimiento por página indica la cantidad total de páginas que pueden imprimirse con un cartucho. 
@@ -724,14 +788,14 @@ etc. Podemos considerar gran formato a todo aquello que vaya más alla de un hoja
 A continuación se listan las características técnicas de los equipos de impresión 
 que pueden ser encontrados en los folletos de especificaciones provista por los
 distintos fabricantes. Dichas características son fundamentales para seleccionar
-que modelo de equipo se necesita.
+qué modelo de equipo se necesita.
 Dependiendo del uso que se le va a dar al equipo las distintas características van 
 adquiriendo más o menos relevancia. 
 
 \begin{itemize}
 %\item Marca
 %\item Modelo
-\item Tipo (impresora / multifunsión)
+\item Tipo (impresora / multifunción)
 \item Tecnología de impresión (laser / inyección de tinta / matriz de punto)
 \item Color 
 \item Funciones (imprimir / escanear /copiar /envio de fax /envío digital)
@@ -760,7 +824,7 @@ Otras características a tener en cuenta son:
 %\item Modelo
 \item Período de garantía
 \item Precio de los insumos
-\item Servicio tecnico local
+\item Servicio técnico local
 \end{itemize}
 
 
@@ -786,14 +850,15 @@ Usando como guía lo manifestado por el experto hay cuatro características mínima
  
 
 \subsubsection{Heurísticas}
-Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista de reglas
+Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista preliminares 
+de reglas que luego deben ser validadas.
 
 
  \begin{quote}
  
-	        Si es para poco uso $\wedge$ una sola persona $\Rightarrow$ necesita impresora chica
+	        Si es para poco uso y una sola persona $\Rightarrow$ necesita impresora chica
 	        
-	          Si es para imprimir $\wedge$ escanear $\Rightarrow$ necesita multifunsión
+	          Si es para imprimir y escanear $\Rightarrow$ necesita multifunsión
 	        
 	        Si es para uso corporativo  $\Rightarrow$ necesita impresora de Red
 	       
@@ -812,20 +877,20 @@ Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las s
 	      Si es para el hogar $\Rightarrow$ puede necesitar multifunsión barata \end{quote} 
 
  
-\paragraph{Uso}
+\textbf{Uso}
     
     
 Hay ciertos conceptos impresisos como \textit{impresora chica, alto volumen, poco uso}. En 
 el contexto utilizado todos los términos se están refiriendo a la cantidad de páginas mensuales. 
 Algo más con respecto a la palabra \textit{uso} se la puede emplear para manifestar frecuencia de impresión, 
-como para referise a tipo de docuemntos a imprimir (fotos, textos, etc).
+como para referise a tipo de documentos a imprimir (fotos, textos, etc).
 
 %http://thales.cica.es/rd/Recursos/rd99/ed99-0646-02/impresora.html#laser    
     
 
 
 
-Otras posibles reglas extraídas de noticias y recomendaciones online. 
+Otras posibles reglas extraídas de noticias y recomendaciones online podrían ser las siguientes. 
 
 Si se imprimen menos de 30 pag a color  $\Rightarrow$ cartucho único.
 
@@ -841,13 +906,13 @@ Si se quieren imprimir fotografías $\Rightarrow$ no se recomienda una impresora 
 
 Si no se quieren imprimir fotografías $\Rightarrow$ una resolución de 600 dpi alcanza.
 
-Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresara laser y velocidad de impresión superior  a 30 ppm
+Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresora láser y velocidad de impresión superior  a 30 ppm
 
 Si es una empresa de publicidad $\Rightarrow$ se recomienda laser color u otras tecnologías
 
-Si es para formularios continups $\Rightarrow$ se recomienda matriz de punto
+Si es para formularios continuos $\Rightarrow$ se recomienda matriz de punto
 
-Si es para el hogar o pequeña oficina $\Rightarrow$ inyeccion de tinta 
+Si es para el hogar o pequeña oficina $\Rightarrow$ inyección de tinta 
 
 Si es para el hogar o pequeña oficina y se necesita calidad fotográfica $\Rightarrow$ inyeccion de tinta con 4 cartuchos.
 
@@ -861,9 +926,9 @@ tamaño legal.
 
 Está claro que cúales de todas las características que posee un equipo hay que tener en cuenta depende principalemente del 
 uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
-Porque el uso determina varios del resto de las características. Por ejemplo, para una compañia el período de garantía o saber
-si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
-que un usuario hogareño presta atención a otros aspectos. 
+Porque el uso determina varios del resto de las características. % Por ejemplo, para una compañia el período de garantía o saber
+%si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
+%que un usuario hogareño presta atención a otros aspectos. 
 
 
 
@@ -918,7 +983,7 @@ de acuerdo al tamaño del grupo
 de trabajo. Dicha clasificación se compone de las catgorías de  \textit{peronal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
 \textit{grupo mediano} (de 4 a 10), y \textit{grupo grande de trabajo} (más de 10). 
 Al revisar las especificaciones de los productos de las distintas categorías se observa una relación entre dichas
-categorías y el ciclo mensual de trabajo.
+categorías y el ciclo mensual de trabajo que está resumida en la tabla 2.
 
 
 \begin{table}
@@ -974,11 +1039,16 @@ Inicialmente el sistema no recomendará equipos para lo que se conocen como las a
 que se encuentran dentro de la categoría de grandes formatos. 
 De todas formas el diseño del sistema se plateará de forma tal que puedan ser incorporadas nuevas reglas 
 que cubran estas categorías. 
+También hay algunas características de los equipos e impresión que un determinado cliente pueda desear
+y que no sea necesario el asesoramiento de un profesional para darse cuenta si un equipo que le ofrecen 
+sirve o no a sus necesidades. Un ejemplo de esta característica podría ser el tamaño físico del equipos,
+en este caso al cliente le basta mirar la lista de especificaiones técnicas y verificar si el tamaño del
+equipo que le ofrecen es el adecuado. 
+
+Si bien podría ser un adiccional preguntar y recomendar teniendo en cuenta este tipo de cosas, no agrega inteligencia
+al sistema y la mayoría de las veces las peguntas del sistema serán demasiado redundantes. 
 
 
-\subsubsection{Selección de las herramientas}
-
-CLIPS, Pyclips
 
 \subsubsection{Representación del conocimiento} 
 \smallskip 
@@ -995,7 +1065,10 @@ Mientras que los distintos modelos seran hechos factuales en la base de conocimi
 %\subsection{Base de datos relacional} 
 
 
-\subsubsection{Determinación del uso} 
+\subsubsection{Determinación de las características requeridas} 
+
+Para determinar algunas características será necesario preguntar al cliente, 
+otras en cambio serán inferidas a partir de los datos provistos por el cliente.
 %n CLIPS environment,
 %ules can be defined by using the defrule construct
 
@@ -1003,16 +1076,6 @@ Mientras que los distintos modelos seran hechos factuales en la base de conocimi
 %(uso hogareña)
 %(escanear si)
 %> 
-%(assert(functions imprimir copiar escanear))
-%(assert (tecnology inyeccion))  
-%(assert (type multifuncion))
-%
-
-
-
-
-
-
 %\sunsubsection{Volumen mensual} 
 Para el volumen mensual la clasificación de HP ,
 define 5 conjuntos crips para el volumen mensual de impresión,
@@ -1032,85 +1095,226 @@ de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme
 \end{figure}
 \end{center}  
 
-
-
-
-
+\textbf{Uso}
 El uso vendrá determinado a través de consultar con el cliente
  cuantas páginas cree que en promedio imprimirá en un mes.
 
-También se usará
- la aproximación que 
-usa Xerox y preguntando por el tamaño del grupo de trabajo. En la tabla 3 se encuentra la relación
-tamaño del grupo - tamaño impresora.
+Aunque también se podría usar la aproximación que 
+usa Xerox teniendo encuenta el tamaño del grupo de trabajo estimar el volumen de páginas mensuales. 
+De momento se usará la versión simplificada de pregunntarle directamente al cliente.
+% En la tabla 3 se encuentra la relación
+%tamaño del grupo - tamaño impresora.
 
 
-De esta forma,
-preguntandole el número de usuarios/pc simultáneos del grupo de trabajo al futuro cliente se calcula un volumen mensual 
-máximo de impresiones de acuerdo a la tabla. %Si el usuario ingresa
+%De esta forma,
+%preguntandole el número de usuarios/pc simultáneos del grupo de trabajo al futuro cliente se calcula un volumen mensual 
+%máximo de impresiones de acuerdo a la tabla. %Si el usuario ingresa
 
 % Para el caso en que el cliente facilita un valor $v$ para el volumen mensual, 
 %el valor definitivo utilizado $vd$ será $vd = max (v , vg$), donde $vg$ es el valor
 %correspondiente al tamaño del grupo de trabajo.
 
-\begin{table}
-\caption{}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Tamaño} &\textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
-\hline
-\hline
-chica & personal   &  hasta 2000 p.\\
-\hline
-mediana & hasta 4 personas/pc & hasta 6000 p.\\
-\hline
-grande & hasta 12 personas/pc & hasta 10000 p.\\
-\hline
-alto volumen & más de 12 personas & mas de 10000 p.\\
+%\begin{table}
+%\caption{}
+%\begin{tabular}{|l|l|l|}
+%\hline
+%\textbf{Tamaño} &\textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
+%hline
+%\hline
+%chica & personal   &  hasta 2000 p.\\
+%\hline
+%mediana & hasta 4 personas/pc & hasta 6000 p.\\
+%\hline
+%grande & hasta 12 personas/pc & hasta 10000 p.\\
+%\hline
+%alto volumen & más de 12 personas & mas de 10000 p.\\
 
-\hline
-\end{tabular}
-\end{table}
+%\hline
+%\end{tabular}
+%\end{table}
 
 
+%\textbf{Color}
+%Ahora al preguntar por el tamaño del grupo, al recibir la respuesta se seteará el valor de la variable
+%tamaño en chica, mediana, etc.
 
-Ahora al preguntar por el tamaño del grupo, al recibir la respuesta se seteará el valor de la variable
-tamaño en chica, mediana, etc.
+%\subsubsection{Clasificación económica de los equipos}
 
-\subsubsection{Clasificación económica de los equipos}
+%\textbf{Funciones}
 
-Para 
+
 
 
 \subsection{Base de datos}
 
 Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
 utilizamos un base de datos relacional para mantener las características de los equipos de impesión. 
+La figura 4 muestra el diagrama de entidad relación de la base de datos. 
 
 \begin{center}
 \begin{figure*}[!ht]
 \centering
- \includegraphics[scale=0.5]{BD2.png}
+ \includegraphics[scale=0.4]{BD2.png}
 \caption{Modelo EER de la base de datos}
 \label{db}
 \end{figure*}
 \end{center}
 
 
-La clasificación de los equipos
+%La clasificación de los equipos
 
 \section{Implementación} 
 
-\subsection{Árbol de desición} 
+Un primer prototipo se implemento enteramente en CLIPS. Antes de entrar en los detalles haré 
+una breve introducción aclips.  
 
-En la práctica se hay usado los mismo límites pero ya se verá que pueden ser elegidos por el administrador de
-sistema e incluso se pueden crear nuevas categoarías.
+Primeramente para arrancar CLIPS desde una shell de Linux se teclea clips y nos encontramos en un interprete de comandos.
+La notación es muy similar a la del lenguaje LISP.
 
+(exit)  Sale de CLIPS
+
+(clear) Elimina datos y programas de la memoria.
+
+(reset) Elimina la información dinámica de la memoria y resetea la agenda.
+
+(run)  Comienza la ejecución de un programa CLIPS.
+
+\subsection{Hechos y Reglas en Clips}
+
+En un su modo más sencillo, CLIPS opera manteniendo una lista de hechos (facts) y un conjunto de reglas ( rules) con las que operar.
+Los hechos en CLIPS pueden ser de dos tipos: ordered facts y deftemplate facts.
+Un ejemplo de ordered facts es:
+
+\begin{quote}
+\begin{verbatim}
+(color si)
+(paginas 250)\end{verbatim} \end{quote} 
+Un ejemplo de deftemplate es:
+\begin{quote}
+\begin{verbatim}
+(deftemplate questions
+   (slot question (default ?NONE))
+   (slot atribute (default ?NONE))
+   (slot type (default ?NONE))
+) \end{verbatim} \end{quote} 
+
+La creación de hechos se realiza mediante las sentencias assert (uno solo) o deffact (un conjunto), por ejemplo:
+
+\begin{quote}
+\begin{verbatim}
+(assert(color si))
+(assert (questions
+  (question "¿Será necesario imprimir a color?")
+     (atribute color)(type bool) 
+        )
+)
+
+(deffacts mis-hechos
+  (color no)
+  (paginas 500)
+  (questions
+    (question "¿Será necesario escanear?")
+    (atribute grupo) (type bool)
+   )
+) \end{verbatim} \end{quote} 
+
+
+
+Las reglas en CLIPS están formadas por:
+Una parte izquierda (LHS) que define las condiciones a cumplir y una parte derecha (RHS) que define las acciones a realizar.
+
+Sintaxis:
+
+\begin{quote}
+\begin{verbatim}
+(defrule nombre-regla"comentario"
+(condicion-1)(condicion-2)...
+=>
+(accion-1)(accion-2)...)\end{verbatim} \end{quote} 
+
+Para eliminar un hecho de la memoria de trabajo se usa el comando (retract f).
+
+(printout)
+(read)
+(test)
+(operadores booleanes)
+(if)
+
+\subsection{Reglas} 
+
+Para ayudar a visualizar el conjunto de reglas que componen el sistema ayuda a 
+disponerlas en una estrura de árbol.
+
+Una de las características principales a determinar es el volúmen de páginas
+mensuales, con lo cúal se seleccionará una de las categorías predefinidas para dicho
+característica.
+En la implementación se han usado las 5 categorías ya descriptas para el volumen de páginas
+mensuales, pero ya se verá que el sistema admite cambiar dichos límites
+e incluso se pueden crear nuevas categorías desde la interfaz web administrativa. 
+
+El árbol correspondiente a la regla que determina la categoría uso que se necesita se encuentra en la 
+figura 5.
+
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.7]{arbol.png}
+\caption{}
+\label{db}
+\end{figure}
+\end{center}
+
+Las reglas en clips quedan de la siguiente manera:
+
+\begin{quote}
+\begin{verbatim}
+(defrule regla-uso1
+        (paginas ?p)
+        (test (< ?p  500) )
+=>
+        (assert (uso hogar)))
+
+(defrule regla-uso2
+        (paginas ?p)
+        (and (test (> ?p  500) )
+             (test (<=  ?p  1000)))
+=>
+        (assert (uso profesional)))
+
+
+(defrule regla-uso3
+        (paginas ?p)
+        (and (test (> ?p  1000))
+             (test (<=  ?p  5000)))
+=>
+        (assert (uso pyme)))
+
+(defrule regla-uso4
+        (paginas ?p)
+        (and (test (> ?p  5000))
+             (test (<=  ?p  10000)))
+=>
+        (assert (uso pyme+)))
+
+(defrule regla-uso5
+        (paginas ?p)
+        (test (> ?p  10000))
+=>
+        (assert (uso empresarial)))
+
+ \end{verbatim} 
+\end{quote} 
 
 
 
 \section{Desarrollo de las interfaces web}  
 \subsection{Interfaz administrativa}
+
+La insterfaz administrativa permite agregar nuevo equipamiento a la base de datos. Y cambiar
+parametros que afectan el comportamiento del sistema experto, como por ejemplo cambiar el límite de
+las categorías de volumen mensual de impresión o inclusive agreagar nuevas.  
+
 
 \subsubsection{Requerimientos}
 La interfaz web debe permitir al administrador del sistema agregar elementos a la base de datos y ajustar ciertos parámetros del SE. 
@@ -1134,15 +1338,34 @@ Permite:
 	\item lenguajes de impresión
         \item consumibles
         \item Cambiar límites a los tags* (de cant de impresiones y de precios)
+        \item usuarios
+	
 	
      
        \end{itemize}
+
+\item Mantenimiento:
+          \begin{itemize}
+        \item Actualizar tag a los equipos
+        \item Generar listas de impresoras
+        \item Actualizar reglas de uso
+     
+       \end{itemize}
+
 
 \end{itemize}
 
 Los tags de precios se actualizarán mediante una función fuzzy cuyos parámetros 
 pueden ser alterados por el administrador del sistema. Eso permitirá que los valores de la variable precio
 “económica”, “moderado” varien sus límites de acuerdo a la realidad económica del medio en donde se use el sistema. 
+
+
+\begin{figure*}[!ht]
+ \centering
+
+ \includegraphics[scale=0.5]{./AdminSite.png}
+ % AdminSite.png: 789x550 pixel, 72dpi, 27.83x19.40 cm, bb=0 0 789 550
+\end{figure*}
 
 
 %\subsubsection{Diseño}
@@ -1195,7 +1418,34 @@ pueden ser alterados por el administrador del sistema. Eso permitirá que los val
 \hilight{Pruebas de las distintas componentes}
 
 
-\section{Herramientas utilizadas??}
+\section{Herramientas utilizadas}
+
+\subsection{Selección de las herramientas}
+
+La herramientas necesarias para el desarrollo del sistema ha sido varias,
+como shell para sistemas expertos he seleccionado CLIPS por ser de dominio público, 
+permite una rápida prototipación, la capacidad de poder interoperar con otros lenguajes y la disponibilidad de varias extensiones
+y derivados. 
+
+CLIPS 
+
+El sistema está desarrollado en CLIPS.
+
+Pyclips
+
+Para portar el sistema de manera online a través de un servidor web he 
+usado la librería PyClips, la otra opción era PHLIPS ambas implementan un subconjunto de
+los comandos propios de CLIPS, pero PyClips implementa un numero mayor de comandos.
+
+PHP
+
+La interfaz administrativa del sistema se desarrollo en PHP.
+
+Postgres
+
+La base de datos está implementada en postgres.
+
+
 
 \subsubsection*{Clips} 
 

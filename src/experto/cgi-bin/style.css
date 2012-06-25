@@ -17,7 +17,8 @@ Modify by Erica Vidal,
 body {
 	font-size: 100%; /* Resets 1em to 10px */
 	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	background: #f0f0f0;
+/*	background: #f0f0f0;*/
+	background: #fff;
 	color: #444;
 	text-align: center;
 	}
@@ -142,25 +143,30 @@ body {
 	}
 
 #header {
-	background-color: #73a0c5;
+	background-color: #f0f0f0;
 	margin: 0 0 0 1px;
 	padding: 0;
-	height: 200px;
+	height: 50px;
 	width: 758px;
 	}
 
 
 #footer {
+	 background-color: #f0f0f0;
 	padding: 0;
 	margin: 0 auto;
-	width: 760px;
+	width: 758px;
+	 height: 20px;
 	clear: both;
+
 	}
 
 #footer p {
+	color: #6C6C6C;
 	margin: 0;
-	padding: 20px 0;
-	text-align: center;
+	padding: 2px ;
+	text-align: center; 
+	font-size:12px;
 	}
 
 

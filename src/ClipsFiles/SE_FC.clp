@@ -1,41 +1,13 @@
-(deftemplate printer 
-   (slot model  (default ?NONE))
-   (slot tecnology (default ?NONE))		
-   (slot type (default ?NONE))
-   (multislot conectivity (default any))
-   (multislot functions (default any))
-   (slot color (default any))
-   (slot duplex (default any))
-   (slot use (default any))
-   (slot maxp (default any))
-   (slot minp (default any))
-   (slot tag (default ?NONE))
-   (slot a3 (default any))
- )
-
-;;*****************
-;;*    defacts    *
-;;*****************
-
-
-;;********************************;; 
-
-
-(deftemplate volumen "Volumen mensual"
-  (slot paginas)
-)
-(deftemplate tgrupo "tamaño del grupo"
-  (slot miembros)
-)
- 
 
 ;**************
 ;defrules     *
 ;**************
 ;***************
 
-(defrule start
+(defrule start1
 	?init <- (initial-fact)
+	(terminal)
+
 =>
 	(retract ?init)
 	(printout t crlf "Será necesario imprimir a color?")
@@ -49,16 +21,31 @@
 	(bind ?grupo (read))
 	(bind ?vol (max ?pag ?grupo))
 	(assert (color ?color))
-	(assert (volumen (paginas ?vol)))
-	(assert (tgrupo (miembros ?grupo)))
+	(assert (paginas ?vol))
+	(assert (grupo ?grupo))
+	(assert (regla 1))
 
 )
+
+(defrule start2
+        ?init <- (initial-fact)
+	(browser)
+=>
+        (retract ?init)
+        (assert (questions(question "Será necesario imprimir a color?")(atribute color)(type bool) ))
+        (assert (questions(question "Cúal es el volumen mensual de páginas?")(atribute paginas) (type int)))
+        (assert (questions(question "¿Cúal es el tamaño del grupo de trabajo?")(atribute grupo) (type int)))
+        (assert (regla 1))
+)
+
+
 
 
 
 
 (defrule regla-hog1
 	(uso hogar)
+	(terminal)
 => 
 	
 	(assert (a3 no))
@@ -67,6 +54,18 @@
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (escanear ?ans))
+)
+
+
+(defrule regla-hog1b
+        (uso hogar)
+	(browser)
+=>
+
+        (assert (a3 no))
+        (assert (duplex no))
+        (assert (questions(question "Te interesaria ademas de imprimir poder escanear documentos con el mismo equipo?")(atribute escanear)(type bool) ))
+
 )
 
 
@@ -84,6 +83,7 @@
 (defrule regla-hog3
 	(uso hogar)
 	(escanear no)
+	(terminal)
 => 
 	(assert (functions imprimir))
 	(printout t crlf "Necesitaras desplazar la impresora en viajes, o trasladarla a diferentes habitaciones?")
@@ -91,6 +91,18 @@
 	(bind ?ans (read)) 	
 	(assert (movilidad ?ans))
 )
+
+(defrule regla-hog3b
+        (uso hogar)
+        (escanear no)
+	(browser)
+=>
+        (assert (functions imprimir))
+        (assert (questions (question "Necesitaras desplazar la impresora en viajes, o trasladarla a diferentes habitaciones?")(atribute movilidad)(type bool) ))
+
+)
+
+
 
 (defrule regla-hog4
 	(uso hogar)
@@ -131,6 +143,7 @@
 
 (defrule regla-A3
 	(uso ~hogar)
+	(terminal)
 	
 => 
 
@@ -140,9 +153,20 @@
 	(assert (a3 ?ans))
 )
 
+(defrule regla-A3b
+        (uso ~hogar)
+	(browser)
+=>
+
+        (assert (questions(question "¿Se necesitará imprimir en  A3?")(atribute a3)(type bool) ))
+
+)
+
+
 (defrule regla-duplex
 	(uso ~hogar)
 	(uso ~profesional)
+	(terminal)
 	
 => 
 
@@ -152,9 +176,22 @@
 	(assert (duplex ?ans))
 )
 
+(defrule regla-duplexb
+        (uso ~hogar)
+        (uso ~profesional)
+	(browser)
+
+=>
+
+        (assert (questions(question "Le interesa poder imprimir a doble fax de forma automatica?, encarecerá un poco el equipo.")(atribute duplex)(type bool) ) )
+)
+
+
+
 
 (defrule regla-pro1
 	(uso profesional)
+	(terminal)
 => 
 
 	(assert (duplex no))
@@ -165,15 +202,39 @@
 )
 
 
+
+
 (defrule regla-pro2
 	(uso profesional)
 	(fax no)
+	(terminal)
 => 
 	(printout t crlf " ecanear o fotocopiar con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (escanear ?ans))
 )
+
+(defrule regla-pro1b
+        (uso profesional)
+	(browser)
+=>
+
+        (assert (duplex no))
+        (assert (questions(question "Te interesara ademas de imprimir poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
+
+)
+
+
+(defrule regla-pro2b
+        (uso profesional)
+        (fax no)
+	(browser)
+=>
+        (assert (questions(question " ecanear o fotocopiar con el mismo equipo?")(atribute escanear) (type bool)) )
+)
+
+
 
 
 (defrule regla-pro3
@@ -227,6 +288,7 @@
 
 (defrule regla-py1
 	(uso pyme)
+	(terminal)
 => 
 	(printout t crlf "Te interesaria ademas de imprimir poder escanear documentos con el mismo equipo?")
 	(printout t crlf "Respuesta>")
@@ -237,6 +299,7 @@
 (defrule regla-py2
 	(uso pyme)
 	(escanear si)
+	(terminal)
 => 
 	(assert (type multifuncion))
 	(printout t crlf "Te interesaria ademas de imprimir poder enviar fax con el mismo equipo?")
@@ -248,6 +311,37 @@
 	(bind ?ans (read)) 	
 	(assert (envio_digital ?ans))
 )
+
+(defrule regla-py1b
+        (uso pyme)
+	(browser)
+=>
+        (assert (questions(question "Te interesaria ademas de imprimir poder escanear documentos con el mismo equipo?")(atribute escanear)(type bool) ))
+
+)
+
+(defrule regla-py2b
+        (uso pyme)
+        (escanear si)
+	(browser)
+	
+=>
+        (assert (type multifuncion))
+        (assert (questions(question "Te interesaria ademas de imprimir poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
+        (assert (regla envio))
+)
+
+(defrule regla-envio
+        ?r<-(regla envio)
+	(browser)
+=>
+         (assert (questions( question "Sera necesario hacer envíos digitales?")(atribute envio_digital)(type bool) ))
+        (retract ?r)
+)
+
+
+
+
 
 (defrule regla-py3
 	(uso pyme)
@@ -325,6 +419,7 @@
 
 (defrule regla-py+1
 	(uso pyme+)
+	(terminal)
 => 
 	(printout t crlf "Te interesaria ademas de imprimir poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")
 	(printout t crlf "Respuesta>")
@@ -332,6 +427,16 @@
 	(assert (fax ?f))
 
 )
+
+(defrule regla-py+1b
+        (uso pyme+)
+	(browser)
+=>
+        (assert (questions(question "Te interesaria ademas de imprimir poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")(atribute fax)(type bool) ))
+
+)
+
+
 
 (defrule regla-py+2
 	(uso pyme+)
@@ -353,6 +458,7 @@
 
 (defrule regla-emp1
 	(uso empresarial)
+	(terminal)
 => 
 	(printout t crlf "Te interesaria ademas de imprimir poder enviar fax de documentos con el mismo equipo?")
 	(printout t crlf "Respuesta>")
@@ -363,6 +469,17 @@
 	(bind ?ans (read)) 	
 	(assert (envio_digital ?ans))
 )
+
+(defrule regla-py+2b
+        (uso pyme+)
+        (fax si)
+	(browser)
+
+=>
+        (assert (type multifuncion))
+        (assert (functions imprimir copiar escanear fax envio_digital))
+)
+
 
 (defrule regla-emp2
 	(uso empresarial)
@@ -398,29 +515,4 @@
 )
 
 
-(defrule recomendar
- (printer  
-	(model ?model)
-	(use ?uso)
-	(type ?type)
-	(tecnology ?tec)
-	(color ?color)
-	(duplex ?duplex)
-	(a3 ?a3))
- (uso ?uso)
- (type ?type)
- (tecnology ?tec)
- (color ?color)
- (duplex ?duplex) 
- (a3 ?a3)
-=> 
-	(assert  (model ?model))
-	
-)
 
-
-(defrule print-recom
- (model ?model)
-=> 
- (printout t crlf ?model "\n")
-)

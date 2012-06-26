@@ -16,15 +16,15 @@ include('header.php');
 
 <div class="maincontent">
 <table>
-<tr><th></th>
+<tr>
 <th align="center">Agregar / Modificar</th>  <!--<th align="center">Modify</th>-->
-
+<th align="center">Mantenimiento</th>
 </tr>
 
 
-<tr><td width="220px"></td><td  width="300px">
+<tr><td  width="380px">
 
-<fieldset>
+<fieldset style="width: 260px; height: 450px; margin-left: 55px; " >
   <p>      
 	<ul>
 		<li><a href="alter.php?table=quality">Calidad</a></li>
@@ -63,32 +63,26 @@ include('header.php');
 
 
 
-</fieldset></td><!--
-<td width="300px">
-<fieldset>
+</fieldset></td>
+
+<td width="380px">
+<fieldset style="width: 260px; height: 450px; margin-left: 40px; " >
 
   <p>
         <ul>
-                <li><a href="cartridge.php?add=0">Cartridge</a></li>
-                <li><a href="conectivity.php?add=0">Conectivity</a></li>
-                <li><a href="functions.php?add=0">Functions</a></li>
-                <li><a href="papers.php?add=0">Papers</a></li>
-                <li><a href="quality.php?add=0">Quality</a></li>
-                <li><a href="sheet.php?add=0">Sheet</a></li>
-                <li><a href="so.php?add=0">SO</a></li>
-                <li><a href="tag.php?add=0">Tag</a></li>
-                <li><a href="tecnology.php?add=0">Tecnology</a></li>
-                <li><a href="type.php?add=0">Type</a></li>
-                <li><a href="velocity.php?add=0">Velocity</a></li>
-                <li><a href="vendors.php?add=0">Vendors</a></li>
-                
+
+	
+                <li><a href="categories.php?table=tag">Actualizar categorías de uso</a></li>
+                <li><a href="categories.php?table=tagp">Actualizar catagorías de precio</a></li>
+                <li><a href="printers_list.php">Generar impresoras</a></li>
+                <li><a href="rules_use.php">Actualizar reglas de uso</a></li>
 
 
         </ul>
   </p>
 
 </fieldset>
-  </td>-->
+  </td>
 
 </tr></table>
 

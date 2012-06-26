@@ -1,3 +1,11 @@
+(deftemplate questions
+   (slot question (default ?NONE))
+   (slot atribute (default ?NONE))
+   (slot type (default ?NONE))
+)
+
+
+
 
 ;**************
 ;defrules     *
@@ -73,7 +81,9 @@
 	(uso hogar)
 	(escanear si)
 => 
-	(assert(functions imprimir copiar escanear))
+	(assert(functions imprimir))
+	(assert(functions copiar))
+	(assert(functions escanear))
 	(assert (tecnology inyeccion))  ;; porque en HP no hay multifunciones laser para menos de 500 pag
 	(assert (type multifuncion))
 )

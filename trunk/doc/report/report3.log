@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  25 JUN 2012 19:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  26 JUN 2012 14:21
 entering extended mode
  %&-line parsing enabled.
 **report3.tex
@@ -473,106 +473,48 @@ Overfull \hbox (2.18422pt too wide) in paragraph at lines 1248--1250
 []\T1/aer/m/n/9 Las re-glas en CLIPS es-tán for-madas por: Una parte izquierda
  []
 
-<arbol.png, id=45, 326.018pt x 133.298pt>
+[10] <arbol.png, id=49, 326.018pt x 133.298pt>
 File: arbol.png Graphic file (type png)
- <use arbol.png> [10 <./arbol.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (17.38353pt too wide) in paragraph at lines 1336--1336
+ <use arbol.png> [11 <./BD2.png (PNG copy)>]
+Overfull \hbox (17.38353pt too wide) in paragraph at lines 1382--1382
 []\secfnt DESARROLLO DE LAS IN-TER-FACES WEB 
  []
 
 
-Overfull \hbox (13.3993pt too wide) in paragraph at lines 1339--1342
+Overfull \hbox (13.3993pt too wide) in paragraph at lines 1385--1388
 \T1/aer/m/n/9 La in-ster-faz ad-min-is-tra-tiva per-mite agre-gar nuevo equipam
 iento
  []
 
 
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1345--1347
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1391--1393
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
 
-[11 <./BD2.png (PNG copy)>]
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1385 “
-        económica”, “moderado” varien sus límites de acuerdo a la realidad e...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1385 “económica”
-                  , “moderado” varien sus límites de acuerdo a la realidad e...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1385 “económica”, “
-                     moderado” varien sus límites de acuerdo a la realidad e...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1385 “económica”, “moderado”
-                               varien sus límites de acuerdo a la realidad e...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-<./AdminSite.png, id=55, 791.95876pt x 552.0625pt>
+<./AdminSite.png, id=54, 791.95876pt x 552.0625pt>
 File: ./AdminSite.png Graphic file (type png)
  <use ./AdminSite.png>
-Overfull \hbox (6.32512pt too wide) in paragraph at lines 1450--1451
+Overfull \hbox (13.71133pt too wide) in paragraph at lines 1490--1490
+[]\secfnt RESUMEN DE LAS HER-RAMIEN-TAS UTI-
+ []
+
+
+Overfull \hbox (6.32512pt too wide) in paragraph at lines 1494--1495
 \T1/aer/m/n/9 La her-ramien-tas nece-sarias para el de-sar-rollo y doc-u-mentac
 ión
  []
 
-[12]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1597--1598
+[12 <./arbol.png>] [13 <./AdminSite.png (PNG copy)>]
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 1633--1634
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
-[13 <./AdminSite.png (PNG copy)>]
 
 Package natbib Warning: There were multiply defined citations.
 
-[14
-
-] (./report3.aux
+[14] (./report3.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
@@ -585,11 +527,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3143 strings out of 494999
  38287 string characters out of 1180817
- 94784 words of memory out of 3000000
+ 95784 words of memory out of 3000000
  6264 multiletter control sequences out of 15000+50000
  51092 words of font info for 70 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 39i,11n,28p,254b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,28p,254b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
@@ -601,7 +543,7 @@ s/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/
 helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.p
 fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
 -texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report3.pdf (14 pages, 449007 bytes).
+Output written on report3.pdf (14 pages, 450419 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

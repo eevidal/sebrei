@@ -7,4 +7,6 @@ $DB_HOST= 'localhost';
 $DB_PORT= '5432';
 
 $SERVER= 'localhost/sebrei';
+
+$PATH_RULES='../ClipsFiles';
 ?>

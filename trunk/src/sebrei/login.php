@@ -1,5 +1,5 @@
 <?
-ini_set("display_errors", 1);  
+//ini_set("display_errors", 1);  //for debug
 session_start();
 
 include('functions.php');
@@ -31,9 +31,8 @@ include('functions.php');
 
  if (isset($_POST['submit'])) { // if form has been submitted
 
- // makes sure they filled it in
  	if(!$_POST['username'] | !$_POST['pass']) {
- 		echo('You did not fill in a required field.');
+ 		echo('Faltó completar algún campo.');
  	}
 
    // checks it against the database
@@ -47,7 +46,7 @@ include('functions.php');
 
    if ($check2 == 0) {
 
- 		echo('That user does not exist.');
+ 		echo('El usuario o la contraseña es incorrecta, Intente nuevamente.');
 				}
 
    while($info = pg_fetch_array( $check )) 	
@@ -55,20 +54,19 @@ include('functions.php');
 
     $_POST['pass'] = md5(stripslashes($_POST['pass']));
     $info['user_pw'] = stripslashes($info['user_pw']);
- //$_POST['pass'] = ($_POST['pass']);
 
 
  	//gives error if the password is wrong
 
  	if ($_POST['pass'] != $info['user_pw']) {
-			echo('Incorrect password, please try again.');//.$_POST['pass']);
+			echo('El usuario o la contraseña es incorrecta, Intente nuevamente.');
 
  	}
 	 else 
  	{ 
  	 // if login is ok then we add a cookie 
 	 $_POST['username'] = stripslashes($_POST['username']); 
-	 $hour = time() + 360000; 
+	 $hour = time() + 36000; 
 	 setcookie(ID_my_site, $_POST['username'], $hour); 
 	 setcookie(Key_my_site, $_POST['pass'], $hour);	 
 	 //then redirect them to the members area 
@@ -125,32 +123,6 @@ include('header.php');
  } 
 
 
-?>
 
-<!--
-<div id="content-inner">
-        
-        <div id="content-right">
- 
-    
-
-<div class="maincontent">
-
-</div>
-
-
-
-
-
-                    </div>
-
-
-
-                </div>
-
-
--->
-
-<?
 include('footer.php');
 ?>

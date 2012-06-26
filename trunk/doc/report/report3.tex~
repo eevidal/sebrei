@@ -1101,7 +1101,7 @@ otras en cambio serán inferidas a partir de los datos provistos por el cliente.
 %(uso hogareña)
 %(escanear si)
 %> 
-%\sunsubsection{Volumen mensual} 
+\subsubsection{Volumen mensual} 
 Para el volumen mensual la clasificación de HP ,
 define 5 conjuntos crips para el volumen mensual de impresión,
 se usarán dichos conjuntos para los valores del literal \textit{uso}, los valores
@@ -1173,13 +1173,13 @@ De momento se usará la versión simplificada de pregunntarle directamente al clie
 \subsection{Base de datos}
 
 Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
-utilizamos un base de datos relacional para mantener las características de los equipos de impesión. 
+utilizamos un base de datos relacional para mantener las características de los equipos de impresión. 
 La figura 4 muestra el diagrama de entidad relación de la base de datos. 
 
 \begin{center}
 \begin{figure*}[!ht]
 \centering
- \includegraphics[scale=0.4]{BD2.png}
+ \includegraphics[scale=0.5]{BD2.png}
 \caption{Modelo EER de la base de datos}
 \label{db}
 \end{figure*}
@@ -1265,10 +1265,54 @@ Para eliminar un hecho de la memoria de trabajo se usa el comando (retract f).
 (operadores booleanes)
 (if)
 
-\subsection{Reglas} 
+\subsection{Base de Conocimiento}
 
-Para ayudar a visualizar el conjunto de reglas que componen el sistema ayuda a 
-disponerlas en una estrura de árbol.
+La base de conocimiento del sistema está constituída de hechos y reglas. 
+Una vez iniciada la ejecución del sistema los hechos en la memoria de trabajo
+estarán constituídos por el conjunto de datos persistentes incorporados a la memoria
+a través de un deffacts y los hechos que el sistema irá aseverando como resultado de 
+la aplicación de reglas en base a la información de brindada por el usuadrio.
+
+\subsubsection{Hechos} 
+
+Los hechos persistentes contienten la información acerca de los equipos de impresión. 
+La definición del deftemplate tendrá un slot por cada característica de los equipos de impresión
+que pueda ser necesitado para seleccionarlos. Hay un conjunto de características que son indispensables
+el resto podrán estar presentes o no. Ya se verá que desde la interfaz administrativa se puede controlar
+cúales de un conjunto de características se desean incorporar en la base de conocimiento. 
+
+
+\begin{verbatim}
+(deftemplate printer
+   (slot model  (default ?NONE))
+   (slot tecnology (default ?NONE))
+   (slot type (default ?NONE))
+   (multislot conectivity (default any))
+   (multislot functions (default ?NONE))
+   (multislot papers (default any))
+   (multislot sheet (default any)) 
+   (multislot quality (default any))  
+   (multislot velocity (default any))
+   (slot color (default ?NONE))
+   (slot duplex (default any))
+   (slot use (default ?NONE))
+   (slot maxp (default any))
+   (slot minp (default any))
+   (slot a3 (default any))
+   (slot tag (default ?NONE))
+              .
+              .
+ ) 
+\end{verbatim} 
+
+
+
+
+
+\subsubsection{Reglas} 
+
+Las reglas deben tratar de capturar el conocimiento acerca de cuando es conveniente
+un tipo de equipo u otro.
 
 Una de las características principales a determinar es el volúmen de páginas
 mensuales, con lo cúal se seleccionará una de las categorías predefinidas para dicho
@@ -1277,6 +1321,8 @@ En la implementación se han usado las 5 categorías ya descriptas para el volumen
 mensuales, pero ya se verá que el sistema admite cambiar dichos límites
 e incluso se pueden crear nuevas categorías desde la interfaz web administrativa. 
 
+Ayuda a visualizar el conjunto de reglas que componen el sistema el hecho de  
+disponerlas en una estrura de árbol.
 El árbol correspondiente a la regla que determina la categoría uso que se necesita se encuentra en la 
 figura 5.
 
@@ -1350,22 +1396,20 @@ Permite:
  
     \begin{itemize}
         \item Impresoras
-        \item conectividades
-        \item marcas
-        \item velocidades
-        \item tecnologías
-        \item tipo de equipos
-        \item sistemas operativos
-        \item tamaños de papel
-        \item tipos de papel
-        \item calidades de impresión 
-        \item funciones del equipo
-	\item lenguajes de impresión
-        \item consumibles
+        \item Conectividades
+        \item Marcas
+        \item Velocidades de impresión
+        \item Tecnologías de impresión
+        \item Tipo de equipos
+        \item Sistemas operativos soportados
+        \item Tamaños de papel
+        \item Tipos de papel
+        \item Calidades de impresión 
+        \item Funciones del equipo
+	\item Lenguajes de impresión
+        \item Consumibles
         \item Cambiar límites a los tags* (de cant de impresiones y de precios)
-        \item usuarios
-	
-	
+        \item Usuarios
      
        \end{itemize}
 
@@ -1380,9 +1424,9 @@ Permite:
 
 \end{itemize}
 
-Los tags de precios se actualizarán mediante una función fuzzy cuyos parámetros 
-pueden ser alterados por el administrador del sistema. Eso permitirá que los valores de la variable precio
-“económica”, “moderado” varien sus límites de acuerdo a la realidad económica del medio en donde se use el sistema. 
+%Los tags de precios se actualizarán mediante una función fuzzy cuyos parámetros 
+%pueden ser alterados por el administrador del sistema. Eso permitirá que los valores de la variable precio
+%“económica”, “moderado” varien sus límites de acuerdo a la realidad económica del medio en donde se use el sistema. 
 
 
 \begin{figure*}[!ht]
@@ -1443,7 +1487,7 @@ pueden ser alterados por el administrador del sistema. Eso permitirá que los val
 \hilight{Pruebas de las distintas componentes}
 
 
-\section{Herramientas utilizadas}
+\section{Resumen de las herramientas utilizadas}
 
 \subsection{Selección de las herramientas}
 
@@ -1457,7 +1501,7 @@ permite una rápida prototipación, cuenta con una muy buena documentación, tiene
  la capacidad de poder interoperar con otros lenguajes y la disponibilidad de varias extensiones
 y derivados.
 
-Clipseg: Editor para clips
+%Clipseg: Editor para clips
 
 
 
@@ -1466,14 +1510,8 @@ Clipseg: Editor para clips
 La base de datos está implementada en postgres. La idea inicial fue usar mysql, pero postgres
 cuenta con la posibilidad de definir typos de datos propios y definar usar arreglos en la
 definición de las filas de una tabla lo cúal resulta útil en este sistema. 
-Workbench: 
-
-
-phppgadmin
-pgsql
-
-
-
+Para interactuar directamente con la base de datos use psql y phppgadmin.  
+El modelo de entidad de relación fueron construidos con Workbench para mysql.
 
 
 \subsubsection*{Interfaces web} 
@@ -1481,17 +1519,15 @@ Para portar el sistema de manera online a través de un servidor web he
 usado la librería PyClips, la otra opción era PHLIPS ambas implementan un subconjunto de
 los comandos propios de CLIPS, pero PyClips implementa un número mayor de comandos y además
 cuenta con una muy buena documentación y un foro de discusión activo\footnote{http://sourceforge.net/projects/pyclips/forums}.
-
-PHP
-
 La interfaz administrativa del sistema se desarrollo en PHP.
-
+El diseño funcional de la interfa administrativa se hizo usando 
 Webratio: WebML
 
 Eclipse 
 
 
 \subsubsection*{Otras herramientas} 
+
 
 clientes svn: tortoise (cliente svn para Windows), svn para linux 
 
@@ -1576,7 +1612,7 @@ Manual de pyclips
 \textbf{IC}- \textit{¿Qué tipo de información se le pide a un cliente cuando se acerca con intenciones de comprar un equipo
 de impresión?.}
 
-\textbf{Experto}- \textit{Hay varias consideraciones cuando un interesado con consulta por impresoras, las relevantes son:}
+\textbf{Experto}- \textit{Hay varias consideraciones cuando un interesado consulta por impresoras, las relevantes son:}
 
 \textit{\begin{enumerate}
  \item Qué tipo de uso le va a dar a la impresora, también el trabajo o profesión del cliente es un dato orientativo.
@@ -1609,7 +1645,7 @@ en ese sentido necesitaríamos un poco más de detalle. ¿Qué tipos de profesiones 
 \textbf{Experto}- \textit{Por ejemplo, para una oficina lo más común es usar impresoras láser monocromo.
 Si es un estudio de arquitectura es probable que usen chorro de tinta ya sea formato pequeño o bien A3 (297 x 432 mm.) o bien plotter.
 Un diseñador gráfico o fotógrafo pude elegir una impresora HP Photosmart con 6 tintas de colores diferentes.
-Para el hogar una ultifunción ink jet línea barata.
+Para el hogar una multifunción inkjet línea barata.
 Si entrás a la página de HP vas a encontrar que las impresoras las categorizan para:
 \begin{itemize}
  \item mercado hogareño

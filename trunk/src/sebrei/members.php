@@ -3,11 +3,11 @@
 //ini_set("display_errors", 1);     // for debug 
 //session_start();
 
- // Connects to your Database 
+// Connects to Database 
 
 include('functions.php');
  
- //checks cookies to make sure they are logged in 
+//checks cookies to make sure they are logged in 
 
  if(isset($_COOKIE['ID_my_site'])) 
 
@@ -27,13 +27,13 @@ include('functions.php');
 
  			} 
 
- //otherwise they are shown the admin area	 
+ //otherwise they are shown the menu area	 
  		
  		} 
 } 
 
  else 
- //if the cookie does not exist, they are taken to the login screen 
+ //if the cookie does not exist, then go to the login screen 
  { header("Location: login.php"); } 
 
  ?> 

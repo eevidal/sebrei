@@ -22,7 +22,7 @@ function getvars($str){
 } 
 
 function create_array($str){
-  $psql = "SELECT ".$str."_name FROM ".$str;
+  $psql = "SELECT ".$str."_name FROM ".$str ." ORDER BY ".$str."_id";
 
   $consult = pg_query($psql);
   $result = array();
@@ -31,6 +31,32 @@ function create_array($str){
 #  print_r($result);	
   return $result;
 }
+
+function make_arr_vel($var,$val)
+{
+        $str="";
+	$var = trim($var, "{}");
+        $var=explode(',',$var );
+        $cant=count($var);
+        $i=1;
+
+        foreach ($var as $value)
+	
+        {
+                if ($i<$cant) { $str.= $val[$value-1].' ' ; $i+=1;}
+                else $str.=  $val[$value-1]  ;
+        }
+        return $str;
+}
+
+
+function abool($var)
+{
+	if($var=='t') return "si";
+	else return "no";
+
+}
+	
 
 
 
@@ -98,11 +124,12 @@ list($pdl, $pdlf, $pdlr) = getvars('pdl');
 (type multifuncion) (conectivity usb) (functions imprimir copiar escanear) 
 (color si) (duplex si) (use hogar)(tag economico))
   */
-$function = create_array('tecnology');
+$function = create_array('function');
 $direct = create_array('dicrect');
 $paper = create_array('paper');
 $language = create_array('language');
 $tag = create_array('tag');
+$tagp= create_array('tagp');
 #$tecnology=array();
 $tecnology = create_array('tecnology');
 $type = create_array('type');
@@ -112,29 +139,36 @@ $protocol = create_array('protocol');
 $security_protocol = create_array('security_protocol');
 $sheet = create_array('sheet');
 $so = create_array('so');
+$conectivity=create_array('conectivity');
+
 
 
 $aprinters= array();
 $i=0;
-$sql = pg_query("SELECT * FROM printer ");
+$sql = pg_query("SELECT * FROM printer ORDER by printer_id");
 while ($row=pg_fetch_array($sql))
 {
   $id = $row['printer_id'];
-	
-
-  $aprinters[] = "(printer (model ".$row['printer_model']." )(tecnology "
-		     .$tecnology[$row['tecnology_id']].")(type "
-		      .$type[$row['type_id']].") (conectivity "
-		      .$conectivity[$row['tecnology_id']].") (functions "
-		      .$functions.")(color ".$color.")(duplex "
-		      .$duplex.")(use ".$use.")(tag".$tag."))";
-#   $i=$i++;		
+//	print_r($conectivity);
+  $con = make_arr_vel($row['printer_conectivities'],$conectivity);
+  $fun = make_arr_vel($row['printer_functions'],$function);
+  $use = make_arr_vel($row['printer_tag'],$tag);				
+  $tgp = make_arr_vel($row['printer_tagp'],$tagp);
+  
+  $aprinters[] = "(printer (model \"".$row['printer_model']."\" )(tecnology "
+		     .$tecnology[$row['tecnology_id']-1].")(type "
+		      .$type[$row['type_id']-1].") (conectivity "
+		      .$con.") (functions "
+		      .$fun.")(color ".abool($row['printer_color']).")(duplex "
+		      .abool($row['printer_duplex']).")(use ".$use.")(tag ".$tgp."))";
+//			(a3 ".abool($row['printer_color']) ."))";
+		
 		  
 
 } 
 
 print_r($aprinters);
-print_r($tecnology);
+
 
 // Dedfaults
 //-----------
@@ -173,11 +207,19 @@ $deft="(deftemplate printer
    (multislot functions (default any))
    (slot color (default any))
    (slot duplex (default any))
-   (slot use (default any))
+   (multislot use (default any))
+   (multislot tag (default any))
    (slot a3 (default any))"
    .$varsf
    ."
 )";	
+
+$defm= "(deftemplate models \"Modelos\"
+  (slot model)
+)";
+
+$def="(deffacts the-printer-list
+";
 
 $rule ="(defrule recomendar
  (printer
@@ -186,8 +228,9 @@ $rule ="(defrule recomendar
         (type ?type)
         (tecnology ?tec)
         (color ?color)
-        (duplex ?duplex)
-        (a3 ?a3)	
+        (duplex ?duplex)"
+//        (a3 ?a3)	
+	."
 	(functions $?functions)"
 	.$vars
 ."
@@ -224,10 +267,12 @@ else
 {
 	fwrite($fp,  $sep."\n;; ARCHIVO GENERADO AUTOMATICAMENTE \n".$sep."\n" . PHP_EOL);
 	fwrite($fp,  $deft . PHP_EOL);
+	fwrite($fp,  $defm . PHP_EOL);
 	fwrite($fp,  "\n\n".$sep."\n;; lista de hechos\n".$sep."\n" . PHP_EOL);
-
+	fwrite($fp,  $def . PHP_EOL);
 	for($i=0;$i<count($aprinters);$i++)
         fwrite($fp, $aprinters[$i] ."\n" . PHP_EOL); 
+	fwrite($fp,  ")" . PHP_EOL);
 
 	
 	fwrite($fp,  "\n\n".$sep."\n;; Reglas\n".$sep."\n" . PHP_EOL);	

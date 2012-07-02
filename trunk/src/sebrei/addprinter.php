@@ -179,7 +179,8 @@ else
 	if (!empty($lcd)) pg_query($update."_lcd=$lcd ".$where)or die($er .$lcd);
 	if (!empty($mem)) pg_query($update."_memory=$mem ".$where)or die($er .$mem);
 	if (!empty($gar)) pg_query($update."_warranty=$gar ".$where)or die($er .$gar);
-
+	if (!empty($link)) pg_query($update."_link=$link ".$where)or die($er .$link);
+        if (!empty($des)) pg_query($update."_description=$des ".$where)or die($er .$des);
 
 	//consulto por los cartuchos 
 	$sql_car = pg_query("SELECT * FROM cartridge WHERE vendor_id='$ven'");

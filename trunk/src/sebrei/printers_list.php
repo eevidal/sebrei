@@ -39,12 +39,13 @@ include ('header.php');
  <h2>Las caracteristicas por defecto son</h2>
 	<ul>
 		<li>Uso</li>
-		<li>Tipo (impresora, multifuncion)</li>
+		<li>Tipo (impresora, multifunción)</li>
 		<li>Tecnologia (laser, inkjet, etc)</li>
 		<li>Color (si/no)</li>
-		<li>Duplex automatico (si/no)</li>
+		<li>Duplex automótico (si/no)</li>
 		<li>A3 (si/no)</li>
 		<li>Conexitividad (usb, ethernet, etc)</li>
+		 <li>Funciones (copiar, escanear, imprimir, etc)</li>
 	</ul>
 
  <h2>Elegir caracteristicas adiccionales<br>
@@ -54,21 +55,21 @@ include ('header.php');
         <p>
 <input type="checkbox" name="direct" value="1">	Conectividad Directa <br>
 <input type="checkbox" name="paper" value="1">  Tipo de papel  <br>
-<input type="checkbox" name="sheet" value="1">  Tamanios de papel <br>
+<input type="checkbox" name="sheet" value="1">  Tamaños de papel <br>
 <input type="checkbox" name="so" value="1">	Sistemas Operativos <br>
-<input type="checkbox" name="qual" value="1">	Maxima calidad de Impresion en Blanco y Negro <br>
+<!--<input type="checkbox" name="qual" value="1">	Maxima calidad de Impresion en Blanco y Negro <br>
 <input type="checkbox" name="cqual" value="1">	Maxima calidad de Impresion a Color <br>
 <input type="checkbox" name="vel" value="1">	Maxima velocidad en blanco y negro <br>
-<input type="checkbox" name="cvel" value="1">	Maxima velocidad a Color <br>
+<input type="checkbox" name="cvel" value="1">	Maxima velocidad a Color <br>-->
 <input type="checkbox" name="mem" value="1">    Memoria <br>
-<input type="checkbox" name="war" value="1">	Periodo de garantia <br>
+<input type="checkbox" name="war" value="1">	Período de garantía <br>
 <input type="checkbox" name="lcd" value="1">	LCD <br>
-<input type="checkbox" name="pro" value="1">	Protocolos de comunicacion <br>
+<input type="checkbox" name="pro" value="1">	Protocolos de comunicación <br>
 <input type="checkbox" name="spro" value="1">	Protocolos de seguridad Wifi <br>
 <input type="checkbox" name="cap" value="1">	Capacidad Bandeja Standart <br>
 <input type="checkbox" name="ocap" value="1">	Capacidad Bandeja Salida <br>
-<input type="checkbox" name="tcap" value="1">	Capacidad total de bandejas <br>
-<input type="checkbox" name="pdl" value="1">	Lenguajes de descripcion de paginas <br>
+<input type="checkbox" name="tcap" value="1">	Capacidad total de bandejas  <br>
+<input type="checkbox" name="pdl" value="1">	Lenguajes de descripcion de páginas<br>
         </p>
 	<input type="submit" name="enviar" value="Enviar Seleccion" />
  </form>

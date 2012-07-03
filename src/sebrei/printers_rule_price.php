@@ -26,18 +26,15 @@ function make_arr($var)
 function make_rule($number,$price, $min,$max)
 {
 $template="(defrule regla-price".$number."
-	?r<-(regla 1)
-        (paginas ?p)
+        (precio ?p)
         (and (test (> ?p  ".$min.") )(test (<=  ?p  ".$max.")))
 	=>
-        (retract ?r)
         (assert (tag ".$price."))
 )
 ";
 return $template;
 }
 
-function make_name()
 
 
 function create_array($str){
@@ -45,25 +42,43 @@ function create_array($str){
 
   $consult = pg_query($psql);
   $result = array();
-  $result2	
+  	
   while ($res=pg_fetch_row($consult))
-        $result[] = $res[$str.'_name'];
-#  print_r($result);    
+  {
+        $result[] = $res[0];
+	$rang = make_arr($res[1]); 
+	$result[] =$rang[0];
+
+  }
+ 
   return $result;
 }
 
+function make_names($name,$number,$array)
+{
+  
+  $str = $name;
+  $cant=count($array);
+  $i=0;
+  while($i<$cant)
+  {
+	if($number > $array[$i+1]) $str .=' '.$array[$i];
+	$i+=2;
+  }
+  return $str;
 
+}
 include ('header.php');
 
 //function 
 $psql = pg_query("SELECT * FROM tagp ORDER BY tagp_id");
-
+$lista=create_array('tagp');
 
 // Write all in the file 
 
 $sep = ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;";
 
-$fp = fopen($PATH_RULES."/temporary_rules_use","w+");
+$fp = fopen($PATH_RULES."/temporary_rules_price","w+");
 if($fp == false)
 {
 	fclose($fp);
@@ -77,7 +92,7 @@ else
 	{
 		
 		$m = make_arr($row['tagp_range']);
-		$names = make_names($row['tagp_name'],$m[0]);		
+		$names = make_names($row['tagp_name'],$m[0],$lista);		
 		$res = make_rule($i,$names,$m[0],$m[1]);
 		fwrite($fp,$res."\n" . PHP_EOL);
 		$i++;
@@ -91,7 +106,7 @@ else
 	$old = $PATH_RULES.'/temporary_rules_price';
 	$new = $PATH_RULES.'/regla_precio.clp';
 	copy($old, $new) or die("Unable to copy $old to $new.");
-	echo("<p>Archivo generado regla_uso.clp</p>");	
+	echo("<p>Archivo generado regla_precio.clp</p>");	
 	
 }
 

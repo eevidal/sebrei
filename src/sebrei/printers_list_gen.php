@@ -442,10 +442,10 @@ else
         fclose($fp);
 }
 
-
-echo("<p>Archivo generados printers.clp y temporary_rules_aditionals</p>");
-echo("<p>Verificar temporary_rules_aditionals y mover aditionals.clp lo relevante </p>");	
-	
+echo("<fieldset>");
+echo("<h3>Archivo generados</h3> <p> <strong>printers.clp</strong> <br> <strong>temporary_rules_aditionals</strong></p>");
+	echo("<h3>Verificar</h3> <p>temporary_rules_aditionals y copiar a aditionals.clp lo relevante. </p>");	
+echo("</fieldset>");	
 
 
 

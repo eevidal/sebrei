@@ -1,6 +1,8 @@
 (load "printers.clp")
 (load "main.clp")
 (load "regla_uso.clp")
+(load "regla_precio.clp")
+(load "more_questions.clp")
 (load "adicionales.clp")
 (reset)
 (assert (terminal))

@@ -46,6 +46,8 @@ include ('header.php');
 		<li>A3 (si/no)</li>
 		<li>Conexitividad (usb, ethernet, etc)</li>
 		 <li>Funciones (copiar, escanear, imprimir, etc)</li>
+		<li>Categorías de precios</li>
+
 	</ul>
 
  <h2>Elegir caracteristicas adiccionales<br>
@@ -114,43 +116,6 @@ include ('header.php');
 
 */
 
-
-// 
-/*
-(deftemplate printer
-   (slot model  (default ?NONE))
-   (slot tecnology (default ?NONE))
-   (slot type (default ?NONE))
-   (multislot conectivity (default any))
-   (multislot functions (default any))
-   (slot color (default any))
-   (slot duplex (default any))
-   (slot use (default any))
-   (slot maxp (default any))
-   (slot minp (default any))
-   (slot a3 (default any))
-   (slot tag (default ?NONE))
- )
-
-(deftemplate models "Modelos"
-  (slot model)
-)
-
-*/
-
-/*
-$control = fopen($PATH_RULES."/temporary_rules","w+");
-if($control == false){
-  die("No se ha podido crear el archivo.");
-}
-else fclose($control)
-
-*/
-// header("Location: alter.php?table=$t") ;
-
-
-	
-//include('header.php');
 include('footer.php');
 
 ?>

@@ -35,6 +35,7 @@ include('header.php');
 if($t=='tag'||$t=='cartridge' || $t=='quality' ||$t=='tagp'){ 
 	if($t=='tag'||$t=='tagp')
 	{
+		echo("<h2>Atención:  Lea atentamente el manual antes de efectuar cambios en está categoría.</h2>");
 		echo("<p>Nombre del tag"); 
 		echo("<input type=\"text\" name=\"ad\" class=\"input\"  size=\"20\" style=\"margin-left: 60px;\" /></p>");
 		echo("<p>Valor mínimo: ");

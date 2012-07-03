@@ -29,6 +29,8 @@ include('header.php');
 	<ul>
 		<li><a href="alter.php?table=quality">Calidad</a></li>
 		<li><a href="alter.php?table=cartridge">Cartuchos</a></li>
+		 <li><a href="alter.php?table=tag">Categorías de uso</a></li>
+
 		<li><a href="alter.php?table=conectivity">Conexiones</a></li>
                 <li><a href="alter.php?table=direct">Conexiones directas</a></li>
 		<li><a href="printer.php">Equipos</a></li>
@@ -43,8 +45,6 @@ include('header.php');
 
 		<li><a href="alter.php?table=so">SO</a></li>
 		
-
-		<li><a href="alter.php?table=tag">Tag</a></li>
 		 <li><a href="alter.php?table=tagp">Tag precio</a></li>
 		<li><a href="alter.php?table=sheet">Tamaños de papel</a></li>
 
@@ -72,10 +72,11 @@ include('header.php');
         <ul>
 
 	
-                <li><a href="categories.php?table=tag">Actualizar categorías de uso</a></li>
-                <li><a href="categories.php?table=tagp">Actualizar catagorías de precio</a></li>
+                <li><a href="printers_categories.php?t=tag">Actualizar categorías de uso</a></li>
+                <li><a href="printers_categories.php?t=tagp">Actualizar catagorías de precio</a></li>
                 <li><a href="printers_list.php">Generar impresoras</a></li>
-                <li><a href="rules_use.php">Actualizar reglas de uso</a></li>
+                <li><a href="printers_rule_use.php">Actualizar reglas de uso</a></li>
+		 <li><a href="printers_rule_price.php">Actualizar reglas de precio</a></li>
 
 
         </ul>

@@ -1,6 +1,7 @@
 (load "printers.clp")
-(load "SE_FC3.CLP")
+(load "main.clp")
 (load "regla_uso.clp")
+(load "adicionales.clp")
 (reset)
 (assert (terminal))
 (run)

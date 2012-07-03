@@ -1,10 +1,10 @@
 <?
 
 
-ini_set("display_errors", 1);  
-session_start();   
+//ini_set("display_errors", 1);  
+//session_start();   
 
-//include('header.php');
+
 include('members.php');
 
 
@@ -76,7 +76,9 @@ switch ($especial) {
                 <li><a href=\"printers_rule_use.php\" target=\"_blank\">Actualizar reglas de uso</a></li></ul> </p>";
         break;
     case 2:
-        $r= "<h2>Base de datos actualizada</h2>  ";
+        $r= "<h2>Base de datos actualizada</h2> <p>Resta</p><p><ul>
+                <li><a href=\"printers_list.php\" target=\"_blank\">Generar impresoras</a></li>
+                <li><a href=\"printers_rule_price.php\" target=\"_blank\">Actualizar reglas de precio</a></li></ul> </p> ";
         break;
 
 }
@@ -86,8 +88,9 @@ switch ($especial) {
 include('header.php');
 	
 	//ahora el formulario para agregar los cartuchos 
-
+	echo("<fieldset>");
 	echo($r);
+	echo("</fieldset>");
 	include('footer.php');
 //}	
 ?>

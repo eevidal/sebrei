@@ -27,10 +27,13 @@
 	(printout t crlf "¿Cúal es el tamaño del grupo de trabajo?" )
 	(printout t crlf "Respuesta>")
 	(bind ?grupo (read))
-	(bind ?vol (max ?pag ?grupo))
+	(printout t crlf "¿Cúanto es lo máximo que esta dispuesto a gastar?" )
+        (printout t crlf "Respuesta>")
+	(bind ?precio (read))
 	(assert (color ?color))
-	(assert (paginas ?vol))
+	(assert (paginas ?pag))
 	(assert (grupo ?grupo))
+	(assert (grupo ?precio))
 	(assert (regla 1))
 	(assert (adicionales))
 
@@ -44,6 +47,7 @@
         (assert (questions(question "Será necesario imprimir a color?")(atribute color)(type bool) ))
         (assert (questions(question "Cúal es el volumen mensual de páginas?")(atribute paginas) (type int)))
         (assert (questions(question "¿Cúal es el tamaño del grupo de trabajo?")(atribute grupo) (type int)))
+	(assert (questions(question "¿Cúanto es lo máximo que esta dispuesto a gastar?")(atribute precio) (type int)))
         (assert (regla 1))
 	(assert (adicionales))
 

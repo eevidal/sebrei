@@ -1,7 +1,7 @@
 <?
 
-ini_set("display_errors", 1);
-session_start();
+//ini_set("display_errors", 1);  //for debug
+//session_start();
 
 require_once('members.php');
 
@@ -31,7 +31,18 @@ if(empty($t))  header("Location: error.php?mes='Error en el nombre de la tabla'"
 
 $car = $_GET['car'];            // => Array de id de cartuchos
 $id = $_GET['id'];      // id de la tabla
+$m = $_GET['mens'];
+$add = $_GET['add'];
 
+switch ($m) {
+    case 1:
+        $res= "Equipo Agregado correctamente";
+        break;
+    case 2:
+        $res= "Equipo Modificado correctamente";
+        break;
+
+}
 
 
 //Intento agregar la lista de cartuchos
@@ -45,7 +56,7 @@ $delete = "DELETE $table " ;
 
 if (!empty($car))  pg_query($update."cartridges=ARRAY[$car]".$where )or die($er);
 //si no hay cartuchos elimino la columna
-else pg_query($delete.$where)or die("Error, no indico cartuchos");
+else if($add==1) pg_query($delete.$where)or die("Error, no indico cartuchos");
 
 
 
@@ -58,11 +69,12 @@ include('header.php');
  |	<a href="printer.php">Agregar otro Equipo</a>
 </p>
 
-<p>Equipo Agregado correctamente</p>
+
 
 
 <?
-include('footer.php')
+echo("<p>".$res."<p>");
+include('footer.php');
 
 ?>
 

@@ -73,6 +73,22 @@ function make_arr($var,$val)
         return $str;
 }
 
+function make_arr3($var)
+{
+
+	$result='';
+        foreach ($var as $value)
+
+        {
+                 $result.= $value.' ';
+
+        }
+//      print_r($result);
+        return $result;
+}
+
+
+
 function make_arr_vel($var)
 {
         $str="";
@@ -185,7 +201,7 @@ $conectivity=create_array('conectivity');
 
 $aprinters= array();
 $i=0;
-$sql = pg_query("SELECT * FROM printer ORDER by printer_id");
+$sql = pg_query("SELECT * FROM printer WHERE printer_valid='t' ORDER by printer_id");
 while ($row=pg_fetch_array($sql))
 {
   $id = $row['printer_id'];
@@ -392,9 +408,45 @@ else
 	$old = $PATH_RULES.'/temporary_rules';
 	$new = $PATH_RULES.'/printers.clp';
 	copy($old, $new) or die("Unable to copy $old to $new.");
-	echo("<p>Archivo generado printers.clp</p>");	
-	
 }
+
+//ahora genero reglas adicionales
+
+$asserts = "
+(defrule adicional
+ (adicionales)
+=>
+ (assert (direct any ".make_arr3($direct)."))
+ (assert (so any".make_arr3($so)."))
+ (assert (mem 0))
+ (assert (war 0))
+ (assert (lcd any))
+ (assert (pro any ".make_arr3($protocol)."))
+ (assert (spro any ".make_arr3($security_protocol)."))
+ (assert (cap 0))
+ (assert (ocap 0))
+ (assert (tcap 0))
+)";
+
+$fp = fopen($PATH_RULES."/temporary_rules_aditionals","w+");
+if($fp == false)
+{
+        fclose($fp);
+        die("No se ha podido crear el archivo.");
+}
+else
+{
+        fwrite($fp,  $sep."\n;; ARCHIVO GENERADO AUTOMATICAMENTE \n".$sep."\n" . PHP_EOL);
+	fwrite($fp,  $asserts . PHP_EOL);
+	
+        fclose($fp);
+}
+
+
+echo("<p>Archivo generados printers.clp y temporary_rules_aditionals</p>");
+echo("<p>Verificar temporary_rules_aditionals y mover aditionals.clp lo relevante </p>");	
+	
+
 
 
 

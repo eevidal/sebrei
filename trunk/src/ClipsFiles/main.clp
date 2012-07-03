@@ -32,6 +32,7 @@
 	(assert (paginas ?vol))
 	(assert (grupo ?grupo))
 	(assert (regla 1))
+	(assert (adicionales))
 
 )
 
@@ -44,6 +45,8 @@
         (assert (questions(question "Cúal es el volumen mensual de páginas?")(atribute paginas) (type int)))
         (assert (questions(question "¿Cúal es el tamaño del grupo de trabajo?")(atribute grupo) (type int)))
         (assert (regla 1))
+	(assert (adicionales))
+
 )
 
 
@@ -372,7 +375,7 @@
 
 (defrule regla-py5
 	(uso pyme)
-	(escaner no)
+	(escanear no)
 
 => 	
 	(assert (type impresora))
@@ -408,7 +411,7 @@
 
 (defrule regla-py9
 	(uso pyme)
-	(escaner si)
+	(escanear si)
 	(fax no)
 	(envio_digital no)
 
@@ -418,7 +421,7 @@
 
 
 (defrule regla-laser
-	(or (uso pyme+) (uso empresarial))
+	(or (uso pyme+) (uso corporativo))
 
 => 	
 	(assert (tecnology laser))
@@ -465,7 +468,7 @@
 )
 
 (defrule regla-emp1
-	(uso empresarial)
+	(uso corporativo)
 	(terminal)
 => 
 	(printout t crlf "Te interesaria ademas de imprimir poder enviar fax de documentos con el mismo equipo?")
@@ -490,7 +493,7 @@
 
 
 (defrule regla-emp2
-	(uso empresarial)
+	(uso corporativo)
 	(fax si)
 
 => 	
@@ -500,7 +503,7 @@
 )
 
 (defrule regla-emp3
-	(uso empresarial)
+	(uso corporativo)
 	(fax no)
 	(envio_digital si)
 
@@ -512,7 +515,7 @@
 
 
 (defrule regla-emp4
-	(uso empresarial)
+	(uso corporativo)
 	(fax no)
 	(envio_digital no)
 

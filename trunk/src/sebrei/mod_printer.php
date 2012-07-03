@@ -88,6 +88,10 @@ $p=$table;
         }
 
 */
+	if($row['printer_valid']=='t')
+                echo("<p><strong>Impresora Activa <input type=\"checkbox\" name=\"valid\" value=\"1\" checked  ></strong>") ;
+           else
+                echo("<p><strong>Impresora Activa <input type=\"checkbox\" name=\"valid\" value=\"1\" ></strong>") ;
 
 	$v='vendor';
         $ven=pg_query("SELECT * FROM $v ORDER BY ".$v."_id ");

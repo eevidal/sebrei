@@ -26,6 +26,8 @@ import sys, os, Cookie
 import cgi
 import cgitb; cgitb.enable()
 import random
+import urllib2, httplib
+
 
 def get_history_file():
 	r=random.random()*123456789
@@ -122,6 +124,22 @@ def calcula_modelo(f):
                 return 1,mod
         else:
                 return 0,""
+
+def calcula_id(f):
+        a=f.PPForm()
+        b=a.split('(')
+#       print b
+        if (b[1] == 'ids '):
+                ids = b[2].split('id')
+
+                ids = ids[1].split(')')
+
+                ids = ids[0]
+                return 1,ids
+        else:
+                return 0,""
+
+
 
 
 def calcula_type(f):   #calculo el tipo de una pregunta
@@ -228,16 +246,20 @@ def print_result(sfile):
 #	print clips.PrintFacts()
 	f = clips.FactList()
 	l= len (f)
-	models=[]	
+	ids=[]	
 	for i in range(l):
-                m=calcula_modelo(f[i-1])
+                m=calcula_id(f[i-1])
                 if (m[0]==1): 
-         		models.append(m[1])
-		
-	print models	
-
-       
+         		ids.append(m[1])
 	
+	httplib.HTTPConnection.debuglevel = 1	
+#	print ids	
+	request = urllib2.Request('http://localhost/experto/index.php')
+        opener = urllib2.build_opener()
+	fo = opener.open(request)
+	fo.url	
+	fo.headers.dict
+#	fo.status
 
 
 def main():

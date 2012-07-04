@@ -18,7 +18,9 @@
 (deftemplate models "Modelos"
   (slot model)
 )
-
+(deftemplate ids "Ids"
+  (slot id)
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; lista de hechos
@@ -125,7 +127,7 @@
 	(duplex ?duplex)
 =>
         (assert (models(model ?model)))
-	(assert (id ?id))
+	(assert (ids(id ?id)))
 
 )
 (defrule print-recom

@@ -332,6 +332,9 @@ $deft="(deftemplate printer
 
 $defm= "(deftemplate models \"Modelos\"
   (slot model)
+)
+(deftemplate ids \"Ids\"
+  (slot id)
 )";
 
 $def="(deffacts the-printer-list
@@ -367,7 +370,7 @@ $rule ="(defrule recomendar
 ."
 =>
         (assert (models(model ?model)))
-	(assert (id ?id))
+	(assert (ids(id ?id)))
 
 )";
 

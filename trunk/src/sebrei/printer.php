@@ -6,7 +6,7 @@ session_start();
 require_once('members.php');
 
 $p="printer";
-include('header.php');
+include('header2.php');
 
 ?>
 
@@ -31,18 +31,18 @@ include('header.php');
         while($vendor=pg_fetch_array($ven))
         	echo("<option value=\"".$vendor['vendor_id']."\">".$vendor['vendor_name']."</option>");
         echo("</select>");
-	echo(" <strong> Modelo </strong><input type=\"text\" name=\"mod\" class=\"input\"  size=\"20\" />
-	<strong> Precio (pesos)</strong><input type=\"text\" name=\"pre\" class=\"input\"  size=\"5\" />
+	echo(" <strong> Modelo <span class=\"require\">*</span> </strong><input type=\"text\" name=\"mod\" class=\"input\"  size=\"20\" />
+	<strong> Precio aproximado (pesos) <span class=\"require\">*</span> </strong><input type=\"text\" name=\"pre\" class=\"input\"  size=\"5\" />
 	</p>");
 	$t='type';
 	$ty=pg_query("SELECT * FROM $t ORDER BY ".$t."_name ");
-	echo("<p><strong> Tipo  </strong><select name=\"type\"><option selected=\"selected\">Seleccionar </option> ");
+	echo("<p><strong> Tipo <span class=\"require\">*</span> </strong><select name=\"type\"><option selected=\"selected\">Seleccionar </option> ");
         while($type=pg_fetch_array($ty))
         	echo("<option value=\"".$type['type_id']."\">".$type['type_name']."</option>");
         echo("</select>");
 	$t1='tecnology';
 	$te=pg_query("SELECT * FROM $t1 ORDER BY ".$t1."_name ");
-        echo("<strong> Tipo de técnologia de impresión </strong> <select name=\"tec\">
+        echo("<strong> Tipo de técnologia de impresión <span class=\"require\">*</span> </strong> <select name=\"tec\">
 		<option selected=\"selected\">Seleccionar </option> ");
         while($tec=pg_fetch_array($te))
         echo("<option value=\"".$tec['tecnology_id']."\">".$tec['tecnology_name']."</option>");
@@ -52,7 +52,7 @@ include('header.php');
 
 	$c='conectivity';
 	$co=pg_query("SELECT * FROM $c");
-	echo("<p><strong> Conectividad </strong></p><p>");
+	echo("<p><strong> Conectividad <span class=\"require\">*</span> </strong></p><p>");
         while($con=pg_fetch_array($co))
 		echo($con[$c.'_name']."   <input type=\"checkbox\" size=\"10\" name=\"con[]\" value=\"".$con[$c.'_id']."\"><br>");
         echo("</p></fieldset><fieldset>");
@@ -67,7 +67,7 @@ include('header.php');
 
 	$f='function';
         $fu=pg_query("SELECT * FROM $f");
-	echo("<p><strong> Funciones </strong></p><p>");
+	echo("<p><strong> Funciones <span class=\"require\">*</span> </strong></p><p>");
         while($fun=pg_fetch_array($fu))
                 echo($fun[$f.'_name']."   <input type=\"checkbox\" name=\"fun[]\" value=\"".$fun[$f.'_id']."\"><br>");
         echo("</p></fieldset><fieldset>");
@@ -114,11 +114,11 @@ include('header.php');
 
 	echo("</p></fieldset><fieldset>");
 
-	echo("<p>Ciclo mensual de trabajo");
+	echo("<p>Ciclo mensual de trabajo <span class=\"require\">*</span> ");
 		echo("<input type=\"text\" name=\"cic\" class=\"input\"  size=\"10\" style=\"margin-left: 40px;\" /></p>");
-	echo("<p>Volumen mínimo de páginas al mes recomendado");
+	echo("<p>Volumen mínimo de páginas al mes recomendado <span class=\"require\">*</span> ");
         echo("<input type=\"text\" name=\"min\" class=\"input\"  size=\"10\" style=\"margin-left: 40px;\" /></p>");
-        echo("<p>Volumen máximo de páginas al mes recomendado");
+        echo("<p>Volumen máximo de páginas al mes recomendado <span class=\"require\">*</span> ");
         echo("<input type=\"text\" name=\"max\" class=\"input\"  size=\"10\" style=\"margin-left: 40px;\" /></p></fieldset><fieldset>");
 
 	$l='language';
@@ -147,8 +147,8 @@ include('header.php');
 	
 
 	<p><strong>Otras características</strong></p>
-	<p>Duplex automático <input type="checkbox" name="duplex" value="1"><br> 
-	Impresión a color<input type="checkbox" name="color" value="1"> <br>
+	<p>Duplex automático <span class="require">*</span> <input type="checkbox" name="duplex" value="1"><br> 
+	Impresión a color <span class="require">*</span> <input type="checkbox" name="color" value="1"> <br>
 	LCD<input type="checkbox" name="lcd"  value="1">
 	</p> 
 

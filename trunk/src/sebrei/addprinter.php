@@ -89,8 +89,8 @@ else
 	$duplex = $_GET['duplex'];	//=> //bool 
 	$color = $_GET['color'];	// bool
 	$lcd = $_GET['lcd'];		//bool
-	$link = $_GET['link'];		//=> texto (link web)
-	$des = pg_escape_string($_GET['des']); //=> texto 
+	$link = pg_escape_string($_GET['link']);		//=> texto (link web)
+	$des = trim(pg_escape_string($_GET['des'])); //=> texto 
 	$send = $_GET['send'];
 	$mem = $_GET['mem'];		//memoria
 	$gar = $_GET['gar']; 		//garant'ia
@@ -128,10 +128,6 @@ else
 	$prot=make_arr($prot); $sprot=make_arr($sprot);
 	$fun=make_arr($fun);
 
-	//prepararo los valores booleanos
-//	if (!isset($color) || $color!=1) $color='false'; else $color='true';
-//	if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
-//	if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
 
 	//me aseguro que los valores obligatorios esten todos
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");

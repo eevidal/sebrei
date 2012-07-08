@@ -277,7 +277,7 @@ $p=$table;
 	  if($row['printer_lcd']=='t')
 		echo("LCD<input type=\"checkbox\" name=\"lcd\"  value=\"1\" checked >");
 	  else echo("LCD<input type=\"checkbox\" name=\"lcd\"  value=\"1\">");
-
+	
 	 
 
 	?> 
@@ -291,9 +291,11 @@ $p=$table;
 	</p>
 	</fieldset>
 	<fieldset> <strong> Link del folleto</strong><br>
-	<input type="text" name="link" class="input"  maxlength="300" size="70" value="<?echo($row['printer_link']);?>"    /></p>
+	<input type="text" name="link" class="input"  maxlength="300" size="70" value="<?echo($row['printer_link']);?>"/></p>
 	 <strong> Descripción o comentarios sobre el modelo</strong><br>
-	<textarea name="des" class="input"  rows="10" cols="90" value="<?echo($row['printer_description']);?>"   /></textarea>
+	<textarea name="des" class="input"  rows="10" cols="90" value=""> 
+	<?print $row['printer_description'];?>
+	 </textarea>
 	<input type="submit" name="send" class="button-primary" value="Siguiente" />
 	</fieldset>
 </form>

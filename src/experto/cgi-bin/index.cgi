@@ -27,7 +27,7 @@ import cgi
 import cgitb; cgitb.enable()
 import random
 import urllib2, httplib
-
+import psycopg2
 
 def get_history_file():
 	r=random.random()*123456789
@@ -36,7 +36,36 @@ def get_history_file():
 	sfile = open(path, 'w')	
 	return sfile,path
 
+def database_connect():
+	database = "sebrei"
+	user = "sebrei"
+	password = "sebrei159"
+	host = "localhost"
+	connectstring = host + ':' +database + ':'+ user + ':' + password
+	try:
+		conection =psycopg2.connect(connectstring)
+	except Exception, e:
+	         print str( e )
+	         exit
+	return (conection)
 
+def database_adddata(query):
+	db = database_connect()
+	cur = db.cursor()
+	cur.execute(query)
+	db.commit()
+	database_close(db,cur)
+
+def database_consult(query):
+        db = database_connect()
+        cur = db.cursor()
+        cur.execute(query)
+#	process_results(cur)
+	return (db,cur)
+
+def database_close(db,cur): 
+        cur.close()
+        db.close()
 
 def generate_form(quest,slot,facts,b,sfile):
         print "<html>\n<head>\n<title>Preguntas</title>"
@@ -251,16 +280,10 @@ def print_result(sfile):
                 m=calcula_id(f[i-1])
                 if (m[0]==1): 
          		ids.append(m[1])
-	
-	httplib.HTTPConnection.debuglevel = 1	
+		
+#	httplib.HTTPConnection.debuglevel = 1	
 #	print ids	
-	request = urllib2.Request('http://localhost/experto/index.php')
-        opener = urllib2.build_opener()
-	fo = opener.open(request)
-	fo.url	
-	fo.headers.dict
-#	fo.status
-
+		
 
 def main():
 	form = cgi.FieldStorage()

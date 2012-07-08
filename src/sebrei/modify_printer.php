@@ -121,7 +121,7 @@ else
 	$capt = $_GET['capt']; 		//capacidad total
 	$capo = $_GET['capo'];          //capacidad bandeja salida
 	$valid = $_GET['valid'];          //valid
-
+	$a3 = $_GET['a3'];
 
 	//preparo los tags de volumnen
 	$sql1 = pg_fetch_row(pg_query("SELECT tag_id FROM tag WHERE  tag_range[2] >= $min AND tag_range[1] < $min"));
@@ -152,7 +152,7 @@ else
 	if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
 	if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
 	if (!isset($valid) ||$valid!=1) $valid='false'; else $valid='true';
-
+	if (!isset($a3) ||$a3!=1) $a3='false'; else $a3='true';
 
 	//me aseguro que los valores obligatorios esten todos
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");
@@ -207,7 +207,7 @@ else
 		if (!empty($gar)) pg_query($update."_warranty='$gar' ".$where)or die($er .$gar);
 		if (!empty($link)) pg_query($update."_link='$link' ".$where)or die($er .$link);
 		if (!empty($des)) pg_query($update."_description='{$des}' ".$where)or die($er .$des);
-	
+		if (!empty($a3)) pg_query($update."_a3='$a3' ".$where)or die($er .$a3);
 		//consulto por los cartuchos 
 		$sql_car = pg_query("SELECT * FROM cartridge WHERE vendor_id='$ven'");
 		$sql= "SELECT * FROM $table WHERE ".$table."_id='$id'";

@@ -97,7 +97,8 @@ else
 	$cap = $_GET['cap']; 		//capacidad
 	$capt = $_GET['capt']; 		//capacidad total
 	$capo = $_GET['capo'];          //capacidad bandeja salida
-
+	$a3 = $_GET['a3'];
+	
 	//preparo los tags de volumnen
 	$sql1 = pg_fetch_row(pg_query("SELECT tag_id FROM tag WHERE  tag_range[2] >= $min AND tag_range[1] < $min"));
 	$sql2 = pg_fetch_row(pg_query("SELECT tag_id FROM tag WHERE  tag_range[2] >= $max AND tag_range[1] < $max"));
@@ -115,7 +116,7 @@ else
         if (!isset($color) || $color!=1) $color="false"; else $color="true";
         if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
         if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
-
+	if (!isset($a3) ||$a3!=1) $a3='false'; else $a3='true';
 
 
 	
@@ -144,10 +145,10 @@ else
 		    printer_functions, printer_papers, printer_sheet,
 		    printer_color, printer_duplex, printer_mmdc, printer_vol, printer_tag,
 		    printer_valid, printer_quality_color,printer_tagp, printer_price, 
-		    printer_capacity_standart, printer_capacity_total, printer_capacity_output )  
+		    printer_capacity_standart, printer_capacity_total, printer_capacity_output, printer_a3 )  
 		VALUES ('$mod', '$ven', '$tec', '$type', ".$con.",  ".$fun.", ".$pap.",
 		 ".$she.",  '$color', '$duplex', '$cic',  ARRAY[$min,$max],  ARRAY[$tag1,$tag2],
-		 true,".$qua.",ARRAY[$tag1p,$tag2p], '$pre', '$cap','$capt','$capo')";
+		 true,".$qua.",ARRAY[$tag1p,$tag2p], '$pre', '$cap','$capt','$capo', '$a3')";
 
 	pg_query($sql) or die ("Error al cargar los datos"); 
 
@@ -169,14 +170,15 @@ else
 	if (!empty($vel1)) pg_query($update."_velocity_color=ARRAY[$vel1]".$where )or die($er.$vel1);
 	if (!empty($sos)) pg_query($update."_so=ARRAY[$sos] ".$where)or die($er .$sos);
 	if (!empty($prot)) pg_query($update."_protocols=ARRAY[$prot] ".$where)or die($er .$prot);
-	if (!empty($sprot)) pg_query($update."_protocols=ARRAY[$sprot] ".$where)or die($er .$sprot);
+	if (!empty($sprot)) pg_query($update."_security_protocols=ARRAY[$sprot] ".$where)or die($er .$sprot);
 	if (!empty($quan)) pg_query($update."_quality=ARRAY[$quan] ".$where)or die($er .$quan);
+	if (!empty($qua)) pg_query($update."_quality_color=ARRAY[$qua] ".$where)or die($er .$quan);
 	if (!empty($lan)) pg_query($update."_languages=ARRAY[$lan] ".$where)or die($er .$lan);
-	if (!empty($lcd)) pg_query($update."_lcd=$lcd ".$where)or die($er .$lcd);
-	if (!empty($mem)) pg_query($update."_memory=$mem ".$where)or die($er .$mem);
-	if (!empty($gar)) pg_query($update."_warranty=$gar ".$where)or die($er .$gar);
-	if (!empty($link)) pg_query($update."_link=$link ".$where)or die($er .$link);
-        if (!empty($des)) pg_query($update."_description=$des ".$where)or die($er .$des);
+	if (!empty($lcd)) pg_query($update."_lcd='$lcd' ".$where)or die($er .$lcd);
+	if (!empty($mem)) pg_query($update."_memory='$mem' ".$where)or die($er .$mem);
+	if (!empty($gar)) pg_query($update."_warranty='$gar' ".$where)or die($er .$gar);
+	if (!empty($link)) pg_query($update."_link='$link' ".$where)or die($er .$link);
+        if (!empty($des)) pg_query($update."_description='$des' ".$where)or die($er .$des);
 
 	//consulto por los cartuchos 
 	$sql_car = pg_query("SELECT * FROM cartridge WHERE vendor_id='$ven'");

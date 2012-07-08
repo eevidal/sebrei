@@ -278,6 +278,10 @@ $p=$table;
 		echo("LCD<input type=\"checkbox\" name=\"lcd\"  value=\"1\" checked >");
 	  else echo("LCD<input type=\"checkbox\" name=\"lcd\"  value=\"1\">");
 	
+	     if($row['printer_a3']=='t')
+                echo("Impresión enA3<input type=\"checkbox\" name=\"a3\"  value=\"1\" checked >");
+          else echo("Impresión en A3<input type=\"checkbox\" name=\"a3\"  value=\"1\">");
+	
 	 
 
 	?> 

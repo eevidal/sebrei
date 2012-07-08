@@ -147,8 +147,11 @@ include('header2.php');
 	
 
 	<p><strong>Otras características</strong></p>
-	<p>Duplex automático <span class="require">*</span> <input type="checkbox" name="duplex" value="1"><br> 
-	Impresión a color <span class="require">*</span> <input type="checkbox" name="color" value="1"> <br>
+	<p>Duplex automático <input type="checkbox" name="duplex" value="1"><br> 
+	Impresión a color  <input type="checkbox" name="color" value="1"> <br>
+	
+	Impresión en A3  <input type="checkbox" name="a3" value="1"> <br>
+	
 	LCD<input type="checkbox" name="lcd"  value="1">
 	</p> 
 

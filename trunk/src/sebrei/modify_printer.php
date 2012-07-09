@@ -1,8 +1,8 @@
 <?
 
 
-//ini_set("display_errors", 1);  //for debug
-//session_start();   
+ini_set("display_errors", 1);  //for debug
+session_start();   
 
 //include('header.php');
 include('members.php');
@@ -128,6 +128,11 @@ else
 	$sql2 = pg_fetch_row(pg_query("SELECT tag_id FROM tag WHERE  tag_range[2] >= $max AND tag_range[1] < $max"));
 	$tag1=$sql1[0];
 	$tag2=$sql2[0];
+	$tag11 = '';
+        for ($i=$tag1 ; $i<$tag2; $i++)
+                $tag11 .=  $i.',';
+        $tag11 .=$tag2;
+
 	
 	//preparo los tag de precios
 
@@ -136,6 +141,13 @@ else
         $tag1p=$sql1p[0];
         $tag2p=$sql2p[0];
 
+
+	 //prepararo los valores booleanos
+        if (!isset($color) || $color!=1) $color='false'; else $color='true';
+        if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
+        if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
+        if (!isset($valid) ||$valid!=1) $valid='false'; else $valid='true';
+        if (!isset($a3) ||$a3!=1) $a3='false'; else $a3='true';
 
 
 	//contruyo los arrays que necesito
@@ -147,18 +159,12 @@ else
 	$prot=make_arr($prot); $sprot=make_arr($sprot);
 	$fun=make_arr($fun);
 
-	//prepararo los valores booleanos
-	if (!isset($color) || $color!=1) $color='false'; else $color='true';
-	if (!isset($duplex) || $duplex!=1) $duplex='false'; else $duplex='true';
-	if (!isset($lcd) ||$lcd!=1) $lcd='false'; else $lcd='true';
-	if (!isset($valid) ||$valid!=1) $valid='false'; else $valid='true';
-	if (!isset($a3) ||$a3!=1) $a3='false'; else $a3='true';
 
 	//me aseguro que los valores obligatorios esten todos
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");
 	if (!empty($pap)) $pap="ARRAY[$pap]" ; else die("Error, debe haber al menos una tipo de papel");
 	if (!empty($she)) $she="ARRAY[$she]"; else die("Error, debe haber al menos un tamaño de papel");
-	if($color=="true") { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
+	if($color=='true') { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
 		else $qua="ARRAY[0]";
 	if (!empty($fun)) $fun="ARRAY[$fun]" ; else die("Error, debe haber al menos una funcion");
 
@@ -186,7 +192,7 @@ else
 		if (!empty($duplex)) pg_query($update."_duplex=$duplex ".$where)or die($er.$duplex);
 		if (!empty($cic)) pg_query($update."_mmdc='$cic' ".$where)or die($er.$cic);
 		if (!empty($min)&&!empty($max)) pg_query($update."_vol=ARRAY[$min,$max] ".$where)or die($er."min-max");
-		if (!empty($tag1)&&!empty($tag2)) pg_query($update."_tag=ARRAY[$tag1,$tag2] ".$where)or die($er."tag");
+		if (!empty($tag1)&&!empty($tag2)) pg_query($update."_tag=ARRAY[$tag11] ".$where)or die($er."tag");
 		if (!empty($valid))  pg_query($update."_valid=$valid ".$where)or die($er.$valid);
 		if (!empty($qua)) pg_query($update."_quality_color=$qua ".$where)or die($er.$qua);
 		if (!empty($tag1p)&&!empty($tag2p)) pg_query($update."_tagp=ARRAY[$tag1p,$tag2p] ".$where)or die($er."tagp");
@@ -196,7 +202,7 @@ else
 		if (!empty($capo)) pg_query($update."_capacity_output='$capo' ".$where)or die($er.$capo);
 		if (!empty($dir)) pg_query($update."_direct_con=ARRAY[$dir] ".$where)or die($er.$dir);
 		if (!empty($vel)) pg_query($update."_velocity=ARRAY[$vel] ".$where)or die($er .$vel);
-		if (!empty($vel1)) pg_query($update."_velocity_color=ARRAY[$vel1]".$where )or die($er.$vel1);
+		if (!empty($vel1)) pg_query($update."_velocity_color=ARRAY[$vel1] ".$where )or die($er.$vel1);
 		if (!empty($sos)) pg_query($update."_so=ARRAY[$sos] ".$where)or die($er .$sos);
 		if (!empty($prot)) pg_query($update."_protocols=ARRAY[$prot] ".$where)or die($er .$prot);
 		if (!empty($sprot)) pg_query($update."_protocols=ARRAY[$sprot] ".$where)or die($er .$sprot);

@@ -198,7 +198,7 @@ $p=$table;
         $qu=pg_query("SELECT * FROM $q");
         echo("<p><strong> Calidades en impresión a color</strong> </p>");
         while($qua=pg_fetch_array($qu))
-		if (in_array($qua[$q.'_id'], make_arr($row['printer_quality'])))
+		if (in_array($qua[$q.'_id'], make_arr($row['printer_quality_color'])))
 			echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"qua[]\" value=\"".$qua[$q.'_id']."\" checked >");
 		else
         	        echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"qua[]\" value=\"".$qua[$q.'_id']."\">");
@@ -207,7 +207,7 @@ $p=$table;
         $qu=pg_query("SELECT * FROM $q");
         echo("<p><br></p><p><strong> Calidades en impresión negro</strong> </p>");
         while($qua=pg_fetch_array($qu))
-		if (in_array($qua[$q.'_id'], make_arr($row['printer_quality_color'])))
+		if (in_array($qua[$q.'_id'], make_arr($row['printer_quality'])))
 			echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"quan[]\" value=\"".$qua[$q.'_id']."\" checked>");
 		else
 	   	        echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"quan[]\" value=\"".$qua[$q.'_id']."\">");

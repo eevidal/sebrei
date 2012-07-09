@@ -104,6 +104,10 @@ else
 	$sql2 = pg_fetch_row(pg_query("SELECT tag_id FROM tag WHERE  tag_range[2] >= $max AND tag_range[1] < $max"));
 	$tag1=$sql1[0];
 	$tag2=$sql2[0];
+	$tag11 = '';
+	for ($i=$tag1 ; $i<$tag2; $i++)
+		$tag11 .=  $i.',';
+	$tag11 .=$tag2;
 	
 	//preparo los tag de precios
 
@@ -147,7 +151,7 @@ else
 		    printer_valid, printer_quality_color,printer_tagp, printer_price, 
 		    printer_capacity_standart, printer_capacity_total, printer_capacity_output, printer_a3 )  
 		VALUES ('$mod', '$ven', '$tec', '$type', ".$con.",  ".$fun.", ".$pap.",
-		 ".$she.",  '$color', '$duplex', '$cic',  ARRAY[$min,$max],  ARRAY[$tag1,$tag2],
+		 ".$she.",  '$color', '$duplex', '$cic',  ARRAY[$min,$max],  ARRAY[$tag11],
 		 true,".$qua.",ARRAY[$tag1p,$tag2p], '$pre', '$cap','$capt','$capo', '$a3')";
 
 	pg_query($sql) or die ("Error al cargar los datos"); 

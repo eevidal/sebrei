@@ -89,7 +89,8 @@
 	(escanear si)
 => 
 	(assert(functions imprimir copiar escanear ))
-	(assert (tecnology inyeccion))  ;; porque en HP no hay multifunciones laser para menos de 500 pag
+	(assert (tecnology inyeccion)) 
+	(assert (tecnology laser))	
 	(assert (type multifuncion))
 )
 
@@ -125,6 +126,7 @@
 	(movilidad no)
 => 
 	(assert (tecnology inyeccion))
+	(assert (tecnology laser))
 	(assert (type impresora))
 )
 

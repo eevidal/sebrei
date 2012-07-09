@@ -28,6 +28,8 @@ import cgitb; cgitb.enable()
 import random
 import urllib2, httplib
 import psycopg2
+import string
+
 
 def get_history_file():
 	r=random.random()*123456789
@@ -37,16 +39,11 @@ def get_history_file():
 	return sfile,path
 
 def database_connect():
-	database = "sebrei"
-	user = "sebrei"
-	password = "sebrei159"
-	host = "localhost"
-	connectstring = host + ':' +database + ':'+ user + ':' + password
-	try:
-		conection =psycopg2.connect(connectstring)
-	except Exception, e:
-	         print str( e )
-	         exit
+	conection =psycopg2.connect(database = "sebrei",user = "sebrei",password = "sebrei159",host = "localhost")
+
+#	except Exception, e:
+#	         print str( e )
+#	         exit
 	return (conection)
 
 def database_adddata(query):
@@ -280,7 +277,49 @@ def print_result(sfile):
                 m=calcula_id(f[i-1])
                 if (m[0]==1): 
          		ids.append(m[1])
+	
+	rows=[]
+	
+	while (len (ids)):
+#		widths.append([])
+		query = "SELECT printer_model, printer_description, printer_link,vendor_id  FROM printer where printer_id=" + ids.pop()
+		res = database_consult(query)
+		rows.append(res[1].fetchall())
+		database_close(res[0],res[1])
+
+
+	print "<html>\n<head>\n<title>Preguntas</title>"
+        print "<link rel=StyleSheet href=\"style.css\"> "
+        print "</head><body><div id=\"page\">"
+        print "<div id=\"header\" ><img src=\"../images/printers.png\"   height=50/></div>"
+	if (len(rows)>0):
+	        print "<h5><img src=\"../images/happy.png\"  width=50 height=50/>Mi recomendacion es:</h5>"
+   		
+		for row in rows:
+			print "<fieldset>"
+			query = "SELECT vendor_name FROM vendor WHERE vendor_id="+ str(row[0][3])
+	                res = database_consult(query)
+        	        marcas=(res[1].fetchall())
+               		database_close(res[0],res[1])
+        		print "<p> "+ marcas[0][0] + " "+ row[0][0] + "</p>"
+			if  row[0][1] is None:
+				print " "
+			else:
+				print "<p> ", row[0][1] , "</p>"
+			if  row[0][2] is None:
+				print " "
+			else: 
+				print "<a href=\"",row[0][2],"\">link al folleto</a>"
+			
+			print "</fieldset><br><br>"
+	else:
+		 print "<h5><img src=\"../images/happy.png\"  width=50 height=50/>Lo siento, no puedo ofrecerte nada acorde a tus espectativas.</h5>" 
 		
+        print "<div id=\"footer\">"
+	print "<p>Desarrollado por Erica Vidal.</p></div></div></boby></html>"
+
+
+	
 #	httplib.HTTPConnection.debuglevel = 1	
 #	print ids	
 		

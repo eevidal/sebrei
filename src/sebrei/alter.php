@@ -1,7 +1,7 @@
 <?
 
-ini_set("display_errors", 1);  
-session_start();
+//ini_set("display_errors", 1);  //for debug
+//session_start();
 
 require_once('members.php');
 
@@ -20,6 +20,12 @@ $res = pg_query($sql);
 include('header.php');
 
 ?>
+<p>     <a href="index.php">Menu Principal</a>
+ |      <a href="manual.php">Manual</a>
+
+ |      <a href="logout.php">Logout</a>
+</p>
+
 
 
 <?

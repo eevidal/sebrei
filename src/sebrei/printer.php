@@ -31,7 +31,7 @@ include('header2.php');
         while($vendor=pg_fetch_array($ven))
         	echo("<option value=\"".$vendor['vendor_id']."\">".$vendor['vendor_name']."</option>");
         echo("</select>");
-	echo(" <strong> Modelo <span class=\"require\">*</span> </strong><input type=\"text\" name=\"mod\" class=\"input\"  size=\"20\" />
+	echo(" <strong> Modelo <span class=\"require\">*</span> </strong><input type=\"text\" name=\"mod\" class=\"input\"  size=\"20\" /><br>
 	<strong> Precio aproximado (pesos) <span class=\"require\">*</span> </strong><input type=\"text\" name=\"pre\" class=\"input\"  size=\"5\" />
 	</p>");
 	$t='type';
@@ -95,21 +95,21 @@ include('header2.php');
 
 	$q='quality';
         $qu=pg_query("SELECT * FROM $q");
-        echo("<p><strong> Calidades en impresión a color</strong> </p><p>");
+        echo("<p><strong> Calidades en impresión a color (dpi)</strong> </p><p>");
         while($qua=pg_fetch_array($qu))
                 echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"qua[]\" value=\"".$qua[$q.'_id']."\"><br>");
 
 	$q='quality';
         $qu=pg_query("SELECT * FROM $q");
-        echo("<p><br></p><p><strong> Calidades en impresión negro</strong> </p><p>");
+        echo("<p><br></p><p><strong> Calidades en impresión negro (dpi)</strong> </p><p>");
         while($qua=pg_fetch_array($qu))
                 echo($qua[$q.'_name']."   <input type=\"checkbox\" name=\"quan[]\" value=\"".$qua[$q.'_id']."\"><br>");
 
-        echo("<p><br></p><p><strong> Velocidades en negro</strong>(ingresarlas separadas por coma) 
+        echo("<p><br></p><p><strong> Velocidades (ppp) en negro </strong>(ingresarlas separadas por coma) 
         <input type=\"text\" name=\"vel\" class=\"input\"  maxlength=\"300\" size=\"70\" style=\"margin-left: 20px;\" /></p>");
 
 	
-	echo("<p><strong> Velocidades en color</strong>(ingresarlas separadas por coma) 
+	echo("<p><strong> Velocidades (ppp) en color </strong>(ingresarlas separadas por coma) 
         <input type=\"text\" name=\"vel1\" class=\"input\"  maxlength=\"300\" size=\"70\" style=\"margin-left: 20px;\" /></p>");	
 
 	echo("</p></fieldset><fieldset>");

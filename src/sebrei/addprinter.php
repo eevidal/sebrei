@@ -1,7 +1,7 @@
 <?
 
 
-ini_set("display_errors", 1);  
+ini_set("display_errors", 1);  //for debug
 session_start();   
 
 //include('header.php');
@@ -194,6 +194,7 @@ include('header.php');
         echo(" <h2>Agregar los cartuchos correspondientes</h2>");
         echo("<form action=\"addprinter2.php\" method=\"GET\"> <fieldset>");
         echo("<input type=\"hidden\" name=\"table\" value=\"printer\">");
+	 echo("<input type=\"hidden\" name=\"mens\" value=\"1\">");
 	echo("<input type=\"hidden\" name=\"id\" value=\"$id\">");
 	while ($car = pg_fetch_array($sql_car))
                 echo($car['cartridge_name']."   <input type=\"checkbox\" name=\"car[]\" value=\"".$car['cartridge_id']."\"><br>");

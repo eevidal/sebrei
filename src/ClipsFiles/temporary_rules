@@ -111,6 +111,14 @@
 
 (printer (id 57)(model "HL-2130" )(tecnology laser)(type impresora) (conectivity usb) (functions imprimir)(color no)(duplex no)(use hogar profesional pyme)(tag economica economica)(a3 no))
 
+(printer (id 58)(model "HL-2240" )(tecnology laser)(type impresora) (conectivity usb) (functions imprimir)(color no)(duplex no)(use hogar profesional pyme)(tag economica economica)(a3 no))
+
+(printer (id 59)(model "HL-2270DW" )(tecnology laser)(type impresora) (conectivity ethernet usb wifi) (functions imprimir)(color no)(duplex si)(use hogar profesional pyme)(tag moderado moderado)(a3 no))
+
+(printer (id 60)(model "HL-5340D" )(tecnology laser)(type impresora) (conectivity usb ) (functions imprimir)(color no)(duplex no)(use hogar profesional pyme pyme+ corporativo)(tag moderado moderado)(a3 no))
+
+(printer (id 61)(model "HL-5370DW" )(tecnology laser)(type impresora) (conectivity ethernet usb wifi ) (functions imprimir)(color no)(duplex no)(use hogar profesional pyme)(tag alto alto)(a3 no))
+
 )
 
 
@@ -127,7 +135,9 @@
         (tecnology ?tec)
         (color ?color)
         (duplex ?duplex)
-        (a3 ?a3)	
+        (a3 ?a3)
+	(conectivity $?con1)
+	(tag $?tag1)
 	(functions $?functions)
 )
 	(uso $?uso2)
@@ -135,6 +145,10 @@
         (test (subsetp $?uso2 $?uso))
         (test (subsetp $?functions $?functions2))
         (test (subsetp $?functions2 $?functions))
+	(conectivity $?con2)
+        (tag ?tag2)
+	(test (member$ ?tag2 $?tag1))
+	(test (subsetp $?con2 $?con1))
 	(type ?type)
 	(tecnology ?tec)
 	(color ?color)

@@ -340,6 +340,7 @@ def main():
 		clips.Clear()
 		clips.Load("../../ClipsFiles/main.clp")
 		clips.Load("../../ClipsFiles/regla_uso.clp")
+		clips.Load("../../ClipsFiles/regla_precio.clp")
 		clips.Load("../../ClipsFiles/adicionales.clp")
 
 		clips.Reset()
@@ -348,6 +349,7 @@ def main():
 		sfile.write("(clear)\n")
 		sfile.write("(load \"../../ClipsFiles/main.clp\")\n")
 		sfile.write("(load \"../../ClipsFiles/regla_uso.clp\")\n")
+		sfile.write("(load \"../../ClipsFiles/regla_precio.clp\")\n")
 		sfile.write("(load \"../../ClipsFiles/adicionales.clp\")\n")
 		sfile.write("(reset)\n")
 		sfile.write("(assert (browser))\n")

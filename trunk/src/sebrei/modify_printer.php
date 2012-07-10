@@ -1,8 +1,8 @@
 <?
 
 
-ini_set("display_errors", 1);  //for debug
-session_start();   
+//ini_set("display_errors", 1);  //for debug
+//session_start();   
 
 //include('header.php');
 include('members.php');

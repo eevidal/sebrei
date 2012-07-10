@@ -33,7 +33,7 @@
 	(assert (color ?color))
 	(assert (paginas ?pag))
 	(assert (grupo ?grupo))
-	(assert (grupo ?precio))
+	(assert (precio ?precio))
 	(assert (regla 1))
 	(assert (adicionales))
 
@@ -54,7 +54,30 @@
 )
 
 
+(defrule regla-conect1
+	(grupo ?g)
+	(test (<=  ?g  2))
+=>
+	(assert (conectivity usb))	
 
+)
+
+(defrule regla-conect2
+        (grupo ?g)
+        (and (test (<=  ?g  4)) (test (>  ?g  2))  )
+=>
+        (assert (conectivity usb wifi))
+
+	
+)
+
+(defrule regla-conect3
+        (grupo ?g)
+         (test (>  ?g  4))  
+=>
+        (assert (conectivity ethernet))
+
+)
 
 
 
@@ -200,7 +223,7 @@
 
 =>
 
-        (assert (questions(question "Le interesa poder imprimir a doble fax de forma automatica?, encarecerá un poco el equipo.")(atribute duplex)(type bool) ) )
+        (assert (questions(question "¿Le interesa poder imprimir a doble fax de forma automatica?, encarecerá un poco el equipo.")(atribute duplex)(type bool) ) )
 )
 
 
@@ -212,7 +235,7 @@
 => 
 
 	(assert (duplex no))
-	(printout t crlf "Te interesar�a adem�s de imprimir poder env�ar fax con el mismo equipo?")
+	(printout t crlf "¿Te interesar además de imprimir poder enviar fax con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (fax ?ans))
@@ -226,7 +249,7 @@
 	(fax no)
 	(terminal)
 => 
-	(printout t crlf " ecanear o fotocopiar con el mismo equipo?")
+	(printout t crlf "¿Te interesa ecanear o fotocopiar con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (escanear ?ans))
@@ -238,7 +261,7 @@
 =>
 
         (assert (duplex no))
-        (assert (questions(question "Te interesara ademas de imprimir poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
+        (assert (questions(question "¿Te interesa ademas de imprimir poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
 
 )
 
@@ -248,7 +271,7 @@
         (fax no)
 	(browser)
 =>
-        (assert (questions(question " ecanear o fotocopiar con el mismo equipo?")(atribute escanear) (type bool)) )
+        (assert (questions(question "¿Te interesa ecanear o fotocopiar con el mismo equipo?")(atribute escanear) (type bool)) )
 )
 
 
@@ -307,7 +330,7 @@
 	(uso pyme)
 	(terminal)
 => 
-	(printout t crlf "Te interesaria ademas de imprimir poder escanear documentos con el mismo equipo?")
+	(printout t crlf "¿Te interesa además de imprimir poder escanear documentos con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (escanear ?ans))
@@ -319,7 +342,7 @@
 	(terminal)
 => 
 	(assert (type multifuncion))
-	(printout t crlf "Te interesaria ademas de imprimir poder enviar fax con el mismo equipo?")
+	(printout t crlf "¿Te interesar además de imprimir poder enviar fax con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?f (read)) 	
 	(assert (fax ?f))
@@ -333,7 +356,7 @@
         (uso pyme)
 	(browser)
 =>
-        (assert (questions(question "Te interesaria ademas de imprimir poder escanear documentos con el mismo equipo?")(atribute escanear)(type bool) ))
+        (assert (questions(question "¿Te interesa además de imprimir poder escanear documentos con el mismo equipo?")(atribute escanear)(type bool) ))
 
 )
 
@@ -344,7 +367,7 @@
 	
 =>
         (assert (type multifuncion))
-        (assert (questions(question "Te interesaria ademas de imprimir poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
+        (assert (questions(question "¿Te interesa poder enviar fax con el mismo equipo?")(atribute fax)(type bool) ))
         (assert (regla envio))
 )
 
@@ -352,7 +375,7 @@
         ?r<-(regla envio)
 	(browser)
 =>
-         (assert (questions( question "Sera necesario hacer envíos digitales?")(atribute envio_digital)(type bool) ))
+         (assert (questions( question "¿Será necesario hacer envíos digitales?")(atribute envio_digital)(type bool) ))
         (retract ?r)
 )
 
@@ -438,7 +461,7 @@
 	(uso pyme+)
 	(terminal)
 => 
-	(printout t crlf "Te interesaria ademas de imprimir poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")
+	(printout t crlf "¿Te interesa poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?f (read)) 	
 	(assert (fax ?f))
@@ -449,7 +472,7 @@
         (uso pyme+)
 	(browser)
 =>
-        (assert (questions(question "Te interesaria ademas de imprimir poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")(atribute fax)(type bool) ))
+        (assert (questions(question "¿Te interesa poder escanear documentos, enviar fax o archivos digitales via mail con el mismo equipo?")(atribute fax)(type bool) ))
 
 )
 
@@ -477,7 +500,7 @@
 	(uso corporativo)
 	(terminal)
 => 
-	(printout t crlf "Te interesaria ademas de imprimir poder enviar fax de documentos con el mismo equipo?")
+	(printout t crlf "¿Te interesa poder enviar fax de documentos con el mismo equipo?")
 	(printout t crlf "Respuesta>")
 	(bind ?f (read)) 	
 	(assert (fax ?f))

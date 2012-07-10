@@ -164,7 +164,7 @@ else
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");
 	if (!empty($pap)) $pap="ARRAY[$pap]" ; else die("Error, debe haber al menos una tipo de papel");
 	if (!empty($she)) $she="ARRAY[$she]"; else die("Error, debe haber al menos un tamaño de papel");
-	if($color=='true') { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
+	if($color=='true') { if (!empty($qua)) $qua="ARRAY[$qua]"; else $qua="ARRAY[0]";}
 		else $qua="ARRAY[0]";
 	if (!empty($fun)) $fun="ARRAY[$fun]" ; else die("Error, debe haber al menos una funcion");
 

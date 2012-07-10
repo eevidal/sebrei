@@ -1,8 +1,8 @@
 <?
 
 
-ini_set("display_errors", 1);  //for debug
-session_start();   
+//ini_set("display_errors", 1);  //for debug
+//session_start();   
 
 //include('header.php');
 include('members.php');
@@ -138,7 +138,7 @@ else
 	if (!empty($con)) $con="ARRAY[$con]" ; else die("Error, debe haber al menos una conexión");
 	if (!empty($pap)) $pap="ARRAY[$pap]" ; else die("Error, debe haber al menos una tipo de papel");
 	if (!empty($she)) $she="ARRAY[$she]"; else die("Error, debe haber al menos un tamaño de papel");
-	if($color=="true") { if (!empty($qua)) $qua="ARRAY[$qua]"; else die("Error, debe haber al menos una calidad en color");}
+	if($color=="true") { if (!empty($qua)) $qua="ARRAY[$qua]"; else $qua="ARRAY[0]";}
 		else $qua="ARRAY[0]";
 	if (!empty($fun)) $fun="ARRAY[$fun]" ; else die("Error, debe haber al menos una funcion");
 
@@ -176,7 +176,7 @@ else
 	if (!empty($prot)) pg_query($update."_protocols=ARRAY[$prot] ".$where)or die($er .$prot);
 	if (!empty($sprot)) pg_query($update."_security_protocols=ARRAY[$sprot] ".$where)or die($er .$sprot);
 	if (!empty($quan)) pg_query($update."_quality=ARRAY[$quan] ".$where)or die($er .$quan);
-	if (!empty($qua)) pg_query($update."_quality_color=ARRAY[$qua] ".$where)or die($er .$quan);
+	if (!empty($qua)) pg_query($update."_quality_color=ARRAY[$qua] ".$where)or die($er .$qua);
 	if (!empty($lan)) pg_query($update."_languages=ARRAY[$lan] ".$where)or die($er .$lan);
 	if (!empty($lcd)) pg_query($update."_lcd='$lcd' ".$where)or die($er .$lcd);
 	if (!empty($mem)) pg_query($update."_memory='$mem' ".$where)or die($er .$mem);

@@ -23,11 +23,12 @@ include('header2.php');
 
 	echo(" <h2>Agregar un nuevo equipos de impresión</h2>");
 	echo("<p>Atención: Luego deberá indicar los cartuchos que usa el equipo.</p>");
+	echo("<p>Atención: Los campos marcados con <span class=\"require\">*</span> son obligatorios.</p>");
 	echo("<form action=\"addprinter.php\" method=\"GET\"> <fieldset>");
 	echo("<input type=\"hidden\" name=\"table\" value=\"$p\">");
 	$v='vendor';
         $ven=pg_query("SELECT * FROM $v ORDER BY ".$v."_name ");
-        echo("<p><strong> Marca</strong>  <select name=\"ven\"><option selected=\"selected\">Seleccionar </option>");
+        echo("<p><strong> Marca <span class=\"require\">*</span> </strong>  <select name=\"ven\"><option selected=\"selected\">Seleccionar </option>");
         while($vendor=pg_fetch_array($ven))
         	echo("<option value=\"".$vendor['vendor_id']."\">".$vendor['vendor_name']."</option>");
         echo("</select>");

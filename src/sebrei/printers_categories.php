@@ -62,7 +62,13 @@ if($t=='tag' || $t=='tagp')
 		$sql2 = pg_fetch_row(pg_query("SELECT ".$t."_id FROM ".$t." WHERE  ".$t."_range[2] >= $max AND ".$t."_range[1] < $max"));
 		$tag1=$sql1[0];
 		$tag2=$sql2[0];
-		if (!empty($tag1)&&!empty($tag2)) pg_query($update."_tag=ARRAY[$tag1,$tag2] ".$where)or die($er.$t);
+	        $tag11 = '';
+	        for ($i=$tag1 ; $i<$tag2; $i++)
+        	        $tag11 .=  $i.',';
+	        $tag11 .=$tag2;
+
+
+		if (!empty($tag1)&&!empty($tag2)) pg_query($update."_".$t."=ARRAY[$tag11] ".$where)or die($er.$t);
 	}
 }
 else $especial = 0;	

@@ -7,7 +7,7 @@
  (adicionales)
 =>
  (assert (direct any memory_card usb bluetooth pictbridge ))
- (assert (so anylinux windows mac ))
+ (assert (so any linux windows mac ))
  (assert (mem 0))
  (assert (war 0))
  (assert (lcd any))

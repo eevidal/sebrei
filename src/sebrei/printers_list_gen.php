@@ -426,12 +426,13 @@ $asserts = "
  (adicionales)
 =>
  (assert (direct any ".make_arr3($direct)."))
- (assert (so any".make_arr3($so)."))
+ (assert (so any ".make_arr3($so)."))
  (assert (mem 0))
  (assert (war 0))
  (assert (lcd any))
  (assert (pro any ".make_arr3($protocol)."))
  (assert (spro any ".make_arr3($security_protocol)."))
+ (assert (	
  (assert (cap 0))
  (assert (ocap 0))
  (assert (tcap 0))

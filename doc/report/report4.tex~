@@ -1,0 +1,1788 @@
+%\documentclass[a4paper,10pt]{scrartcl}
+\documentclass{acm_proc_article-sp}
+%\usepackage{ucs}
+%\usepackage{luaotfload}
+%\usepackage[EU2]{fontenc}
+%\usepackage{lmodern}
+\usepackage[latin1]{inputenc}
+%\documentclass[a4paper,10pt]{book}
+%\textwidth 15cm
+%\textheight 20cm
+%\oddsidemargin -0.5cm
+
+%\topmargin -2.0cm
+
+%\usepackage{natbib}
+\usepackage[numbers]{natbib} 
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
+\begin{document}
+\title{ SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impesión
+\titlenote{Trabajo final de la asignatura Introducción a la Inteligencia Artificial
+de la carrera Licenciatura en Cs. de la Computación.} }
+\subtitle{}
+\numberofauthors{1}
+
+\author{
+\alignauthor Erica Vidal\\
+       \affaddr{Fac. de Cs. Exactas, Ingeniería y Agrimensura}\\
+       \affaddr{Departamento de Ciencias de la computación}\\
+       \affaddr{Pellegrini 250, Rosario, Santa Fe, Argentina}\\
+       \email{ericavidal@gmail.com}
+}
+
+
+%\abstractname{Introducción}
+
+%\hilight{síntesis y presentación del trabajo}
+
+\maketitle
+
+\section{Sistemas Expertos}
+\medskip 
+Los términos sistema experto, sistema basado en conocimiento o sistema experto basado en conocimiento
+a menudo se usan como sinónimos.
+
+Los sistemas expertos son una rama de la Inteligencia Artificial que hace un amplio 
+uso del conocimiento especializado para resolver problemas como un especialista humano.\cite{Riley}
+
+
+Se los puede definir como una clase de programas que son capaces de: aconsejar, categorizar, analizar, consultar, 
+diseñar, diagnosticar, explicar, explorar, interpretar, justificar, planificar, son en suma,
+ programas capaces de manejar problemas que normalmente requieren para su 
+resolución la intervención humana especializada.\cite{garcia}
+
+
+
+
+
+Un experto es una persona que tiene experiencia en cierta área, tiene habilidades que la mayoría  
+no y/o puede resolver problemas que la gran parte de las personas no pueden, o lo puede hacer de una 
+manera más eficiente. 
+
+El conocimiento en un sistema esperto puede representar experiencia o conocimiento que está disponible
+en libros, revistas y personas.
+
+Todo sistema experto está especializado en cierto campo o area del conocimento.
+El área de conocimiento que es capturado por un sistema experto se llama dominio de tarea o aplicación.
+
+
+%\hilight{ssssmm}
+
+
+
+%\section*{Breve historia de los Sistemas Expertos}
+
+%\hilight{completar}
+
+\section*{Estructura básica de un Sistema Experto}
+
+\smallskip 
+
+La estructura básica de un sistema experto consta de una base de conocimiento que es el conjunto de 
+hechos y heurísticas debidamente alamacenadas y un motor de inferencias que es el programa que gestiona y controla la base de
+de conocimiento. Una característica relevante es que la base de conocimiento y el motor de inferencias se encuentran separados.
+En la figura 1 se ilustra la estructura básica de un sistema experto.
+
+
+\begin{figure}[h]
+ \centering
+ \includegraphics{SE.png}
+ % SE.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+ \caption{Estructura básica de un sistema experto.}
+ \label{fig:se}
+\end{figure}
+
+ Otros componentes importantes son la memoria de trabajo,
+ la interfaz con el usuario y 
+el módulo de explicación. La memoria de trabajo también llamada base o lista de hechos (facts list)
+es el conjunto de datos 
+de un determinado problema y se almacena en forma separada de la base de conocimiento.
+ El módulo de explicación o justificación explica el razonamiento utilizado por el sistema para 
+llegar a una conclusión. 
+
+\section*{Representación del conocimiento}
+\smallskip 
+``En IA, la representación del conocimiento es una combinación de estructura de datos y procedimientos de
+interpretación, que si se usan de una forma adecuada en un programa se tendrá un comportamiento experto."\cite{feigenbaum}
+
+La representación del conocimento formaliza y ordena el conocimento.
+%La "experiencia" de un experto puede ser representada de diversas maneras. 
+%La representación del conocimiento es un esquema o dispositivo utilizado para capturar los elementos 
+%esenciales del dominio de un %problema.
+Existen varios sistemas para la representación del conocimiento.
+Entre los principales sistemas se tienen: 
+\begin{itemize}
+ \item Formalismos lógicos (lógica propocicional, lógica de primer orden, lógicas multivaluadas)
+ \item Sistemas de producción 
+ \item Formalismos estructurados (Redes semánticas, Frames, Objetos y Ontologías )
+\end{itemize}
+
+\subsection*{Reglas de Producción} 
+Una regla de producción es una sentencia que tiene la siguiente forma: 
+
+
+\begin{quote}
+
+SI $<$antecedente$>$ ENTONCES $<$consecuente$>$\end{quote} 
+
+
+
+donde el antecedente y el consecuente son frases en lenguaje coloquial. 
+El nombre de producción se debe al hecho de que el consecuente 
+describe el estado de cosas que resulta como consecuencia de que el antecedente sea satisfecho. 
+
+Un sistema basado en reglas se define como una colección consistente de reglas del tipos
+antecedente-concecuente, una base de hechos y un motor de inferencias. \cite{waterman}
+%La base de conocimiento de un sistema experto basado en reglas es un conjunto de reglas. 
+
+%{Reglas de producción} fundamentar elección 
+
+%{Métodos de de inferencia}
+\section*{Motor de inferencia}
+\smallskip 
+El motor de inferencia de un sistema experto usa los datos (hechos o evidencia) y el 
+conocimiento (el conjunto de reglas almacenado en 
+la base de conocimiento)  para obtener nuevas conclusiones o hechos mediante el uso de reglas de
+inferencia.
+
+Una regla de inferencia es un esquema para construir inferencias válidas. Estos esquemas establecen 
+relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una aserción llamada conclusión. 
+Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
+
+\subsection*{Agenda}
+La lista de reglas que se encuentran en la base de conocimento que son portencialmente ejecutables se almacenan
+en lo que se denomina agenda. Una regla es potencialmente ejecutable si su parte izquierda se satisface. 
+Al conjunto de reglas que pueden ser ejecutadas se las denomina grupo de conflicto de reglas y al preoceso de ordernarlas
+para ser ejecutadas se lo denomina resolución de conflictos. 
+
+
+
+
+\subsection*{El algoritmo de Rete}
+\smallskip 
+
+
+El motor de inferencias debe decidir que regla disparar según el contexto, el componente del motor 
+de inferencia que matchea (compara patrones) hechos con patrones en reglas
+para determinar que reglas tienen sus condiciones satisfechas deberá buscar entre posiblimente miles
+de reglas. Existen un conjunto de algoritmos que abordan esta problematica de manera muy eficiente, el más
+conocido es el algoritmo de Rete. 
+
+Los lenguajes basados en reglas tienen lo que se llama redundancia temporal, que significa que en 
+cada ciclo de ejecución sólo pocos hechos se agregan a la lista de hechos y los mismos afectan a pocas reglas; 
+por lo que el sistema cambia muy lentamente. El algortimo de Rete toma ventaja de esto, salvando el estado
+del matching ciclo a ciclo y reconstruyendo los cambios en el estado solo para los cambios que ocurrieron en la 
+fact list. 
+
+\subsection*{Encadenamientos}
+
+Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
+
+
+Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
+mientras que un encadenamiento 
+que va desde una hipótesis u objetivo hacia los hechos que soportan dicha hipótesis se llama encadenamiento hacia atraz.
+Backward Chain. 
+
+Debido a que los datos determinan que reglas se usarán el Fordward Chaining es llamado inferencia data-driven en contraste 
+con inferencia goal-driven referido al Backward Chaining.
+
+\hilight{Agregar ejemplos}
+
+ 
+Suele resulta útil visualizar los Forward y Backward Chaining en términos de la búsqueda de un path 
+a través de un espacio de búsqueda. 
+
+
+%!!!!!!
+%Fordward Chaining es llamado bottom-up reasoning porque razona desde el nivel de evidencia, hechos al
+%nivel de conclusiones que están basadas en los hechos.
+
+%El razonamiento desde el nivel más alto, 
+%la hipótesis, al nivel más bajo, los hechos que la soportan se llama top-down reasoning o 
+%backward chaining. 
+%!!!!!!!!!!
+
+Buenas aplicaciones para Fordward Chaining son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
+porque el Fordward Chaining produce una búsqueda a lo ancho. 
+
+En cambio el Backward Chaining produce una búsqueda en profundidad y un buen árbol para una búsqueda en profundidad
+es uno angosto y profundo.\cite{Riley}
+
+De acuerdo al tipo de encadenamiento que use un motor de inferencia se los denomina también Fordward o Backward Chaninig.
+
+El algoritmo de Fordward Chaining trabaja de la siguiente manera:
+
+procesa un hecho en la memoria de trabajo, verifica
+su base de reglas para ver si alguna de las condiciones es verdadera. Si alguna lo es,
+las acciones del lado derecho de las reglas son procesadas, pudiendo cambiar la información
+de la memoria de trabajo.
+Cuando se completa la acción, el motor chequea si la condición de alguna otra regla
+es verdadera y el proceso se repite hasta que no existan reglas que sean verdaderas.
+
+!!algoritmo
+
+
+El algoritmo de Backward Chaining en cambio:
+
+Se comienza con una conclusión que el motor trata de satisfacer.
+Si no se puede satisfacer, se buscan conclusiones intermedias que sí se puedan
+satisfacer (sub goals), lo que permite satisfacer alguna parte del objetivo actual
+(current goal).
+Se continúa con este proceso hasta que se prueban las conclusiones iniciales o
+no hay más sub-conclusiones (sub goals) para analizar. \cite{silverira}
+
+!!algoritmo
+
+%\section*{Incertidumbre}
+%Se han desarrollado varias técnicas para utilizarlas ante casos de  incertidumbre, y que forman un 
+%componente estandar de los sistemas expertos, así por ejemplo, una técnica es asociar factores de certeza con hechos
+%y reglas, y propagar la incertidumbre junto con la inferencia. 
+
+
+
+
+
+\section*{Metodología para el desarollo de sistemas expertos}
+\smallskip 
+
+%\hilight{revizar riley y completar}
+``Desde los primeros Sistemas Expertos operativos desarrollados en la Universidad de 
+Standford en la década de los '60 hasta los que hoy se desarrollan comercialmente, 
+su proceso de construcción ha evolucionado desde lo artesanal en aquellos días 
+hasta un sólido enfoque metodológico en la actualidad."\cite{garcia}
+
+
+A través de la bibliografía consultada sobre la construcción de sistemas expertos, se ha observado
+que
+al igual que los modelos tradicionales de desarrollo de software, que se han propuesto %para proveer una 
+%metodología que fuera util en la construcción de grandes sistemas de software como por ejemplo 
+para controlar el ciclo de vida del software, (como
+el modelo de cascada, el modelo incremental, el modelo de espiral, etc); también 
+ se han desarrollado varias metodologías para la producción de sistemas expertos.\cite{Riley},\cite{Carrillo}
+
+
+El ciclo de vida del software o ``los modelos de procesos son en realidad metametodologías porque determinan el orden y la duración
+en el cual los métodos de software comunes son aplicados. Los métodos tradicionales de desarrollo de software 
+muestran procedimientos específicos para llevar a cabo una las siguientes etapas"\cite{Riley}\footnote{pag. 318--319}.
+
+
+\begin{itemize}
+\item Ingenieria de requerimientos
+\item Diseño
+\item Implementación 
+\item Evaluación (verificación + validación)
+\item Documentación
+\item Mantenimiento
+\end{itemize}
+
+Además de estas, el desarrollo de un sistema experto debe incluir las etapas de 
+
+
+\begin{itemize}
+\item Adquisición y representación del conocimiento 
+\item Selección de las herramientas de desarrollo
+\end{itemize}
+
+
+\section*{Adquisición del conocimiento}
+
+Uno de los aspectos más importantes
+en el proceso de construcción de un sistema informático basado en el
+conocimiento es el de la adquisición y validación de conocimiento. 
+
+"Dentro de los métodos de adquisición de
+conocimiento se pueden citar los métodos basados en interaccion humana
+tales como tareas familiares, entrevistas, tareas de proceso restringido y tareas
+de información limitada y los basados en técnicas de aprendizaje automático."\cite{garcia}
+
+En \cite{Carrillo} el autor en el desarrollo de su metodología integreal para el
+desarollo de sistemas basados en conocimiento,
+explora, recopila y analiza varias técnicas para la adquisición del
+conocimiento y la elección adecuada de su representación.
+
+En reglas generales la adquisición del conocimento consta de identificar las fuentes del 
+conocimento, extraer el conocimiento de dichas las fuentes, ordenarlo, construir definiciones 
+claves del dominio de aplicación.   
+
+
+
+
+\section*{Herramientas}
+\smallskip 
+
+Las herramientas informáticas utilizadas para la realización de sistemas expertos pueden ser
+lenguajes de alto nivel (C, JAVA) o ambientes especializados para aplicaciones de inteligencia artificial
+(Common LISP, PROLOG) o ambientes especializados para la creaciones de sistemas expertos que en la literatura
+se suelen denominar shells.\cite{cammarata}
+
+Un shell es un programa preparado para la generación de sistemas expertos, incorporan un motor de inferencia y el 
+ingeniero del cnocimiento se limita a  crear la base de conocimiento. CLIPS es un ejemplo de shell o entorno de desarrollo
+para la producción de sistemas expertos. En \cite{shells} hay una extensa referencia a los distintas herramientas y shell 
+disponibles hacia la década de los '90.
+
+
+
+
+
+
+\textbf{LISP}: (LISt Procesing) Inicialmente instrumentado de 1958 a 1960 por Mc Crathy, basandose en la lógica matemática.	
+Hacia mediados de la década del 80 el 95\% de los programas en IA estaban escritos en LIPS. \cite{charniak}\footnote{pag. 33}
+
+\textbf{Common LISP}  :Durante los años 1980 y 1990, fue hecho un gran esfuerzo para unificar los numerosos dialectos del Lisp 
+en un solo lenguaje (más notablemente, InterLisp, Maclisp, ZetaLisp, MetaLisp, y Franz Lisp). 
+El nuevo lenguaje, Common Lisp, fue esencialmente un subconjunto compatible de los dialectos que reemplazó. 
+En 1994, la ANSI publicó el estándar del Common Lisp, "ANSI X3.226-1994 Information Technology Programming Language Common Lisp
+Common Lisp es un lenguaje multi paradigma de propósitos generales. Soporta una combinación 
+de paradigmas de programación como procedimental 
+(imperativo), funcional, y orientada al objeto. 
+
+\textbf{PROLOG} (PROgrammation en
+LOGique) es un lenguaje de programación lógico e interpretado.
+
+\textbf{CLIPS} (C Language Integrated Production System) es una
+herramienta para el desarrollo de sistemas expertos (SE) creada
+por la Software Technology Branch (STB), NASA / Lyndon B.
+Johnson Space Center. Los orígenes de CLIPS se remontan a
+1984. En la actualidad, entre los paradigmas de programación que
+soporta CLIPS se encuentran la Programación lógica, la Programación imperativa y
+la Programación Orientada a Objetos. Aunque ahora es de
+dominio público (license public domain), aún es actualizado y mantenido por su autor original, Gary Riley.
+Permite representar reglas de producción y frames.
+El motor de inferencias es de tipo Fordward Chaining, y hay X formas de resolución de conflicto
+(depth, breadth, LEX, MEA, complexity, simplicity y random).
+Está escrito en C, por lo que es portable a varios sistemas operativos.
+En la actualidad se encuentra en su versión 6.3.
+
+Existen derivados de CLIPS para ser usados en otros lenguajes como por ejemplo:
+
+\begin{itemize}
+ \item JESS: implementación de CLIPS en Java+.
+ \item FuzzyCLIPS: incorpora a CLIPS la posibilidad de usar razonamiento difuso.
+ \item CLIPSMM: una interfaz libre de CLIPS con C++.
+ \item PHLIPS: extensión para PHP.  (PHP License V3)
+ \item PyCLIPS: interfaz libre para Python., (utilizada en este trabajo).(License (LGPL))
+ \item CLIPSNET: librería de C\#
+\end{itemize}
+
+Hay una extensa lista de softwares y variates derivadas de Clips y aplicacaciones desarrolladas con
+Clips en el sitio web de la herramienta\footnote{http://clipsrules.sourceforge.net/OtherWeb.html}.
+
+
+\textbf{SOAR (State, Operator And Result)}
+Soar es una arquitectura general de desarrollo de agentes inteligentes. Es usada tanto por investigadores de inteligencia
+artificial como de ciencias cognitivas para una variedad de tareas.
+SOAR se usa desde 1983 y en la actualidad a evolucionado hasta su versión actual 9.3.
+Se destribuye bajo licencia BSD.
+ 
+
+
+
+
+
+\begin{thebibliography}{1}
+
+
+
+\bibitem{shells}
+Bourbakis, N.G.
+\newblock {\em Knowledge Engineering Shells: Systems and Techniques}.
+\newblock Advanced Series on Artificial Intelligence. World Scientific, 1993.
+
+\bibitem{cammarata}
+Cammarata, Silvio.
+\newblock {\em Sistemi Esperti: teorie, metodi, strumenti tecnici}.
+\newblock Milano, ETAS Libri, 1987.
+
+\bibitem{Carrillo}
+Carrillo Verdún, José Domingo.
+\newblock {\em Metodología para el desarrollo de sistemas expertos}.
+\newblock PhD thesis, 1987.
+
+\bibitem{charniak}
+Charniak, Eugene; McDermott, Drew.
+\newblock {\em Introduction to Artificial Intelligence}.
+\newblock Addison-Wesley, 1985.
+
+\bibitem{feigenbaum}
+Feigenbaum,Edward A. ; Barr, Avron.
+\newblock {\em The Handbook of Artificial Intelligence}.
+\newblock Standford, California, HeurisTech Press; Los Altos, California, W.
+  Kaufmann Inc., 1982.
+
+\bibitem{garcia}
+Garcia Martinez, Ramon; Britos, Paola Veronica.
+{\em Ingenieria de Sistemas Expertos}.
+\newblock Nueva Libreria, 2004.  
+  
+\bibitem{Riley}
+Giarratano, Joseph; Riley, Gary.
+\newblock {\em Sistemas Expertos, Principios y Programacion.}
+\newblock PWS Publishing Company, third edition, 1998.
+
+  
+\bibitem{silverira}
+Silveira, Luciano.
+\newblock {\em Disenio en implementación de un motor de reglas din'amicos usando especificaciones GeneXus: Tesis de Maestr'ia}
+\newblock UNIVERSIDAD DE LA REPUBLICA, Uruguay - Montevideo, 2010.
+
+
+
+\bibitem{waterman}
+ Waterman, D.~A.
+\newblock {\em User-Oriented System for capturing Expertise: A rule based
+  Aproach}.
+\newblock Edingburg University Press, 1984.
+
+\end{thebibliography}
+
+
+%\bibliographystyle{nature}
+%\bibliography{references1}
+\newpage
+
+
+
+\part{Desarrollo del sistema experto} 
+\label{sec: }
+\smallskip 
+\addtocounter{section}{-1}
+
+\section{Presentación del problema} 
+
+\smallskip 
+La elección de una determinada tecnología de impresión 
+ a la hora de comprar está sujeta a numerosas cuestiones 
+relacionadas con el uso que se le va a dar al equipo, 
+la velocidad de respuesta deseada, la calidad esperada, factores económicos, etc.
+ Requiere tiempo y esfuerzo investigar las tecnologías 
+disponibles en el mercado y decidir en base a las características
+ que posee cada equipo, aquel que resulte más conveniente según las necesidades. 
+
+Los sitios web de las diferentes marcas de impresión a menudo preclasifican sus productos para
+ayudar al cliente a encontrar el equipo que se necesita, otros simplemente listan los productos 
+disponibles. En todos los casos, el cliente debe saber qué está buscando.
+Para facilitar la tarea  de elección, lo más común es consultar con un vendedor competente en la materia. 
+
+Emular un vendedor o recomendador de impresoras es un problema bastante complejo si se lo quisiera
+desarrollar como una aplicación convencional, %hay demasiados detalles a tener en cuenta ...
+%pero eso no significa que el desarrollo de un 
+%sistema experto sea el más adecuado para este tipo de problema. 
+%
+%por lo que resulta adecuado utilizar un sistema experto.
+además cada experto tiene su opinión sobre cúal es la mejor opción en cada caso para
+satisfacer al cliente.
+%Una distinción importante es que existen equipos de impresión para usos muy especificos, como impresoras de 
+%etiquetas u CDs. Inicialmente este trabajo esta orientado a la recomendación de impresoras o multifunciones
+%para el público en general, considerando sólo el uso más convencional de los mismos. Pero el diseño del sistema
+%se hará de forma tal que puedan ser contemplados otros usos más especificos en el futuro. 
+
+
+\subsection{Objetivos} 
+\smallskip 
+El principal objetivo del presente trabajo es diseñar y desarrollar un Sistema Experto online que 
+emule un vendedor de sistemas de impresión, que aconseja a 
+un cliente sobre las características necesarias en impresora o multifinción de acuerdo a las necesidades
+que el cliente exprese tener, y en base a las características recomendadas, ofrezca de un conjunto de productos
+disponibles aquellos que más se ajusten.
+
+Un segundo objetivo es la confección de un paquete de software de código abierto con la implementación
+del sistema. 
+%Para que por ejemplo pueda ser utilizado de 
+%empresas de ventas de equipos de impresión para facilitar la consulta a sus clientes a través de la web, 
+%o adaptado a nuevas necesidades. 
+
+
+
+
+
+
+
+
+
+
+
+%A lo largo de los años varios modelos de desarrollo de software se han propuesto para proveer una 
+%metodología que fuera util en la construcción de grandes sistemas de software, ejemplos de ellos
+% son el modelo de cascada, el modelo incremental, el modelo de espiral, el modelo lineal. 
+
+
+
+
+
+
+\subsection{Requerimientos generales}
+\smallskip 
+\subsubsection{Uso}
+
+El sistema debe poder ser accedido a través de un browser.
+El sistema debe recomendar los equipos de impresión que más se ajusten a las necesidades del cliente.
+Para determinar las necesidades del cliente el sistema se vale de preguntas en español.
+El sistema debe explicar las razones de sus recomendaciones.  
+
+\subsubsection{Actualización y Mantenimiento}
+
+El sistema debe permitir a un usuario autenticado agregar nuevos equipos o modificar los ya existentes. 
+También se debe permitir agregar o modificar las características técnicas posibles de los equipos de
+impresión.
+
+\subsubsection{Cambios futuros}
+Se debe preveer la posibilidad de extender la base de conocimiento (hechos y reglas) sin afectar
+la estructura del sistema. 
+
+%\subsubsection{Particularidad}
+
+
+
+
+ 
+
+
+
+\section{Adquisición del conocimiento} 
+\smallskip 
+  %\addtocounter{section}{1}
+  %\addtocounter{subsection}{-2}
+\subsection{Fuentes de conocimiento} 
+
+La adquicisión del conocimiento se llevó a cabo consultando las especificaciones técnicas publicadas por 
+los fabricantes de equipos de impresión y  a través de, las intercaciones con un experto en el rubro de venta de
+equipos de impresión para oficina y el hogar, la página web de la empresa del experto\footnote{\textit{http://www.jeanmco.com.ar}} y 
+la web de 
+varias marcas de impresoras y multifunsión\footnote{\textit{http://www8.hp.com}}, \footnote{\textit{http://global.latin.epson.com/}},
+ \footnote{\textit{http://www.xerox.com}}, \footnote{\textit{http://www.brother.es/}}. 
+También se consultaron foros, noticias de tecnología y recomendaciones onlines publicadas 
+por expertos en medios digitales\cite{otero},\cite{redusers},\cite{curso},
+\cite{consejos}.
+
+
+\subsection{Definiciones y conceptos clave del dominio de tarea}
+
+\subsubsection{Impresora - Multifunción:}
+Una impresora es un periférico de ordenador que permite producir una gama permanente de textos o gráficos de
+documentos almacenados en formato electrónico, imprimiéndolos en medios físicos, 
+normalmente en papel o transparencias, utilizando cartuchos de tinta o tecnología láser.
+Si además de imprimir el equipo cuenta con un escáner y/o fax incorporados, el equipo se denomina multifunción.
+
+\subsubsection{Funciones:}
+Una impresora posse la función de imprimir, pero si el equipo es una multifunción
+significa que ademas posee una o más de las siguientes funciones: escanear, copiar, envío de fax, envío digital.
+El envío digital es la capacidad enviar por mail un documento digital que el equipo tenga en memoria, por lo general como 
+resultado de haber escaneado algo. 
+
+\subsubsection{Tecnologías de impresión:} 
+\textbf{Matriz de punto.}
+Las impresoras de matriz de puntos usan un conjunto de agujas de cabeza redonda que 
+presionan una cinta entintada contra una página. Las agujas (por lo general 9 o 24) están dispuestas en una 
+cuadrícula rectangular llamada matriz;
+diferentes combinaciones de agujas forman los distintos caracteres e imágenes. Siguen siendo las únicas capaces de imprimir 
+en formulario continuo. 
+No procesan los documentos una página a la vez. En su lugar, trabajan principalmente con un flujo de caracteres
+ASCII hasta una línea a la vez y, por lo tanto, requieren de búferes de memoria muy reducidos. Como resultado,
+su velocidad se mide en caracteres por segundo (cps) en vez de en páginas pon minuto.
+
+\textbf{Inyección de tinta.} 
+Las impresoras de inyección de tinta tienen boquillas diminutas situadas en lo que se llama cabezal de impresión,
+que esparcen tinta 
+especialmente formulada sobre una página. Existen dos métodos de impresión con inyección de tinta, 
+uno es térmico como la que usa la línea Bubblejet de Canon y HP, en los que diminutos elementos calentadores
+son usados para expulsar gotitas de tinta desde las boquillas del cabezal.
+El otro método utiliza la tecnología piezoeléctrica desarrollada por Epson.
+%Algunas impresoras utilizan dos cartuchos, uno para la tinta negra y otro para la de color,
+ %en donde suelen están los tres colores básicos. Otras en cambio tienen 3 cartuchos para el color.
+
+\textbf{Láser:}. Las impresoras láser funcionan creando una imagen electrostática de una página completa sobre un tambor 
+fotosensible con un haz de luz láser. Cuando se aplica al tambor el polvo ultrafino de color, denominado tóner, 
+éste se adhiere sólo a las áreas sensibilizadas correspondientes a las letras o imágenes sobre la página. 
+El tambor gira y se presiona contra una hoja de papel, transfiriendo el tóner a la página y creando la imagen.
+Esta tecnología es similar a la que utilizan las fotocopiadoras.
+Muchas de las llamadas impresoras láser son actualmente del tipo LED. Estas impresoras reemplazan el haz de luz 
+láser con una disposición fija de diodos emisores de luz (LEDs) para 
+crear la imagen; por lo demás, son similares en desempeño aunque más económicas. %http://www.okiuruguay.com.uy
+
+
+
+\textbf{Tinta Sólida:}
+Las impresoras de tinta sólida son impresoras de página completa que usan varillas de tinta encerada sólida en 
+un proceso ''phase-change" (cambio de fase). Trabajan licuando las varillas en depósitos, y luego volcando 
+la tinta en un tambor de transferencia, desde donde es fusionada en frío en el papel en una sola pasada.
+Es una técnología exclusiva de Xerox. %www.okiuruguay.com.uy/REVOLUCION.PDF
+
+\textbf{Sublimación de tinta:}
+Las impresoras de sublimación de tinta son dispositivos especializados ampliamente usados en aplicaciones
+ fotográficas y de artes gráficas. Estas impresoras trabajan calentando la tinta hasta convertirla en gas. 
+El elemento térmico puede generar diferentes temperaturas, lo que permite controlar la cantidad de tinta 
+que es ubicada en una mancha. En la práctica, esto significa que el color es aplicado como un tono 
+continuo más que como puntos.
+Un color por vez es depositado en toda la hoja, comenzando con el amarillo y terminando con el negro. 
+La sublimación de tinta requiere de un papel especial particularmente caro, y los tintes 
+están diseñados para difuminarse en la superficie del papel, mezclándose para crear sombras de colores 
+precisas. 
+
+\textbf{Móvil:} Las impresoras portátiles suministran muchos de los recursos que ofrecen sus similares,
+ pero son lo suficientemente ligeras como para llevarlas 
+a cualquier parte. Por lo general incluyen una bateria recargable, y pueden ser térmicas o a inyección
+de tinta.
+ %También pueden hacer doble tarea, como las impresoras de escritorio de bajo volumen, cuando te encuentras en la oficina.
+
+
+\subsubsection{Velocidad de impresión:}
+La velocidad de una impresora suele medirse con el parámetro \textit{ppm} (páginas por minuto),  
+es decir, la cantidad de páginas que puede imprimir en un minuto en determinadas condiciones. 
+Otro parámetro que se utiliza es el de \textit{cps} (caracteres por segundo) 
+adecuado para las impresoras matriciales que aún se fabrican.
+La velocidad exacta varía según la configuración del sistema,
+ la aplicación de software, el driver y la complejidad del documento.
+Para poder comparar impresoras de distintos fabricantes basándose en las ppm se definio el 
+estandar ISO/IEC 24734$:$2009 \cite{iso} aplicables tanto a impresoras como 
+multifunciones que pueden imprimir en formato A4.  
+
+\subsubsection{Calidad de impresión:} %http://www.monografias.com/trabajos11/trimpres/trimpres.shtm
+Uno de los determinantes de la calidad de la impresión realizada, es la resolución que se usa
+para describir la agudeza y claridad de la salida impresa. La resolución de impresión se mide en dpi 
+(dots per inch) o en español, ppp (puntos por pulgada). 
+ Una resolución de   ``300 dpi" se refiere a que en cada pulgada (2.54 cm) cuadrada, la impresora puede situar 300
+ puntos horizontales y 300 verticales. Una expresión del tipo  ``600 x 300 dpi" , significa que el primer 
+valor se asume a la línea horizontal y el segundo a la vertical.
+Otro determinante de la calidad de impresión es el  número de niveles o graduaciones que pueden ser impresos por punto, 
+una técnica de capas de color que hace que la oscilación en los gráficos y fotografías sea más difícil de ver.
+ Las impresoras sin niveles de impresión por punto, 
+imprimen cada punto de color en una de sólo dos intensidades (encendido o apagado), 
+con tinta cian, magenta, amarilla o negra. Pueden combinarlas para crear tintas roja, 
+verde y morada, y pueden crear la ilusión de otros colores al distribuir puntos de distintos
+ colores en el papel (cada color se logra siguiendo un patrón determinado). La impresión de multinivel hace posibles más 
+intensidades para cada punto que se imprime, así permite que la impresora utilice menos puntos para crear colores esfumados y
+ hace que sea más difícil ver los patrones.
+
+Máquinas con la misma resolución pueden ofrecer resultados dispares, 
+porque hay que tener en cuenta el tamaño de las gotas que generarán esos puntos por pulgada y ésta varía según 
+la tecnología empleada para llevar a cabo la impresión.
+Las gotas de tinta se miden en picolitros (1 picolitro es la billonésima parte de un litro 10$^{-12}$).
+
+
+\subsubsection{Memoria:}
+La mayoría de las impresoras contienen una cantidad de memoria para almacenar parte de la información 
+que se les va enviando, de forma que la computadora no tiene que estar esperando a la impresora. 
+
+
+
+
+\subsubsection{Conectividad / Interfaces:}
+La conectividad o conexión refiere a la forma en que la impresora se comunica con el medio, mientras que las interfaces
+son los conectores que permiten la existencia de una conexión. 
+La forma más antigua de conexión era mediante puerto serie en donde la transferencia se hacía bit a bit, 
+permitía distancias largas con velocidades lentas que no superaban los 19.200 bytes/segundo.
+Actualmente una de las formas de conexión puede establecerse mediante puerto paralelo en la que las transferencias 
+eran byte a byte permitiendo 8 
+conexiones paralelas consiguiendo una velocidad más rápida entre los 0.5 MB/segundo hasta los 4MB/segundo. 
+La longitud del cable  que une la impresora con el computador o print server no puede ser mayor a 2 metros.
+
+Otra método de conexión más actual es por medio de puertos USB (Universal Serial Bus). 
+
+A algunas impresoras se las puede conectar poniendolas en red Ethernet mediante conexiones RJ 45 basadas en 
+el estándar IEEE 802.3 o vía wifi, mediante el protocolo IEEE 802.11. También como forma de conexión sin cables es a través 
+de Bluetooth.
+
+Los equipos que pueden enviar fax cuentan con una interfaz RJ 11 para poder ser conectados a la línea telefónica. 
+
+Existe otro tipo de conexión que se denomina directa y está relacionado con las interfaces para conectar pendrives, 
+tarjetas de memoria o cámaras fotográficas sin la intervención de la computadora. 
+
+
+
+\subsubsection{Lenguajes de descripción de páginas:}
+Hace unos años el texto a imprimir en un impresora era enviado en código ASCII con un caracter indicando
+bold, itálica, tamaño, etc; y los gráficos eran producidos línea por línea. El problema es que este proceso era
+muy dependiente del dispositivo y los caracteres raramente estaban en la misma posición con que, aparecían en pantalla.
+Actualmente se usa un lenguaje de descripción de página (PDL), el cual describe el formato de las páginas,
+la colocación del texto y los elementos gráficos como mapas de bits
+o como objetos vectoriales.
+
+Existen muy variados PDLs\footnote{\textit{http://www.undocprint.org/formats/
+page\_description\_languages}}, los más 
+conocidos son  PCL\footnote{\textit{Printer Command Languaje.}} de Hewlett Packard y Postscript de Adobe. 
+
+Postscript fue uno de los primeros PDL estandar y multiplataforma; describe las páginas en forma vectorial en outline, 
+las cuales son enviadas a la impresora para ser
+rasterizadas\footnote{Convertidas en puntos.} en el mismo dispositivo. 
+
+PCL es un lenguaje de descripción de página desarrollado por Hewlett-Packard, a principios de los ochenta,
+para sus impresoras. El PCL se ha convertido en un estándar emulado por muchos otros fabricantes de impresoras. 
+Además del texto real que se imprime, el PCL consta en gran medida de comandos diseñados para 
+accionar diversas características y capacidades de la impresora. 
+
+Lenguajes GDI: Algunas impresoras de inyección de tinta o de matriz de puntos no usan ninguno de los PDL 
+``clásicos" (PostScript o HP-PCL), sino que recurren a la computadora para producir la página a imprimir.
+A estas impresoras se les llama impresoras basadas en el host o servidor de impresora.
+Algunas variantes de este tipo de impresión incluyen impresoras que usan el motor de la interfaz de dispositivo gráfico 
+(GDI) de Windows para generar la imagen de la página (impresoras GDI) y la
+línea de impresoras PPA (Arquitectura para Rendimiento de Impresión) de Hewlett-Packard."\cite{curso}
+Esta característica es importante
+porque dependiendo de cómo esté diseñada la impresora basada en el host, podría no ser posible imprimir desde 
+sistemas operativos distintos a Windows.
+
+Emulaciones:
+Decimos que una impresora "emula" cuando admite códigos y modos de funcionamiento de otros modelos o marcas del mercado.
+
+%Un formato de salida para la impresión viene representado por un flujo de datos 
+%que es enviado a la impresora de forma que puede ser interpretado por el 
+%dispositivo de salida sin necesidad de ningún proceso de conversión previo. 
+%Dicho flujo de datos viene escrito en un "lenguaje" que la impresora es capaz de entender.
+
+
+%Una impresora que se basa en el procesador del host para generar las páginas.
+% La mayoría de impresoras host- base printers del mercado hoy en día utilizan el
+% GDI otra variante que utiliza la interfaz incorporada en Windows para generar la imagen 
+%de la página (impresoras GDI) y la línea de impresoras PPA (Arquitectura para Rendimiento de Impresión)
+% de Hewlett-Packard. Debido a que no necesita un potente procesador propio, 
+%tienden a ser más baratas que las impresoras convencionales. Sin embargo, debido a que comparten
+% el procesador del ordenador, pueden ralentizar su equipo de trabajo.
+% La velocidad de estas depende de la 'potencia' del equipo y de lo ocupado que este pueda estar,
+%por lo que no deben instalarse en servidores.
+
+
+
+\subsubsection{Ciclo mensual de trabajo - Volumen de impresiones mensuales recomendados:} 
+ Los fabricantes de equipos de impresión, normalmente idican el ciclo de trabajo mensual, 
+que es la cantidad máxima de páginas en un determinado 
+formato que el equipo puede imprimir en un mes sin deteriorarse.
+Lo recomendado es que al momento de elegir un equipo el cliente elija uno cuyo ciclo de trabajo
+mensual exeda por mucho a la cantidad de impresiones que se van a hacer por mes. Por
+eso es que paralelamente, los fabricantes, también idican un volumen de páginas mensuales recomendado
+que es el que debe usarse para determinar cúal es el tamaño que se necesita.
+
+
+%\subsubsection{Insumos - Consumibles}
+
+\subsubsection{Color}
+
+..
+Algunas impresoras utilizan dos cartuchos, uno para la tinta negra y otro para la de color, 
+en donde suelen están los tres colores básicos.
+
+
+\subsubsection{Consumibles}\footnote{Extraído de \textit{http://www.duiops.net/hardware/impresor /impresor.htm}}
+En las impresoras matriciales, el mantenimiento es sencillo y
+ normalmente barato, ya que únicamente será preciso cambiar la cinta,
+ que suele durar bastante. El cabezal también se suele considerar como 
+consumible, pero no es algo que se estropee con frecuencia, teniendo una media de vida del orden de años.
+
+En las de inyección, lo que más cambiaremos serán los cartuchos de negro
+ y/o color; el cabezal inyector no suele estropearse, y la mayoría de impresoras 
+implementan sistemas de limpieza y calibrado que permiten ajustar el funcionamiento de las mismas.
+
+Por último, en las impresoras láser el consumible por excelencia es el cartucho 
+de tóner (es decir, la tinta), pero tampoco es extraño tener que cambiar la unidad 
+fotoconductora o el tambor (en algunas máquinas estas dos piezas se engloban en una sola) 
+cada cierto tiempo, siempre según la carga de trabajo que soporte la máquina.
+
+
+\subsubsection{Rendimiento - Consumibles}
+El rendimiento por página indica la cantidad total de páginas que pueden imprimirse con un cartucho. 
+En diciembre de 2006, la Organización Internacional de Estandarización (ISO, por sus siglas en inglés) 
+aprobó nuevos estándares para la medición del rendimiento por página de cartuchos de tinta (ISO/IEC 24711)
+ y tóner de color (ISO/IEC 19798) para impresoras.  Estos estándares complementan la norma de rendimiento 
+ISO/IEC 19752 para cartuchos de tóner monocromático publicada en junio de 2004.
+\footnote{\textit{http://www1.lexmark.com/es\_MX/cartridges-ink-supplies/iso-page-yields/},
+
+\textit{http://isotc.iso.org/livelink/livelink/open/jtc1sc28} }
+
+
+Estos estándares permiten comparar el rendimiento de cartuchos de distintas marcas. 	
+
+\subsubsection{Grandes formatos}
+Un plotter es un periférico de salida que efectúa con gran precisión, impresiones gráficas que una impresora no podría obtener. 
+Permite imprimir mapas de gran formato, dibujos técnicos, pósters, fotografías en materiales como vinilo adhesivo, lona, papel,
+etc. Podemos considerar gran formato a todo aquello que vaya más alla de un hoja A3. 
+
+
+%\subsubsection{Usos:}
+
+\subsection{El proceso de elección de un equipo de impresión}
+
+
+\subsubsection{Lista de especificaciones técnicas }
+
+
+A continuación se listan las características técnicas de los equipos de impresión 
+que pueden ser encontrados en los folletos de especificaciones provista por los
+distintos fabricantes. Dichas características son fundamentales para seleccionar
+qué modelo de equipo se necesita.
+Dependiendo del uso que se le va a dar al equipo las distintas características van 
+adquiriendo más o menos relevancia. 
+
+\begin{itemize}
+%\item Marca
+%\item Modelo
+\item Tipo (impresora / multifunción)
+\item Tecnología de impresión (laser / inyección de tinta / matriz de punto)
+\item Color 
+\item Funciones (imprimir / escanear /copiar /envio de fax /envío digital)
+\item Volumen de impresión recomendado 
+\item Conectividad  (usb / puerto paralelo / red ethernet / wifi)
+\item Lenguajes de Impresión Soportados  (GDI / PCL / PostSCript / ESC/Page)
+\item Tipo de papel  (normal, fotográfico)
+\item Tamaño de papel (A4, A5, etc)
+\item Velocidad de impresión
+%\begin{itemize}
+% \item La velocidad exacta varía según la configuración del sistema,
+% la aplicación de software, el driver y la complejidad del documento.
+%\end{itemize}
+\item Calidad de Impresión
+\item Cantidad de Memoria
+\item Duplex automático 
+\item Pantalla táctil
+\item Impresión en A3
+\item Cantidad de hojas soportadas en la/las bandejas
+\item Adicionales (bandejas adicionales)
+\end{itemize}
+
+Otras características a tener en cuenta son:
+\begin{itemize}
+%\item Marca
+%\item Modelo
+\item Período de garantía
+\item Precio de los insumos
+\item Servicio técnico local
+\end{itemize}
+
+
+
+
+\subsubsection{Entrevista con el experto}
+En el \textit{Apendice A} se encuentra el contenido de los intercambios de mails con el experto (vendedor), que han sido
+dispuestos en forma de entrevista. 
+Usando como guía lo manifestado por el experto hay cuatro características mínimas que conciderar para un usuario común y son
+
+
+\begin{quote}
+
+\begin{tabular}{l}
+
+ uso ( en qué ambito será usada: oficina / hogar)  \\
+ funciones (copiar, imprimir, etc) \\
+ color  \\
+ volumen mensual  \\
+ conectividad requerida  \\
+
+\end{tabular}\end{quote} 
+ 
+
+\subsubsection{Heurísticas}
+Direcatamente de la \textquotedblleft entrevista" con el experto extraemos las siguiente lista preliminares 
+de reglas que luego deben ser validadas.
+
+
+ \begin{quote}
+ 
+	        Si es para poco uso y una sola persona $\Rightarrow$ necesita impresora chica
+	        
+	          Si es para imprimir y escanear $\Rightarrow$ necesita multifunsión
+	        
+	        Si es para uso corporativo  $\Rightarrow$ necesita impresora de Red
+	       
+	       Si no quiere cables  $\Rightarrow$ necesita conexión wireless
+	      
+	      Si es fanático de la tecnología $\Rightarrow$ puede querer imprimir desde el iPod
+	      
+	      Si es para altos volúmenes $\Rightarrow$ el costo del toner es importante
+	      
+	      Si el volumen mensual del equipo es menor a 2000 páginas $\Rightarrow$ la impresora es chica
+	      
+	      Si es para una oficina $\Rightarrow$ necesita laser monocromo
+	      
+	      Si es un estudio de arquitectura $\Rightarrow$ necesita chorro de tinta para A4 o A3 o un plotter
+	      
+	      Si es para el hogar $\Rightarrow$ puede necesitar multifunsión barata \end{quote} 
+
+ 
+%\textbf{Uso}
+    
+    
+Hay ciertos conceptos impresisos como \textit{impresora chica, alto volumen, poco uso}. En 
+el contexto utilizado todos los términos se están refiriendo a la cantidad de páginas mensuales. 
+Algo más con respecto a la palabra \textit{uso} se la puede emplear para manifestar frecuencia de impresión, 
+como para referise a tipo de documentos a imprimir (fotos, textos, etc).
+
+%http://thales.cica.es/rd/Recursos/rd99/ed99-0646-02/impresora.html#laser    
+    
+
+
+
+Otras posibles reglas extraídas de noticias y recomendaciones online podrían ser las siguientes. 
+
+Si se imprimen menos de 30 pag a color  $\Rightarrow$ cartucho único.
+
+Si se imprimen más de 30 pag a color  $\Rightarrow$ cartuchos separados.
+
+Si el uso es doméstico u ocasional $\Rightarrow$ la velocidad no es relevante.
+
+Si el uso es doméstico u ocasional $\Rightarrow$ el tamaño de la bandeja no es relevante.
+
+Si se deben imprimir muchas copias $\Rightarrow$ la velocidad es relevante.
+
+Si se quieren imprimir fotografías $\Rightarrow$ no se recomienda una impresora domestica.
+
+Si no se quieren imprimir fotografías $\Rightarrow$ una resolución de 600 dpi alcanza.
+
+Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresora láser y velocidad de impresión superior  a 30 ppm
+
+Si es una empresa de publicidad $\Rightarrow$ se recomienda laser color u otras tecnologías
+
+Si es para formularios continuos $\Rightarrow$ se recomienda matriz de punto
+
+Si es para el hogar o pequeña oficina $\Rightarrow$ inyección de tinta 
+
+Si es para el hogar o pequeña oficina y se necesita calidad fotográfica $\Rightarrow$ inyeccion de tinta con 4 cartuchos.
+
+Si el grupo de trabajo promedio es de 10 computadores $\Rightarrow$ el tamaño de la bandeja de entrada es importante, y 
+se prefiere de más de 200 hojas. 
+
+Si se requiere escanear en un estudio contable o de abogados $\Rightarrow$ conviene chequear la superifie del escaner admite
+tamaño legal. 
+
+\subsubsection{Perfil de usuario}
+
+Está claro que cúales de todas las características que posee un equipo hay que tener en cuenta depende principalemente del 
+uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
+Porque el uso determina varios del resto de las características. % Por ejemplo, para una compañia el período de garantía o saber
+%si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
+%que un usuario hogareño presta atención a otros aspectos. 
+
+
+
+\subsubsection{Notas sobre volúmen mensual}
+
+
+ HP Argentina, en su pámgina web\footnote{\textit{http://www8.hp.com}
+} clasifica sus productos en 5 categorías y guía al cliente que 
+ visita su página en busca de impresoras 
+o multifinciones en esta clasificación
+de acuerdo al uso que tiene intensiones de darle el cliente.
+
+\begin{table*}
+\caption{Volumen mensual según uso pretendido.}
+\begin{tabular}{|l|l|l|}
+\hline
+ \textbf{Volumen mensual}  &  \textbf{Uso pretendido} \\
+\hline
+\hline
+ Hasta 500 páginas mensuales  &  Fotos y Documentos \\
+\hline
+ Entre 500 y 1000 páginas mensuales & Impresión de documentos profesional\\
+\hline
+ Entre 1000 y 5000 páginas mensuales & Empresa en crecimiento\\
+\hline
+ Entre 5000 y 10000 páginas mensuales  & Impresión de volumen para medianas empresas\\
+\hline
+ Más de 10000 páginas mensuales & Soluciones para organizaciones Empresariales\\
+\hline
+\end{tabular} 
+\end{table*}
+
+
+%De acuerdo a este criterio de volumen mensual se puede usar las siguientes categorías para clasificar los 
+%equipos:
+%\begin{quote}
+%begin{itemize}
+% \item hogareña
+% \item profesional
+% \item pyme
+% \item pyme+
+% \item empresarial
+%\end{itemize}
+%\end{quote} 
+
+
+
+
+En la página de Xerox\footnote{\textit{http://www.office.xerox.com/small-business/esuy.html}} dentro de
+los equipos ofrecidos para la pequeña y mediana empresa hay una clasificación 
+de acuerdo al tamaño del grupo
+de trabajo. Dicha clasificación se compone de las catgorías de  \textit{peronal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
+\textit{grupo mediano} (de 4 a 10), y \textit{grupo grande de trabajo} (más de 10). 
+Al revisar las especificaciones de los productos de las distintas categorías se observa una relación entre dichas
+categorías y el ciclo mensual de trabajo que está resumida en la tabla 2.
+
+
+\begin{table}
+ \caption{Correspondencia entre volumen mensual y tamaño del grupo de trabajo }
+
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Tamaño del grupo} &  \textbf{Ciclo mensual} &  \textbf{Volumen}\\
+\hline
+\hline
+ 1 persona & 10000 p./mes &  hasta 1000 p.\\
+\hline
+1  a 3 usuarios & hasta 50000 p./mes & hasta 4000 p.\\
+\hline
+ 4 a 10 usuarios& hasta 60000 p./mes & hasta 5000 p. \\
+\hline
+   más de 10 usuarios & hatsa 85000 p./mes & hasta 8000 p. \\
+
+\hline
+\end{tabular} 
+\end{table}
+
+\section{Diseño}
+
+La figura se presenta la una arquitectura de tres niveles\footnote{
+Una arquitectura de tres niveles es una especialización de la arquitectura 
+cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
+ una capa para la presentación (interfaz de usuario), otra para el cálculo 
+ y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
+del sistema. 
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
+ % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+\caption{}
+\label{arq}
+\end{figure}
+\end{center}
+
+
+\subsection{Desiciones de Diseño}
+
+
+\subsubsection{Acotación del dominio de tarea}
+
+El mercado de equipos de impresión es bastante grande. Por una cuestión de practicidad y tiempo
+el sistema desarrollado recomendará quiepos para los segmentos de mercados desde el hogar a empresas, 
+pero siempre equipos que admitan imprimir en formato A4. 
+Inicialmente el sistema no recomendará equipos para lo que se conocen como las artes gráficas, ni equipos
+que se encuentran dentro de la categoría de grandes formatos. 
+De todas formas el diseño del sistema se plateará de forma tal que puedan ser incorporadas nuevas reglas 
+que cubran estas categorías. 
+También hay algunas características de los equipos e impresión que un determinado cliente pueda desear
+y que no sea necesario el asesoramiento de un profesional para darse cuenta si un equipo que le ofrecen 
+sirve o no a sus necesidades. Un ejemplo de esta característica podría ser el tamaño físico del equipos,
+en este caso al cliente le basta mirar la lista de especificaiones técnicas y verificar si el tamaño del
+equipo que le ofrecen es el adecuado. 
+
+Si bien podría ser un adiccional preguntar y recomendar teniendo en cuenta este tipo de cosas, no agrega inteligencia
+al sistema y la mayoría de las veces las peguntas del sistema serán demasiado redundantes. 
+
+
+
+\subsubsection{Representación del conocimiento} 
+\smallskip 
+La principal tarea del sistema experto es determinar cúales del conjunto de características que describen a un equipo 
+son relevantes y que valores deben tener para satisfaces las necesidades del cliente. 
+Una vez determinadas cuales son las características deseadas en un equipo se procede a ofrecen los modelos
+que cumplen los requerimientos.
+
+Para determinar las características deseadas se usarán reglas de inferencia.
+Mientras que los distintos modelos seran hechos factuales en la base de conocimiento. 
+
+
+
+%\subsection{Base de datos relacional} 
+
+
+\subsubsection{Determinación de las características requeridas} 
+
+Para determinar algunas características será necesario preguntar al cliente, 
+otras en cambio serán inferidas a partir de los datos provistos por el cliente.
+%n CLIPS environment,
+%ules can be defined by using the defrule construct
+
+%defrule regla-funcion2
+%(uso hogareña)
+%(escanear si)
+%> 
+\subsubsection{Volumen mensual} 
+Para el volumen mensual la clasificación de HP ,
+define 5 conjuntos crips para el volumen mensual de impresión,
+se usarán dichos conjuntos para los valores del literal \textit{uso}, los valores
+de la variable \textit{uso} podran ser \textit{hogareño, profesional, pyme, pyme+} y \textit{empresarial}.
+
+%Por otro lado el experto nos habla de impresoras \textit{chica} como aquella que no 
+%superara las 2000 páginas de impresiones al mes. Dentro de la categoría \textit{chica}
+%del experto están contenidas las dos primeras categorías de HP y parte de la tercera. 
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.9]{conjuntosCrips2.png}
+\caption{Clasificación según volumen de impresiones mensuales}
+\label{conjuntos}
+\end{figure}
+\end{center}  
+
+\textbf{Uso}
+El uso vendrá determinado a través de consultar con el cliente
+ cuantas páginas cree que en promedio imprimirá en un mes.
+
+Aunque también se podría usar la aproximación que 
+usa Xerox teniendo encuenta el tamaño del grupo de trabajo estimar el volumen de páginas mensuales. 
+De momento se usará la versión simplificada de pregunntarle directamente al cliente.
+% En la tabla 3 se encuentra la relación
+%tamaño del grupo - tamaño impresora.
+
+
+%De esta forma,
+%preguntandole el número de usuarios/pc simultáneos del grupo de trabajo al futuro cliente se calcula un volumen mensual 
+%máximo de impresiones de acuerdo a la tabla. %Si el usuario ingresa
+
+% Para el caso en que el cliente facilita un valor $v$ para el volumen mensual, 
+%el valor definitivo utilizado $vd$ será $vd = max (v , vg$), donde $vg$ es el valor
+%correspondiente al tamaño del grupo de trabajo.
+
+%\begin{table}
+%\caption{}
+%\begin{tabular}{|l|l|l|}
+%\hline
+%\textbf{Tamaño} &\textbf{Tamaño del grupo}  &  \textbf{volumen mensual} \\
+%hline
+%\hline
+%chica & personal   &  hasta 2000 p.\\
+%\hline
+%mediana & hasta 4 personas/pc & hasta 6000 p.\\
+%\hline
+%grande & hasta 12 personas/pc & hasta 10000 p.\\
+%\hline
+%alto volumen & más de 12 personas & mas de 10000 p.\\
+
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+%\textbf{Color}
+%Ahora al preguntar por el tamaño del grupo, al recibir la respuesta se seteará el valor de la variable
+%tamaño en chica, mediana, etc.
+
+%\subsubsection{Clasificación económica de los equipos}
+
+%\textbf{Funciones}
+
+
+
+
+\subsection{Base de datos}
+
+Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
+utilizamos un base de datos relacional para mantener las características de los equipos de impresión. 
+La figura 4 muestra el diagrama de entidad relación de la base de datos. 
+La base de datos está implementada en postgres. La idea inicial fue usar mysql, pero postgres
+cuenta con la posibilidad de definir typos de datos propios y definar usar arreglos en la
+definición de las filas de una tabla lo cúal resulta útil en este sistema. 
+Para interactuar directamente con la base de datos use psql y phppgadmin.  
+El modelo de entidad de relación fueron construidos con Workbench para mysql.
+
+\begin{center}
+\begin{figure*}[!ht]
+\centering
+ \includegraphics[scale=0.5]{BD2.png}
+\caption{Modelo EER de la base de datos}
+\label{db}
+\end{figure*}
+\end{center}
+
+
+%La clasificación de los equipos
+
+\section{Implementación} 
+
+Como shell para sistemas expertos he seleccionado CLIPS por ser de dominio público, 
+permite una rápida prototipación, cuenta con una muy buena documentación, tiene
+ la capacidad de poder interoperar con otros lenguajes y la disponibilidad de varias extensiones
+y derivados.
+Entonces un primer prototipo se implemento enteramente en CLIPS. Antes de entrar en los detalles haré 
+una breve introducción a clips.  
+
+Primeramente para arrancar CLIPS desde una shell de Linux se teclea clips y nos encontramos en un interprete de comandos.
+La notación es muy similar a la del lenguaje LISP.
+
+(exit)  Sale de CLIPS
+
+(clear) Elimina datos y programas de la memoria.
+
+(reset) Elimina la información dinámica de la memoria y resetea la agenda.
+
+(run)  Comienza la ejecución de un programa CLIPS.
+
+\subsection{Hechos y Reglas en Clips}
+
+En un su modo más sencillo, CLIPS opera manteniendo una lista de hechos (facts) y un conjunto de reglas ( rules) con las que operar.
+Los hechos en CLIPS pueden ser de dos tipos: ordered facts y deftemplate facts.
+Un ejemplo de ordered facts es:
+
+\begin{quote}
+\begin{verbatim}
+(color si)
+(paginas 250)\end{verbatim} \end{quote} 
+Un ejemplo de deftemplate es:
+\begin{quote}
+\begin{verbatim}
+(deftemplate questions
+   (slot question (default ?NONE))
+   (slot atribute (default ?NONE))
+   (slot type (default ?NONE))
+) \end{verbatim} \end{quote} 
+
+La creación de hechos se realiza mediante las sentencias assert (uno solo) o deffact (un conjunto), por ejemplo:
+
+\begin{quote}
+\begin{verbatim}
+(assert(color si))
+(assert (questions
+  (question "¿Será necesario imprimir a color?")
+     (atribute color)(type bool) 
+        )
+)
+
+(deffacts mis-hechos
+  (color no)
+  (paginas 500)
+  (questions
+    (question "¿Será necesario escanear?")
+    (atribute grupo) (type bool)
+   )
+) \end{verbatim} \end{quote} 
+
+
+
+Las reglas en CLIPS están formadas por:
+Una parte izquierda (LHS) que define las condiciones a cumplir y una parte derecha (RHS) que define las acciones a realizar.
+
+Sintaxis:
+
+\begin{quote}
+\begin{verbatim}
+(defrule nombre-regla"comentario"
+(condicion-1)(condicion-2)...
+=>
+(accion-1)(accion-2)...)\end{verbatim} \end{quote} 
+
+Para eliminar un hecho de la memoria de trabajo se usa el comando (retract f).
+
+(printout)
+(read)
+(test)
+(operadores booleanes)
+(if)
+
+\subsection{Base de Conocimiento}
+
+La base de conocimiento del sistema está constituída de hechos y reglas. 
+Una vez iniciada la ejecución del sistema los hechos en la memoria de trabajo
+estarán constituídos por el conjunto de datos persistentes incorporados a la memoria
+a través de un deffacts y los hechos que el sistema irá aseverando como resultado de 
+la aplicación de reglas en base a la información de brindada por el usuadrio.
+
+\subsubsection{Hechos} 
+
+Los hechos persistentes contienten la información acerca de los equipos de impresión. 
+La definición del deftemplate tendrá un slot por cada característica de los equipos de impresión
+que pueda ser necesitado para seleccionarlos. Hay un conjunto de características que son indispensables
+el resto podrán estar presentes o no en el deftemplate y la lista de deffacts. 
+Ya se verá que desde la interfaz administrativa se puede controlar
+cúales de un conjunto de características se incorporan en la base de conocimiento. 
+
+
+\begin{verbatim}
+(deftemplate printer
+   (slot model  (default ?NONE))
+   (slot tecnology (default ?NONE))
+   (slot type (default ?NONE))
+   (multislot conectivity (default any))
+   (multislot functions (default ?NONE))
+   (slot color (default ?NONE))
+   (slot duplex (default any))
+   (slot use (default ?NONE))
+   (slot a3 (default any))
+   (slot tag (default ?NONE))
+              .
+              .
+ ) 
+\end{verbatim} 
+
+
+
+
+
+\subsubsection{Reglas} 
+
+Las reglas deben tratar de capturar el conocimiento acerca de cuando es conveniente
+un tipo de equipo u otro.
+
+Una de las características principales a determinar es el volúmen de páginas
+mensuales, con lo cúal se seleccionará una de las categorías predefinidas para dicho
+característica.
+En la implementación se han usado las 5 categorías ya descriptas para el volumen de páginas
+mensuales, pero ya se verá que el sistema admite cambiar dichos límites
+e incluso se pueden crear nuevas categorías desde la interfaz web administrativa. 
+
+Ayuda a visualizar el conjunto de reglas que componen el sistema el hecho de  
+disponerlas en una estrura de árbol.
+El árbol correspondiente a la regla que determina la categoría uso que se necesita se encuentra en la 
+figura 5.
+
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+ \includegraphics[scale=0.7]{arbol.png}
+\caption{}
+\label{db}
+\end{figure}
+\end{center}
+
+Las reglas en clips quedan de la siguiente manera:
+
+\begin{quote}
+\begin{verbatim}
+(defrule regla-uso1
+        (paginas ?p)
+        (test (< ?p  500) )
+=>
+        (assert (uso hogar)))
+
+(defrule regla-uso2
+        (paginas ?p)
+        (and (test (> ?p  500) )
+             (test (<=  ?p  1000)))
+=>
+        (assert (uso profesional)))
+
+
+(defrule regla-uso3
+        (paginas ?p)
+        (and (test (> ?p  1000))
+             (test (<=  ?p  5000)))
+=>
+        (assert (uso pyme)))
+
+(defrule regla-uso4
+        (paginas ?p)
+        (and (test (> ?p  5000))
+             (test (<=  ?p  10000)))
+=>
+        (assert (uso pyme+)))
+
+(defrule regla-uso5
+        (paginas ?p)
+        (test (> ?p  10000))
+=>
+        (assert (uso empresarial)))
+
+ \end{verbatim} 
+\end{quote} 
+
+
+El sistema usa encadenamiento hacia adelante y el conjunto de reglas que los componen estan 
+distribuidas en los siguientes archivos
+
+\begin{verbatim}
+"printers.clp"
+"main.clp"
+"regla_uso.clp"
+"regla_precio.clp"
+"more_questions.clp"
+"adicionales.clp"\end{verbatim} 
+
+El archivo printers.clp contiene el deftemplate de los equipos, los defacts y una regla para seleccionar
+los equipos que cumplan ciertas condiciones.
+main.clp contiene reglas que determinan si el equipo debe ser a color o no, si sera necesario imprimir a 
+doble fax de forma automatica, el tipo de conexion, el tamanio del grupo de trabajo, el tipo de equipo y
+las funciones requeridas. 
+regla\_uso.clp determina el tipo de uso y regla\_precio.clp el tag de precio. 
+more\_questions.clp inicialmente esta vacio y sirve para incorporar nuevas preguntas para setear nuevas caracteristicas
+que se necesiten de un equipo
+adicionales.clp es un conjunto de reglas adicionales relacionadas con caracteristicas de los equipos que podrian sera necesarias
+como por ejemplo el tamanio de la bandeja de salida standar o si el equipo debera contar con lcd o no. Inicialmente tiene un conjunto de
+reglas configuradas para que sean neutrales tanto si en el deffact de los equipos se incluyen todas a las caracteristicas posibles o solo 
+las que se han elegido por defecto. 
+
+
+
+\section{Desarrollo de las interfaces web}  
+\subsection{Interfaz administrativa}
+
+La insterfaz administrativa permite  agregar o modificar entre otras cosas tipo de equipos, tecnologia, funciones, y 
+nuevo equipamiento a la base de datos. Y cambiar
+parametros que afectan el comportamiento del sistema experto, como por ejemplo cambiar el límite de
+las categorías de volumen mensual de impresión o inclusive agreagar nuevas.  
+
+
+\subsubsection{Requerimientos}
+La interfaz web debe permitir al administrador del sistema agregar elementos a la base de datos y ajustar ciertos parámetros del SE. 
+Permite: 
+\begin{itemize}
+ \item Logueo y autenticación
+\item Agregar/Modificar :
+ 
+    \begin{itemize}
+        \item Impresoras
+        \item Conectividades
+        \item Marcas
+        \item Velocidades de impresión
+        \item Tecnologías de impresión
+        \item Tipo de equipos
+        \item Sistemas operativos soportados
+        \item Tamaños de papel
+        \item Tipos de papel
+        \item Calidades de impresión 
+        \item Funciones del equipo
+	\item Lenguajes de impresión
+        \item Consumibles
+        \item Cambiar límites a los tags* (de cant de impresiones y de precios)
+        \item Usuarios 
+       \end{itemize}
+
+\item Mantenimiento:
+          \begin{itemize}
+        \item Actualizar tag a los equipos
+        \item Generar listas de impresoras
+        \item Actualizar reglas 
+     
+       \end{itemize}
+
+
+\end{itemize}
+
+%Los tags de precios se actualizarán mediante una función fuzzy cuyos parámetros 
+%pueden ser alterados por el administrador del sistema. Eso permitirá que los valores de la variable precio
+%“económica”, “moderado” varien sus límites de acuerdo a la realidad económica del medio en donde se use el sistema. 
+
+%\subsubsection{Diseño}
+%\begin{figure*}[!ht]
+% \centering
+
+ %\includegraphics[scale=0.5]{./AdminSite.png}
+ % AdminSite.png: 789x550 pixel, 72dpi, 27.83x19.40 cm, bb=0 0 789 550
+%\caption{}
+%\end{figure*}
+
+
+
+
+\subsubsection{Implementación}
+La interfaz administrativa del sistema se desarrollo en PHP.
+ 
+En la figura 6 se muestra el menu general del sistema. Cada link de la columna
+agregar/modificar permite agregar o editar una caracteristica relacionada con las impresoras
+o un nuevo equipo. 
+
+
+\begin{figure*}[!ht]
+ \centering
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+\fbox {\includegraphics[scale=0.5]{./menu.png}}
+ % menu.png: 764x614 pixel, 72dpi, 26.95x21.66 cm, bb=0 0 764 614
+\caption{}
+\end{figure*}
+
+
+El formulario de agregar (figuras 7) un nuevo equipo sirve para incorporar a la base de datos, los datos correspondientes
+a un nuevo equipo, el formulario permite asociar todas las características presentes en la base de datos a un equipo de 
+impresión. 
+\begin{figure*}[!ht]
+ \centering
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+\fbox { \includegraphics[scale=0.5]{./mod_printer.png}}
+ % printer.png: 1280x1024 pixel, 72dpi, 45.16x36.12 cm, bb=0 0 1280 1024
+\caption{}
+\end{figure*}
+
+
+Una vez completado el formulario al presionar el botón siguiente aparece un nuevo
+formulario (figura 8) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
+disponibles de la misma marca que el equipo que se esté cargando. 
+
+\begin{figure*}[!ht]
+ \centering\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+\fbox {\includegraphics[scale=0.5]{./print_cart.png}}
+ % print_cart.png: 398x578 pixel, 72dpi, 14.04x20.39 cm, bb=0 0 398 578
+\caption{}
+\end{figure*}
+
+Las categorías de uso controlan los límites de la variable linguística uso relacionada con el volumen
+de páginas mensuales. La interfaz permite agregar tantas categorías como se quieran. 
+
+\begin{figure*}[!ht]
+ \centering
+ \centering\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+\fbox { \includegraphics[scale=0.5]{./uso.png}}
+ % uso.png: 1280x1024 pixel, 72dpi, 45.15x36.12 cm, bb=0 0 1280 1024
+\caption{}
+\end{figure*}
+
+El menu para cambiar los limites y categorias de precio cumple un papel similar con respecto a la 
+categrias relacionadas con el precio de los equipos.
+Si se alteran los tags de precio o uso las descripciones asociadas a los equipos podrian dejar de ser
+consistentes por lo que es necesario actualizarlas. El menu de Actualizar las categorias cumple dicha
+funcion. Luego deberan generarse nuevamente el file de impresoras y las reglas de uso o precio respectivamente. 
+
+Hay varios motivos por los cuales se deba volver a generar el archivo de impresoras: 
+\begin{itemize}
+\item Se han agregado/modificado equipos.
+\item Se han agregado/modificado los tags de uso o precio.
+\item Se quiere incluir una característica nueva a los equipos para ser considerado por el sistema
+experto.
+\end{itemize}
+
+Al hacer click sobre el menu de generar impresoras se abre un formulario que permite
+seleccionar un grupo de caracteristicas disponibles para incluir en la base de conocimiento. 
+Si todo sale bien el proceso genera dos archivos printer.clp y temporary\_rules\_adicional, el
+segundo sirve de ejemplo para crear las reglas adicionales del archivo aditionals.clp. 
+
+  
+
+
+\subsection{Interfaz cliente}
+Para portar el sistema de manera online a través de un servidor web he 
+usado la librería PyClips, la otra opción era PHLIPS ambas implementan un subconjunto de
+los comandos propios de CLIPS, pero PyClips implementa un número mayor de comandos y además
+cuenta con una muy buena documentación y un foro de discusión activo\footnote{http://sourceforge.net/projects/pyclips/forums}.
+
+\subsubsection{Requerimientos}
+La interfaz web del sistema experto con las personas que van a consultar debe hacer las mismas preguntas 
+y generar el mismo resultado que el sistema batch para clips.
+De hecho se requiere que sean usado los mismos archivos.
+
+\subsubsection{Notas a la implementación}
+
+Las reglas que incluyen 
+sentencias del tipo printout y read deben ser modificadas de modo que en vez de imprimir 
+en pantalla se haga un assert con la pregunta que debe ser hecha al usuario. 
+Para mantener la idea de usar los mismos archivos 
+para ambas interfaces (web y terminal) se creo el deftemplate questions
+
+\begin{verbatim}
+(deftemplate questions
+   (slot question (default ?NONE))
+   (slot atribute (default ?NONE))
+   (slot type (default ?NONE))
+)\end{verbatim} 
+
+Que se usa para compunicar que pregunta con la interfaz web. Ademas
+se crearon duplicaron las reglas que hacian preguntas al usuario unas se seguiran usando con la terminal y 
+el resto solo con la interfaz web. 
+Por ejemplo si una regla era como la que sigue:
+
+\begin{verbatim}
+(defrule regla1
+=>
+  (printout t crlf "¿Se necesitará imprimir en  A3?")
+  (printout t crlf "Respuesta>")
+  (bind ?ans (read))
+  (assert (a3 ?ans))
+)\end{verbatim} 
+
+Se reemplazara con la siguiente: 
+
+\begin{verbatim}
+(defrule regla1
+ (terminal)
+=>
+  (printout t crlf "¿Se necesitará imprimir en  A3?")
+  (printout t crlf "Respuesta>")
+  (bind ?ans (read))
+  (assert (a3 ?ans))
+)
+\end{verbatim} 
+y se creara la siguiente regla
+
+\begin{verbatim}
+(defrule regla12
+ (browser)
+ =>
+ (assert (questions
+    (question "¿Se necesitará imprimir en  A3?")
+    (atribute a3)
+    (type bool)
+ )
+)
+\end{verbatim} 
+El sistema se encargara de hacer la pregunta y generar el assert correspondiente
+con la respuesta del usuario. 
+
+
+
+\subsection{Testing}
+
+
+
+ 
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=1.7]{universe.jpg}
+%\caption{The Universe}
+%\label{threadsVsSync}
+%\end{figure}
+
+\hilight{Agregar diseños de las interfaces web en WEBML}
+
+
+
+
+
+
+ 
+
+
+
+
+
+\subsubsection*{Base de datos}
+
+
+
+
+\subsubsection*{Interfaces web} 
+
+Webratio: WebML
+
+Eclipse 
+
+
+\subsubsection*{Otras herramientas} 
+
+
+clientes svn: tortoise (cliente svn para Windows), svn para linux 
+
+
+LibreOffice: Calc, Draw
+
+
+Gimp: Editor de imágenes
+
+Inkscape: editor de imágenes vectorial
+
+Editor de Latex
+
+
+
+\section{Conclusión y notas finales}
+
+
+%\bibliographystyle{plain}
+%\bibliography{references}
+
+
+
+
+\newpage
+%\bibliographystyle{nature}
+%\bibliography{references}
+\begin{thebibliography}{1}
+
+\bibitem{otero}
+Otero~Spagnuolo, M.
+
+
+\bibitem{redusers}
+Fiorotto, A.
+
+
+\bibitem{curso}
+Montoya, M.~A.
+\newblock {\em Impresoras, Curso online}.
+
+\bibitem{consejos}
+Huergo, C.
+
+
+\bibitem{iso}
+24734:2009, I.
+ (2009).
+
+\bibitem{riley}
+Manual de Clips
+
+\bibitem{riley}
+Manual de pyclips
+
+
+\end{thebibliography}
+
+
+
+%\begin{thebibliography}{9}
+
+%\bibitem{Riley} 
+%Giarratano Riley. Sistemas Expertos, Principios y Programación.  2003
+
+%\bibitem{Riley2} 
+%Giarratano Riley. Sistemas Expertos, Principios y Programación.  2003. pag 318-319
+%\   Ingenieria del conocimientos. Aspectos metodolo
+
+%Russell, Stuart J.; Norvig, Peter (2003), Artificial Intelligence: 
+%A Modern Approach (2nd ed.), Upper Saddle River, New Jersey: Prentice Hall, ISBN 0-13-790395-2
+
+%\end{thebibliography}
+
+\newpage
+
+\appendix
+\section{Entrevista con el Experto}
+
+
+
+\textbf{IC}- \textit{¿Qué tipo de información se le pide a un cliente cuando se acerca con intenciones de comprar un equipo
+de impresión?.}
+
+\textbf{Experto}- \textit{Hay varias consideraciones cuando un interesado consulta por impresoras, las relevantes son:}
+
+\textit{\begin{enumerate}
+ \item Qué tipo de uso le va a dar a la impresora, también el trabajo o profesión del cliente es un dato orientativo.
+ \item Producción de trabajo diario o mensual.
+ \item Si es para grupos de trabajo o para usar solo junto a una PC.
+ \item Si también escanean documentos, sacan fotocopias y/o usan fax
+\end{enumerate}}
+
+\textit{
+Con estos primeros datos ya tenemos para prepararle un abanico de soluciones de impresión.
+Es decir, si es para poco uso y una sola persona puede sugerirse una impresora chica, 
+si también escanea se amplía a una multifunción.
+Si ya es corporativa conviene una impresora en RED, con print server interno.
+A veces el cliente para su hogar ya está pidiendo impresoras WIRELESS ya que no quiere cables dando vuelta por su casa, 
+también hoy hay estos equipos.
+Además para los fanáticos de la tecnología tenemos las nuevas máquinas que imprimen desde un iPOD, etc.
+También hoy el asesoramiento va por el costo de los toner que al momento de la elección puede 
+ser importante sobre todo para altos volúmenes.}
+
+\textbf{IC}-\textit{ ¿Cúal debe ser aproximadamente el volumen de impresiones diario o mensual 
+para que se concidere que se necesita una impresora chica?, o sino ¿cuándo considero que una impresora es chica?}
+
+\textbf{Experto}- \textit{Normalmente el fabricante especifica en la folletería el volumen de trabajo, 
+normalmente si el volumen mensual es de hasta 1.500 a 2.000 páginas por mes, 
+en Argentina se estila comprar una máquina chica.}
+
+\textbf{IC}- \textit{Mencionaste que la profesión de un cliente es un dato orientativo para la recomendación de un equipo, 
+en ese sentido necesitaríamos un poco más de detalle. ¿Qué tipos de profesiones indican qué tipos de equipos?}
+
+\textbf{Experto}- \textit{Por ejemplo, para una oficina lo más común es usar impresoras láser monocromo.
+Si es un estudio de arquitectura es probable que usen chorro de tinta ya sea formato pequeño o bien A3 (297 x 432 mm.) o bien plotter.
+Un diseñador gráfico o fotógrafo pude elegir una impresora HP Photosmart con 6 tintas de colores diferentes.
+Para el hogar una multifunción inkjet línea barata.
+Si entrás a la página de HP vas a encontrar que las impresoras las categorizan para:
+\begin{itemize}
+ \item mercado hogareño
+ \item mercado de diseño
+ \item  mercado corporativo
+\end{itemize}     }       
+
+
+
+
+
+
+\end{document}

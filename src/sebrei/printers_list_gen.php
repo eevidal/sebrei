@@ -42,6 +42,20 @@ function getvars2($str,$def){
 }
 
 
+function getvars4($str,$def){
+  $var  = $_GET[$str];
+  if(isset($var)) {
+   $varf = "
+   (slot ".$str." (default ".$def."))";
+   $varr= "
+        (".$str." ?".$str.")";
+   $varr2="
+        (".$str." ?".$str.")";
+     
+  }
+  else {$var= 0;$varf = ""; $varr="";$varr2="";}
+  return array($var,$varf, $varr,$varr2);
+}
 
 
 
@@ -132,7 +146,7 @@ list($vel, $velf, $velr,$velr2) = getvars('vel');
 list($cvel, $cvelf, $cvelr,$cvelr2) = getvars('cvel');*/
 list($mem, $memf, $memr,$memr2) = getvars2('mem','0');
 list($war, $warf, $warr,$warr2) = getvars2('war','12');
-list($lcd, $lcdf, $lcdr,$lcdr2) = getvars2('lcd','any');
+list($lcd, $lcdf, $lcdr,$lcdr2) = getvars4('lcd','any');
 list($pro, $prof, $pror,$pror2) = getvars('pro');
 list($spro, $sprof, $spror,$spror2) = getvars('spro');
 list($cap, $capf, $capr,$capr2) = getvars2('cap','0');
@@ -429,10 +443,13 @@ $asserts = "
  (assert (so any ".make_arr3($so)."))
  (assert (mem 0))
  (assert (war 0))
- (assert (lcd any))
+ (assert (lcd no))
+ (assert (lcd si))
  (assert (pro any ".make_arr3($protocol)."))
  (assert (spro any ".make_arr3($security_protocol)."))
- (assert (	
+ (assert (paper any ".make_arr3($paper)."))
+ (assert (sheet any ".make_arr3($sheet)."))
+ (assert (pdl any ".make_arr3($language)."))		
  (assert (cap 0))
  (assert (ocap 0))
  (assert (tcap 0))

@@ -367,7 +367,7 @@ $rule ="(defrule recomendar
         (duplex ?duplex)
         (a3 ?a3)
 	(conectivity $?con1)
-	(tag $?tag1)
+	(tag ?tag1)
 	(functions $?functions)"
 	.$varsr
 ."
@@ -378,8 +378,8 @@ $rule ="(defrule recomendar
         (test (subsetp $?functions $?functions2))
         (test (subsetp $?functions2 $?functions))
 	(conectivity $?con2)
-        (tag ?tag2)
-	(test (member$ ?tag2 $?tag1))
+        (tag $?tag2)
+	(test (member$ ?tag1 $?tag2))
 	(test (subsetp $?con2 $?con1))
 	(type ?type)
 	(tecnology ?tec)

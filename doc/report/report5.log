@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  13 JUL 2012 19:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  13 JUL 2012 10:37
 entering extended mode
  %&-line parsing enabled.
-**report4.tex
-(./report4.tex
+**report5.tex
+(./report5.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, spanish, galician, catalan, loaded.
-(./acm_proc_article-sp.cls
+(./acm_proc_article-sp2.cls
 (/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -132,6 +132,10 @@ Excerpts were taken from (Journal Style) 'esub2acm.cls'.
 \c@table=\count99
 \titleboxnotes=\toks23
 \titleboxnoteflag=\count100
+
+LaTeX Warning: You have requested document class `acm_proc_article-sp2',
+               but the document class provides `acm_proc_article-sp'.
+
 Document Class: acm_proc_article-sp 2009/04/22 - V3.2SP - based on esub2acm.sty
  <23 April 96>
 (/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
@@ -158,7 +162,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@paragraph=\count107
 
 Using 'Abbrev' bibliography style
-LaTeX Info: Redefining \cite on input line 1236.
+LaTeX Info: Redefining \cite on input line 1237.
 \bibindent=\dimen122
 \colcntr=\count108
 \saveb@x=\box29
@@ -261,17 +265,6 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip46
-\f@ncyO@elh=\skip47
-\f@ncyO@erh=\skip48
-\f@ncyO@olh=\skip49
-\f@ncyO@orh=\skip50
-\f@ncyO@elf=\skip51
-\f@ncyO@erf=\skip52
-\f@ncyO@olf=\skip53
-\f@ncyO@orf=\skip54
-)
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -279,10 +272,7 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
-) (./report4.aux
-
-LaTeX Warning: Label `db' multiply defined.
-
+) (./report5.aux
 
 LaTeX Warning: Label `db' multiply defined.
 
@@ -290,7 +280,7 @@ LaTeX Warning: Label `db' multiply defined.
 Package natbib Warning: Citation `riley' multiply defined.
 
 )
-\openout1 = `report4.aux'.
+\openout1 = `report5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -324,297 +314,187 @@ LaTeX Font Info:    ... okay on input line 24.
 \MPnumerator=\count114
 \everyMPtoPDFconversion=\toks39
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 44.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 37.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (10.79999pt too wide) in paragraph at lines 44--44
- [][][] 
- []
+
+LaTeX Warning: No \author given.
 
 
-Overfull \hbox (6.08054pt too wide) in paragraph at lines 53--55
-[]\T1/aer/m/n/9 Los tér-mi-nos sis-tema ex-perto, sis-tema basado en conocimien
-to
- []
-
-
-Overfull \hbox (7.3423pt too wide) in paragraph at lines 77--81
-\T1/aer/m/n/9 es el pro-grama que ges-tiona y con-trola la base de conocimiento
-.
- []
-
-<SE.png, id=1, 158.36214pt x 128.74329pt>
-File: SE.png Graphic file (type png)
- <use SE.png> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./SE.png (PNG copy)>]
-Overfull \hbox (4.69609pt too wide) in paragraph at lines 157--162
-\T1/aer/m/n/9 La lista de re-glas que se en-cuen-tran en la base de conocimient
-o
- []
-
-
-Overfull \hbox (1.49788pt too wide) in paragraph at lines 200--200
-[]\secfnt Metodología para el de-sar-rollo de sis-temas
- []
-
-
-Overfull \hbox (1.85036pt too wide) in paragraph at lines 210--217
-\T1/aer/m/n/9 es-pi-ral, etc); tam-bién se han de-sar-rol-lado varias metodolog
-ías
- []
-
-[2]
-Overfull \hbox (4.78607pt too wide) in paragraph at lines 244--247
-\T1/aer/m/n/9 struc-ción de un sis-tema in-for-mático basado en el conocimiento
-
- []
-
-
-Overfull \hbox (9.31105pt too wide) in paragraph at lines 258--261
-\T1/aer/m/n/9 iden-ti-ficar las fuentes del conocimiento, ex-traer el conocimie
-nto
- []
-
-
-Overfull \hbox (10.62706pt too wide) in paragraph at lines 273--277
-\T1/aer/m/n/9 niero del conocimiento se limita a crear la base de conocimiento.
-
- []
-
-
-Overfull \hbox (4.67767pt too wide) in paragraph at lines 286--293
-\T1/aer/m/n/9 de propósi-tos gen-erales. So-porta una com-bi-nación de paradig-
-
- []
-
-[3] [4]
-Overfull \hbox (2.3385pt too wide) in paragraph at lines 428--432
+Overfull \hbox (2.3385pt too wide) in paragraph at lines 52--56
 []\T1/aer/m/n/9 Los sitios web de las difer-entes mar-cas de im-pre-sión a menu
 do
  []
 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-Overfull \hbox (1.95996pt too wide) in paragraph at lines 538--547
+
+]
+Overfull \hbox (1.95996pt too wide) in paragraph at lines 174--183
 \T1/aer/m/n/9 tienen bo-quil-las dimin-u-tas situ-adas en lo que se llama cabez
 al
  []
 
-[5]
-Overfull \hbox (2.93233pt too wide) in paragraph at lines 584--593
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (2.93233pt too wide) in paragraph at lines 220--229
 \T1/aer/m/n/9 La ve-loci-dad de una im-pre-sora suele medirse con el parámetro
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 656--656
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
 [][]\T1/aer/m/it/9 http://www.undocprint.org/formats/
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 718--718
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--354
 [][]\T1/aer/m/n/9 Extraído de \T1/aer/m/it/9 http://www.duiops.net/hardware/imp
 resor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--742
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
 [][]\T1/aer/m/it/9 http://www1.lexmark.com/es_MX/cartridges-ink-
  []
 
-[7]
-Overfull \hbox (11.50926pt too wide) in paragraph at lines 815--823
+
+Overfull \hbox (30.4891pt too wide) in paragraph at lines 371--379
+\T1/aer/m/n/9 rendimiento ISO/IEC 19752 para car-tu-chos de tóner monocromático
+
+ []
+
+[3]
+Overfull \hbox (11.50926pt too wide) in paragraph at lines 450--458
 [][] 
  []
 
 
-Overfull \hbox (2.55322pt too wide) in paragraph at lines 847--848
+Overfull \hbox (2.55322pt too wide) in paragraph at lines 482--483
 []\T1/aer/m/n/9 Si es para una ofic-ina $\OMS/cmsy/m/n/9 )$ \T1/aer/m/n/9 nece-
-sita láser monocromo 
+sita laser monocromo 
  []
 
 
-Overfull \hbox (1.31091pt too wide) in paragraph at lines 849--850
+Overfull \hbox (1.31091pt too wide) in paragraph at lines 484--485
 []\T1/aer/m/n/9 Si es un es-tu-dio de ar-qui-tec-tura $\OMS/cmsy/m/n/9 )$ \T1/a
 er/m/n/9 nece-sita chorro
  []
 
-
-Overfull \hbox (5.91936pt too wide) in paragraph at lines 884--885
-[]\T1/aer/m/n/9 Si el vol-u-men de im-pre-sión es alto $\OMS/cmsy/m/n/9 )$ \T1/
-aer/m/n/9 se re-comienda
- []
-
-[8]
-Overfull \hbox (9.89018pt too wide) in paragraph at lines 970--985
+[4]
+Overfull \hbox (9.89018pt too wide) in paragraph at lines 602--617
 [][] 
  []
 
-<arquitecturaSEBREI.png, id=39, 264.59508pt x 279.60197pt>
+<arquitecturaSEBREI.png, id=23, 264.59508pt x 279.60197pt>
 File: arquitecturaSEBREI.png Graphic file (type png)
 
-<use arquitecturaSEBREI.png> [9 <./arquitecturaSEBREI.png (PNG copy)>]
-<BD2.png, id=43, 915.42pt x 918.43124pt>
-File: BD2.png Graphic file (type png)
- <use BD2.png>
-LaTeX Font Info:    Try loading font information for T1+aett on input line 1175
-.
+<use arquitecturaSEBREI.png> [5 <./arquitecturaSEBREI.png (PNG copy)>]
+<conjuntosCrips2.png, id=27, 276.83754pt x 63.97672pt>
+File: conjuntosCrips2.png Graphic file (type png)
 
-(/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Overfull \hbox (8.8645pt too wide) in paragraph at lines 1205--1205
- []  \T1/aett/m/n/9 (question "¾Será necesario imprimir a color?")[] 
- []
-
-
-Overfull \hbox (2.18422pt too wide) in paragraph at lines 1209--1211
-[]\T1/aer/m/n/9 Las re-glas en CLIPS es-tán for-madas por: Una parte izquierda
- []
-
-[10] [11 <./BD2.png (PNG copy)>]
-<pagmen.png, id=51, 346.29375pt x 229.85875pt>
-File: pagmen.png Graphic file (type png)
- <use pagmen.png>
-<hogar.png, id=53, 513.92pt x 327.2225pt>
-File: hogar.png Graphic file (type png)
- <use hogar.png>
-Overfull \hbox (16.95937pt too wide) in paragraph at lines 1338--1339
+<use conjuntosCrips2.png>
+Overfull \hbox (9.15147pt too wide) in paragraph at lines 701--702
  [][] 
  []
 
-[12 <./pagmen.png> <./hogar.png>] <./menu.png, id=59, 766.865pt x 616.3025pt>
-File: ./menu.png Graphic file (type png)
 
-<use ./menu.png>
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1386--1388
+Overfull \hbox (10.5367pt too wide) in paragraph at lines 759--767
+\T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuevos
+ equipos
+ []
+
+<BD2.png, id=28, 915.42pt x 918.43124pt>
+File: BD2.png Graphic file (type png)
+ <use BD2.png> [6 <./conjuntosCrips2.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 807.
+
+ (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 837--837
+ []  \T1/aett/m/n/9 (question "¾Será necesario imprimir a color?")[] 
+ []
+
+[7 <./BD2.png (PNG copy)>]
+Overfull \hbox (2.18422pt too wide) in paragraph at lines 841--843
+[]\T1/aer/m/n/9 Las re-glas en CLIPS es-tán for-madas por: Una parte izquierda
+ []
+
+<arbol.png, id=37, 326.018pt x 133.298pt>
+File: arbol.png Graphic file (type png)
+ <use arbol.png> [8 <./arbol.png>]
+Overfull \hbox (17.38353pt too wide) in paragraph at lines 995--995
+[]\secfnt DESARROLLO DE LAS IN-TER-FACES WEB 
+ []
+
+
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1005--1007
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
 
-<./mod_printer.png, id=60, 763.85374pt x 925.4575pt>
+<./menu.png, id=43, 766.865pt x 616.3025pt>
+File: ./menu.png Graphic file (type png)
+ <use ./menu.png>
+<./mod_printer.png, id=44, 763.85374pt x 925.4575pt>
 File: ./mod_printer.png Graphic file (type png)
  <use ./mod_printer.png>
-<./print_cart.png, id=61, 399.4925pt x 580.1675pt>
+<./print_cart.png, id=45, 399.4925pt x 580.1675pt>
 File: ./print_cart.png Graphic file (type png)
  <use ./print_cart.png>
-[13 <./print_cart.png (PNG copy)>]
-<./uso.png, id=66, 764.8575pt x 593.21625pt>
+<./uso.png, id=46, 764.8575pt x 593.21625pt>
 File: ./uso.png Graphic file (type png)
- <use ./uso.png>
-<./printer_list.png, id=67, 440.64626pt x 724.7075pt>
-File: ./printer_list.png Graphic file (type png)
- <use ./printer_list.png>
-<./generar2.png, id=68, 392.46625pt x 250.9375pt>
-File: ./generar2.png Graphic file (type png)
- <use ./generar2.png> [14 <./menu.png (PNG copy)>] [15 <./mod_printer.png (PNG 
-copy)>]
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1556--1556
+ <use ./uso.png> [9]
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1171--1171
 []  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
  []
 
-
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1569--1569
+[10 <./menu.png (PNG copy)>]
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1184--1184
 []  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
  []
 
-Runaway argument?
- 
-! Paragraph ended before \@xverbatim was complete.
-<to be read again> 
-                   \par 
-l.1621 }}
-         
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+[11 <./mod_printer.png (PNG copy)>]
+
+LaTeX Warning: Text page \thepage  contains only floats.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1621--1621
-[]\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
- []
+Overfull \vbox (6.18233pt too high) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1621--1621
-[]\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
- []
+
+LaTeX Warning: Text page \thepage  contains only floats.
 
 
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1621--1622
-[][] 
- []
+Overfull \vbox (6.18233pt too high) has occurred while \output is active []
 
 
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [16 <./uso.png (PNG copy)>]
-Runaway argument?
- CLIPS> (run) 
-! Paragraph ended before \@xverbatim was complete.
-<to be read again> 
-                   \par 
-l.1672 }}
-         \end{quote}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
-[]\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
-[]\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
-[]\T1/aett/m/n/9 Necesitaras desplazar la impresora
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1672
-\T1/aett/m/n/9 en viajes, o trasladarla a diferentes
- []
-
-
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1672--1672
-[][] 
- []
-
-<./resp2.png, id=78, 602.25pt x 646.415pt>
-File: ./resp2.png Graphic file (type png)
- <use ./resp2.png>
-Overfull \hbox (4.97359pt too wide) in paragraph at lines 1688--1690
- [][] 
- []
-
-[17 <./printer_list.png (PNG copy)> <./generar2.png (PNG copy)>]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1786--1787
+[12 <./print_cart.png (PNG copy)> <./uso.png (PNG copy)>]
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 1316--1317
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
-[18 <./resp2.png (PNG copy)>]
+[13]
 
 Package natbib Warning: There were multiply defined citations.
 
-[19
+[14
 
-] (./report4.aux
+] (./report5.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
@@ -625,27 +505,25 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3294 strings out of 494999
- 40000 string characters out of 1180817
- 96794 words of memory out of 3000000
- 6404 multiletter control sequences out of 15000+50000
- 52246 words of font info for 71 fonts, out of 3000000 for 9000
+ 3120 strings out of 494999
+ 38015 string characters out of 1180817
+ 94606 words of memory out of 3000000
+ 6241 multiletter control sequences out of 15000+50000
+ 48784 words of font info for 68 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 39i,11n,43p,254b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,9n,28p,254b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/
-helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
--texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report4.pdf (19 pages, 846435 bytes).
+e1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/font
+s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times
+/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report5.pdf (14 pages, 515171 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

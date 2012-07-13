@@ -43,7 +43,7 @@ include('header.php');
                 <li><a href="alter.php?table=protocol">Protocolos de red</a></li>
 		<li><a href="alter.php?table=security_protocol">Seguridad Wifi</a></li>
 
-		<li><a href="alter.php?table=so">SO</a></li>
+		<li><a href="alter.php?table=so">Sistemas Operativos</a></li>
 		
 		 <li><a href="alter.php?table=tagp">Tag precio</a></li>
 		<li><a href="alter.php?table=sheet">Tamaños de papel</a></li>

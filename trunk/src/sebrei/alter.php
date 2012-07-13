@@ -84,7 +84,7 @@ else {	echo("<input type=\"text\" name=\"ad\" class=\"input\"  size=\"20\" style
 ?>
 <br>
 <fieldset>
-<h3> Already in database</h3>
+<h3> En la base de datos</h3>
 
 <ul>
 <?	while($row = pg_fetch_assoc($res))

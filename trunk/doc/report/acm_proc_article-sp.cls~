@@ -528,7 +528,7 @@
 #1}
 
 \long\def\@maketitlenotetext#1#2{\noindent
-            \hbox to 1.5em{\hss$^{#1}$}#2}
+            \hbox to 1.8em{\hss$^{#1}$}#2}
 
 \setcounter{topnumber}{2}
 \def\topfraction{.7}

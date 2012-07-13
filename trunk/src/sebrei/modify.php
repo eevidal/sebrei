@@ -16,9 +16,9 @@ else
 { 
 	if(!is_numeric($id)) header("Location: error.php?mes='Error en la consulta'");
 	else {
-		if ($t=='tag'||$t=='cartridge')
+		if ($t=='tag'||$t=='cartridge'||$t=='tagp')
         	{
-                	if($t=='tag')
+                	if($t=='tag'||$t=='tagp')
                 	{	
                         	$min=pg_escape_string($_GET['min']);
 	                        $max=pg_escape_string($_GET['max']);

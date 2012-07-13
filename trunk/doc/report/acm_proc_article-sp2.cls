@@ -447,7 +447,7 @@
 \fboxsep =2.7pt      % Space left between box and text by \fbox and \framebox.
 \fboxrule =.5pt      % Width of rules in box made by \fbox and \framebox. % (was .4) updated Gerry March 20 2007
 
-\def\thepart{\Roman{part}} % Roman numeral part numbers.
+\def\thepart {\arabic{part}} % Roman numeral part numbers.
 \def\thesection       {\arabic{section}}
 \def\thesubsection    {\thesection.\arabic{subsection}}
 %\def\thesubsubsection {\thesubsection.\arabic{subsubsection}} % GM 7/30/2002
@@ -533,6 +533,7 @@
 \setcounter{topnumber}{2}
 \def\topfraction{.7}
 \setcounter{bottomnumber}{1}
+
 \def\bottomfraction{.3}
 \setcounter{totalnumber}{3}
 \def\textfraction{.2}
@@ -579,7 +580,7 @@
 
 \def\maketitle{\par
  \begingroup
-   \def\thefootnote{\fnsymbol{footnote}}
+   %\def\thefootnote{\fnsymbol{footnote}}
    \def\@makefnmark{\hbox
        to 0pt{$^{\@thefnmark}$\hss}}
      \twocolumn[\@maketitle]
@@ -588,7 +589,7 @@
  \setcounter{footnote}{0}
  \let\maketitle\relax
  \let\@maketitle\relax
- \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@subtitle{}\let\thanks\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@subtitle{} \let\thanks\relax
  \@copyrightspace}
 
 %% CHANGES ON NEXT LINES
@@ -994,10 +995,10 @@
 %% suitably redefined for LaTeX2e
 %% END CHANGES
 \setcounter{secnumdepth}{3}
-\def\part{%
-    \@startsection{part}{9}{\z@}{-10\p@ \@plus -4\p@ \@minus -2\p@}
-        {4\p@}{\normalsize\@ucheadtrue}%
-}
+%\def\part{%
+%    \@startsection{part}{9}{\z@}{-10\p@ \@plus -4\p@ \@minus -2\p@}
+%        {4\p@}{\normalsize\@ucheadtrue}%
+%}
 
 % Rationale for changes made in next four definitions:
 % "Before skip" is made elastic to provide some give in setting columns (vs.

@@ -1,4 +1,4 @@
-%\documentclass[a4paper,10pt]{scrartcl}
+
 \documentclass{acm_proc_article-sp}
 %\usepackage{ucs}
 %\usepackage{luaotfload}
@@ -22,12 +22,12 @@
 \newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
 
 \begin{document}
-\title{ SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impesión
-\titlenote{Trabajo final de la asignatura Introducción a la Inteligencia Artificial
-de la carrera Licenciatura en Cs. de la Computación.} }
+\title{ SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impesión}
+\titlenote{ Trabajo final de la asignatura Introducción a la Inteligencia Artificial
+de la carrera Licenciatura en Cs. de la Computación.} 
 \subtitle{}
 \numberofauthors{1}
-
+%\titlenotecount=1
 \author{
 \alignauthor Erica Vidal\\
        \affaddr{Fac. de Cs. Exactas, Ingeniería y Agrimensura}\\
@@ -45,6 +45,10 @@ de la carrera Licenciatura en Cs. de la Computación.} }
 
 \section{Sistemas Expertos}
 \medskip 
+Un experto es una persona que tiene experiencia en cierta área, tiene habilidades que la mayoría  
+no y/o puede resolver problemas que la gran parte de las personas no pueden, o lo puede hacer de una 
+manera más eficiente. 
+
 Los términos sistema experto, sistema basado en conocimiento o sistema experto basado en conocimiento
 a menudo se usan como sinónimos.
 
@@ -61,15 +65,14 @@ resolución la intervención humana especializada.\cite{garcia}
 
 
 
-Un experto es una persona que tiene experiencia en cierta área, tiene habilidades que la mayoría  
-no y/o puede resolver problemas que la gran parte de las personas no pueden, o lo puede hacer de una 
-manera más eficiente. 
+
 
 El conocimiento en un sistema esperto puede representar experiencia o conocimiento que está disponible
 en libros, revistas y personas.
 
 Todo sistema experto está especializado en cierto campo o area del conocimento.
-El área de conocimiento que es capturado por un sistema experto se llama dominio de tarea o aplicación.
+El área de conocimiento que es capturado por un sistema experto se llama \textit{dominio de tarea} o 
+\textit{dominio de aplicación}.
 
 
 %\hilight{ssssmm}
@@ -80,13 +83,17 @@ El área de conocimiento que es capturado por un sistema experto se llama dominio
 
 %\hilight{completar}
 
-\section*{Estructura básica de un Sistema Experto}
+\subsection{Estructura básica de un Sistema Experto}
 
 \smallskip 
 
-La estructura básica de un sistema experto consta de una base de conocimiento que es el conjunto de 
-hechos y heurísticas debidamente alamacenadas y un motor de inferencias que es el programa que gestiona y controla la base de
-de conocimiento. Una característica relevante es que la base de conocimiento y el motor de inferencias se encuentran separados.
+La estructura básica de un sistema experto consta de una \textit{base de conocimiento} que es el conjunto de 
+hechos y heurísticas debidamente alamacenadas y un \textit{motor de inferencias} que es el programa 
+que gestiona y controla la base de
+de conocimiento. 
+
+En un sistema esperto la base de conocimiento y el motor de inferencias se encuentran separados.
+
 En la figura 1 se ilustra la estructura básica de un sistema experto.
 
 
@@ -98,15 +105,15 @@ En la figura 1 se ilustra la estructura básica de un sistema experto.
  \label{fig:se}
 \end{figure}
 
- Otros componentes importantes son la memoria de trabajo,
- la interfaz con el usuario y 
-el módulo de explicación. La memoria de trabajo también llamada base o lista de hechos (facts list)
+ Otros componentes importantes son la \textit{memoria de trabajo},
+ la \textit{interfaz con el usuario} y 
+el\textit{ módulo de explicación}. La memoria de trabajo también llamada base o lista de hechos (facts list)
 es el conjunto de datos 
 de un determinado problema y se almacena en forma separada de la base de conocimiento.
  El módulo de explicación o justificación explica el razonamiento utilizado por el sistema para 
 llegar a una conclusión. 
 
-\section*{Representación del conocimiento}
+\subsection{Representación del conocimiento}
 \smallskip 
 ``En IA, la representación del conocimiento es una combinación de estructura de datos y procedimientos de
 interpretación, que si se usan de una forma adecuada en un programa se tendrá un comportamiento experto."\cite{feigenbaum}
@@ -123,7 +130,7 @@ Entre los principales sistemas se tienen:
  \item Formalismos estructurados (Redes semánticas, Frames, Objetos y Ontologías )
 \end{itemize}
 
-\subsection*{Reglas de Producción} 
+\subsubsection{Reglas de Producción} 
 Una regla de producción es una sentencia que tiene la siguiente forma: 
 
 
@@ -135,7 +142,7 @@ SI $<$antecedente$>$ ENTONCES $<$consecuente$>$\end{quote}
 
 donde el antecedente y el consecuente son frases en lenguaje coloquial. 
 El nombre de producción se debe al hecho de que el consecuente 
-describe el estado de cosas que resulta como consecuencia de que el antecedente sea satisfecho. 
+describe el estado de cosas que resulta como producto de que el antecedente sea satisfecho. 
 
 Un sistema basado en reglas se define como una colección consistente de reglas del tipos
 antecedente-concecuente, una base de hechos y un motor de inferencias. \cite{waterman}
@@ -144,7 +151,7 @@ antecedente-concecuente, una base de hechos y un motor de inferencias. \cite{wat
 %{Reglas de producción} fundamentar elección 
 
 %{Métodos de de inferencia}
-\section*{Motor de inferencia}
+\subsection{Motor de inferencia}
 \smallskip 
 El motor de inferencia de un sistema experto usa los datos (hechos o evidencia) y el 
 conocimiento (el conjunto de reglas almacenado en 
@@ -155,16 +162,17 @@ Una regla de inferencia es un esquema para construir inferencias válidas. Estos 
 relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una aserción llamada conclusión. 
 Ejemplos de reglas de inferencias clásicas son  las conocidas Modus Ponens y Modus Tollens.
 
-\subsection*{Agenda}
+\subsubsection{Agenda}
 La lista de reglas que se encuentran en la base de conocimento que son portencialmente ejecutables se almacenan
-en lo que se denomina agenda. Una regla es potencialmente ejecutable si su parte izquierda se satisface. 
-Al conjunto de reglas que pueden ser ejecutadas se las denomina grupo de conflicto de reglas y al preoceso de ordernarlas
-para ser ejecutadas se lo denomina resolución de conflictos. 
+en lo que se denomina \textit{agenda}. Una regla es potencialmente ejecutable si su parte izquierda se satisface. 
+Al conjunto de reglas que pueden ser ejecutadas se las denomina \textit{grupo de conflicto} de reglas y al
+proceso de ordernarlas
+para ser ejecutadas se lo denomina \textit{resolución de conflictos}. 
 
 
 
 
-\subsection*{El algoritmo de Rete}
+\subsubsection{El algoritmo de Rete}
 \smallskip 
 
 
@@ -180,24 +188,24 @@ por lo que el sistema cambia muy lentamente. El algortimo de Rete toma ventaja d
 del matching ciclo a ciclo y reconstruyendo los cambios en el estado solo para los cambios que ocurrieron en la 
 fact list. 
 
-\subsection*{Encadenamientos}
+\subsubsection{Encadenamientos}
 
-Un grupo de múltiples inferencias que conecta un problema con una solución se llama encadenamiento (chain).
+Un grupo de múltiples inferencias que conecta un problema con una solución se llama \textit{encadenamiento} (chain).
 
 
-Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o Forward Chain, 
+Una encadenamiento que va desde los hechos  hacia un objetivo o conclusión se llama ecadenamiento hacia adelante o \textit{Forward Chain}, 
 mientras que un encadenamiento 
 que va desde una hipótesis u objetivo hacia los hechos que soportan dicha hipótesis se llama encadenamiento hacia atraz.
-Backward Chain. 
+\textit{Backward Chain}. 
 
 Debido a que los datos determinan que reglas se usarán el Fordward Chaining es llamado inferencia data-driven en contraste 
 con inferencia goal-driven referido al Backward Chaining.
 
-\hilight{Agregar ejemplos}
+%\hilight{Agregar ejemplos}
 
  
-Suele resulta útil visualizar los Forward y Backward Chaining en términos de la búsqueda de un path 
-a través de un espacio de búsqueda. 
+%Suele resulta útil visualizar los Forward y Backward Chaining en términos de la búsqueda de un path 
+%a través de un espacio de búsqueda. 
 
 
 %!!!!!!
@@ -209,36 +217,36 @@ a través de un espacio de búsqueda.
 %backward chaining. 
 %!!!!!!!!!!
 
-Buenas aplicaciones para Fordward Chaining son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
-porque el Fordward Chaining produce una búsqueda a lo ancho. 
+%Buenas aplicaciones para Fordward Chaining son aquellas en el que el arbol de búsqueda es ancho y no muy profundo, 
+%porque el Fordward Chaining produce una búsqueda a lo ancho. 
 
-En cambio el Backward Chaining produce una búsqueda en profundidad y un buen árbol para una búsqueda en profundidad
-es uno angosto y profundo.\cite{Riley}
+%En cambio el Backward Chaining produce una búsqueda en profundidad y un buen árbol para una búsqueda en profundidad
+%es uno angosto y profundo.\cite{Riley}
 
-De acuerdo al tipo de encadenamiento que use un motor de inferencia se los denomina también Fordward o Backward Chaninig.
+%De acuerdo al tipo de encadenamiento que use un motor de inferencia se los denomina también Fordward o Backward Chaninig.
 
-El algoritmo de Fordward Chaining trabaja de la siguiente manera:
+%El algoritmo de Fordward Chaining trabaja de la siguiente manera:
 
-procesa un hecho en la memoria de trabajo, verifica
-su base de reglas para ver si alguna de las condiciones es verdadera. Si alguna lo es,
-las acciones del lado derecho de las reglas son procesadas, pudiendo cambiar la información
-de la memoria de trabajo.
-Cuando se completa la acción, el motor chequea si la condición de alguna otra regla
-es verdadera y el proceso se repite hasta que no existan reglas que sean verdaderas.
+%procesa un hecho en la memoria de trabajo, verifica
+%su base de reglas para ver si alguna de las condiciones es verdadera. Si alguna lo es,
+%las acciones del lado derecho de las reglas son procesadas, pudiendo cambiar la información
+%de la memoria de trabajo.
+%Cuando se completa la acción, el motor chequea si la condición de alguna otra regla
+%es verdadera y el proceso se repite hasta que no existan reglas que sean verdaderas.
 
-!!algoritmo
+%!!algoritmo
 
 
-El algoritmo de Backward Chaining en cambio:
+%El algoritmo de Backward Chaining en cambio:
 
-Se comienza con una conclusión que el motor trata de satisfacer.
-Si no se puede satisfacer, se buscan conclusiones intermedias que sí se puedan
-satisfacer (sub goals), lo que permite satisfacer alguna parte del objetivo actual
-(current goal).
-Se continúa con este proceso hasta que se prueban las conclusiones iniciales o
-no hay más sub-conclusiones (sub goals) para analizar. \cite{silverira}
-
-!!algoritmo
+%Se comienza con una conclusión que el motor trata de satisfacer.
+%Si no se puede satisfacer, se buscan conclusiones intermedias que sí se puedan
+%satisfacer (sub goals), lo que permite satisfacer alguna parte del objetivo actual
+%(current goal).
+%Se continúa con este proceso hasta que se prueban las conclusiones iniciales o
+%no hay más sub-conclusiones (sub goals) para analizar. \cite{silverira}
+%
+%!!algoritmo
 
 %\section*{Incertidumbre}
 %Se han desarrollado varias técnicas para utilizarlas ante casos de  incertidumbre, y que forman un 
@@ -249,7 +257,7 @@ no hay más sub-conclusiones (sub goals) para analizar. \cite{silverira}
 
 
 
-\section*{Metodología para el desarollo de sistemas expertos}
+\subsection{Metodología para el desarollo de sistemas expertos}
 \smallskip 
 
 %\hilight{revizar riley y completar}
@@ -291,18 +299,18 @@ Además de estas, el desarrollo de un sistema experto debe incluir las etapas de
 \end{itemize}
 
 
-\section*{Adquisición del conocimiento}
+\subsection{Adquisición del conocimiento}
 
 Uno de los aspectos más importantes
 en el proceso de construcción de un sistema informático basado en el
 conocimiento es el de la adquisición y validación de conocimiento. 
 
-"Dentro de los métodos de adquisición de
+''Dentro de los métodos de adquisición de
 conocimiento se pueden citar los métodos basados en interaccion humana
 tales como tareas familiares, entrevistas, tareas de proceso restringido y tareas
 de información limitada y los basados en técnicas de aprendizaje automático."\cite{garcia}
 
-En \cite{Carrillo} el autor en el desarrollo de su metodología integreal para el
+En \cite{Carrillo} el autor en el desarrollo de su metodología IDEAL para el
 desarollo de sistemas basados en conocimiento,
 explora, recopila y analiza varias técnicas para la adquisición del
 conocimiento y la elección adecuada de su representación.
@@ -314,7 +322,7 @@ claves del dominio de aplicación.
 
 
 
-\section*{Herramientas}
+\subsection{Herramientas}
 \smallskip 
 
 Las herramientas informáticas utilizadas para la realización de sistemas expertos pueden ser
@@ -338,8 +346,8 @@ Hacia mediados de la década del 80 el 95\% de los programas en IA estaban escrit
 \textbf{Common LISP}  :Durante los años 1980 y 1990, fue hecho un gran esfuerzo para unificar los numerosos dialectos del Lisp 
 en un solo lenguaje (más notablemente, InterLisp, Maclisp, ZetaLisp, MetaLisp, y Franz Lisp). 
 El nuevo lenguaje, Common Lisp, fue esencialmente un subconjunto compatible de los dialectos que reemplazó. 
-En 1994, la ANSI publicó el estándar del Common Lisp, "ANSI X3.226-1994 Information Technology Programming Language Common Lisp
-Common Lisp es un lenguaje multi paradigma de propósitos generales. Soporta una combinación 
+En 1994, la ANSI publicó el estándar del Common Lisp, ``ANSI X3.226-1994 Information Technology Programming Language Common Lisp.
+Common Lisp es un lenguaje multi-paradigma de propósitos generales. Soporta una combinación 
 de paradigmas de programación como procedimental 
 (imperativo), funcional, y orientada al objeto. 
 
@@ -355,7 +363,7 @@ soporta CLIPS se encuentran la Programación lógica, la Programación imperativa y
 la Programación Orientada a Objetos. Aunque ahora es de
 dominio público (license public domain), aún es actualizado y mantenido por su autor original, Gary Riley.
 Permite representar reglas de producción y frames.
-El motor de inferencias es de tipo Fordward Chaining, y hay X formas de resolución de conflicto
+El motor de inferencias es de tipo Fordward Chaining, y hay varias formas de resolución de conflicto
 (depth, breadth, LEX, MEA, complexity, simplicity y random).
 Está escrito en C, por lo que es portable a varios sistemas operativos.
 En la actualidad se encuentra en su versión 6.3.

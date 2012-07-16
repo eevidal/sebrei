@@ -469,7 +469,7 @@ disponibles aquellos que más se ajusten.
 \smallskip 
 \subsubsection{Uso}
 
-El sistema debe poder ser accedido a través de un browser.
+%El sistema debe poder ser accedido a través de un browser.
 El sistema debe recomendar los equipos de impresión que más se ajusten a las necesidades del cliente.
 Para determinar las necesidades del cliente el sistema se vale de preguntas en español.
 El sistema debe explicar las razones de sus recomendaciones.  
@@ -721,9 +721,14 @@ En las impresoras matriciales, el mantenimiento es sencillo y
  que suele durar bastante. El cabezal también se suele considerar como 
 consumible, pero no es algo que se estropee con frecuencia, teniendo una media de vida del orden de años.
 
-En las de inyección, lo que más cambiaremos serán los cartuchos de negro
+En las de inyección, lo que más se cambia son los cartuchos de negro
  y/o color; el cabezal inyector no suele estropearse, y la mayoría de impresoras 
 implementan sistemas de limpieza y calibrado que permiten ajustar el funcionamiento de las mismas.
+Algunas impresoras utilizan dos cartuchos, uno para la tinta negra y otro para la de color, 
+en donde suelen estar los tres colores básicos.La mayoría de las impresoras de nueva generación utilizan cartuchos
+ individuales por cada color, esto permite al usuario reemplazar solo el color que se agote.
+Además con la finalidad de mejorar los tonos claros y oscuros las nuevas impresoras fotográficas cuentan con seis
+y hasta ocho colores diferentes (magenta claro, cyan claro, negro claro, azul marino, naranja, rojo y verde entre otros).
 
 Por último, en las impresoras láser el consumible por excelencia es el cartucho 
 de tóner (es decir, la tinta), pero tampoco es extraño tener que cambiar la unidad 
@@ -760,7 +765,7 @@ etc. Podemos considerar gran formato a todo aquello que vaya más allá de un hoja
 
 A continuación se listan las características técnicas de los equipos de impresión 
 que pueden ser encontrados en los folletos de especificaciones provista por los
-distintos fabricantes. Dichas características se deben tener en cuenta para seleccionar
+distintos fabricantes. Dichas características se tienen en cuenta para seleccionar
 qué modelo de equipo se necesita.
 Dependiendo del uso que se le va a dar al equipo las distintas características van 
 adquiriendo más o menos relevancia. 
@@ -804,17 +809,18 @@ Otras características a tener en cuenta pueden ser:
 
 
 \subsubsection{Entrevista con el experto}
-En el \textit{Apéndice A} se encuentra el contenido de los intercambios de mails con el experto (vendedor), que han sido
+En el \textit{Apéndice A} se encuentra el contenido de los intercambios de mails con un experto (vendedor), que han sido
 dispuestos en forma de entrevista. 
-Usando como guía un poco lo manifestado por el experto podemos establecer
- cuatro características mínimas que considerar antes de hacer una recomendación
+Usando como guía un lo manifestado por el experto y lo consultado en el resto de las fuentes ya mencionadas,
+podemos establecer
+ cuatro características mínimas que considerar para hacer una recomendación de equipos de impresión.
 
 
 \begin{quote}
 
 \begin{tabular}{l}
 
- uso ( en qué ámbito será usada: oficina / hogar)  \\
+ uso ( en qué ámbito será usado: oficina, hogar, etc)  \\
  funciones (copiar, imprimir, etc) \\
  color  \\
  volumen mensual  \\
@@ -830,33 +836,34 @@ de reglas que luego deben ser validadas.
 
  \begin{quote}
  
-	      Si es para poco uso y una sola persona $\Rightarrow$ necesita impresora chica
+	      
+	      SI es para poco uso y una sola persona ENTONCES necesita impresora chica
 	        
-	      Si es para imprimir y escanear $\Rightarrow$ necesita multifunción
+	      SI es para imprimir y escanear ENTONCES necesita multifunción
 	        
-	      Si es para uso corporativo  $\Rightarrow$ necesita impresora de Red
+	      SI es para uso corporativo  ENTONCES necesita impresora de Red
 	       
-	      Si no quiere cables  $\Rightarrow$ necesita conexión wireless
+	      SI no quiere cables ENTONCES necesita conexión wireless
 	      
-	      Si es fanático de la tecnología $\Rightarrow$ puede querer imprimir desde el iPod
+	      SI es fanático de la tecnología ENTONCES puede querer imprimir desde el iPod
 	      
-	      Si es para altos volúmenes $\Rightarrow$ el costo del tóner es importante
+	      SI es para altos volúmenes ENTONCES el costo del tóner es importante
 	      
-	      Si el volumen mensual del equipo es menor a 2000 páginas $\Rightarrow$ la impresora es chica
+	      SI el volumen mensual del equipo es menor a 2000 páginas ENTONCES la impresora es chica
 	      
-	      Si es para una oficina $\Rightarrow$ necesita láser monocromo
+	      SI es para una oficina ENTONCES necesita láser monocromo
 	      
-	      Si es un estudio de arquitectura $\Rightarrow$ necesita chorro de tinta para A4 o A3 o un plotter
+	      SI es un estudio de arquitectura ENTONCES necesita chorro de tinta para A4 o A3 o un plotter
 	      
-	      Si es para el hogar $\Rightarrow$ puede necesitar multifunción barata \end{quote} 
+	      SI es para el hogar ENTONCES puede necesitar multifunción barata \end{quote} 
 
  
 %\textbf{Uso}
     
-    
-Hay ciertos conceptos imprecisos como \textit{impresora chica, alto volumen, poco uso}. En 
+En la lista de reglas
+hay ciertos conceptos imprecisos como \textit{impresora chica, alto volumen, poco uso}. En 
 el contexto utilizado todos los términos se están refiriendo a la cantidad de páginas mensuales. 
-Algo más con respecto a la palabra \textit{uso} se la puede emplear para manifestar frecuencia de impresión, 
+La palabra \textit{uso} se la puede emplear tanto para manifestar frecuencia de impresión, 
 como para referirse a tipo de documentos a imprimir (fotos, textos, etc).
 
 %http://thales.cica.es/rd/Recursos/rd99/ed99-0646-02/impresora.html#laser    
@@ -867,34 +874,34 @@ como para referirse a tipo de documentos a imprimir (fotos, textos, etc).
 Otras posibles reglas extraídas de noticias y recomendaciones online podrían ser las siguientes. 
 \begin{quote}
 
-Si se imprimen menos de 30 pag. a color  $\Rightarrow$ cartucho único.
+SI se imprimen menos de 30 pag. a color  ENTONCES cartucho único.
 
-Si se imprimen más de 30 pag a color  $\Rightarrow$ cartuchos separados.
+SI se imprimen más de 30 pag a color  ENTONCES cartuchos separados.
 
-Si el uso es doméstico u ocasional $\Rightarrow$ la velocidad no es relevante.
+SI el uso es doméstico u ocasional ENTONCES la velocidad no es relevante.
 
-Si el uso es doméstico u ocasional $\Rightarrow$ el tamaño de la bandeja no es relevante.
+SI el uso es doméstico u ocasional ENTONCES el tamaño de la bandeja no es relevante.
 
-Si se deben imprimir muchas copias $\Rightarrow$ la velocidad es relevante.
+SI se deben imprimir muchas copias ENTONCES la velocidad es relevante.
 
-Si se quieren imprimir fotografías $\Rightarrow$ no se recomienda una impresora domestica.
+SI se quieren imprimir fotografías ENTONCES no se recomienda una impresora domestica.
 
-Si no se quieren imprimir fotografías $\Rightarrow$ una resolución de 600 dpi alcanza.
+SI no se quieren imprimir fotografías ENTONCES una resolución de 600 dpi alcanza.
 
-Si el volumen de impresión es alto $\Rightarrow$ se recomienda impresora láser y velocidad de impresión superior  a 30 ppm
+SI el volumen de impresión es alto ENTONCES se recomienda impresora láser y velocidad de impresión superior  a 30 ppm.
 
-Si es una empresa de publicidad $\Rightarrow$ se recomienda láser color u otras tecnologías
+SI es una empresa de publicidad ENTONCES se recomienda láser color.
 
-Si es para formularios continuos $\Rightarrow$ se recomienda matriz de punto
+SI es para formularios continuos ENTONCES se recomienda matriz de punto.
 
-Si es para el hogar o pequeña oficina $\Rightarrow$ inyección de tinta 
+SI es para el hogar o pequeña oficina ENTONCES inyección de tinta.
 
-Si es para el hogar o pequeña oficina y se necesita calidad fotográfica $\Rightarrow$ inyección de tinta con 4 cartuchos.
+SI es para el hogar o pequeña oficina y se necesita calidad fotográfica ENTONCES inyección de tinta con 4 cartuchos.
 
-Si el grupo de trabajo promedio es de 10 computadores $\Rightarrow$ el tamaño de la bandeja de entrada es importante, y 
+SI el grupo de trabajo promedio es de 10 computadores ENTONCES el tamaño de la bandeja de entrada es importante, y 
 se prefiere de más de 200 hojas. 
 
-Si se requiere escanear en un estudio contable o de abogados $\Rightarrow$ conviene chequear la superficie del escáner admite
+SI se requiere escanear en un estudio contable o de abogados ENTONCES conviene chequear la superficie del escáner admite
 tamaño legal.               \end{quote} 
 
 \subsubsection{Perfil de usuario}
@@ -914,8 +921,8 @@ Porque el uso determina varios del resto de las características. % Por ejemplo, 
 } clasifica sus productos en 5 categorías y guía al cliente que 
  visita su página en busca de impresoras 
 o multifunciones en esta clasificación
-de acuerdo al uso que tiene intensiones de darle el cliente. En la tabla 1 
-se puede observar la correspondencia entre uso y volumen mensual según la pagina de
+de acuerdo al uso que el cliente tiene intensiones de darle. En la tabla 1 
+se puede observar la correspondencia entre uso y volumen mensual de páginas según la web de
 HP.
 
 \begin{table*}
@@ -960,7 +967,7 @@ de acuerdo al tamaño del grupo
 de trabajo. Dicha clasificación se compone de las categorías de  \textit{personal},\textit{ grupo pequeño} (de 1 a 3 usuarios),
 \textit{grupo mediano} (de 4 a 10), y \textit{grupo grande de trabajo} (más de 10). 
 Al revisar las especificaciones de los productos de las distintas categorías se observa una relación entre dichas
-categorías y el ciclo mensual de trabajo que está resumida en la tabla 2.
+categorías y el ciclo mensual de trabajo, dicha relación se resume en la tabla 2.
 
 
 \begin{table}
@@ -986,12 +993,22 @@ categorías y el ciclo mensual de trabajo que está resumida en la tabla 2.
 
 \section{Diseño}
 
-La figura 2 se presenta la arquitectura de tres niveles\footnote{
+En la figura 2 se presenta la arquitectura de tres niveles\footnote{
 Una arquitectura de tres niveles es una especialización de la arquitectura 
 cliente-servidor donde la carga se divide en tres partes (o capas) con un reparto claro de funciones:
  una capa para la presentación (interfaz de usuario), otra para el cálculo 
  y otra para el almacenamiento (persistencia). Una capa solamente tiene relación con la siguiente. } 
 del sistema. 
+
+Para permitir flexibilidad en la incorporación de nuevos equipos o modificación de los existentes, 
+se utilizó un base de datos relacional para mantener las características de los equipos de impresión.  
+Las interfaces web Cliente y Administrador son interfaces gráficas HTML embebidas en código de algún lenguaje 
+de script. El SE se refiere al sistema experto que interactúa con el procesador de consulta y de anera indirecta
+con la base de datos. El procesador de consulta es el encargado de generar una respuesta en base a los datos provistos
+por el cliente, las respuestas del SE y consultas a la base de datos.
+La interfaz con la BD es el módulo que permite modificar y consultar con la base de datos en respuesta a los comandos
+introducidos desde la interfaz administrativa.
+
 
 \begin{center}
 \begin{figure}[!ht]
@@ -1060,8 +1077,8 @@ se usarán dichos conjuntos para los valores del literal \textit{uso}, los valore
 de la variable \textit{uso} podrán ser \textit{hogar, profesional, pyme, pyme+} y \textit{corporativo}.
 
 Los límites del volumen mensual definidos por los fabricantes de cada equipo se usaran para categorizar
-los equipos de acuerdo a los conjuntos definidos para la variable uso. Nótese que un mismo equipo puede pertenecer
-a más de una categoría.
+los equipos de acuerdo a los conjuntos definidos para la variable uso. %Nótese que un mismo equipo puede pertenecer
+%a más de una categoría.
 
 %Por otro lado el experto nos habla de impresoras \textit{chica} como aquella que no 
 %superara las 2000 páginas de impresiones al mes. Dentro de la categoría \textit{chica}
@@ -1119,16 +1136,20 @@ gran inversión & 3000 -  150000\\
  Dichas categorías se usaran solo para excluir equipos que están mas o menos fuera del 
 presupuesto del cliente.
 
+\subsubsection{Conjunto de Reglas default}
+La lista de reglas por defecto que serán tenidas en cuenta para la
+implementación del sistema se encuentran en el Apendice B.
+
+
 
 \subsection{Base de datos}
 
-Para permitir flexibilidad en la incorporación de nuevos equi- pos o modificación de los existentes, 
-utilizamos un base de datos relacional para mantener las características de los equipos de impresión. 
+
 La figura 3 muestra el diagrama de entidad relación de la base de datos. 
 La base de datos está implementada en postgres. 
 La idea inicial fue usar mysql, pero postgres
 cuenta con la posibilidad de definir tipos de datos propios y definir usar arreglos en la
-definición de las filas de una tabla lo cual resulta útil en este sistema. 
+definición de las filas de una tabla lo cual resulta útil en este sistema.
 %Para interactuar directamente con la base de datos use psql y phppgadmin.  
 %El modelo de entidad de relación fueron construidos con Workbench para mysql.
 
@@ -1146,16 +1167,13 @@ definición de las filas de una tabla lo cual resulta útil en este sistema.
 
 \section{Implementación} 
 
-Como shell para sistemas expertos he seleccionado CLIPS por ser de dominio público, 
+Como shell para sistemas expertos se seleccionó CLIPS por ser de dominio público, 
 permitir una rápida prototipación, contar con una muy buena documentación, tener
  la capacidad de poder interoperar con otros lenguajes y la disponibilidad de varias extensiones
 y derivados.
 Un primer prototipo se implemento enteramente en CLIPS.
-Antes de entrar en los detalles haré 
-una breve introducción a clips.  
-
-Para arrancar CLIPS desde una shell de Linux se teclea clips y nos encontramos en un interprete de comandos.
-La notación es muy similar a la del lenguaje LISP.
+  
+\subsection{Breve introducción a CLIPS} 
 
 (exit)  Sale de CLIPS
 
@@ -1165,7 +1183,7 @@ La notación es muy similar a la del lenguaje LISP.
 
 (run)  Comienza la ejecución de un programa CLIPS.
 
-\subsection{Hechos y Reglas en Clips}
+\subsubsection{Hechos y Reglas en Clips}
 
 En un su modo más sencillo, CLIPS opera manteniendo una lista de hechos (facts) y un conjunto de reglas ( rules) con las que operar.
 Los hechos en CLIPS pueden ser de dos tipos: ordered facts y deftemplate facts.
@@ -1184,7 +1202,7 @@ Un ejemplo de deftemplate es:
    (slot type (default ?NONE))
 ) \end{verbatim} \end{quote} 
 
-La creación de hechos se realiza mediante las sentencias assert (uno solo) o deffact (un conjunto), por ejemplo:
+La creación de hechos se realiza mediante las sentencias assert (uno solo hecho) o deffact (un conjunto), por ejemplo:
 
 \begin{quote}
 \begin{verbatim}
@@ -1206,8 +1224,8 @@ La creación de hechos se realiza mediante las sentencias assert (uno solo) o def
 
 
 
-Las reglas en CLIPS están formadas por:
-Una parte izquierda (LHS) que define las condiciones a cumplir y una parte derecha (RHS) que define las acciones a realizar.
+Las reglas en CLIPS están formadas por una parte izquierda (LHS) que define las 
+condiciones a cumplir y una parte derecha (RHS) que define las acciones a realizar.
 
 Sintaxis:
 
@@ -1289,7 +1307,7 @@ e incluso se pueden crear nuevas categorías desde la interfaz web administrativa
 \end{center}
 Ayuda a visualizar el conjunto de reglas el hecho de  
 disponerlas en una estructura de árbol.
-El árbol correspondiente a la regla que determina la categoría uso que se necesita se encuentra en la 
+El árbol correspondiente a la regla que determina la categoría uso se encuentra en la 
 figura 4.
 Las reglas en clips para ese árbol quedan de la siguiente manera:
 
@@ -1340,6 +1358,8 @@ Las reglas en clips para ese árbol quedan de la siguiente manera:
 \label{db}
 \end{figure}
 \end{center}
+El subárbol del nodo hogar se encuentra representado en la figura 5. 
+
 El sistema usa encadenamiento hacia adelante y el conjunto de reglas que los componen están 
 distribuidas en los siguientes archivos
 
@@ -1353,13 +1373,14 @@ distribuidas en los siguientes archivos
 
 El archivo \verb|printers.clp| contiene el deftemplate de los equi- pos, los deffacts y una regla para seleccionar
 los equipos que cumplan ciertas condiciones, \verb|main.clp|
- contiene reglas que determinan si el equipo debe ser a color o no, si sera necesario imprimir a 
+ contiene reglas que se han definido como default del sistema y que determinan si el equipo debe ser a color 
+o no, si sera necesario imprimir a 
 doble fax de forma automática, el tipo de conexión, el tamaño del grupo de trabajo, el tipo de equipo y
 las funciones requeridas. 
 \verb|regla_uso.clp| determina el tipo de uso y \verb|regla_precio.clp| el tag de precio. 
 \verb|more_questions.clp| inicialmente esta vació y sirve para incorporar nuevas preguntas para setear nuevas características
-que se necesiten de un equipo
-\verb|adicionales.clp| es un conjunto de reglas adicionales relacionadas con características de los equipos que podrían sera necesarias
+que se necesiten de un equipo,
+\verb|adicionales.clp| es un conjunto de reglas adicionales relacionadas con características de los equipos que podrían ser necesarias
 como por ejemplo el tamaño de la bandeja de salida estándar o si el equipo deberá contar con lcd o no. Inicialmente tiene un conjunto de
 reglas configuradas para que sean neutrales tanto si en el deffact de los equipos se incluyen todas a las características posibles o solo 
 las que se han elegido por defecto. 
@@ -1418,26 +1439,13 @@ Permite:
 
 \end{itemize}
 
-%Los tags de precios se actualizarán mediante una función fuzzy cuyos parámetros 
-%pueden ser alterados por el administrador del sistema. Eso permitirá que los valores de la variable precio
-%“económica”, “moderado” varien sus límites de acuerdo a la realidad económica del medio en donde se use el sistema. 
-
-%\subsubsection{Diseño}
-%\begin{figure*}[!ht]
-% \centering
-
- %\includegraphics[scale=0.5]{./AdminSite.png}
- % AdminSite.png: 789x550 pixel, 72dpi, 27.83x19.40 cm, bb=0 0 789 550
-%\caption{}
-%\end{figure*}
-
 
 
 
 \subsubsection{Implementación}
 La interfaz administrativa del sistema se desarrollo en PHP.
  
-En la figura 6 se muestra el menú general del sistema. Cada link de la columna
+En la figura 7 se muestra el menú general del sistema. Cada link de la columna
 agregar/modificar permite agregar o e- ditar una característica relacionada con las impresoras
 o un nuevo equipo. 
 
@@ -1445,7 +1453,7 @@ o un nuevo equipo.
 
 
 
-El formulario de agregar un nuevo equipo (figura 7) sirve para incorporar a la base de datos, los datos correspondientes
+El formulario de agregar un nuevo equipo (figura 8) sirve para incorporar a la base de datos, los datos correspondientes
 a un nuevo equipo, el formulario permite asociar todas las características presentes en la base de datos a un equipo de 
 impresión. 
 \begin{figure*}
@@ -1457,12 +1465,12 @@ impresión.
 \caption{}
 \end{figure*}
 
-Algo interezante es que no tenemos que clasificar los equipos de acuerdo al uso o precio de los mismos, 
+Algo practico es que no tenemos que clasificar los equipos de acuerdo al uso o precio de los mismos, 
 el sistema se encarga de categorizarlos automáticamente de acuerdo a los límites seteados para cada categoría
 definida.
 
 Una vez completado el formulario al presionar el botón si- guiente aparece un nuevo
-formulario (figura 8) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
+formulario (figura 9) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
 disponibles de la misma marca que el equipo que se esté cargando. \footnote{Inicialmente el sistema no usa esta información, 
 pero podría llegar a ser necesario ya que cada cartucho tiene asociado una duración en paginas sirve para calcular el costo de
 mantenimiento del equipo.}
@@ -1528,14 +1536,14 @@ segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|adi
 
 \subsection{Interfaz cliente}
 Para portar el sistema de manera online a través de un servidor web he 
-usado la librería PyClips, la otra opción era PHLIPS. Ambas implementan un subconjunto de
-los comandos propios de CLIPS, pero PyClips implementa un número mayor de comandos y además
+usado la librería CLIPS, la otra opción era PÓLIPOS. Ambas implementan un subconjunto de
+los comandos propios de CLIPS, pero CLIPS implementa un número mayor de comandos y además
 cuenta con una muy buena documentación y un activo foro de discusión\footnote{http://sourceforge.net/projects/pyclips/forums}.
 
 \subsubsection{Objetivos}
 La interfaz web del sistema experto con las personas que van a consultar debe hacer las mismas preguntas 
-y generar el mismo resultado que el sistema batch para clips.
-De hecho unos de los objetivos fue se usen los mismos archivos en clips para ambas interfaces.
+y generar el mismo resultado que el sistema bache para CLIPS.
+De hecho unos de los objetivos fue se usen los mismos archivos en CLIPS para ambas interfaces.
 
 \subsubsection{Notas a la implementación}
 
@@ -1552,9 +1560,9 @@ para ambas interfaces (web y terminal) se creo el siguiente deftemplate:
    (slot type (default ?NONE))
 )\end{verbatim} 
 
-Dicha estructura se usa para compunicar la pregunta a la interfaz web. Ademas
-Las reglas que hacian preguntas al usuario unas se seguiran usando con la terminal y deben cumplir la
-condicion de que el sistema este siendo ejecutado en una terminal y al mismo tiempo se crearon reglas 
+Dicha estructura se usa para compunicar la pregunta a la interfaz web. Además
+Las reglas que hacían preguntas al usuario unas se seguirán usando con la terminal y deben cumplir la
+condición de que el sistema este siendo ejecutado en una terminal y al mismo tiempo se crearon reglas 
 similares para usar con la interfaz web. 
 
 Por ejemplo si una regla era como la que sigue:
@@ -1599,7 +1607,7 @@ con la respuesta del usuario, para el caso de la interfaz web.
 \subsection{Testing}
 
 Lo que queda por verificar es que la respuesta del sistema sea la misma tanto si es ejecutado
-a traves del browser o desde una terminal.
+a través del browser o desde una terminal.
 
 \begin{quote}
 
@@ -1820,7 +1828,82 @@ Si entrás a la página de HP vas a encontrar que las impresoras las categorizan p
 \end{itemize}     }       
 
 
+\newpage
 
+\appendix
+\appendixname  \section{Reglas default}
+SI el uso es hogar ENTONCES no es necesario imprimir en A3 ni duplex automático.
+
+SI el uso es hogar y no es necesario escanear ENTONCES sólo se necesita imprimir.
+
+SI el uso es hogar y es necesario escanear ENTONCES se necesita una multifunción que imprima, 
+copie y escanee y la tecnología de impresión puede ser laser o a chorro de tinta. 
+
+SI el uso es hogar, no es necesario escanear y es necesario trasladar el equipos ENTONCES se 
+necesita una impresora móvil. 
+
+SI el uso es hogar, no es necesario escanear y no es necesario trasladar el equipos ENTONCES se 
+necesita una impresora.
+
+SI se necesita una impresora movil y es necesario imprimir a color ENTONCES se recomienda tecnología 
+de impresión a chorro de tinta.
+
+SI se necesita una impresora movil y es necesario imprimir a color ENTONCES la tecnología 
+de impresión puede ser témica o chorro de tinta.
+
+SI el uso no es hogar ENTONCES el cliente debe indicar si desea imprimir en A3.
+
+SI el uso no es hogar ni profesionañ ENTONCES es una desición del cliente si quiere un equipos con
+duplex automático.
+
+SI el uso es profesional ENTONCES no ofrecer duplex automático.
+
+SI el uso es profesional y es necesario enviar fax con el equipo ENTONCES se recomienda
+una multifunción que imprima, copie, escanee y envíe fax. 
+
+SI el uso es profesional y no es necesario enviar fax con el equipo pero si escanear ENTONCES se recomienda
+una multifunción que imprima, copie, escanee.
+
+SI el uso es profesional y no es necesario enviar fax, ni escanear ENTONCES se recomienda una impresora.
+
+SI el uso es profesional y el volumen mensual es hasta 800 páginas ENTONCES la tecnología de impresión puede ser laser o a chorro de tinta.
+
+SI el uso es profesional y el volumen mensual es mayor a 800 páginas ENTONCES se recomienda láser como tecnología de impresión.
+
+SI el uso es pyme y es necesario enviar fax y documentos digitales ENTONCES se recomienda una multifunción que imprima, copie, escanee,
+envie fax y domcumentos digitales. 
+
+SI el uso es pyme y es necesario enviar fax y no documentos digitales ENTONCES se recomienda una multifunción que imprima, copie, escanee,
+envie fax. 
+
+SI el uso es pyme y no es necesario enviar fax, ni documentos digitales pero sí escanerar ENTONCES se recomienda 
+una multifunción que imprima, copie y escanee.
+
+SI el uso es pyme y no es necesario enviar fax, ni documentos digitales, ni escanerar ENTONCES se recomienda 
+una impresora. 
+
+
+SI el uso es pyme+ o corporativo ENTONCES se recomienda láser como tecnología de impresión.
+
+SI el uso es pyme+ y es necesario enviar fax o documentos digitales o escanear ENTONCES se recomienda una multifunción 
+que imprima, copie, escanee, envie fax y domcumentos digitales. 
+
+SI el uso es pyme+ y sólo se necesita imprimir ENTONCES se una impresora.
+
+SI el uso es corporativo y es necesario enviar fax ENTONCES se recomienda 
+una multifunción imprima, copie, escanee, envie fax y domcumentos digitales.
+
+SI el uso es corporativo y no es necesario enviar fax pero sí documentos digitales ENTONCES se recomienda 
+una multifunción imprima, copie, escanee y envíe domcumentos digitales.
+
+SI el uso es corporativo y no es necesario enviar fax ni documentos digitales ENTONCES se recomienda 
+una impresora. 
+
+SI el tamaño del grupo de trabajo es menor o igual a 2 ENTONCES se recomienda conexión usb.
+
+SI el tamaño del grupo de trabajo está entre 2 y 4 personas ENTONCES se recomienda conexión usb o wifi.
+
+SI el tamaño del grupo de trabajo es mayor a 4 personas ENTONCES se recomienda conexión ethernet. 
 
 
 

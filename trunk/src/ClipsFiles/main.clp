@@ -144,8 +144,6 @@
 
 
 (defrule regla-hog4
-	(uso hogar)
-	(escanear no)
 	(movilidad no)
 => 
 	(assert (tecnology inyeccion))
@@ -154,16 +152,12 @@
 )
 
 (defrule regla-hog5
-	(uso hogar)
-	(escanear no)
 	(movilidad si)
 => 
 	(assert (type impresora_movil))
 )
 
 (defrule regla-hog6
-	(uso hogar)
-	(escanear no)
 	(movilidad si)
 	(color si)
 => 
@@ -171,8 +165,6 @@
 )
 
 (defrule regla-hog7
-	(uso hogar)
-	(escanear no)
 	(movilidad si)
 	(color no)
 => 
@@ -223,7 +215,7 @@
 
 =>
 
-        (assert (questions(question "¿Le interesa poder imprimir a doble fax de forma automatica?, encarecerá un poco el equipo.")(atribute duplex)(type bool) ) )
+        (assert (questions(question "¿Le interesa poder imprimir a doble faz de forma automatica?, encarecerá un poco el equipo.")(atribute duplex)(type bool) ) )
 )
 
 

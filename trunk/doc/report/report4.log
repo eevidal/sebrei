@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  16 JUL 2012 11:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  16 JUL 2012 17:11
 entering extended mode
  %&-line parsing enabled.
 **report4.tex
@@ -286,9 +286,6 @@ LaTeX Warning: Label `db' multiply defined.
 
 LaTeX Warning: Label `db' multiply defined.
 
-
-Package natbib Warning: Citation `riley' multiply defined.
-
 )
 \openout1 = `report4.aux'.
 
@@ -343,13 +340,13 @@ Overfull \hbox (10.79999pt too wide) in paragraph at lines 44--44
  []
 
 
-Overfull \hbox (6.08054pt too wide) in paragraph at lines 53--55
+Overfull \hbox (6.08054pt too wide) in paragraph at lines 69--71
 []\T1/aer/m/n/9 Los tér-mi-nos sis-tema ex-perto, sis-tema basado en conocimien
 to
  []
 
 
-Overfull \hbox (7.3423pt too wide) in paragraph at lines 77--81
+Overfull \hbox (7.3423pt too wide) in paragraph at lines 93--97
 \T1/aer/m/n/9 es el pro-grama que ges-tiona y con-trola la base de conocimiento
 .
  []
@@ -360,111 +357,105 @@ File: SE.png Graphic file (type png)
 
 
  <./SE.png (PNG copy)>]
-Overfull \hbox (4.69609pt too wide) in paragraph at lines 157--162
+Overfull \hbox (4.69609pt too wide) in paragraph at lines 171--176
 \T1/aer/m/n/9 La lista de re-glas que se en-cuen-tran en la base de conocimient
 o
  []
 
 
-Overfull \hbox (1.49788pt too wide) in paragraph at lines 200--200
+Overfull \hbox (1.49788pt too wide) in paragraph at lines 214--214
 []\secfnt Metodología para el de-sar-rollo de sis-temas
  []
 
-
-Overfull \hbox (1.85036pt too wide) in paragraph at lines 210--217
-\T1/aer/m/n/9 es-pi-ral, etc); tam-bién se han de-sar-rol-lado varias metodolog
-ías
- []
-
 [2]
-Overfull \hbox (4.78607pt too wide) in paragraph at lines 244--247
+Overfull \hbox (4.78607pt too wide) in paragraph at lines 258--261
 \T1/aer/m/n/9 struc-ción de un sis-tema in-for-mático basado en el conocimiento
 
  []
 
 
-Overfull \hbox (9.31105pt too wide) in paragraph at lines 258--261
+Overfull \hbox (9.31105pt too wide) in paragraph at lines 272--275
 \T1/aer/m/n/9 iden-ti-ficar las fuentes del conocimiento, ex-traer el conocimie
 nto
  []
 
 
-Overfull \hbox (10.62706pt too wide) in paragraph at lines 273--277
+Overfull \hbox (10.62706pt too wide) in paragraph at lines 287--291
 \T1/aer/m/n/9 niero del conocimiento se limita a crear la base de conocimiento.
 
  []
 
 
-Overfull \hbox (4.67767pt too wide) in paragraph at lines 286--293
+Overfull \hbox (4.67767pt too wide) in paragraph at lines 297--304
 \T1/aer/m/n/9 de propósi-tos gen-erales. So-porta una com-bi-nación de paradig-
 
  []
 
 [3] [4]
-Overfull \hbox (2.3385pt too wide) in paragraph at lines 428--432
+Overfull \hbox (2.3385pt too wide) in paragraph at lines 439--443
 []\T1/aer/m/n/9 Los sitios web de las difer-entes mar-cas de im-pre-sión a menu
 do
  []
 
 
-Overfull \hbox (1.95996pt too wide) in paragraph at lines 538--547
+Overfull \hbox (1.95996pt too wide) in paragraph at lines 549--558
 \T1/aer/m/n/9 tienen bo-quil-las dimin-u-tas situ-adas en lo que se llama cabez
 al
  []
 
 [5]
-Overfull \hbox (2.93233pt too wide) in paragraph at lines 584--593
+Overfull \hbox (2.93233pt too wide) in paragraph at lines 595--604
 \T1/aer/m/n/9 La ve-loci-dad de una im-pre-sora suele medirse con el parámetro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--656
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
 [][]\T1/aer/m/it/9 http://www.undocprint.org/formats/
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 718--718
+Underfull \hbox (badness 10000) in paragraph at lines 729--729
 [][]\T1/aer/m/n/9 Extraído de \T1/aer/m/it/9 http://www.duiops.net/hardware/imp
 resor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--747
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 [][]\T1/aer/m/it/9 http://www1.lexmark.com/es_MX/cartridges-ink-
  []
 
 [7]
-Overfull \hbox (23.82991pt too wide) in paragraph at lines 821--829
+Overfull \hbox (23.82991pt too wide) in paragraph at lines 832--840
 [][] 
  []
 
 
-Overfull \hbox (8.46718pt too wide) in paragraph at lines 840--841
+Overfull \hbox (8.46718pt too wide) in paragraph at lines 851--852
 []\T1/aer/m/n/9 SI es para poco uso y una sola per-sona EN-TONCES
  []
 
 
-Overfull \hbox (3.27489pt too wide) in paragraph at lines 879--880
+Overfull \hbox (3.27489pt too wide) in paragraph at lines 890--891
 []\T1/aer/m/n/9 SI se im-pri-men más de 30 pag a color EN-TONCES
  []
 
 
-Overfull \hbox (2.56358pt too wide) in paragraph at lines 889--890
+Overfull \hbox (2.56358pt too wide) in paragraph at lines 900--901
 []\T1/aer/m/n/9 SI no se quieren im-primir fo-tografías EN-TONCES
  []
 
 
-Overfull \hbox (1.15045pt too wide) in paragraph at lines 897--898
+Overfull \hbox (1.15045pt too wide) in paragraph at lines 908--909
 []\T1/aer/m/n/9 SI es para el hogar o pe-queña ofic-ina EN-TONCES
  []
 
 [8]
-Overfull \hbox (9.89018pt too wide) in paragraph at lines 977--992
+Overfull \hbox (9.89018pt too wide) in paragraph at lines 988--1003
 [][] 
  []
 
 
-Overfull \hbox (10.5367pt too wide) in paragraph at lines 1003--1011
+Overfull \hbox (10.5367pt too wide) in paragraph at lines 1014--1022
 []\T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuev
 os equipos
  []
@@ -473,7 +464,7 @@ os equipos
 File: arquitecturaSEBREI.png Graphic file (type png)
 
 <use arquitecturaSEBREI.png> [9 <./arquitecturaSEBREI.png (PNG copy)>]
-Overfull \hbox (1.44722pt too wide) in paragraph at lines 1140--1142
+Overfull \hbox (1.44722pt too wide) in paragraph at lines 1151--1153
 \T1/aer/m/n/9 para la im-ple-mentación del sis-tema se en-cuen-tran en el Apen-
 
  []
@@ -481,13 +472,13 @@ Overfull \hbox (1.44722pt too wide) in paragraph at lines 1140--1142
 <BD2.png, id=43, 915.42pt x 918.43124pt>
 File: BD2.png Graphic file (type png)
  <use BD2.png>
-LaTeX Font Info:    Try loading font information for T1+aett on input line 1193
+LaTeX Font Info:    Try loading font information for T1+aett on input line 1204
 .
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (8.8645pt too wide) in paragraph at lines 1223--1223
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 1234--1234
  []  \T1/aett/m/n/9 (question "¾Será necesario imprimir a color?")[] 
  []
 
@@ -500,125 +491,163 @@ File: pagmen.png Graphic file (type png)
 <use pagmen.png> <hogar.png, id=53, 513.92pt x 327.2225pt>
 File: hogar.png Graphic file (type png)
  <use hogar.png>
-Overfull \hbox (16.95937pt too wide) in paragraph at lines 1356--1357
+Overfull \hbox (16.95937pt too wide) in paragraph at lines 1367--1368
  [][] 
  []
 
-[12 <./pagmen.png>] <./menu.png, id=58, 766.865pt x 616.3025pt>
-File: ./menu.png Graphic file (type png)
+[12 <./pagmen.png>] [13 <./hogar.png>]
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 1538--1538
+ []\T1/aett/m/n/9 (model "HP_Color_LaserJet_Enterprise_CP5525dn" )[] 
+ []
 
-<use ./menu.png>
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1404--1406
+
+Overfull \hbox (13.58043pt too wide) in paragraph at lines 1578--1578
+ []\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a gastar?[] 
+ []
+
+
+Overfull \hbox (13.58043pt too wide) in paragraph at lines 1578--1578
+ [] \T1/aett/m/n/9 forma automatica?, encarecerá un poco el equipo.[] 
+ []
+
+
+Overfull \hbox (2.64401pt too wide) in paragraph at lines 1583--1591
+[]\T1/aer/m/n/9 En este caso este es el único equipo en la base de conocimiento
+
+ []
+
+[14] <./menu.png, id=66, 766.865pt x 616.3025pt>
+File: ./menu.png Graphic file (type png)
+ <use ./menu.png>
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1696--1698
 \T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
 met-
  []
 
-<./mod_printer.png, id=59, 763.85374pt x 925.4575pt>
+[15] <./mod_printer.png, id=70, 763.85374pt x 925.4575pt>
 File: ./mod_printer.png Graphic file (type png)
- <use ./mod_printer.png>
-<./print_cart.png, id=60, 399.4925pt x 580.1675pt>
+
+<use ./mod_printer.png> <./print_cart.png, id=71, 399.4925pt x 580.1675pt>
 File: ./print_cart.png Graphic file (type png)
- <use ./print_cart.png>
-<./uso.png, id=61, 764.8575pt x 593.21625pt>
+
+<use ./print_cart.png> [16 <./menu.png (PNG copy)> <./print_cart.png (PNG copy)
+>] [17 <./mod_printer.png (PNG copy)>]
+<./uso.png, id=78, 764.8575pt x 593.21625pt>
 File: ./uso.png Graphic file (type png)
- <use ./uso.png> [13 <./hogar.png>] <./printer_list.png, id=67, 440.64626pt x 7
-24.7075pt>
+ <use ./uso.png>
+<./printer_list.png, id=79, 440.64626pt x 724.7075pt>
 File: ./printer_list.png Graphic file (type png)
-
-<use ./printer_list.png> <./generar2.png, id=68, 392.46625pt x 250.9375pt>
+ <use ./printer_list.png>
+<./generar2.png, id=80, 392.46625pt x 250.9375pt>
 File: ./generar2.png Graphic file (type png)
-
-<use ./generar2.png> [14 <./menu.png (PNG copy)> <./print_cart.png (PNG copy)>]
-[15 <./mod_printer.png (PNG copy)>]
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1574--1574
+ <use ./generar2.png> [18 <./printer_list.png (PNG copy)> <./generar2.png (PNG 
+copy)>]
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1867--1867
 []  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
  []
 
 
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1587--1587
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1880--1880
 []  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
  []
 
-[16 <./uso.png (PNG copy)>]
 Runaway argument?
  
 ! Paragraph ended before \@xverbatim was complete.
 <to be read again> 
                    \par 
-l.1639 }}
+l.1932 }}
          
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1639--1639
+Underfull \hbox (badness 10000) in paragraph at lines 1932--1932
 []\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1639--1639
+Underfull \hbox (badness 10000) in paragraph at lines 1932--1932
 []\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
  []
 
 
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1639--1640
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 1932--1933
 [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./uso.png (PNG copy)>]
 Runaway argument?
  CLIPS> (run) 
 ! Paragraph ended before \@xverbatim was complete.
 <to be read again> 
                    \par 
-l.1690 }}
+l.1983 }}
          \end{quote}
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
 []\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
 []\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
 []\T1/aett/m/n/9 Necesitaras desplazar la impresora
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1690--1690
+Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
 \T1/aett/m/n/9 en viajes, o trasladarla a diferentes
  []
 
 
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1690--1690
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 1983--1983
 [][] 
  []
 
-[17 <./printer_list.png (PNG copy)> <./generar2.png (PNG copy)>]
-<./resp2.png, id=81, 602.25pt x 646.415pt>
+<./resp2.png, id=88, 602.25pt x 646.415pt>
 File: ./resp2.png Graphic file (type png)
  <use ./resp2.png>
-Overfull \hbox (4.97359pt too wide) in paragraph at lines 1706--1708
+Overfull \hbox (4.97359pt too wide) in paragraph at lines 1999--2001
  [][] 
  []
 
-[18 <./resp2.png (PNG copy)>]
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 1804--1805
+[20 <./resp2.png (PNG copy)>]
+Underfull \hbox (badness 3646) in paragraph at lines 2045--2047
+[] \T1/aer/m/it/9 http://marina-otero-spagnuolo.suite101.net/consejos-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2067--2069
+[] \T1/aer/m/it/9 http://tecnologia.iprofesional.com/notas/115886-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2067--2069
+\T1/aer/m/it/9 Consejos-para-tener-en-cuenta-antes-de-comprar-una-
+ []
+
+
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 2151--2152
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
-[19]
+[21]
 ! Undefined control sequence.
-l.1831 \appendixname
+l.2177 \appendixname
                       \section{Reglas default}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -627,32 +656,21 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
-
-Overfull \hbox (1.04163pt too wide) in paragraph at lines 1890--1892
+Overfull \hbox (1.04163pt too wide) in paragraph at lines 2236--2238
 []\T1/aer/m/n/9 SI el uso es cor-po-ra-tivo y es nece-sario en-viar fax EN-TONC
 ES
  []
 
-
-Package natbib Warning: There were multiply defined citations.
-
-[20] (./report4.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+[22] (./report4.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3294 strings out of 494999
- 40000 string characters out of 1180817
- 95794 words of memory out of 3000000
- 6404 multiletter control sequences out of 15000+50000
+ 3300 strings out of 494999
+ 40066 string characters out of 1180817
+ 97774 words of memory out of 3000000
+ 6410 multiletter control sequences out of 15000+50000
  52246 words of font info for 71 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
  39i,11n,43p,254b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -667,9 +685,9 @@ s/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/
 helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.p
 fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
 -texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report4.pdf (20 pages, 849949 bytes).
+Output written on report4.pdf (22 pages, 863174 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 137 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

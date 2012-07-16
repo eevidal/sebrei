@@ -202,7 +202,7 @@
 	
 => 
 
-	(printout t crlf "Le interesa poder imprimir a doble fax de forma automatica?, encarecerá un poco el equipo.")
+	(printout t crlf "Le interesa poder imprimir a doble faz de forma automatica?, encarecerá un poco el equipo.")
 	(printout t crlf "Respuesta>")
 	(bind ?ans (read)) 	
 	(assert (duplex ?ans))

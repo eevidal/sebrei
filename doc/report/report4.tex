@@ -37,11 +37,27 @@ de la carrera Licenciatura en Ciencias de la Computación.}
 }
 
 
-%\abstractname{Introducción}
+
 
 %\hilight{síntesis y presentación del trabajo}
 \pagenumbering{arabic} 
 \maketitle
+\begin{abstract}
+La elección de una determinada tecnología de impresión 
+ a la hora de comprar está sujeta a numerosas cuestiones 
+relacionadas con el uso que se le va a dar al equipo, 
+la velocidad de respuesta deseada, la calidad esperada, factores económicos, etc.
+ Requiere tiempo y esfuerzo investigar las tecnologías 
+disponibles en el mercado y decidir en base a las características
+ que posee cada equipo, aquel que resulte más conveniente según las necesidades.
+
+Las heurísticas usadas por un vendedor de equipos de impresión pueden ser capturadas
+en un sistema experto basado en reglas que emule el razonamiendo seguido por el especialista. 
+El sistema SEBREI integra la tecnología de sistema de experto con una interfaz web, utilizando
+una base de datos para ofrecer la posibilidad de mantener la base de conocimiento actualizada
+e incorporar nuevas tecnologías.
+
+\end{abstract}
 
 
 \section{Sistemas Expertos}
@@ -90,9 +106,7 @@ En la figura 1 se ilustra la estructura básica de un sistema experto.
  \label{fig:se}
 \end{figure}
 
- Otros componentes importantes son la \textit{memoria de trabajo},
- la \textit{interfaz con el usuario} y 
-el\textit{ módulo de explicación}. La memoria de trabajo también llamada base o lista de hechos (facts list)
+ La memoria de trabajo también llamada base o lista de hechos (facts list)
 es el conjunto de datos 
 de un determinado problema y se almacena en forma separada de la base de conocimiento.
  El módulo de explicación o justificación explica el razonamiento utilizado por el sistema para 
@@ -110,9 +124,9 @@ La representación del conocimiento formaliza y ordena el conocimiento.
 Existen varios sistemas para la representación del conocimiento.
 Entre los principales sistemas se tienen: 
 \begin{itemize}
- \item Formalismos lógicos (lógica proposicional, lógica de primer orden, lógicas multivaluadas)
- \item Sistemas de producción 
- \item Formalismos estructurados (Redes semánticas, Frames, Objetos y Ontologías )
+ \item Formalismos lógicos (lógica proposicional, lógica de primer orden, lógicas multivaluadas).
+ \item Sistemas de producción.
+ \item Formalismos estructurados (Redes semánticas, Frames, Objetos y Ontologías).
 \end{itemize}
 
 \subsubsection{Sistemas de Producción} 
@@ -128,7 +142,7 @@ SI $<$antecedente$>$ ENTONCES $<$consecuente$>$\end{quote}
 
 donde el antecedente y el consecuente son frases en lenguaje coloquial. 
 Los antecedentes son las condiciones y los consecuentes las conclusiones, acciones o hipótesis. Por ejemplo, 
-la siguiente regla 
+la siguiente regla es una regla de producción.
 \begin{quote}
 SI se quiere un  equipo para imprimir y escanear ENTONCES se recomienda una multifunción.
 \end{quote} 
@@ -189,7 +203,7 @@ mientras que un encadenamiento
 que va desde una hipótesis u objetivo hacia los hechos que soportan dicha hipótesis se llama encadenamiento hacia atrás.
 \textit{Backward Chaining}. 
 
-Debido a que los datos determinan qué reglas se usarán el Forward Chaining es llamado inferencia data-driven en contraste 
+Debido a que los datos determinan qué reglas se usarán, el Forward Chaining es llamado inferencia data-driven en contraste 
 con inferencia goal-driven referido al Backward Chaining.
 
 
@@ -212,7 +226,7 @@ que
 al igual que los modelos tradicionales de desarrollo de software, que se han propuesto %para proveer una 
 %metodología que fuera útil en la construcción de grandes sistemas de software como por ejemplo 
 para controlar el ciclo de vida del software, (como
-el modelo de cascada, el modelo incremental, el modelo de espiral, etc); también 
+el modelo de cascada, el modelo incremental, el modelo de espiral, etc) también 
  se han desarrollado varias metodologías para la producción de sistemas expertos.\cite{Riley},\cite{Carrillo}
 
 
@@ -222,12 +236,12 @@ muestran procedimientos específicos para llevar a cabo una las siguientes etapas
 
 
 \begin{itemize}
-\item Ingeniería de requerimientos
-\item Diseño
-\item Implementación 
-\item Evaluación (verificación + validación)
-\item Documentación
-\item Mantenimiento
+\item Ingeniería de requerimientos.
+\item Diseño.
+\item Implementación.
+\item Evaluación (verificación + validación).
+\item Documentación.
+\item Mantenimiento.
 \end{itemize}
 
 Además de estas, el desarrollo de un sistema experto debe incluir las etapas de 
@@ -256,7 +270,7 @@ explora, recopila y analiza varias técnicas para la adquisición del
 conocimiento y la elección adecuada de su representación.
 
 En reglas generales la adquisición del conocimiento consta de identificar las fuentes del 
-conocimiento, extraer el conocimiento de dichas las fuentes, ordenarlo, construir definiciones 
+conocimiento, extraer el conocimiento de dichas fuentes, ordenarlo y construir definiciones 
 claves del dominio de aplicación.   
 
 
@@ -267,21 +281,18 @@ claves del dominio de aplicación.
 
 Las herramientas informáticas utilizadas para la realización de sistemas expertos pueden ser
 lenguajes de alto nivel (C, JAVA), ambientes especializados para aplicaciones de inteligencia artificial
-(Common LISP, PROLOG) o ambientes especializados para la creaciones de sistemas expertos que en la literatura
+(Common LISP, PROLOG) o ambientes especializados para la creación de sistemas expertos que en la literatura
 se suelen denominar shells.\cite{cammarata}
 
 Un shell es un programa preparado para la generación de sistemas expertos, incorporan un motor de inferencia y el 
 ingeniero del conocimiento se limita a  crear la base de conocimiento. CLIPS es un ejemplo de shell o entorno de desarrollo
-para la producción de sistemas expertos. En \cite{shells} hay una extensa re- ferencia a distintas herramientas y shell 
+para la producción de sistemas expertos. En \cite{shells} hay una extensa re- ferencia a distintas herramientas y shells 
 disponibles hacia la década de los '90.
 
 
 
-
-
-
 \textbf{LISP}: (LISt Procesing) Inicialmente instrumentado de 1958 a 1960 por Mc Carthy, basándose en la lógica matemática.	
-Hacia mediados de la década del 80 el 95\% de los programas en IA estaban escritos en LIPS. \cite{charniak}\footnote{pag. 33}
+Hacia mediados de la década del 80 el 95\% de los programas en IA estaban escritos en LISP. \cite{charniak}\footnote{pag. 33}
 
 \textbf{Common LISP}: Durante los años 1980 y 1990, fue hecho un gran esfuerzo para unificar los numerosos dialectos del Lisp 
 en un solo lenguaje (más notablemente, InterLisp, Maclisp, ZetaLisp, MetaLisp, y Franz Lisp). 
@@ -295,8 +306,8 @@ de paradigmas de programación como procedimental
 LOGique) es un lenguaje de programación lógico e interpretado.
 
 \textbf{CLIPS} (C Language Integrated Production System) es una
-herramienta para el desarrollo de sistemas expertos (SE) creada
-por la Software Technology Branch (STB), NASA / Lyndon B.
+herramienta para el desarrollo de sistemas expertos creada
+por la Software Technology Branch, NASA / Lyndon B.
 Johnson Space Center. Los orígenes de CLIPS se remontan a
 1984. En la actualidad, entre los paradigmas de programación que
 soporta CLIPS se encuentran la Programación lógica, la Programación imperativa y
@@ -314,9 +325,9 @@ Existen derivados de CLIPS para ser usados en otros lenguajes como por ejemplo:
  \item JESS: implementación de CLIPS en Java+.
  \item FuzzyCLIPS: incorpora a CLIPS la posibilidad de usar razonamiento difuso.
  \item CLIPSMM: una interfaz libre de CLIPS con C++.
- \item PHLIPS: extensión para PHP.  (PHP License V3)
- \item PyCLIPS: interfaz libre para Python., (utilizada en este trabajo).(License (LGPL))
- \item CLIPSNET: librería de C\#
+ \item PHLIPS: extensión para PHP.  (Licencia PHP V3)
+ \item PyCLIPS: interfaz libre para Python (utilizada en este trabajo)(Licencia (LGPL)).
+ \item CLIPSNET: librería de C\#.
 \end{itemize}
 
 Hay una extensa lista de softwares y variantes derivadas de Clips y aplicaciones desarrolladas con
@@ -1386,7 +1397,282 @@ reglas configuradas para que sean neutrales tanto si en el deffact de los equipo
 las que se han elegido por defecto. 
 
 
-\section{Evaluación del sistema}
+La regla default que selecciona los equipos que cumplen ciertas condiciones es la siguiente:
+
+\begin{verbatim}
+(defrule recomendar
+ (printer
+        (id ?id)
+        (model ?model)
+        (use $?uso)
+        (type ?type)
+        (tecnology ?tec)
+        (color ?color)
+        (duplex ?duplex)
+        (a3 ?a3)
+        (conectivity $?con1)
+        (tag ?tag1)
+        (functions $?functions)
+  )
+        (uso $?uso2)
+        (functions $?functions2)
+        (test (subsetp $?uso2 $?uso))
+        (test (subsetp $?functions $?functions2))
+        (test (subsetp $?functions2 $?functions))
+        (conectivity $?con2)
+        (tag $?tag2)
+        (test (member$ ?tag1 $?tag2))
+        (test (subsetp $?con2 $?con1))
+        (type ?type)
+        (tecnology ?tec)
+        (color ?color)
+        (a3 ?a3)
+        (duplex ?duplex)
+ =>
+        (assert (models(model ?model)))
+        (assert (ids(id ?id)))
+
+)
+\end{verbatim} 
+
+La función \verb|(subsetp <multifield> <multifield>)| retorna TRUE
+si el primer argumento es un subconjunto del segundo.
+
+\verb|(member$ <single-field> <multifield>)|
+Si el primer argumento es uno de los campos del segundo , la función retornará un entero con la posición del campo, 
+de otro modo retornará FALSE.
+
+
+
+\subsubsection{Reglas Adicionales}
+Si se desea incluir la característica de sistema operativo entonces 
+en la definición del deftemplate se debe agregar la sentencia
+
+\verb|(multislot so (default any))|
+
+y cada instancia de equipo tendrá la lista de sistemas operativos que soporta
+
+La regla adicionales incluye el assert
+
+\verb|(assert (so any linux windows mac ))|
+
+y a la regla recomendar se le debe agregar las condiciones correspondiente al sistema operativo. 
+
+\begin{quote}
+\begin{verbatim}
+(defrule recomendar
+ (printer
+        (id ?id)
+        (model ?model)
+         ...
+        (so $?so)
+)
+         ...
+        (so $?so2)
+        (test (subsetp $?so $?so2))
+=>
+        (assert (models(model ?model)))
+        (assert (ids(id ?id)))
+ )
+\end{verbatim} \end{quote} 
+
+Dado que la regla adicionales  hace una assert de todos los sistemas operativos
+ disponibles en la base de datos
+y los equipos sólo tienen la posibilidad de tener asociados sistemas operativos
+ que se encuentran en la base de datos en este punto haber seleccionado la característica
+sistemas operativos para incorporar a las características de los equipos no tiene 
+efecto alguno sobre las recomendaciones que el sistema está en grado de hacer. 
+Es necesario modificar la regla de adicionales eliminando la claúsula 
+(assert (so any linux windows mac )) y agregar una nueva regla que tome alguna decisión 
+acerca de que sistema operativo debe soportar los euqipos a recomandar. 
+
+
+\section{Evaluación del prototipo}
+
+La regla selecciona todos los modelos de impresoras o multifuciones que cumplen
+el conjunto de características de uso, funciones, conexiones, tags, tipo, color, 
+tecnología, a3, y duplex. Por lo tanto el conjunto de reglas por defecto debe
+setear los valores de dichas características. 
+
+Dado que la cantidad de reglas es reducido y en general se las puede organizar
+como árboles de desicion para las distintas características es fácil comprobar 
+que no hay reglas inconsistentes, contradictorias, referencias circulares o reglas
+que no pueden ser alcanzadas en el sistema. 
+
+CLIPS tiene a su vez varios comandos que pueden ser útiles a la hora de chequear el 
+funcionamiento del sistema.  
+
+(agenda): Muestra las reglas instanciadas.
+ Para cada instancia muestra la prioridad de la regla, el nombre de la regla y los hechos reconocidos por la regla.
+
+(facts): Muestra los hechos de la memoria de trabajo.
+
+(watch <parámetro>): Es útil para depurar programas. El parámetro puede ser un de los siguientes símbolos: facts, rules, 
+activations, statistics, compilations, focus, o all. 
+
+
+(matches <nombre-de-regla>): Recibe como argumento el nombre de una regla y muestra los hechos reconocidos por cada patrón. 
+
+Se realizaron varios ensayos sobre el prototipo que cuenta con una lista de 45 equipos
+ y con las distintas herramientas se corrigieron errores de sintácticos, 
+de funciones, de tipeo y reglas faltantes. 
+
+Ejemplo de un test de prueba.
+Se elige un equipo de la base de conocimiento, en este caso el modelo
+
+\verb|HP_Color_LaserJet_Enterprise_CP5525dn| 
+
+cuyas características son las siguientes:
+
+\begin{quote}
+\begin{verbatim}
+(printer (id 48)
+(model "HP_Color_LaserJet_Enterprise_CP5525dn" )
+(tecnology laser)
+(type impresora)
+ (conectivity ethernet usb) 
+(functions imprimir)
+(color si)(duplex si)
+(use pyme pyme+)
+(tag gran_inversion)(a3 si)
+)\end{verbatim} \end{quote} 
+
+Dentro del interprete de órdenes de CLIPS se
+ ejecuta el sistema tipeando el comando \verb| (batch "SE.clp")|
+\begin{quote}
+\begin{verbatim}
+CLIPS> (batch "SE.clp")
+TRUE\end{verbatim} \end{quote} 
+
+El sistema responde TRUE, lo que indica que las reglas se cargaron de manera correcta. 
+
+Luego se responden las pregunats hechas por el sistema de modo que si el sistema está correctamente implementado
+se seteen las características correspondientes al equipo seleccionado. 
+\begin{quote}
+\begin{verbatim}
+Será necesario imprimir a color?
+Respuesta>no
+
+Cúal es el volumen mensual de páginas?
+Respuesta>5001
+
+¿Cúal es el tamaño del grupo de trabajo?
+Respuesta>5
+
+¿Cúanto es lo máximo que esta dispuesto a gastar?
+Respuesta>3100
+
+Le interesa poder imprimir a doble faz de 
+ forma automatica?, encarecerá un poco el equipo.
+Respuesta>si
+
+¿Se necesitará imprimir en  A3?
+Respuesta>no
+
+¿Te interesa poder escanear documentos, 
+enviar fax o archivos digitales via mail 
+con el mismo equipo?
+Respuesta>si
+
+LaserJet_Enterprise_M4555f_MFPn
+\end{verbatim}\end{quote}  
+La respuesta del sistema ha sido justamente
+
+ \verb|LaserJet_Enterprise_M4555f_MFPn|.
+
+ En este caso este es el único equipo 
+en la base de conocimiento con dichas características. El sistema recomienda exactamente lo que se ha definido
+que haga. Para este ejemplo en particular el equipo recomendado tiene un valor de 13000 pesos, lo cual esta muy por 
+encima del presupuesto que indicamos al sistema. A decir verdad un equipo con las características pedidas raramente tendrá
+un valor inferior a 10000 pesos, por lo que la recomendación sigue siendo válida. Ante este tipo de situaciones una cosa que se 
+puede hacer es emitir un mensaje diciendo que todos los equipos superan el preuspuesto del cliente pero aún así recomendarlos. 
+También debe considerarse si las categorías planteadas tanto de precio como de uso son válidas. 
+Por lo demás el sistema funciona apropiadamente. 
+
+A continuación un subconjunto de la lista de hechos que 
+pueden observarse al tipear el comando facts:
+
+\begin{quote}
+\begin{verbatim}
+CLIPS> (facts)
+...
+f-48    (color no)
+f-49    (paginas 5001)
+f-50    (grupo 5)
+f-51    (precio 3100)
+f-68    (uso pyme+)
+f-69    (duplex si)
+f-70    (a3 no)
+f-72    (type multifuncion)
+f-73    (functions imprimir copiar 
+         escanear fax envio_digital)
+f-74    (tecnology laser)
+f-75    (tag gran_inversion economica 
+         moderado alto)
+f-76    (conectivity ethernet)
+f-77    (models 
+ (model "LaserJet_Enterprise_M4555f_MFP"))
+f-78    (ids (id 53))\end{verbatim} \end{quote} 
+
+
+Y la lista de matcheos, en particular el equipo recomendado corresponde al fact 37.
+Los signos '..' significan que todos los hechos intermedios también fueron reconocidos por el patrón.
+
+\begin{quote}
+\begin{verbatim}
+CLIPS> (matches recomendar)
+Matches for Pattern 1
+f-1 .. f-46
+Matches for Pattern 2
+f-68
+Matches for Pattern 3
+f-73
+Matches for Pattern 4
+f-76
+Matches for Pattern 5
+f-75
+Matches for Pattern 6
+f-72
+Matches for Pattern 7
+f-74
+Matches for Pattern 8
+f-48
+Matches for Pattern 9
+f-69
+Matches for Pattern 10
+f-70
+Partial matches for CEs 1 - 2
+f-1,f-68
+..
+f-46,f-68
+Partial matches for CEs 1 - 3
+f-38,f-68,f-73
+f-37,f-68,f-73
+f-33,f-68,f-73
+Partial matches for CEs 1 - 4
+f-33,f-68,f-73,f-76
+f-37,f-68,f-73,f-76
+f-38,f-68,f-73,f-76
+Partial matches for CEs 1 - 5
+f-33,f-68,f-73,f-76,f-75
+f-37,f-68,f-73,f-76,f-75
+Partial matches for CEs 1 - 6
+f-33,f-68,f-73,f-76,f-75,f-72
+f-37,f-68,f-73,f-76,f-75,f-72
+Partial matches for CEs 1 - 7
+f-33,f-68,f-73,f-76,f-75,f-72,f-74
+f-37,f-68,f-73,f-76,f-75,f-72,f-74
+Partial matches for CEs 1 - 8
+f-37,f-68,f-73,f-76,f-75,f-72,f-74,f-48
+Partial matches for CEs 1 - 9
+f-37,f-68,f-73,f-76,f-75,f-72,f-74,f-48,f-69
+Partial matches for CEs 1 - 10
+f-37,f-68,f-73,f-76,f-75,f-72,f-74,f-48,
+
+f-69,f-70\end{verbatim} \end{quote} 
+
+
+
 
 
 
@@ -1448,7 +1734,7 @@ Permite:
 \subsubsection{Implementación}
 La interfaz administrativa del sistema se desarrollo en PHP.
  
-En la figura 7 se muestra el menú general del sistema. Cada link de la columna
+En la figura 6 se muestra el menú general del sistema. Cada link de la columna
 agregar/modificar permite agregar o e- ditar una característica relacionada con las impresoras
 o un nuevo equipo. 
 
@@ -1456,7 +1742,7 @@ o un nuevo equipo.
 
 
 
-El formulario de agregar un nuevo equipo (figura 8) sirve para incorporar a la base de datos, los datos correspondientes
+El formulario de agregar un nuevo equipo (figura 7) sirve para incorporar a la base de datos, los datos correspondientes
 a un nuevo equipo, el formulario permite asociar todas las características presentes en la base de datos a un equipo de 
 impresión. 
 \begin{figure*}
@@ -1473,7 +1759,7 @@ el sistema se encarga de categorizarlos automáticamente de acuerdo a los límites
 definida.
 
 Una vez completado el formulario al presionar el botón si- guiente aparece un nuevo
-formulario (figura 9) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
+formulario (figura 8) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
 disponibles de la misma marca que el equipo que se esté cargando. \footnote{Inicialmente el sistema no usa esta información, 
 pero podría llegar a ser necesario ya que cada cartucho tiene asociado una duración en paginas sirve para calcular el costo de
 mantenimiento del equipo.}
@@ -1499,7 +1785,7 @@ de páginas mensuales. La interfaz permite agregar tantas categorías como se quie
 \end{figure*}
 
 El menú para cambiar los limites y categorías de precio cumple un papel similar con respecto a la 
-categorías relacionadas con el precio de los equipos.
+categorías relacionadas con el precio de los equipos (Ver  figura 9).
 Si se alteran los tags de precio o uso las descripciones asociadas a los equipos podrían dejar de ser
 consistentes por lo que es necesario actualizarlas. El menú de Actualizar las categorías cumple dicha
 función. Luego deberán generarse nuevamente el file de impresoras y las reglas de uso o precio respectivamente. 
@@ -1514,7 +1800,7 @@ experto.
 
 Al hacer click sobre el menú de generar impresoras se abre un formulario que permite
 seleccionar un grupo de características disponibles para incluir en la base de conocimiento. 
-Ver figura 9.
+Ver figura 10.
 \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
@@ -1525,7 +1811,7 @@ Ver figura 9.
 \end{figure}
 
 Si todo sale bien el proceso genera dos archivos \verb|printer.clp| y \verb|temporary_rules_adicional|, el
-segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionals.clp|. 
+segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionals.clp|. (Ver figura 11). 
  \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
@@ -1553,8 +1839,9 @@ De hecho unos de los objetivos fue se usen los mismos archivos en CLIPS para amb
 Las reglas que incluyen 
 sentencias del tipo printout y read deben ser modificadas de modo que en vez de imprimir 
 en pantalla se haga un assert con la pregunta que debe ser hecha al usuario. 
-Para mantener la idea de usar los mismos archivos 
-para ambas interfaces (web y terminal) se creo el siguiente deftemplate:
+%Para mantener la idea de usar los mismos archivos 
+%para ambas interfaces (web y terminal) 
+Se creo el siguiente deftemplate:
 
 \begin{verbatim}
 (deftemplate questions
@@ -1563,8 +1850,8 @@ para ambas interfaces (web y terminal) se creo el siguiente deftemplate:
    (slot type (default ?NONE))
 )\end{verbatim} 
 
-Dicha estructura se usa para compunicar la pregunta a la interfaz web. Además
-Las reglas que hacían preguntas al usuario unas se seguirán usando con la terminal y deben cumplir la
+Dicha estructura se usa para compunicar la pregunta a la interfaz web. 
+Las reglas que hacían preguntas al usuario se seguirán usando con la terminal y deben cumplir la
 condición de que el sistema este siendo ejecutado en una terminal y al mismo tiempo se crearon reglas 
 similares para usar con la interfaz web. 
 
@@ -1714,18 +2001,34 @@ HL-2240n
 \caption{}
 \end{figure}
 
+En todos los casos testeados la respuesta es la misma en ambas interfacez. En la figura 12 se encuentra el resultado
+de dar las mismas respuestas que en el último test. 
+La única diferencia entre la interfaz web y la interfaz para terminal es que en la interzas web además del modelos de los equipos
+se da una breve descripción del modelo si es que está presente en la base de datos y un link al folleto o pagina web
+del modelo. 
 
+\newpage
 \section{Conclusión y notas finales}
-Construir el sistema ha servido para satisfacer mi curiosisdad personal acerca de los sistemas expertos. 
-En particular he comprendido que la parte mas dificil es la adquisición del conocimiento, y que para construir un 
-sistema experto se podria llegar a requerir varios anios.   
+Construir el sistema ha servido para satisfacer mi curiosidad personal acerca de los sistemas expertos. 
+En particular he comprendido que la parte mas difícil de la cosntrucción de este tipo de sistemas 
+ es la adquisición del conocimiento, así como la selección
+de una correcta representación del conocimiento. 
 
 
-Encontre varios desafios a me
+También me he hecho a la idea de que construir un sistema experto medianamente complejo
+puede llegar a requerir varios años de desarrollo por lo que primero conviene hacer un verdadero estudio de la viabilidad del proyecto,
+que por lo general incluye costo, disponibilidad de las fuentes del conocimiento, utilidad o necesidad de la construcción
+del sistema, determinar si características del problema que resuelve son apropiadas para ser resuelto mediante un sistema
+experto, entre otras. 
+ 
 
 %\bibliographystyle{plain}
 %\bibliography{references}
-
+Una de las cosas que me parece vale la pena destacar del sistema construído
+es la posibilidad de manetener actualizada la base de conocimiento
+a través de una base de datos, la generación automática de los deffacts, de las reglas de tag, uso, adicionales y recomendar. 
+También es un buen atributo la posibilidad de agregar nuevas heurísticas sobre características presente en la base de datos
+y que inicialmente no se han incorporado al conjunto de reglas por defecto. 
 
 
 
@@ -1737,28 +2040,66 @@ Encontre varios desafios a me
 \bibitem{otero}
 Otero~Spagnuolo, M.
 
+\newblock {\em Consejos para comprar una impresora}
+
+\newblock {\em http://marina-otero-spagnuolo.suite101.net/consejos-para-comprar-una-impresora-a29960}
+ \newblock {Nov, 2010 }
 
 \bibitem{redusers}
 Fiorotto, A.
 
+\newblock {\em Impresoras: consejos antes de salir a comprar}.
+
+\newblock {\em http://www.redusers.com/noticias/impresoras-consejos-antes-de-comprar/}
+\newblock {Abril, 2011 }
 
 \bibitem{curso}
-Montoya, M.~A.
+Montoya, Marcelo~A.
 \newblock {\em Impresoras, Curso online}.
+
+\newblock { \em http://www.mailxmail.com/curso-impresoras.}
 
 \bibitem{consejos}
 Huergo, C.
 
+\newblock {\em Consejos para tener en cuenta antes de comprar una nueva impresora}.
+
+\newblock {\em http://tecnologia.iprofesional.com/notas/115886-Consejos-para-tener-en-cuenta-antes-de-comprar-una-nueva-impresora}
+\newblock {Mayo, 2011}
+
 
 \bibitem{iso}
-24734:2009, I.
- (2009).
+ISO/IEC, 24734:2009.
 
-\bibitem{riley}
-Manual de Clips
+\newblock {\em Information technology: Office equipment: Method for measuring digital printing productivity}.
 
-\bibitem{riley}
-Manual de pyclips
+\newblock {\em http://www.iso.org/iso/iso\_catalogue/catalogue\_tc
+
+/catalogue\_detail.htm?csnumber=38844}
+ \newblock {2009.}
+
+\bibitem{git}
+Giarratano, Joseph.
+\newblock {\em CLIPS User's guide}.
+\newblock {Quicksilver Beta, 2007}.
+
+\bibitem{git2}
+Giarratano, Joseph.
+\newblock {\em CLIPS Reference Manual}.
+\newblock {Quicksilver Beta,Volume I, 2007}.
+
+
+\bibitem{garo}
+ Garosi, F.
+\newblock {\em PyCLIPS Manual}
+
+{\em http://pyclips.sourceforge.net/manual/}
+\newblock {Feb 22, 2008}.
+
+
+
+%http://pcayuda.com.ar/impresoras/49/impresoras-y-toners-%C2%BFcomprar-laser-o-inkjet/
+
 
 
 \end{thebibliography}
@@ -1831,7 +2172,6 @@ Si entrás a la página de HP vas a encontrar que las impresoras las categorizan p
 \end{itemize}     }       
 
 
-\newpage
 
 \appendix
 \appendixname  \section{Reglas default}

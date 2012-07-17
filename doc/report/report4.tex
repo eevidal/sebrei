@@ -1427,54 +1427,45 @@ La regla \verb|adicionales| incluye el assert
 
 \verb|(assert (so any linux windows mac ))|
 
-y a la regla \verb|recomendar| se le debe agregar las condiciones correspondiente al sistema operativo. 
+y a la regla \verb|recomendar| se le debe agregar las condiciones correspondientes para sistema operativo\footnote{Líneas
+5,7 y 8}. 
 
 \begin{quote}
 \begin{verbatim}
-(defrule recomendar
- (printer
-        (id ?id)
-        (model ?model)
-         ...\end{verbatim}
-\fbox{
-    \parbox{\linewidth}{      
-   \begin{verbatim}
- (so $?so)             \end{verbatim} 
-   }}
- 
-\verb|)|
-         ...
- \fbox {
-    \parbox{\linewidth}{
-      \verb|  (so $?so2)|
-      \verb|  (test (subsetp $?so $?so2))|}}
-\begin{verbatim}        
-=>
-        (assert (models(model ?model)))
-        (assert (ids(id ?id)))
- )
+1 (defrule recomendar
+2  (printer
+3        (id ?id)
+4        (model ?model)
+5        (so $?so)
+6 )       
+7        (so $?so2)
+8        (test (subsetp $?so $?so2))  
+9 =>
+10        (assert (models(model ?model)))
+11        (assert (ids(id ?id)))
+12 )
 \end{verbatim} \end{quote} 
 
-Dado que la regla adicionales  hace una assert de todos los sistemas operativos
+Dado que la regla \textbf{adicionales}  hace un assert de todos los sistemas operativos
  disponibles en la base de datos
 y los equipos sólo tienen la posibilidad de tener asociados sistemas operativos
- que se encuentran en la base de datos en este punto haber seleccionado la característica
+ que se encuentran en la base de datos, haber seleccionado la característica
 sistemas operativos para incorporar a las características de los equipos no tiene 
-efecto alguno sobre las recomendaciones que el sistema está en grado de hacer. 
-Es necesario modificar la regla de adicionales eliminando la claúsula 
-(assert (so any linux windows mac )) y agregar una nueva regla que tome alguna decisión 
-acerca de que sistema operativo debe soportar los euqipos a recomandar. 
+efecto alguno sobre las recomendaciones que el sistema experto está en grado de hacer. 
+Es necesario modificar la regla de reglas adicionales eliminando la claúsula 
+\verb|(assert (so any linux windows mac ))| y agregar una nueva regla que tome alguna decisión 
+acerca de cúales sistemas operativos debe soportar los euqipos a recomendar. 
 
 
 \section{Evaluación del prototipo}
 
-La regla selecciona todos los modelos de impresoras o multifuciones que cumplen
+La regla \verb|recomendar| selecciona todos los modelos de impresoras o multifuciones que cumplen
 el conjunto de características de uso, funciones, conexiones, tags, tipo, color, 
 tecnología, a3, y duplex. Por lo tanto el conjunto de reglas por defecto debe
 setear los valores de dichas características. 
 
-Dado que la cantidad de reglas es reducido y en general se las puede organizar
-como árboles de desicion para las distintas características es fácil comprobar 
+Dado que la cantidad de reglas es reducida y en general se las puede organizar
+como árboles de desición para las distintas características es fácil comprobar 
 que no hay reglas inconsistentes, contradictorias, referencias circulares o reglas
 que no pueden ser alcanzadas en el sistema. 
 
@@ -1486,18 +1477,18 @@ funcionamiento del sistema.
 
 (facts): Muestra los hechos de la memoria de trabajo.
 
-(watch <parámetro>): Es útil para depurar programas. El parámetro puede ser un de los siguientes símbolos: facts, rules, 
+(watch <parámetro>): Es útil para depurar programas. El parámetro puede ser uno de los siguientes símbolos: facts, rules, 
 activations, statistics, compilations, focus, o all. 
 
 
 (matches <nombre-de-regla>): Recibe como argumento el nombre de una regla y muestra los hechos reconocidos por cada patrón. 
 
-Se realizaron varios ensayos sobre el prototipo que cuenta con una lista de 45 equipos
- y con las distintas herramientas se corrigieron errores de sintácticos, 
-de funciones, de tipeo y reglas faltantes. 
+Se realizaron varios ensayos sobre el prototipo que cuenta con una lista de 45 equipos para verificar el funcionamiento
+y que la respuesta obtenida sea aceptable.
 
-Ejemplo de un test de prueba.
-Se elige un equipo de la base de conocimiento, en este caso el modelo
+LO siguiente es un ejemplo de un test de prueba.
+
+Se elige un equipo de la base de conocimiento, en este caso el modelo es
 
 \verb|HP_Color_LaserJet_Enterprise_CP5525dn| 
 
@@ -1527,34 +1518,42 @@ El sistema responde TRUE, lo que indica que las reglas se cargaron de manera cor
 
 Luego se responden las pregunats hechas por el sistema de modo que si el sistema está correctamente implementado
 se seteen las características correspondientes al equipo seleccionado. 
+
+
 \begin{quote}
+\fbox {
+    \parbox{\linewidth}{
+
 \begin{verbatim}
 Será necesario imprimir a color?
-Respuesta>no
+Respuesta> no
 
 Cúal es el volumen mensual de páginas?
-Respuesta>5001
+Respuesta> 5001
 
 ¿Cúal es el tamaño del grupo de trabajo?
-Respuesta>5
+Respuesta> 5
 
 ¿Cúanto es lo máximo que esta dispuesto a gastar?
-Respuesta>3100
+Respuesta> 3100
 
 Le interesa poder imprimir a doble faz de 
  forma automatica?, encarecerá un poco el equipo.
-Respuesta>si
+Respuesta> si
 
-¿Se necesitará imprimir en  A3?
-Respuesta>no
+¿Se necesitará imprimir en A3?
+Respuesta> no
 
 ¿Te interesa poder escanear documentos, 
 enviar fax o archivos digitales via mail 
 con el mismo equipo?
-Respuesta>si
+Respuesta> si
 
-LaserJet_Enterprise_M4555f_MFPn
-\end{verbatim}\end{quote}  
+LaserJet\_Enterprise\_M4555f\_MFPn
+
+\end{verbatim}
+}}\end{quote}  
+
 La respuesta del sistema ha sido justamente
 
  \verb|LaserJet_Enterprise_M4555f_MFPn|.
@@ -1564,12 +1563,12 @@ en la base de conocimiento con dichas características. El sistema recomienda exa
 que haga. Para este ejemplo en particular el equipo recomendado tiene un valor de 13000 pesos, lo cual esta muy por 
 encima del presupuesto que indicamos al sistema. A decir verdad un equipo con las características pedidas raramente tendrá
 un valor inferior a 10000 pesos, por lo que la recomendación sigue siendo válida. Ante este tipo de situaciones una cosa que se 
-puede hacer es emitir un mensaje diciendo que todos los equipos superan el preuspuesto del cliente pero aún así recomendarlos. 
+puede hacer es emitir un mensaje diciendo que todos los equipos superan el presupuesto del cliente pero aún así recomendarlos. 
 También debe considerarse si las categorías planteadas tanto de precio como de uso son válidas. 
-Por lo demás el sistema funciona apropiadamente. 
+%Por lo demás el sistema funciona apropiadamente. 
 
 A continuación un subconjunto de la lista de hechos que 
-pueden observarse al tipear el comando facts:
+pueden observarse al tipear el comando \verb|facts| para este ejemplo:
 
 \begin{quote}
 \begin{verbatim}
@@ -1594,8 +1593,10 @@ f-77    (models
 f-78    (ids (id 53))\end{verbatim} \end{quote} 
 
 
-Y la lista de matcheos, en particular el equipo recomendado corresponde al fact 37.
-Los signos '..' significan que todos los hechos intermedios también fueron reconocidos por el patrón.
+%Y la lista de matcheos, en particular 
+El equipo recomendado corresponde al fact 37.
+A continuación la lista de matcheos que pueden obtenerse con el comando\verb| matches|.
+
 
 \begin{quote}
 \begin{verbatim}
@@ -1647,10 +1648,9 @@ Partial matches for CEs 1 - 9
 f-37,f-68,f-73,f-76,f-75,f-72,f-74,f-48,f-69
 Partial matches for CEs 1 - 10
 f-37,f-68,f-73,f-76,f-75,f-72,f-74,f-48,
-
 f-69,f-70\end{verbatim} \end{quote} 
 
-
+Los signos '..' significan que todos los hechos intermedios también fueron reconocidos por el patrón.
 
 
 
@@ -1658,7 +1658,7 @@ f-69,f-70\end{verbatim} \end{quote}
 \section{Desarrollo de la interfaz web}  
 \subsection{Interfaz administrativa}
 
-La interfaz administrativa permite  agregar o modificar entre otras cosas tipo de equipos, tecnología, funciones, y 
+La interfaz administrativa permite  agregar o modificar entre otras cosas el tipo de equipos, tecnología, funciones, y 
 nuevo equipamiento a la base de datos. También cambiar
 paráme- tros que afectan el comportamiento del sistema experto, como por ejemplo cambiar el límite de
 las categorías de vo- lumen mensual de impresión o inclusive agregar nuevas.  
@@ -1668,7 +1668,7 @@ las categorías de vo- lumen mensual de impresión o inclusive agregar nuevas.
 \setlength\fboxrule{0.5pt}
 \fbox {\includegraphics[scale=0.5]{./menu.png}}
  % menu.png: 764x614 pixel, 72dpi, 26.95x21.66 cm, bb=0 0 764 614
-\caption{}
+\caption{Menú principal de la Interfaz Administrativa.}
 \end{figure*}
 
 \subsubsection{Requerimientos}
@@ -1692,7 +1692,7 @@ Permite:
         \item Funciones del equipo
 	\item Lenguajes de impresión
         \item Consumibles
-        \item Cambiar límites a los tags* (de cant de impresiones y de precios)
+        \item Cambiar límites a los tags (de uso y de precios)
         \item Usuarios 
        \end{itemize}
 
@@ -1721,7 +1721,7 @@ o un nuevo equipo.
 
 
 
-El formulario de agregar un nuevo equipo (figura 7) sirve para incorporar a la base de datos, los datos correspondientes
+El formulario de agregar un nuevo equipo (\textbf{figura 7}) sirve para incorporar a la base de datos, los datos correspondientes
 a un nuevo equipo, el formulario permite asociar todas las características presentes en la base de datos a un equipo de 
 impresión. 
 \begin{figure*}
@@ -1730,29 +1730,29 @@ impresión.
 \setlength\fboxrule{0.5pt}
 \fbox { \includegraphics[scale=0.5]{./mod_printer.png}}
  % printer.png: 1280x1024 pixel, 72dpi, 45.16x36.12 cm, bb=0 0 1280 1024
-\caption{}
+\caption{Formulario de agregar nuevo equipo.}
 \end{figure*}
 
-Algo practico es que no tenemos que clasificar los equipos de acuerdo al uso o precio de los mismos, 
+Algo práctico es que no es necesario clasificar los equipos de acuerdo al uso o precio de los mismos, 
 el sistema se encarga de categorizarlos automáticamente de acuerdo a los límites seteados para cada categoría
 definida.
 
-Una vez completado el formulario al presionar el botón si- guiente aparece un nuevo
-formulario (figura 8) para asociar los cartuchos al equipo, en particular sólo aparecerán los cartuchos 
-disponibles de la misma marca que el equipo que se esté cargando. \footnote{Inicialmente el sistema no usa esta información, 
+Una vez completado el formulario, al presionar el botón si- guiente aparece un nuevo
+formulario (\textbf{figura 8}) para asociar los cartuchos al equipo\footnote{Inicialmente el sistema no usa esta información, 
 pero podría llegar a ser necesario ya que cada cartucho tiene asociado una duración en paginas sirve para calcular el costo de
-mantenimiento del equipo.}
+mantenimiento del equipo.}, en particular sólo aparecerán los cartuchos 
+disponibles de la misma marca que el equipo que se esté cargando. 
 
 \begin{figure}
  \centering\setlength\fboxsep{0pt}
 \setlength\fboxrule{0.5pt}
 \fbox {\includegraphics[scale=0.5]{./print_cart.png}}
  % print_cart.png: 398x578 pixel, 72dpi, 14.04x20.39 cm, bb=0 0 398 578
-\caption{}
+\caption{Formulario para asociar los cartuchos con sus respectivos equipos.}
 \end{figure}
 
-Las categorías de uso controlan los límites de la variable lingüística uso relacionada con el volumen
-de páginas mensuales. La interfaz permite agregar tantas categorías como se quieran. 
+Las categorías de uso controlan los límites de la variable lingüística \textit{uso} relacionada con el volumen
+de páginas mensuales. La interfaz permite agregar tantas categorías como se quieran (ver  \textbf{figura 9}). 
 
 \begin{figure*}
  \centering
@@ -1760,16 +1760,17 @@ de páginas mensuales. La interfaz permite agregar tantas categorías como se quie
 \setlength\fboxrule{0.5pt}
 \fbox { \includegraphics[scale=0.5]{./uso.png}}
  % uso.png: 1280x1024 pixel, 72dpi, 45.15x36.12 cm, bb=0 0 1280 1024
-\caption{}
+\caption{Formulario para agregar nuevas categorías de uso o alterar las existentes.}
 \end{figure*}
 
-El menú para cambiar los limites y categorías de precio cumple un papel similar con respecto a la 
-categorías relacionadas con el precio de los equipos (Ver  figura 9).
+El menú para cambiar los límites y categorías de precio cumple un papel similar con respecto a la 
+categorías relacionadas con el precio de los equipos.
 Si se alteran los tags de precio o uso las descripciones asociadas a los equipos podrían dejar de ser
-consistentes por lo que es necesario actualizarlas. El menú de Actualizar las categorías cumple dicha
+consistentes, por lo que es necesario actualizarlas. El menú de \textsl{Actualizar las categorías} del menú principal
+cumple dicha
 función. Luego deberán generarse nuevamente el file de impresoras y las reglas de uso o precio respectivamente. 
 
-Hay varios motivos por los cuales se deba volver a generar el archivo de impresoras: 
+Hay varios motivos por los cuales se debe volver a generar el archivo de impresoras: 
 \begin{itemize}
 \item Se han agregado/modificado equipos.
 \item Se han agregado/modificado los tags de uso o precio.
@@ -1777,41 +1778,41 @@ Hay varios motivos por los cuales se deba volver a generar el archivo de impreso
 experto.
 \end{itemize}
 
-Al hacer click sobre el menú de generar impresoras se abre un formulario que permite
+Al hacer click sobre el menú de\textsl{ Generar impresoras} del menú prinicipal se abre un formulario que permite
 seleccionar un grupo de características disponibles para incluir en la base de conocimiento. 
-Ver figura 10.
+Ver \textbf{figura 10}.
 \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
 \setlength\fboxrule{0.5pt}
 \fbox { \includegraphics[scale=0.5]{./printer_list.png}}
  % uso.png: 1280x1024 pixel, 72dpi, 45.15x36.12 cm, bb=0 0 1280 1024
-\caption{}
+\caption{Formulario para la generación automática de archivo de equipos.}
 \end{figure}
 
 Si todo sale bien el proceso genera dos archivos \verb|printer.clp| y \verb|temporary_rules_adicional|, el
-segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionals.clp|. (Ver figura 11). 
+segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionales.clp|. (Ver \textbf{figura 11}). 
  \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
 \setlength\fboxrule{0.5pt}
 \fbox { \includegraphics[scale=0.5]{./generar2.png}}
  % uso.png: 1280x1024 pixel, 72dpi, 45.15x36.12 cm, bb=0 0 1280 1024
-\caption{}
+\caption{Respuesta exitosa de la generación automática del archivo de equipos.}
 \end{figure}
   
 
 
 \subsection{Interfaz cliente}
-Para portar el sistema de manera online a través de un servidor web he 
-usado la librería CLIPS, la otra opción era PÓLIPOS. Ambas implementan un subconjunto de
-los comandos propios de CLIPS, pero CLIPS implementa un número mayor de comandos y además
+Para portar el sistema de manera online a través de un servidor web se ha 
+usado la librería PyCLIPS, la otra opción era PHLIPS. Ambas implementan un subconjunto de
+los comandos propios de CLIPS, pero PyCLIPS implementa un número mayor de comandos y además
 cuenta con una muy buena documentación y un activo foro de discusión\footnote{http://sourceforge.net/projects/pyclips/forums}.
 
 \subsubsection{Objetivos}
 La interfaz web del sistema experto con las personas que van a consultar debe hacer las mismas preguntas 
-y generar el mismo resultado que el sistema bache para CLIPS.
-De hecho unos de los objetivos fue se usen los mismos archivos en CLIPS para ambas interfaces.
+y generar el mismo resultado que el sistema batch para CLIPS.
+De hecho uno de los objetivos fue que se usen los mismos archivos en CLIPS para ambas interfaces.
 
 \subsubsection{Notas a la implementación}
 
@@ -1820,7 +1821,7 @@ sentencias del tipo printout y read deben ser modificadas de modo que en vez de 
 en pantalla se haga un assert con la pregunta que debe ser hecha al usuario. 
 %Para mantener la idea de usar los mismos archivos 
 %para ambas interfaces (web y terminal) 
-Se creo el siguiente deftemplate:
+Se creó el siguiente deftemplate:
 
 \begin{verbatim}
 (deftemplate questions
@@ -1829,7 +1830,7 @@ Se creo el siguiente deftemplate:
    (slot type (default ?NONE))
 )\end{verbatim} 
 
-Dicha estructura se usa para compunicar la pregunta a la interfaz web. 
+Dicha estructura se usa para comunicar la pregunta a la interfaz web. 
 Las reglas que hacían preguntas al usuario se seguirán usando con la terminal y deben cumplir la
 condición de que el sistema este siendo ejecutado en una terminal y al mismo tiempo se crearon reglas 
 similares para usar con la interfaz web. 
@@ -1857,7 +1858,7 @@ Se reemplazara con la siguiente:
   (assert (a3 ?ans))
 )
 \end{verbatim} 
-y se creara la siguiente regla
+y se creará la siguiente regla
 
 \begin{verbatim}
 (defrule regla12
@@ -1870,13 +1871,16 @@ y se creara la siguiente regla
  )
 )
 \end{verbatim} 
-El sistema se encargara de hacer la pregunta y generar el assert correspondiente
+
+El sistema se encargará de hacer la pregunta y generar el assert correspondiente
 con la respuesta del usuario, para el caso de la interfaz web. 
 
 \subsection{Testing}
 
 Lo que queda por verificar es que la respuesta del sistema sea la misma tanto si es ejecutado
 a través del browser o desde una terminal.
+
+Por ejemplo los siguientes tests de prueba:
 
 \begin{quote}
 
@@ -1908,8 +1912,7 @@ Respuesta>si
 
 \end{verbatim} 
 
-}}
-\end{quote}
+}}\end{quote}
 Respuesta del sistema
 
 \begin{verbatim}
@@ -1977,27 +1980,28 @@ HL-2240n
 \setlength\fboxrule{0.5pt}
 \fbox { \includegraphics[scale=0.4]{./resp2.png}}
  % uso.png: 1280x1024 pixel, 72dpi, 45.15x36.12 cm, bb=0 0 1280 1024
-\caption{}
+\caption{Resultado de una ejecución de consulta en la Interfaz Web Cliente de SEBREI.}
 \end{figure}
 
-En todos los casos testeados la respuesta es la misma en ambas interfacez. En la figura 12 se encuentra el resultado
+En todos los casos testeados la respuesta es la misma en ambas interfaces. En la \textbf{figura 12} se encuentra el resultado
 de dar las mismas respuestas que en el último test. 
-La única diferencia entre la interfaz web y la interfaz para terminal es que en la interzas web además del modelos de los equipos
-se da una breve descripción del modelo si es que está presente en la base de datos y un link al folleto o pagina web
-del modelo. 
+La única diferencia entre la interfaz web y la interfaz para terminal es que en la interfaz web además del modelos de los equipos
+se da una breve descripción del modelo si es que está presente en la base de datos y un link al folleto o página web
+del equipo en cuestión. 
 
 \newpage
 \section{Conclusión y notas finales}
-Construir el sistema ha servido para satisfacer mi curiosidad personal acerca de los sistemas expertos. 
-En particular he comprendido que la parte mas difícil de la cosntrucción de este tipo de sistemas 
+Construir este sistema ha servido para satisfacer mi curiosidad acerca de los sistemas expertos. 
+En particular he comprendido que la parte más difícil de la construcción de este tipo de sistemas 
  es la adquisición del conocimiento, así como la selección
 de una correcta representación del conocimiento. 
 
 
 También me he hecho a la idea de que construir un sistema experto medianamente complejo
-puede llegar a requerir varios años de desarrollo por lo que primero conviene hacer un verdadero estudio de la viabilidad del proyecto,
+puede llegar a requerir varios años de desarrollo por lo que primero conviene hacer un verdadero estudio 
+de la viabilidad del proyecto,
 que por lo general incluye costo, disponibilidad de las fuentes del conocimiento, utilidad o necesidad de la construcción
-del sistema, determinar si características del problema que resuelve son apropiadas para ser resuelto mediante un sistema
+del sistema, determinar si las características del problema que resuelve son apropiadas para ser resuelto mediante un sistema
 experto, entre otras. 
  
 
@@ -2006,7 +2010,7 @@ experto, entre otras.
 Una de las cosas que me parece vale la pena destacar del sistema construído
 es la posibilidad de manetener actualizada la base de conocimiento
 a través de una base de datos, la generación automática de los deffacts, de las reglas de tag, uso, adicionales y recomendar. 
-También es un buen atributo la posibilidad de agregar nuevas heurísticas sobre características presente en la base de datos
+También es un buen atributo la posibilidad de agregar nuevas heurísticas sobre características presentes en la base de datos
 y que inicialmente no se han incorporado al conjunto de reglas por defecto. 
 
 
@@ -2125,7 +2129,7 @@ si también escanea se amplía a una multifunción.
 Si ya es corporativa conviene una impresora en RED, con print server interno.
 A veces el cliente para su hogar ya está pidiendo impresoras WIRELESS ya que no quiere cables dando vuelta por su casa, 
 también hoy hay estos equipos.
-Además para los fanáticos de la tecnología tenemos las nuevas máquinas que imprimen desde un iPOD, etc.
+Además para los fanáticos de la tecnología tenemos las nuevas máquinas que imprimen desde un smartphone, etc.
 También hoy el asesoramiento va por el costo de los toner que al momento de la elección puede 
 ser importante sobre todo para altos volúmenes.}
 
@@ -2140,7 +2144,8 @@ en Argentina se estila comprar una máquina chica.}
 en ese sentido necesitaríamos un poco más de detalle. ¿Qué tipos de profesiones indican qué tipos de equipos?}
 
 \textbf{Experto}- \textit{Por ejemplo, para una oficina lo más común es usar impresoras láser monocromo.
-Si es un estudio de arquitectura es probable que usen chorro de tinta ya sea formato pequeño o bien A3 (297 x 432 mm.) o bien plotter.
+Si es un estudio de arquitectura es probable que usen chorro de tinta ya sea formato pequeño o bien A3 
+(297 $\times$ 432 mm.) o bien plotter.
 Un diseñador gráfico o fotógrafo pude elegir una impresora HP Photosmart con 6 tintas de colores diferentes.
 Para el hogar una multifunción inkjet línea barata.
 Si entrás a la página de HP vas a encontrar que las impresoras las categorizan para:
@@ -2152,8 +2157,8 @@ Si entrás a la página de HP vas a encontrar que las impresoras las categorizan p
 
 
 
-\appendix
-\appendixname  \section{Reglas default}
+%\appendix
+ \section{Reglas default}
 SI el uso es hogar ENTONCES no es necesario imprimir en A3 ni duplex automático.
 
 SI el uso es hogar y no es necesario escanear ENTONCES sólo se necesita imprimir.
@@ -2167,15 +2172,15 @@ necesita una impresora móvil.
 SI el uso es hogar, no es necesario escanear y no es necesario trasladar el equipos ENTONCES se 
 necesita una impresora.
 
-SI se necesita una impresora movil y es necesario imprimir a color ENTONCES se recomienda tecnología 
+SI se necesita una impresora móvil y es necesario imprimir a color ENTONCES se recomienda tecnología 
 de impresión a chorro de tinta.
 
-SI se necesita una impresora movil y es necesario imprimir a color ENTONCES la tecnología 
+SI se necesita una impresora móvil y no es necesario imprimir a color ENTONCES la tecnología 
 de impresión puede ser témica o chorro de tinta.
 
 SI el uso no es hogar ENTONCES el cliente debe indicar si desea imprimir en A3.
 
-SI el uso no es hogar ni profesionañ ENTONCES es una desición del cliente si quiere un equipos con
+SI el uso no es hogar ni profesional ENTONCES es una desición del cliente si quiere un equipos con
 duplex automático.
 
 SI el uso es profesional ENTONCES no ofrecer duplex automático.
@@ -2188,7 +2193,8 @@ una multifunción que imprima, copie, escanee.
 
 SI el uso es profesional y no es necesario enviar fax, ni escanear ENTONCES se recomienda una impresora.
 
-SI el uso es profesional y el volumen mensual es hasta 800 páginas ENTONCES la tecnología de impresión puede ser laser o a chorro de tinta.
+SI el uso es profesional y el volumen mensual es hasta 800 páginas ENTONCES la tecnología
+de impresión puede ser laser o a chorro de tinta.
 
 SI el uso es profesional y el volumen mensual es mayor a 800 páginas ENTONCES se recomienda láser como tecnología de impresión.
 
@@ -2210,7 +2216,7 @@ SI el uso es pyme+ o corporativo ENTONCES se recomienda láser como tecnología de
 SI el uso es pyme+ y es necesario enviar fax o documentos digitales o escanear ENTONCES se recomienda una multifunción 
 que imprima, copie, escanee, envie fax y domcumentos digitales. 
 
-SI el uso es pyme+ y sólo se necesita imprimir ENTONCES se una impresora.
+SI el uso es pyme+ y sólo se necesita imprimir ENTONCES se recomienda una impresora.
 
 SI el uso es corporativo y es necesario enviar fax ENTONCES se recomienda 
 una multifunción imprima, copie, escanee, envie fax y domcumentos digitales.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  16 JUL 2012 17:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.1)  18 JUL 2012 11:31
 entering extended mode
  %&-line parsing enabled.
 **report4.tex
@@ -261,17 +261,6 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip46
-\f@ncyO@elh=\skip47
-\f@ncyO@erh=\skip48
-\f@ncyO@olh=\skip49
-\f@ncyO@orh=\skip50
-\f@ncyO@elf=\skip51
-\f@ncyO@erf=\skip52
-\f@ncyO@olf=\skip53
-\f@ncyO@orf=\skip54
-)
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -340,15 +329,9 @@ Overfull \hbox (10.79999pt too wide) in paragraph at lines 44--44
  []
 
 
-Overfull \hbox (6.08054pt too wide) in paragraph at lines 69--71
+Overfull \hbox (6.08054pt too wide) in paragraph at lines 70--72
 []\T1/aer/m/n/9 Los tér-mi-nos sis-tema ex-perto, sis-tema basado en conocimien
 to
- []
-
-
-Overfull \hbox (7.3423pt too wide) in paragraph at lines 93--97
-\T1/aer/m/n/9 es el pro-grama que ges-tiona y con-trola la base de conocimiento
-.
  []
 
 <SE.png, id=1, 158.36214pt x 128.74329pt>
@@ -357,337 +340,362 @@ File: SE.png Graphic file (type png)
 
 
  <./SE.png (PNG copy)>]
-Overfull \hbox (4.69609pt too wide) in paragraph at lines 171--176
-\T1/aer/m/n/9 La lista de re-glas que se en-cuen-tran en la base de conocimient
-o
- []
-
-
 Overfull \hbox (1.49788pt too wide) in paragraph at lines 214--214
 []\secfnt Metodología para el de-sar-rollo de sis-temas
  []
 
 [2]
-Overfull \hbox (4.78607pt too wide) in paragraph at lines 258--261
-\T1/aer/m/n/9 struc-ción de un sis-tema in-for-mático basado en el conocimiento
+Overfull \hbox (3.81374pt too wide) in paragraph at lines 267--274
+\T1/aer/m/n/9 sentación. En re-glas gen-erales la adquisi-ción del conocimiento
 
  []
 
 
-Overfull \hbox (9.31105pt too wide) in paragraph at lines 272--275
-\T1/aer/m/n/9 iden-ti-ficar las fuentes del conocimiento, ex-traer el conocimie
-nto
- []
-
-
-Overfull \hbox (10.62706pt too wide) in paragraph at lines 287--291
-\T1/aer/m/n/9 niero del conocimiento se limita a crear la base de conocimiento.
-
- []
-
-
-Overfull \hbox (4.67767pt too wide) in paragraph at lines 297--304
-\T1/aer/m/n/9 de propósi-tos gen-erales. So-porta una com-bi-nación de paradig-
-
+Overfull \hbox (3.1841pt too wide) in paragraph at lines 286--290
+\T1/aer/m/n/9 niero del conocimiento se limita a crear la base de conocimien-
  []
 
 [3] [4]
-Overfull \hbox (2.3385pt too wide) in paragraph at lines 439--443
+Overfull \hbox (2.3385pt too wide) in paragraph at lines 437--441
 []\T1/aer/m/n/9 Los sitios web de las difer-entes mar-cas de im-pre-sión a menu
 do
  []
 
 
-Overfull \hbox (1.95996pt too wide) in paragraph at lines 549--558
+Overfull \hbox (1.95996pt too wide) in paragraph at lines 510--519
 \T1/aer/m/n/9 tienen bo-quil-las dimin-u-tas situ-adas en lo que se llama cabez
 al
  []
 
 [5]
-Overfull \hbox (2.93233pt too wide) in paragraph at lines 595--604
-\T1/aer/m/n/9 La ve-loci-dad de una im-pre-sora suele medirse con el parámetro
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 667--667
+Underfull \hbox (badness 10000) in paragraph at lines 629--629
 [][]\T1/aer/m/it/9 http://www.undocprint.org/formats/
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 729--729
+
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
 [][]\T1/aer/m/n/9 Extraído de \T1/aer/m/it/9 http://www.duiops.net/hardware/imp
 resor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--758
+Underfull \hbox (badness 10000) in paragraph at lines 703--703
 [][]\T1/aer/m/it/9 http://www1.lexmark.com/es_MX/cartridges-ink-
  []
 
 [7]
-Overfull \hbox (23.82991pt too wide) in paragraph at lines 832--840
-[][] 
+Overfull \hbox (22.45142pt too wide) in paragraph at lines 736--737
+[]\T1/aer/m/n/9 Lenguajes de im-pre-sión so-por-ta-dos (GDI / PCL / PostScript
  []
 
 
-Overfull \hbox (8.46718pt too wide) in paragraph at lines 851--852
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
+
+ []
+
+
+Overfull \hbox (8.46718pt too wide) in paragraph at lines 797--798
 []\T1/aer/m/n/9 SI es para poco uso y una sola per-sona EN-TONCES
  []
 
 
-Overfull \hbox (3.27489pt too wide) in paragraph at lines 890--891
-[]\T1/aer/m/n/9 SI se im-pri-men más de 30 pag a color EN-TONCES
- []
-
-
-Overfull \hbox (2.56358pt too wide) in paragraph at lines 900--901
+Overfull \hbox (2.56358pt too wide) in paragraph at lines 844--845
 []\T1/aer/m/n/9 SI no se quieren im-primir fo-tografías EN-TONCES
  []
 
 
-Overfull \hbox (1.15045pt too wide) in paragraph at lines 908--909
+Overfull \hbox (1.15045pt too wide) in paragraph at lines 852--853
 []\T1/aer/m/n/9 SI es para el hogar o pe-queña ofic-ina EN-TONCES
  []
 
-[8]
-Overfull \hbox (9.89018pt too wide) in paragraph at lines 988--1003
-[][] 
- []
-
-
-Overfull \hbox (10.5367pt too wide) in paragraph at lines 1014--1022
-[]\T1/aer/m/n/9 Para per-mi-tir flex-i-bil-i-dad en la in-cor-po-ración de nuev
-os equipos
- []
-
-<arquitecturaSEBREI.png, id=39, 264.59508pt x 279.60197pt>
+[8] <arquitecturaSEBREI.png, id=40, 264.59508pt x 279.60197pt>
 File: arquitecturaSEBREI.png Graphic file (type png)
 
 <use arquitecturaSEBREI.png> [9 <./arquitecturaSEBREI.png (PNG copy)>]
-Overfull \hbox (1.44722pt too wide) in paragraph at lines 1151--1153
-\T1/aer/m/n/9 para la im-ple-mentación del sis-tema se en-cuen-tran en el Apen-
-
+Overfull \hbox (1.13255pt too wide) in paragraph at lines 1073--1075
+\T1/aer/m/n/9 para la im-ple-mentación del sis-tema se en-cuen-tran en el \T1/a
+er/m/it/9 Apén-
  []
 
-<BD2.png, id=43, 915.42pt x 918.43124pt>
+<BD2.png, id=44, 915.42pt x 918.43124pt>
 File: BD2.png Graphic file (type png)
- <use BD2.png>
-LaTeX Font Info:    Try loading font information for T1+aett on input line 1204
+ <use BD2.png> [10]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 1131
 .
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Overfull \hbox (8.8645pt too wide) in paragraph at lines 1234--1234
+) [11 <./BD2.png (PNG copy)>]
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 1203--1203
  []  \T1/aett/m/n/9 (question "¾Será necesario imprimir a color?")[] 
  []
 
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./BD2.png (PNG copy)>] <pagmen.png, id=51, 346.29375pt x 229.85875pt>
+<pagmen.png, id=52, 346.29375pt x 229.85875pt>
 File: pagmen.png Graphic file (type png)
-
-<use pagmen.png> <hogar.png, id=53, 513.92pt x 327.2225pt>
+ <use pagmen.png> [12]
+<hogar.png, id=57, 391.4625pt x 418.56375pt>
 File: hogar.png Graphic file (type png)
- <use hogar.png>
-Overfull \hbox (16.95937pt too wide) in paragraph at lines 1367--1368
- [][] 
+ <use hogar.png> [13 <./pagmen.png> <./hogar.png>]
+Overfull \hbox (5.63275pt too wide) in paragraph at lines 1411--1414
+\T1/aer/m/n/9 fun-ción []\T1/aett/m/n/9 (member$ <single-field> <multifield>) \
+T1/aer/m/n/9 re-tornará
  []
 
-[12 <./pagmen.png>] [13 <./hogar.png>]
-Overfull \hbox (8.8645pt too wide) in paragraph at lines 1538--1538
+[14]
+Overfull \hbox (8.8645pt too wide) in paragraph at lines 1510--1510
  []\T1/aett/m/n/9 (model "HP_Color_LaserJet_Enterprise_CP5525dn" )[] 
  []
 
-
-Overfull \hbox (13.58043pt too wide) in paragraph at lines 1578--1578
- []\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a gastar?[] 
- []
-
-
-Overfull \hbox (13.58043pt too wide) in paragraph at lines 1578--1578
- [] \T1/aett/m/n/9 forma automatica?, encarecerá un poco el equipo.[] 
- []
-
-
-Overfull \hbox (2.64401pt too wide) in paragraph at lines 1583--1591
-[]\T1/aer/m/n/9 En este caso este es el único equipo en la base de conocimiento
-
- []
-
-[14] <./menu.png, id=66, 766.865pt x 616.3025pt>
-File: ./menu.png Graphic file (type png)
- <use ./menu.png>
-Overfull \hbox (5.97429pt too wide) in paragraph at lines 1696--1698
-\T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
-met-
- []
-
-[15] <./mod_printer.png, id=70, 763.85374pt x 925.4575pt>
-File: ./mod_printer.png Graphic file (type png)
-
-<use ./mod_printer.png> <./print_cart.png, id=71, 399.4925pt x 580.1675pt>
-File: ./print_cart.png Graphic file (type png)
-
-<use ./print_cart.png> [16 <./menu.png (PNG copy)> <./print_cart.png (PNG copy)
->] [17 <./mod_printer.png (PNG copy)>]
-<./uso.png, id=78, 764.8575pt x 593.21625pt>
-File: ./uso.png Graphic file (type png)
- <use ./uso.png>
-<./printer_list.png, id=79, 440.64626pt x 724.7075pt>
-File: ./printer_list.png Graphic file (type png)
- <use ./printer_list.png>
-<./generar2.png, id=80, 392.46625pt x 250.9375pt>
-File: ./generar2.png Graphic file (type png)
- <use ./generar2.png> [18 <./printer_list.png (PNG copy)> <./generar2.png (PNG 
-copy)>]
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1867--1867
-[]  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
- []
-
-
-Overfull \hbox (9.94414pt too wide) in paragraph at lines 1880--1880
-[]  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
- []
-
 Runaway argument?
- 
+ Será necesario imprimir a color? Respuesta> no 
 ! Paragraph ended before \@xverbatim was complete.
 <to be read again> 
                    \par 
-l.1932 }}
-         
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1932--1932
-[]\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1932--1932
-[]\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
- []
-
-
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1932--1933
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <./uso.png (PNG copy)>]
-Runaway argument?
- CLIPS> (run) 
-! Paragraph ended before \@xverbatim was complete.
-<to be read again> 
-                   \par 
-l.1983 }}
+l.1557 }}
          \end{quote}
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+[]\T1/aett/m/n/9 Cúal es el volumen mensual de páginas?
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+[]\T1/aett/m/n/9 ¾Cúal es el tamaño del grupo de trabajo?
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
 []\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+[]\T1/aett/m/n/9 Le interesa poder imprimir a doble faz de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+\T1/aett/m/n/9 forma automatica?, encarecerá un poco el
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+[]\T1/aett/m/n/9 ¾Se necesitará imprimir en A3? Respuesta>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+[]\T1/aett/m/n/9 ¾Te interesa poder escanear documentos,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1557--1557
+\T1/aett/m/n/9 enviar fax o archivos digitales via mail
+ []
+
+
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 1557--1557
+[][] 
+ []
+
+
+Overfull \hbox (2.64401pt too wide) in paragraph at lines 1563--1571
+[]\T1/aer/m/n/9 En este caso este es el único equipo en la base de conocimiento
+
+ []
+
+[15] <./menu.png, id=70, 766.865pt x 616.3025pt>
+File: ./menu.png Graphic file (type png)
+ <use ./menu.png>
+Overfull \hbox (5.97429pt too wide) in paragraph at lines 1677--1679
+\T1/aer/m/n/9 agre-gar el-e-men-tos a la base de datos y ajus-tar cier-tos pará
+met-
+ []
+
+<./mod_printer.png, id=71, 763.85374pt x 925.4575pt>
+File: ./mod_printer.png Graphic file (type png)
+ <use ./mod_printer.png>
+<./print_cart.png, id=72, 399.4925pt x 580.1675pt>
+File: ./print_cart.png Graphic file (type png)
+ <use ./print_cart.png>
+<./uso.png, id=73, 764.8575pt x 593.21625pt>
+File: ./uso.png Graphic file (type png)
+ <use ./uso.png>
+<./printer_list.png, id=74, 440.64626pt x 724.7075pt>
+File: ./printer_list.png Graphic file (type png)
+ <use ./printer_list.png>
+Underfull \hbox (badness 1430) in paragraph at lines 1792--1792
+[]\T1/aer/bx/n/9 Figure 10: For-mu-la-rio para la gen-eración au-
+ []
+
+[16] <./generar2.png, id=79, 392.46625pt x 250.9375pt>
+File: ./generar2.png Graphic file (type png)
+ <use ./generar2.png>
+Overfull \hbox (4.21931pt too wide) in paragraph at lines 1795--1805
+\T1/aer/m/n/9 para crear las re-glas adi-cionales del archivo []\T1/aett/m/n/9 
+aditionales.clp\T1/aer/m/n/9 .
+ []
+
+
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1849--1849
+[]  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
+ []
+
+[17 <./menu.png (PNG copy)>] [18 <./mod_printer.png (PNG copy)>]
+Overfull \hbox (9.94414pt too wide) in paragraph at lines 1862--1862
+[]  \T1/aett/m/n/9 (printout t crlf "¾Se necesitará imprimir en  A3?")[] 
+ []
+
+[19 <./uso.png (PNG copy)> <./print_cart.png (PNG copy)>]
+Runaway argument?
+ 
+! Paragraph ended before \@xverbatim was complete.
+<to be read again> 
+                   \par 
+l.1917 }}
+         \end{quote}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1917--1917
+[]\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1917--1917
 []\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 1917--1917
+[][] 
+ []
+
+Runaway argument?
+ CLIPS> (run) 
+! Paragraph ended before \@xverbatim was complete.
+<to be read again> 
+                   \par 
+l.1967 }}
+         \end{quote}
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1967
+[]\T1/aett/m/n/9 ¾Cúanto es lo máximo que esta dispuesto a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1967
+[]\T1/aett/m/n/9 Te interesaria ademas de imprimir poder
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1967
 []\T1/aett/m/n/9 Necesitaras desplazar la impresora
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1983--1983
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1967
 \T1/aett/m/n/9 en viajes, o trasladarla a diferentes
  []
 
 
-Overfull \hbox (9.47786pt too wide) in paragraph at lines 1983--1983
+Overfull \hbox (9.47786pt too wide) in paragraph at lines 1967--1967
 [][] 
  []
 
-<./resp2.png, id=88, 602.25pt x 646.415pt>
+<./resp2.png, id=90, 602.25pt x 646.415pt>
 File: ./resp2.png Graphic file (type png)
  <use ./resp2.png>
-Overfull \hbox (4.97359pt too wide) in paragraph at lines 1999--2001
+Overfull \hbox (4.97359pt too wide) in paragraph at lines 1983--1985
  [][] 
  []
 
-[20 <./resp2.png (PNG copy)>]
-Underfull \hbox (badness 3646) in paragraph at lines 2045--2047
+[20 <./printer_list.png (PNG copy)> <./generar2.png (PNG copy)>]
+Underfull \hbox (badness 3646) in paragraph at lines 2030--2032
 [] \T1/aer/m/it/9 http://marina-otero-spagnuolo.suite101.net/consejos-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2067--2069
+Underfull \hbox (badness 10000) in paragraph at lines 2052--2054
 [] \T1/aer/m/it/9 http://tecnologia.iprofesional.com/notas/115886-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2067--2069
+Underfull \hbox (badness 10000) in paragraph at lines 2052--2054
 \T1/aer/m/it/9 Consejos-para-tener-en-cuenta-antes-de-comprar-una-
  []
 
-
-Overfull \hbox (9.03679pt too wide) in paragraph at lines 2151--2152
+[21 <./resp2.png (PNG copy)>]
+Overfull \hbox (9.03679pt too wide) in paragraph at lines 2136--2137
 \T1/aer/m/it/9 para los fanáti-cos de la tec-nología ten-emos las nuevas máquin
 as
  []
 
-[21]
-! Undefined control sequence.
-l.2177 \appendixname
-                      \section{Reglas default}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (1.04163pt too wide) in paragraph at lines 2236--2238
+[22]
+Overfull \hbox (1.04163pt too wide) in paragraph at lines 2223--2225
 []\T1/aer/m/n/9 SI el uso es cor-po-ra-tivo y es nece-sario en-viar fax EN-TONC
 ES
  []
 
-[22] (./report4.aux)
+[23
+
+] (./report4.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3300 strings out of 494999
- 40066 string characters out of 1180817
- 97774 words of memory out of 3000000
- 6410 multiletter control sequences out of 15000+50000
- 52246 words of font info for 71 fonts, out of 3000000 for 9000
+ 3176 strings out of 494999
+ 38763 string characters out of 1180817
+ 95719 words of memory out of 3000000
+ 6289 multiletter control sequences out of 15000+50000
+ 53779 words of font info for 72 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 39i,11n,43p,254b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,28p,254b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/
-helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf
--texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report4.pdf (22 pages, 863174 bytes).
+e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl9.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmtt9.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-tex
+live/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/times/utmri8a.pfb>
+Output written on report4.pdf (23 pages, 888900 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
+ 148 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

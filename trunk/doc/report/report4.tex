@@ -74,7 +74,7 @@ Los sistemas expertos son una rama de la Inteligencia Artificial que hace un amp
 uso del conocimiento especializado para resolver problemas como un especialista humano.\cite{Riley}
 Se los puede definir como una clase de programas que son capaces de: aconsejar, categorizar, analizar, consultar, 
 di- señar, diagnosticar, explicar, explorar, interpretar, justificar, planificar, son en suma,
- programas capaces de manejar problemas que normalmente requieren para su 
+ programas capaces de manejar pro- blemas que normalmente requieren para su 
 resolución la intervención humana especializada.\cite{garcia}
 
 
@@ -93,10 +93,10 @@ El área de conocimiento que es capturado por un sistema experto se llama \textit
 
 La estructura básica de un sistema experto consta de una \textit{base de conocimiento} que es el conjunto de 
 hechos y heurísticas debidamente almacenadas y un \textit{motor de inferencias} que es el programa 
-que gestiona y controla la base de conocimiento. 
+que gestiona y controla la base de conocimien- to. 
 En un sistema experto la base de conocimiento y el motor de inferencias se encuentran separados.
 
-En la figura 1 se ilustra la estructura básica de un sistema experto.
+En la \textbf{figura 1} se ilustra la estructura básica de un sistema experto.
 
 
 \begin{figure}[h]
@@ -168,7 +168,7 @@ relaciones sintácticas entre un conjunto de fórmulas llamados premisas y una ase
 Ejemplos de reglas de inferencias clásicas son Modus Ponens y Modus Tollens.
 
 \subsubsection{Agenda}
-La lista de reglas que se encuentran en la base de conocimiento que son potencialmente ejecutables se almacenan
+La lista de reglas que se encuentran en la base de conocimien- to que son potencialmente ejecutables se almacenan
 en lo que se denomina \textit{agenda}. Una regla es potencialmente ejecutable si su parte izquierda se satisface. 
 Al conjunto de reglas que pueden ser ejecutadas se las denomina \textit{grupo de conflicto} de reglas y al
 proceso de ordenarlas
@@ -1071,7 +1071,7 @@ presupuesto del cliente.
 
 \subsubsection{Conjunto de Reglas default}
 La lista de reglas por defecto que serán tenidas en cuenta para la
-implementación del sistema se encuentran en el \textit{Apéndice B}.
+implementación del sistema se encuentran en el \textit{Apén- dice B}.
 
 
 
@@ -1432,18 +1432,17 @@ y a la regla \verb|recomendar| se le debe agregar las condiciones correspondient
 
 \begin{quote}
 \begin{verbatim}
-1 (defrule recomendar
-2  (printer
+1  (defrule recomendar
+2   (printer
 3        (id ?id)
 4        (model ?model)
-5        (so $?so)
-6 )       
+5        (so $?so))
+6       
 7        (so $?so2)
 8        (test (subsetp $?so $?so2))  
-9 =>
+9      =>
 10        (assert (models(model ?model)))
-11        (assert (ids(id ?id)))
-12 )
+11        (assert (ids(id ?id))))
 \end{verbatim} \end{quote} 
 
 Dado que la regla \textbf{adicionales}  hace un assert de todos los sistemas operativos
@@ -1453,7 +1452,10 @@ y los equipos sólo tienen la posibilidad de tener asociados sistemas operativos
 sistemas operativos para incorporar a las características de los equipos no tiene 
 efecto alguno sobre las recomendaciones que el sistema experto está en grado de hacer. 
 Es necesario modificar la regla de reglas adicionales eliminando la claúsula 
-\verb|(assert (so any linux windows mac ))| y agregar una nueva regla que tome alguna decisión 
+
+\verb|(assert (so any linux windows mac ))|
+
+ y agregar una nueva regla que tome alguna decisión 
 acerca de cúales sistemas operativos debe soportar los euqipos a recomendar. 
 
 

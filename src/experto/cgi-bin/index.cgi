@@ -34,7 +34,7 @@ import string
 def get_history_file():
 	r=random.random()*123456789
 	r=str(r)
-	path = "../history/prueba"
+	path = "../history/"+r
 	sfile = open(path, 'w')	
 	return sfile,path
 

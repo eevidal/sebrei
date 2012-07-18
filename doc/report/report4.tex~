@@ -19,7 +19,7 @@
 \usepackage{graphicx}
 
 \usepackage{color}
-%\newcommand{\hilight}[1]{\colorbox{yellow}{#1}}
+
 
 \begin{document}
 \title{ SEBREI: Sistema Experto basado en reglas para la recomendación de equipos de impresión}
@@ -39,7 +39,6 @@ de la carrera Licenciatura en Ciencias de la Computación.}
 
 
 
-%\hilight{síntesis y presentación del trabajo}
 \pagenumbering{arabic} 
 \maketitle
 \begin{abstract}
@@ -190,7 +189,7 @@ conocido es el algoritmo de Rete.
 Los lenguajes basados en reglas tienen lo que se llama redundancia temporal, que significa que en 
 cada ciclo de ejecución sólo pocos hechos se agregan a la lista de hechos y los mismos afectan a pocas reglas; 
 por lo que el sistema cambia muy lentamente. El algoritmo de Rete toma ventaja de esto, salvando el estado
-del matching ciclo a ciclo y reconstruyendo los cambios en el estado solo para los cambios que ocurrieron en la 
+del matching ciclo a ciclo y reconstruyendo los cambios en el estado sólo para los cambios que ocurrieron en la 
 fact list. 
 
 \subsubsection{Encadenamientos}
@@ -310,7 +309,7 @@ por la Software Technology Branch, NASA / Lyndon B.
 Johnson Space Center. Los orígenes de CLIPS se remontan a
 1984. En la actualidad, entre los paradigmas de programación que
 soporta CLIPS se encuentran la programación lógica, la programación imperativa y
-la programación orientada a objetos. Aunque ahora es de
+la programación orien- tada a objetos. Aunque ahora es de
 dominio público (license public domain), aún es actualizado y mantenido por su autor original, Gary Riley.
 Permite representar reglas de producción y frames.
 El motor de inferencias es de tipo Forward Chaining, y hay varias formas de resolución de conflicto
@@ -324,8 +323,8 @@ Existen derivados de CLIPS para ser usados en otros lenguajes como por ejemplo:
  \item JESS: implementación de CLIPS en Java+.
  \item FuzzyCLIPS: incorpora a CLIPS la posibilidad de usar razonamiento difuso.
  \item CLIPSMM: una interfaz libre de CLIPS con C++.
- \item PHLIPS: extensión para PHP.  (Licencia PHP V3)
- \item PyCLIPS: interfaz libre para Python (utilizada en este trabajo)(Licencia (LGPL)).
+ \item PHLIPS: extensión para PHP.  (Licencia PHP V3).
+ \item PyCLIPS: interfaz libre para Python (utilizada en este trabajo).(Licencia (LGPL)).
  \item CLIPSNET: librería de C\#.
 \end{itemize}
 
@@ -476,9 +475,9 @@ La adquisición del conocimiento se llevó a cabo consultando las especificaciones
 los fabricantes de equipos de impresión, a través de las interacciones con un experto en el rubro de venta de
 equipos de impresión para oficina y el hogar, la página web de la empresa del experto\footnote{\textit{http://www.jeanmco.com.ar}} y 
 la web de 
-varias marcas de impresoras y multifunción\footnote{\textit{http://www8.hp.com}}$^,$ \footnote{\textit{http://global.latin.epson.com/}}$^,$
- \footnote{\textit{http://www.xerox.com}}$^,$ \footnote{\textit{http://www.brother.es/}}. 
-También se consultaron foros, noticias de tecnología y recomendaciones onlines publicadas 
+varias marcas de impresoras y multifunción\footnote{\textit{http://www8.hp.com}}$^,$\footnote{\textit{http://global.latin.epson.com/}}$^,$
+\footnote{\textit{http://www.xerox.com}}$^,$\footnote{\textit{http://www.brother.es/}}. 
+También se consultaron foros, noticias de tecnología y recomendaciones online publicadas 
 por expertos en medios digitales\cite{otero},\cite{redusers},\cite{curso},\cite{consejos}.
 
 
@@ -493,7 +492,7 @@ Si además de imprimir el equipo cuenta con un escáner y/o fax incorporados, el e
 \subsubsection{Funciones:}
 Una impresora posee la función de imprimir, pero si el equipo es una multifunción
 significa que además posee una o más de las siguientes funciones: escanear, copiar, envío de fax, envío digital.
-El envío digital es la capacidad enviar por mail un documento digital que el equipo tenga en memoria, por lo general como 
+El envío digital es la capacidad de enviar por mail un documento digital que el equipo tenga en memoria, por lo general como 
 resultado de haber escaneado algo. 
 
 \subsubsection{Tecnologías de impresión:} 
@@ -505,7 +504,7 @@ diferentes combinaciones de agujas forman los distintos caracteres e imágenes. S
 en formulario continuo. 
 No procesan los documentos una página a la vez. En su lugar, trabajan principalmente con un flujo de caracteres
 ASCII hasta una línea a la vez y, por lo tanto, requieren de buffers de memoria muy reducidos. Como resultado,
-su velocidad se mide en caracteres por segundo (cps) en vez de en páginas pon minuto.
+su velocidad se mide en caracteres por segundo (cps) en vez de en páginas por minuto.
 
 \textbf{Inyección de tinta:} 
 Las impresoras de inyección de tinta tienen boquillas diminutas situadas en lo que se llama cabezal de impresión,
@@ -530,8 +529,8 @@ crear la imagen; por lo demás, son similares en desempeño aunque más económicas.
 
 \textbf{Tinta Sólida:}
 Las impresoras de tinta sólida son impresoras de página completa que usan varillas de tinta encerada sólida en 
-un proceso ´´phase-change" (cambio de fase). Trabajan licuando las varillas en depósitos, y luego volcando 
-la tinta en un tambor de transferencia, desde donde es fusionada en frío en el papel en una sola pasada.
+un proceso \textquotedblleft phase-change" (cambio de fase). Trabajan licuando las varillas en depósitos, y luego volcando 
+la tinta en un tambor de transferencia, desde donde es fusio- nada en frío en el papel en una sola pasada.
 Es una tecnología exclusiva de Xerox. %www.okiuruguay.com.uy/REVOLUCION.PDF
 
 \textbf{Sublimación de tinta:}
@@ -558,10 +557,10 @@ La velocidad de una impresora suele medirse con el paráme- tro \textit{ppm} (pág
 es decir, la cantidad de páginas que puede imprimir en un minuto en determinadas condiciones. 
 Otro parámetro que se utiliza es el de \textit{cps} (caracteres por segundo) 
 adecuado para las impresoras matriciales que aún se fabrican.
-La velocidad exacta varía según la configuración del sistema,
+La velocidad exacta varía según la confi- guración del sistema,
  la aplicación de software, el driver y la complejidad del documento.
 Para poder comparar impresoras de distintos fabricantes basándose en las ppm se definió el 
-estándar ISO/IEC 24734$:$2009 \cite{iso} aplicables tanto a impresoras como 
+estándar ISO/IEC 24734$:$2009 \cite{iso} aplicable tanto a impresoras como 
 multifunciones que pueden imprimir en formato A4.  
 
 \subsubsection{Calidad de impresión:} %http://www.monografias.com/trabajos11/trimpres/trimpres.shtm
@@ -571,6 +570,7 @@ para describir la agudeza y claridad de la salida impresa. La resolución de impr
  Una resolución de   ``300 dpi" se refiere a que en cada pulgada (2.54 cm) cuadrada, la impresora puede situar 300
  puntos horizontales y 300 verticales. Una expresión del tipo  ``600 x 300 dpi" , significa que el primer 
 valor se asume a la línea horizontal y el segundo a la vertical.
+
 Otro determinante de la calidad de impresión es el  número de niveles o graduaciones que pueden ser impresos por punto, 
 una técnica de capas de color que hace que la oscilación en los gráficos y fotografías sea más difícil de ver.
  Las impresoras sin niveles de impresión por punto, 
@@ -582,7 +582,7 @@ intensidades para cada punto que se imprime, así permite que la impresora utilic
  hace que sea más difícil ver los patrones.
 
 Máquinas con la misma resolución pueden ofrecer resultados dispares, 
-porque hay que tener en cuenta el tamaño de las gotas que generarán esos puntos por pulgada y ésta varía según 
+porque hay que tener en cuenta el tamaño de las gotas que generarán esos puntos por pulgada y éste varía según 
 la tecnología empleada para llevar a cabo la impresión.
 Las gotas de tinta se miden en picolitros (1 picolitro es la billonésima parte de un litro (10$^{-12}$)).
 
@@ -600,11 +600,11 @@ son los conectores que permiten la existencia de una conexión.
 La forma más antigua de conexión era mediante puerto serie en donde la transferencia se hacía bit a bit, 
 permitía distancias largas con velocidades lentas que no superaban los 19.200 bytes/segundo.
 Actualmente una de las formas de conexión puede establecerse mediante puerto paralelo en la que las transferencias 
-eran byte a byte permitiendo 8 
+son byte a byte permitiendo 8 
 conexiones paralelas consiguiendo una velocidad más rápida entre los 0.5 MB/segundo hasta los 4MB/segundo. 
 La longitud del cable  que une la impresora con el computador o print server no puede ser mayor a 2 metros.
 
-Otra método de conexión más actual es por medio de puertos USB (Universal Serial Bus). 
+Otro método de conexión más actual es por medio de puertos USB (Universal Serial Bus). 
 
 A algunas impresoras se las puede conectar poniéndolas en red Ethernet mediante conexiones RJ 45 basadas en 
 el estándar IEEE 802.3 o vía wifi, mediante el protocolo IEEE 802.11. Otra forma de conexión sin cables es a través 
@@ -629,11 +629,11 @@ Existen muy variados PDLs\footnote{\textit{http://www.undocprint.org/formats/
 page\_description\_languages}}, los más 
 conocidos son  PCL\footnote{\textit{Printer Command Languaje.}} de Hewlett Packard y Postscript de Adobe. 
 
-Postscript fue uno de los primeros PDL estándar y multiplataforma; describe las páginas en forma vectorial en outline, 
+Postscript: Fue uno de los primeros PDL estándar y multiplataforma; describe las páginas en forma vectorial en outline, 
 las cuales son enviadas a la impresora para ser
 rasterizadas\footnote{Convertidas en puntos.} en el mismo dispositivo. 
 
-PCL: es un lenguaje de descripción de página desarrollado por Hewlett-Packard, a principios de los ochenta,
+PCL: Es un lenguaje de descripción de página desarrollado por Hewlett-Packard, a principios de los ochenta,
 para sus impresoras. El PCL se ha convertido en un estándar emulado por muchos otros fabricantes de impresoras. 
 Además del texto real que se imprime, el PCL consta en gran medida de comandos diseñados para 
 accionar diversas características y capacidades de la impresora. 
@@ -641,7 +641,7 @@ accionar diversas características y capacidades de la impresora.
 Lenguajes GDI: Algunas impresoras de inyección de tinta o de matriz de puntos no usan ninguno de los PDL 
 ``clásicos" (PostScript o HP-PCL), sino que recurren a la computadora para producir la página a imprimir.
 A estas impresoras se les llama impresoras basadas en el host o servidor de impresora.
-´´Algunas variantes de este tipo de impresión incluyen impresoras que usan el motor de la interfaz de dispositivo gráfico 
+\textquotedblleft Algunas variantes de este tipo de impresión incluyen impresoras que usan el motor de la interfaz de dispositivo gráfico 
 (GDI) de Windows para generar la imagen de la página (impresoras GDI) y la
 línea de impresoras PPA (Arquitectura para Rendimiento de Impresión) de Hewlett-Packard."\cite{curso}
 Esta característica es importante
@@ -653,7 +653,7 @@ Se dice que una impresora \textit{emula} cuando admite códigos y modos de funcio
 
 
 \subsubsection{Ciclo mensual de trabajo - Volumen de impresiones mensuales recomendados:} 
- Los fabricantes de equipos de impresión, normalmente indican el ciclo de trabajo mensual, 
+ Los fabricantes de equipos de impresión normalmente indican el ciclo de trabajo mensual, 
 que es la cantidad máxima de páginas en un determinado 
 formato que el equipo puede imprimir en un mes sin deteriorarse.
 Lo recomendado es que al momento de elegir un equipo el cliente elija uno cuyo ciclo de trabajo
@@ -671,18 +671,18 @@ que es el que debe usarse para elegir un equipo.
 %en donde suelen están los tres colores básicos.
 
 
-\subsubsection{Consumibles:}\footnote{Extraído de \textit{http://www.duiops.net/hardware/impresor /impresor.htm}}
+\subsubsection{Consumibles \footnote{Extraído de \textit{http://www.duiops.net/hardware/impresor /impresor.htm}}:}
 En las impresoras matriciales, el mantenimiento es sencillo y
  normalmente barato, ya que únicamente será preciso cambiar la cinta,
  que suele durar bastante. El cabezal también se suele considerar como 
 consumible, pero no es algo que se estropee con frecuencia, teniendo una media de vida del orden de años.
 
-En las de inyección, lo que más se cambia son los cartuchos de tinta negra
+En las de inyección de tinta, lo que más se cambia son los cartuchos de tinta negra
  y/o color; el cabezal inyector no suele estropearse, y la mayoría de las impresoras 
 implementan sistemas de limpieza y calibrado que permiten ajustar el funcionamiento de las mismas.
 Algunas impresoras utilizan dos cartuchos, uno para la tinta negra y otro para la de color, 
 en donde suelen estar los tres colores básicos. La mayoría de las impresoras de nueva generación utilizan cartuchos
- individuales por cada color, esto permite al usuario reemplazar solo el color que se agote.
+ individuales por cada color, esto permite al usuario reemplazar sólo el color que se agote.
 Además, con la finalidad de mejorar los tonos claros y oscuros, las nuevas impresoras fotográficas cuentan con seis
 y hasta ocho colores diferentes (magenta claro, cyan claro, azul marino, naranja, rojo y verde entre otros).
 
@@ -701,12 +701,12 @@ ISO/IEC 19752 para cartuchos de tóner mono- cromático publicada en junio de 2004
 \footnote{\textit{http://www1.lexmark.com/es\_MX/cartridges-ink-supplies/iso-page-yields/},
 
 \textit{http://isotc.iso.org/livelink/livelink/open/jtc1sc28} }
-que permiten comparar el rendimiento de cartuchos de distintas marcas. 	
+que permite comparar el rendimiento de cartuchos de distintas marcas. 	
 
 \subsubsection{Grandes formatos:}
 Un plotter es un periférico de salida que efectúa con gran precisión, impresiones gráficas que una impresora no podría obtener. 
 Permite imprimir mapas de gran formato, dibujos técnicos, pósteres, fotografías en materiales como vinilo adhesivo, lona, papel,
-etc. Podemos considerar gran formato a todo aquello que vaya más allá de un hoja A3. 
+etc. Podemos considerar gran formato a todo de tamaño superior de un hoja A3. 
 
 
 %\subsubsection{Usos:}
@@ -727,36 +727,36 @@ adquiriendo más o menos relevancia.
 \begin{itemize}
 %\item Marca
 %\item Modelo
-\item Tipo (impresora / multifunción)
-\item Tecnología de impresión (láser / inyección de tinta / matriz de punto)
-\item Color 
-\item Funciones (imprimir / escanear /copiar /envió de fax /envío digital)
-\item Volumen de impresión recomendado 
-\item Conectividad  (usb / puerto paralelo / red ethernet / wifi)
-\item Lenguajes de impresión soportados  (GDI / PCL / PostScript / ESC/Page)
-\item Tipo de papel  (normal, fotográfico)
-\item Tamaño de papel (A4, A5, etc.)
-\item Velocidad de impresión
+\item Tipo (impresora / multifunción).
+\item Tecnología de impresión (láser / inyección de tinta / matriz de punto).
+\item Color.
+\item Funciones (imprimir / escanear /copiar /envió de fax /envío digital).
+\item Volumen de impresión recomendado.
+\item Conectividad  (usb / puerto paralelo / red ethernet / wifi).
+\item Lenguajes de impresión soportados  (GDI / PCL / PostScript / ESC/Page).
+\item Tipo de papel  (normal, fotográfico).
+\item Tamaño de papel (A4, A5, etc.).
+\item Velocidad de impresión.
 %\begin{itemize}
 % \item La velocidad exacta varía según la configuración del sistema,
 % la aplicación de software, el driver y la complejidad del documento.
 %\end{itemize}
-\item Calidad de impresión
-\item Cantidad de memoria
-\item Dúplex automático 
-\item Pantalla táctil
-\item Impresión en A3
-\item Cantidad de hojas soportadas en la/las bandejas
-\item Adicionales (bandejas adicionales)
+\item Calidad de impresión.
+\item Cantidad de memoria.
+\item Dúplex automático.
+\item Pantalla táctil.
+\item Impresión en A3.
+\item Cantidad de hojas soportadas en la/las bandejas.
+\item Adicionales (bandejas adicionales).
 \end{itemize}
 
 Otras características a tener en cuenta pueden ser:
 \begin{itemize}
 %\item Marca
 %\item Modelo
-\item Período de garantía
-\item Precio de los insumos
-\item Servicio técnico local
+\item Período de garantía.
+\item Precio de los insumos.
+\item Servicio técnico local.
 \end{itemize}
 
 
@@ -774,10 +774,10 @@ podemos establecer
 
 
 \begin{itemize}
- \item  uso ( en qué ámbito será usado: oficina, hogar, etc)  \\
- \item funciones (copiar, imprimir, etc) \\
-  \item color  \\
-  \item volumen mensual  \\
+ \item  Uso ( en qué ámbito será usado: oficina, hogar, etc).  \\
+ \item Funciones (copiar, imprimir, etc). \\
+  \item Color.  \\
+  \item Volumen mensual.  \\
 \end{itemize}
 
 
@@ -862,7 +862,7 @@ tamaño legal.               \end{quote}
 \subsubsection{Perfil de usuario}
 
 Cúales de todas las características que posee un equipo hay que tener en cuenta depende principalmente del 
-uso que se le dará al equipo y en que ámbito se le dará ese uso (hogar, empresa, etc). 
+uso que se le dará al equipo y en qué ámbito se le dará ese uso (hogar, empresa, etc.). 
 Porque el uso determina varios del resto de las características. % Por ejemplo, para una compañía el período de garantía o saber
 %si la marca del equipo tiene un representante técnico local son características que pueden adquirir gran relevancia, mientras
 %que un usuario hogareño presta atención a otros aspectos. 
@@ -872,7 +872,7 @@ Porque el uso determina varios del resto de las características. % Por ejemplo, 
 \subsubsection{Notas sobre volumen mensual}
 
 
- HP Argentina, en su pagina web\footnote{\textit{http://www8.hp.com}
+ HP Argentina, en su pagina web\footnote{\textit{http://www8.hp.com.ar}
 } clasifica sus productos en 5 categorías y guía al cliente que 
  visita su página en busca de impresoras 
 o multifunciones en esta clasificación
@@ -958,7 +958,7 @@ introducidos desde la interfaz administrativa.
 \centering
  \includegraphics[scale=0.9]{arquitecturaSEBREI.png}
  % arquitecturaSEBREI.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
-\caption{Arquitecuta de tres capas para el sistema SEBREI. SE: sistema experto, BD: Base de datos.}
+\caption{Arquitectuta de tres capas para el sistema SEBREI. SE: sistema experto, BD: Base de datos.}
 \label{arq}
 \end{figure}
 \end{center}
@@ -972,9 +972,9 @@ introducidos desde la interfaz administrativa.
 El mercado de equipos de impresión es bastante grande. El sistema desarrollado recomendará sólo 
 equipos para los segmentos de mercados desde el hogar a empresas, 
 pero siempre equipos que admitan imprimir en formato A4. 
-Inicialmente el sistema no recomendará equipos para lo que se conocen como las artes gráficas, ni equipos
+Inicialmente el sistema no recomendará equipos para lo que se conoce como artes gráficas, ni equipos
 que se encuentran dentro de la categoría de grandes formatos. 
-De todas formas el diseño del sistema se plateará de forma tal que puedan ser incorporadas nuevas reglas 
+De todas formas el diseño del sistema se planteará de forma tal que puedan ser incorporadas nuevas reglas 
 que cubran estas categorías. 
 %También hay algunas características de los equipos e impresión que un determinado cliente pueda desear
 %y que no sea necesario el asesoramiento de un profesional para darse cuenta si un equipo que le ofrecen 
@@ -1015,10 +1015,10 @@ otras en cambio serán inferidas a partir de los datos provistos por el cliente.
 %> 
 \subsubsection{Volumen mensual} 
 Para el volúmen mensual se usará una clasificación similar a la propuesta por HP en su 
-web\footnote{\textit{http://www8.hp.com}}.
+web.
 Se definen 5 conjuntos crips para el volumen mensual de impresión.
 Se usarán dichos conjuntos para los valores del literal \textit{uso} cuyos valores
- podrán ser \textit{hogarv (hasta 500 pág.), \textit{profesional} (de 500 a 1000), 
+ podrán ser \textit{hogar (hasta 500 pág.), \textit{profesional} (de 500 a 1000), 
  \textit{pyme} (de 1000 a 5000), \textit{pyme+} (de 5000 a 10000)}
  y \textit{corporativo} (de más de 10000).
 
@@ -1035,18 +1035,18 @@ pertenecerá a las categorías hogar, profesional y pyme. Si luego llega una consu
 donde se expresa que el volumen de páginas mensuales es 3000, el sistema seteará
 como pyme la categoría de uso requerida y entonces se podría llegar a recomendar el equipo A
 cuyo límite superior es inferior a lo que el cliente asegura que usará. 
-
 Este tipo de situaciones 
 es considerado aceptable puesto que estamos hablando de promedios y aproximaciones. Un refinamiento
 del sistema tal vez requiera que se generen un número mayor de categorías, nuevas reglas o la utilización 
 de algún tipo de manejo de incertidumbre, ya sea utilizando grados de certezas o conjuntos fuzzy.  
-
+ Dichas categorías se usarán sólo para excluir equipos que están mas o menos fuera del 
+presupuesto del cliente.
 %
 
 \subsubsection{Precios}
 El precio de los equipos también es una característica a tener en cuenta. Para evitar tener que
 actualizar continuamente la base de datos si varían los precios de los equipos se decidió categorizar 
-a los equipos de acuerdo a cierto rango de precios. En la t\textit{abla 3} se resumen las categorías.
+a los equipos de acuerdo a cierto rango de precios. En la \textbf{tabla 3} se resumen las categorías.
 \begin{table}
 \caption{}
 \begin{tabular}{|l|l|l|}
@@ -1066,12 +1066,11 @@ gran inversión & 3000 -  150000\\
 \end{tabular}
 \end{table}
 
- Dichas categorías se usaran solo para excluir equipos que están mas o menos fuera del 
-presupuesto del cliente.
+
 
 \subsubsection{Conjunto de Reglas default}
 La lista de reglas por defecto que serán tenidas en cuenta para la
-implementación del sistema se encuentran en el \textit{Apéndice B}.
+implementación del sistema se encuentran en el \textit{Apén- dice B}.
 
 
 
@@ -1090,7 +1089,7 @@ definición de las filas de una tabla lo cual resulta útil en este sistema.
 \begin{figure*}[!ht]
 \centering
  \includegraphics[scale=0.5]{BD2.png}
-\caption{Modelo EER de la base de datos}
+\caption{Modelo EER de la base de datos.}
 \label{db}
 \end{figure*}
 \end{center}
@@ -1107,16 +1106,22 @@ y derivados.
 Un primer prototipo se implementó sólo en CLIPS.
   
 \subsection{Breve introducción a CLIPS} 
-La forma más usual de interactuar con CLIPS es a través de un interprete de comandos. 
+La forma más usual de interactuar con CLIPS es a través de un intérprete de comandos. 
 Para ejecutar cualquier comando en CLIPS es necesario encerrar al mismo entre paréntesis. 
 
-(exit)  Sale de CLIPS
+(exit)  Sale de CLIPS.
 
 (clear) Elimina datos y programas de la memoria.
 
 (reset) Elimina la información dinámica de la memoria y resetea la agenda.
 
 (run)  Comienza la ejecución de un programa CLIPS.
+
+(printout) Permite imprimir en pantalla.
+
+(read) Permite leer desde la entrada standar.
+
+(test) Permite evaluar predicados.
 
 \subsubsection{Hechos y Reglas en Clips}
 
@@ -1136,7 +1141,7 @@ Sintaxis
 ) 
 
 <atributo-template>::= 
-           (default ?DERIVE| ?NONE | <exp>*)
+           (default ?DERIVE | ?NONE | <exp>*)
            |
            (default-dynamic <exp>*) 
 \end{verbatim} \end{quote} 
@@ -1145,11 +1150,11 @@ El atributo default especifica un valor estático por defecto.
 La expresión especificada es evaluada una vez cuando se define el deftemplate
 y el resultado se almacena con el deftemplate. El resultado es asignado al slot 
 apropiado cuando se inserta un nuevo deftemplate fact.
-La palabra ?DERIVE se usa para el valor por defecto, y por defecto el atributo default para un 
-slot es default ?DERIVE. Si se usa ?NONE el valor del slot debe ser explicitamente asignado cuando se 
+La palabra \verb|?DERIVE| se usa para el valor por defecto, y por defecto el atributo default para un 
+slot es default \verb|?DERIVE|. Si se usa \verb|?NONE| el valor del slot debe ser explicitamente asignado cuando se 
 inserta un nuevo hecho. 
-El atributo default-dynamic expecifica que la expresión que lo acompaña será evaluada cada vez
-que se inserta un nuevo hecho y el resultado se asiganrá al apropiado slot. 
+El atributo \verb|default-dynamic| expecifica que la expresión que lo acompaña será evaluada cada vez
+que se inserta un nuevo hecho y el resultado se asignará al slot apropiado. 
 
 
 Un ejemplo de un construtor deftemplate es el siguiente:
@@ -1182,7 +1187,7 @@ los siguientes hechos corresponden a ordered facts:
 (paginas 250)\end{verbatim} \end{quote} 
 
 
-La creación de hechos se realiza mediante las sentencias assert (uno solo hecho) o deffact (un conjunto), por ejemplo:
+La creación de hechos se realiza mediante las sentencias assert (uno solo hecho) o deffact (un conjunto de hechos), por ejemplo:
 
 \begin{quote}
 \begin{verbatim}
@@ -1218,16 +1223,12 @@ Sintaxis:
 
 Para eliminar un hecho de la memoria de trabajo se usa el comando (retract f).
 
-(printout) permite imprimir en pantalla
 
-(read) permite leer desde la entrada standar
-
-(test) permite evaluar predicados 
 
 
 \subsection{Base de Conocimiento}
 
-La base de conocimiento del sistema está constituida de hechos y reglas. 
+La base de conocimiento del sistema está constituída de hechos y reglas. 
 Una vez iniciada la ejecución del sistema los hechos en la memoria de trabajo
 estarán constituidos por el conjunto de datos persistentes incorporados a la memoria
 a través de un deffacts y los hechos que el sistema irá aseverando como resultado de 
@@ -1265,7 +1266,7 @@ A continuación un ejemplo del deftemplate de los equipos:
 \subsubsection{Reglas} 
 
 Las reglas deben tratar de capturar el conocimiento acerca de cuándo es conveniente
-recomandar un tipo de equipo u otro.
+recomendar un tipo de equipo u otro.
 
 Una de las características principales a determinar es el volumen de páginas
 mensuales, con lo cual se seleccionará una de las categorías predefinidas para dicha
@@ -1273,7 +1274,8 @@ característica.
 En la implementación se han usado las 5 categorías ya descriptas para el volumen de páginas
 mensuales, pero el sistema admite cambiar dichos límites
 e incluso se pueden crear nuevas categorías desde la interfaz web administrativa. 
-
+Una forma de visualizar el conjunto de reglas es  
+poniéndolas en una estructura de árbol.
 
 
 
@@ -1281,12 +1283,11 @@ e incluso se pueden crear nuevas categorías desde la interfaz web administrativa
 \begin{figure}[!ht]
 \centering
  \includegraphics[scale=0.6]{pagmen.png}
-\caption{}
+\caption{Árbol correspondiente a la regla que determina la categoría uso.}
 \label{db}
 \end{figure}
 \end{center}
-Una forma de visualizar el conjunto de reglas es  
-poniendolas en una estructura de árbol.
+
 El árbol correspondiente a la regla que determina la categoría uso se encuentra en la 
 \textbf{figura 4}.
 Las reglas en CLIPS para ese árbol quedan de la siguiente manera:
@@ -1334,14 +1335,14 @@ Las reglas en CLIPS para ese árbol quedan de la siguiente manera:
 \begin{figure}[!ht]
 \centering
  \includegraphics[scale=0.5]{hogar.png}
-\caption{}
+\caption{Árbol de decisión para las características de tipo, función y tecnología de los equipos de uso hogareños.}
 \label{db}
 \end{figure}
 \end{center}
 El subárbol del nodo hogar se encuentra representado en la \textbf{figura 5}. 
 
 El sistema usa encadenamiento hacia adelante y el conjunto de reglas que los componen están 
-distribuidas en los siguientes archivos
+distribuidas en los siguientes archivos:
 
 \begin{verbatim}
 "printers.clp"
@@ -1359,10 +1360,10 @@ doble faz de forma automática, el tipo de conexión, el tamaño del grupo de traba
 las funciones requeridas. 
 \verb|regla_uso.clp| determina el tipo de uso y \verb|regla_precio.clp| el tag de precio. 
 \verb|more_questions.clp| inicialmente esta vació y sirve para incorporar nuevas preguntas para setear nuevas características
-que se necesiten de un equipo,
-\verb|adicionales.clp| es un conjunto de reglas adicionales relacionadas con características de los equipos que podrían ser necesarias
-como por ejemplo el tamaño de la bandeja de salida estándar o si el equipo deberá contar con lcd o no. Inicialmente tiene un conjunto de
-reglas configuradas para que sean neutrales tanto si en el deffact de los equipos se incluyen todas las características posibles o solo 
+que se necesiten de un equipo. El archivo
+\verb|adicionales.clp| contiene un conjunto de reglas adicionales relacionadas con características de los equipos que podrían ser necesarias
+como por ejemplo el tamaño de la bandeja de salida estándar o si el equipo deberá contar con LCD o no. Inicialmente tiene un conjunto de
+reglas configuradas para que sean neutrales tanto si en el deffact de los equipos se incluyen todas las características posibles o sólo 
 las que se han elegido por defecto. 
 
 
@@ -1415,7 +1416,7 @@ de otro modo retornará FALSE.
 
 
 \subsubsection{Reglas Adicionales}
-Si por ejemplo se desea incluir la característica de cúales sistema operativos 
+Si por ejemplo se desea incluir la característica de cuáles sistemas operativos 
 son soportados por cada equipo entonces 
 en la definición del deftemplate se debe agregar la sentencia
 
@@ -1428,7 +1429,7 @@ La regla \verb|adicionales| incluye el assert
 \verb|(assert (so any linux windows mac ))|
 
 y a la regla \verb|recomendar| se le debe agregar las condiciones correspondientes para sistema operativo\footnote{Líneas
-5,7 y 8}. 
+5,7 y 8.}. 
 
 \begin{quote}
 \begin{verbatim}
@@ -1445,7 +1446,7 @@ y a la regla \verb|recomendar| se le debe agregar las condiciones correspondient
 11        (assert (ids(id ?id))))
 \end{verbatim} \end{quote} 
 
-Dado que la regla \textbf{adicionales}  hace un assert de todos los sistemas operativos
+Dado que la regla \verb|adicionales|  hace un assert de todos los sistemas operativos
  disponibles en la base de datos
 y los equipos sólo tienen la posibilidad de tener asociados sistemas operativos
  que se encuentran en la base de datos, haber seleccionado la característica
@@ -1456,7 +1457,7 @@ Es necesario modificar la regla de reglas adicionales eliminando la claúsula
 \verb|(assert (so any linux windows mac ))|
 
  y agregar una nueva regla que tome alguna decisión 
-acerca de cúales sistemas operativos debe soportar los euqipos a recomendar. 
+acerca de cúales sistemas operativos deben soportar los equipos a recomendar. 
 
 
 \section{Evaluación del prototipo}
@@ -1477,18 +1478,18 @@ funcionamiento del sistema.
 (agenda): Muestra las reglas instanciadas.
  Para cada instancia muestra la prioridad de la regla, el nombre de la regla y los hechos reconocidos por la regla.
 
-(facts): Muestra los hechos de la memoria de trabajo.
+(facts) Muestra los hechos de la memoria de trabajo.
 
-(watch <parámetro>): Es útil para depurar programas. El parámetro puede ser uno de los siguientes símbolos: facts, rules, 
+(watch <parámetro>) Es útil para depurar programas. El parámetro puede ser uno de los siguientes símbolos: facts, rules, 
 activations, statistics, compilations, focus, o all. 
 
 
-(matches <nombre-de-regla>): Recibe como argumento el nombre de una regla y muestra los hechos reconocidos por cada patrón. 
+(matches <nombre-de-regla>) Recibe como argumento el nombre de una regla y muestra los hechos reconocidos por cada patrón. 
 
 Se realizaron varios ensayos sobre el prototipo que cuenta con una lista de 45 equipos para verificar el funcionamiento
 y que la respuesta obtenida sea aceptable.
 
-LO siguiente es un ejemplo de un test de prueba.
+Lo siguiente es un ejemplo de un test de prueba.
 
 Se elige un equipo de la base de conocimiento, en este caso el modelo es
 
@@ -1518,7 +1519,7 @@ TRUE\end{verbatim} \end{quote}
 
 El sistema responde TRUE, lo que indica que las reglas se cargaron de manera correcta. 
 
-Luego se responden las pregunats hechas por el sistema de modo que si el sistema está correctamente implementado
+Luego se responden las preguntas hechas por el sistema de modo que si el sistema está correctamente implementado
 se seteen las características correspondientes al equipo seleccionado. 
 
 
@@ -1528,27 +1529,34 @@ se seteen las características correspondientes al equipo seleccionado.
 
 \begin{verbatim}
 Será necesario imprimir a color?
+
 Respuesta> no
 
 Cúal es el volumen mensual de páginas?
+
 Respuesta> 5001
 
 ¿Cúal es el tamaño del grupo de trabajo?
+
 Respuesta> 5
 
 ¿Cúanto es lo máximo que esta dispuesto a gastar?
+
 Respuesta> 3100
 
 Le interesa poder imprimir a doble faz de 
  forma automatica?, encarecerá un poco el equipo.
+
 Respuesta> si
 
 ¿Se necesitará imprimir en A3?
+
 Respuesta> no
 
 ¿Te interesa poder escanear documentos, 
 enviar fax o archivos digitales via mail 
 con el mismo equipo?
+
 Respuesta> si
 
 LaserJet\_Enterprise\_M4555f\_MFPn
@@ -1563,7 +1571,7 @@ La respuesta del sistema ha sido justamente
  En este caso este es el único equipo 
 en la base de conocimiento con dichas características. El sistema recomienda exactamente lo que se ha definido
 que haga. Para este ejemplo en particular el equipo recomendado tiene un valor de 13000 pesos, lo cual esta muy por 
-encima del presupuesto que indicamos al sistema. A decir verdad un equipo con las características pedidas raramente tendrá
+encima del presupuesto que se le indicó al sistema. A decir verdad un equipo con las características pedidas raramente tendrá
 un valor inferior a 10000 pesos, por lo que la recomendación sigue siendo válida. Ante este tipo de situaciones una cosa que se 
 puede hacer es emitir un mensaje diciendo que todos los equipos superan el presupuesto del cliente pero aún así recomendarlos. 
 También debe considerarse si las categorías planteadas tanto de precio como de uso son válidas. 
@@ -1663,7 +1671,7 @@ Los signos '..' significan que todos los hechos intermedios también fueron recon
 La interfaz administrativa permite  agregar o modificar entre otras cosas el tipo de equipos, tecnología, funciones, y 
 nuevo equipamiento a la base de datos. También cambiar
 paráme- tros que afectan el comportamiento del sistema experto, como por ejemplo cambiar el límite de
-las categorías de vo- lumen mensual de impresión o inclusive agregar nuevas.  
+las categorías de volumen mensual de impresión o inclusive agregar nuevas.  
 \begin{figure*}[!ht]
  \centering
 \setlength\fboxsep{0pt}
@@ -1675,7 +1683,7 @@ las categorías de vo- lumen mensual de impresión o inclusive agregar nuevas.
 
 \subsubsection{Requerimientos}
 La interfaz web debe permitir al administrador del sistema agregar elementos a la base de datos y ajustar ciertos parámetros del SE. 
-Permite: 
+Debe permitir: 
 \begin{itemize}
  \item Logueo y autenticación
 \item Agregar/Modificar :
@@ -1713,9 +1721,9 @@ Permite:
 
 
 \subsubsection{Implementación}
-La interfaz administrativa del sistema se desarrollo en PHP.
+La interfaz administrativa del sistema se desarrolló en PHP.
  
-En la figura 6 se muestra el menú general del sistema. Cada link de la columna
+En la \textbf{figura 6} se muestra el menú general del sistema. Cada link de la columna
 agregar/modificar permite agregar o e- ditar una característica relacionada con las impresoras
 o un nuevo equipo. 
 
@@ -1741,7 +1749,8 @@ definida.
 
 Una vez completado el formulario, al presionar el botón si- guiente aparece un nuevo
 formulario (\textbf{figura 8}) para asociar los cartuchos al equipo\footnote{Inicialmente el sistema no usa esta información, 
-pero podría llegar a ser necesario ya que cada cartucho tiene asociado una duración en paginas sirve para calcular el costo de
+pero podría llegar a ser necesario ya que cada cartucho tiene asociado una duración en páginas y esta información
+podría utilizarse para calcular el costo de
 mantenimiento del equipo.}, en particular sólo aparecerán los cartuchos 
 disponibles de la misma marca que el equipo que se esté cargando. 
 
@@ -1770,19 +1779,18 @@ categorías relacionadas con el precio de los equipos.
 Si se alteran los tags de precio o uso las descripciones asociadas a los equipos podrían dejar de ser
 consistentes, por lo que es necesario actualizarlas. El menú de \textsl{Actualizar las categorías} del menú principal
 cumple dicha
-función. Luego deberán generarse nuevamente el file de impresoras y las reglas de uso o precio respectivamente. 
+función. Luego deberán generarse nuevamente el file de impresoras y las reglas de precio o uso respectivamente. 
 
 Hay varios motivos por los cuales se debe volver a generar el archivo de impresoras: 
 \begin{itemize}
 \item Se han agregado/modificado equipos.
 \item Se han agregado/modificado los tags de uso o precio.
-\item Se quiere incluir una característica nueva a los equipos para ser considerado por el sistema
+\item Se quiere incluir una característica nueva a los equipos para ser considerada por el sistema
 experto.
 \end{itemize}
 
 Al hacer click sobre el menú de\textsl{ Generar impresoras} del menú prinicipal se abre un formulario que permite
-seleccionar un grupo de características disponibles para incluir en la base de conocimiento. 
-Ver \textbf{figura 10}.
+seleccionar un grupo de características disponibles para incluir en la base de conocimiento (ver \textbf{figura 10}).
 \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
@@ -1793,7 +1801,7 @@ Ver \textbf{figura 10}.
 \end{figure}
 
 Si todo sale bien el proceso genera dos archivos \verb|printer.clp| y \verb|temporary_rules_adicional|, el
-segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionales.clp|. (Ver \textbf{figura 11}). 
+segundo sirve de ejemplo para crear las reglas adicionales del archivo \verb|aditionales.clp| (ver \textbf{figura 11}). 
  \begin{figure}
  \centering
  \centering\setlength\fboxsep{0pt}
@@ -1842,19 +1850,19 @@ Por ejemplo si una regla era como la que sigue:
 \begin{verbatim}
 (defrule regla1
 =>
-  (printout t crlf "¿Se necesitará imprimir en  A3?")
+  (printout t crlf "¿Se necesitará imprimir en A3?")
   (printout t crlf "Respuesta>")
   (bind ?ans (read))
   (assert (a3 ?ans))
 )\end{verbatim} 
 
-Se reemplazara con la siguiente: 
+Se reemplazará con la siguiente: 
 
 \begin{verbatim}
 (defrule regla1
  (terminal)
 =>
-  (printout t crlf "¿Se necesitará imprimir en  A3?")
+  (printout t crlf "¿Se necesitará imprimir en A3?")
   (printout t crlf "Respuesta>")
   (bind ?ans (read))
   (assert (a3 ?ans))
@@ -1867,7 +1875,7 @@ y se creará la siguiente regla
  (browser)
  =>
  (assert (questions
-    (question "¿Se necesitará imprimir en  A3?")
+    (question "¿Se necesitará imprimir en A3?")
     (atribute a3)
     (type bool)
  )
@@ -1882,50 +1890,7 @@ con la respuesta del usuario, para el caso de la interfaz web.
 Lo que queda por verificar es que la respuesta del sistema sea la misma tanto si es ejecutado
 a través del browser o desde una terminal.
 
-Por ejemplo los siguientes tests de prueba:
-
-\begin{quote}
-
-\fbox {
-    \parbox{\linewidth}{
-\begin{verbatim}
-
-Será necesario imprimir a color?
-
-Respuesta>si
-
-Cúal es el volumen mensual de páginas?
-
-Respuesta>300
-
-¿Cúal es el tamaño del grupo de trabajo?
-
-Respuesta>2
-
-¿Cúanto es lo máximo que esta 
-dispuesto a gastar?
-
-Respuesta>500
-
-Te interesaria ademas de imprimir poder
- escanear documentos con el mismo equipo?
-
-Respuesta>si
-
-\end{verbatim} 
-
-}}\end{quote}
-Respuesta del sistema
-
-\begin{verbatim}
-Deskjet2050n
-Deskjet3050n
-Officejet4400-K410an
-
-
-\end{verbatim} 
-
-
+Por ejemplo el siguiente test de prueba:
 
  
 
@@ -1986,8 +1951,8 @@ HL-2240n
 \end{figure}
 
 En todos los casos testeados la respuesta es la misma en ambas interfaces. En la \textbf{figura 12} se encuentra el resultado
-de dar las mismas respuestas que en el último test. 
-La única diferencia entre la interfaz web y la interfaz para terminal es que en la interfaz web además del modelos de los equipos
+de dar las mismas respuestas que en el test del ejemplo. 
+La única diferencia entre la interfaz web y la interfaz para terminal es que en la interfaz web además del modelo de los equipos
 se da una breve descripción del modelo si es que está presente en la base de datos y un link al folleto o página web
 del equipo en cuestión. 
 

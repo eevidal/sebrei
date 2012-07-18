@@ -1,12 +1,12 @@
 <?
 
-include('header.php');
+
 
 
 
 ?>
 
-<p> HOLA </p>
+
 
 
 
@@ -15,5 +15,5 @@ include('header.php');
 
 
 
-include('footer.php');
+
 ?>

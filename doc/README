@@ -1,0 +1,112 @@
+LISTA DE ARCHIVOS
+-----------------
+|- doc 
+ |-- report.pdf : Informe del desarrollo del sistema
+|- README : Este archivo
+|- src :
+ |-- ClipsFiles : Contiene los archivos en CLIPS
+ |-- conf       : Ejemplos de configuración
+ |-- db  	: Base de datos
+ |-- experto	: Interfaz Cliente
+ |-- externals  : Archivos necesarios para la intalación de PyCLIPS
+ |-- sebrei     : Interfaz administrativa
+ 
+ 
+REQUISITOS PARA LA INSTALACIÓN
+------------------------------
+Postgres 8.x o superior
+Apache
+php5 
+python 2.7, python-dev, gcc
+módulos php y wsgi para apache
+php5-pgsql
+psycopg2
+
+
+INSTALACION
+-----------
+Descomprimir el paquete en alguna carpeta del sistema, por ejemplo /opt 
+
+
+1. CREACIÓN DE LA BASE DE DATOS
+----------------------------
+
+su postgres
+psql
+CREATE USER <sebrei-user> WITH PASSWORD 'Password';
+CREATE DATABASE  <database-name>
+GRANT ALL ON DATABASE <database-name> TO <sebrei-user>;
+\q
+psql -U <database-name>  < /opt/SEBREI/src/db/sebrei.sql > import.log
+
+
+2. CONFIGURACION DE LA CONEXION CON LA BASE DE DATOS
+----------------------------------------------------
+
+Copiar el archivo config-example.php de la carpeta sebrei a config.php
+Editar config.php con los datos de conexion a la base de datos, Nombre de usuario,
+contraseña, servidor y nombre de la base de  datos. 
+
+Además modificar setear correctamente los valores de la base de datos, usuario y password
+en el archivo index.cgi de la carpeta /opt/SEBREI/src/experto/cgi-bin
+
+conection =psycopg2.connect(database = "sebrei",user = "sebrei",password = "sebrei",host = "localhost")
+
+
+
+3. CONFIGURACION DEL WEB SERVER
+-------------------------------
+Hay varias formas de hacer esto, lo siguigente es una sugerencia.
+Crear links simbólicos para las carpetas sebrei y experto en el directorio /var/www 
+
+cd /var/www
+ln -s /opt/SEBREI/src/sebrei sebrei
+ln -s /opt/SEBREI/src/experto experto
+
+y luego usar como ejemplo de configuración el archivo apache-example de la carpeta conf, 
+en particular agregar las siguientes líneas al archivo de configuración de virtualhost. 
+
+
+        <Directory /var/www/sebrei>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                 Order allow,deny
+                Allow from all
+        </Directory>
+
+
+        <Directory /var/www/experto/cgi-bin>
+                Options +ExecCGI +Indexes +FollowSymLinks +MultiViews
+                AddHandler cgi-script .cgi
+        </Directory>
+ 
+
+4. CONFUGURACIÓN DE LOS PERMISOS
+--------------------------------
+El directorio ClipsFiles debe pertenecer al usuario web del sistema, por lo general
+www-data o apache.
+
+chown -R www-data:www-data /opt/SEBREI/src/ClipsFiles
+chown -R www-data:www-data /opt/SEBREI/src/experto
+chown -R www-data:www-data /opt/SEBREI/src/sebrei
+
+cdmod  -R 755 /opt/SEBREI/src/
+
+
+5. INSTALACIÓN DE PyCLIPS
+-------------------------
+
+cd /opt/SEBREI/src/externals
+tar -xzvf pyclips-1.0.7.348.tar.gz
+cd pyclips
+seguir las instrucciones de README
+
+
+6. INSTALACIÓN DE CLIPS
+-----------------------
+No es necesario, sólo en caso de que quiera usarse la versión terminal del sistema. 
+Y como herramienta en el desarrollo de extensiones. 
+El paquete se encuentra disponible en http://clipsrules.sourceforge.net/
+
+
+

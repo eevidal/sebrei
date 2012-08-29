@@ -66,7 +66,7 @@ include('header.php');
 </fieldset></td>
 
 <td width="380px">
-<fieldset style="width: 260px; height: 450px; margin-left: 40px; " >
+<fieldset style="width: 260px; height: 480px; margin-left: 40px; " >
 
   <p>
         <ul>

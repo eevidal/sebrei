@@ -24,7 +24,7 @@ include('header.php');
 
 <tr><td  width="380px">
 
-<fieldset style="width: 260px; height: 450px; margin-left: 55px; " >
+<fieldset style="width: 260px; height: 480px; margin-left: 55px; " >
   <p>      
 	<ul>
 		<li><a href="alter.php?table=quality">Calidad</a></li>

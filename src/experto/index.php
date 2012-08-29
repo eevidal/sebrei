@@ -25,7 +25,7 @@
 
 ?>
 
-        <html><head>\n<title>Sebrei</title>
+        <html><head><title>Sebrei</title>
 	<link rel=StyleSheet href="style.css"> 
 	</head><body><div id="page">
 	<div id="header" > <img src="images/EncabezadoSEBREI.png"  />   </div>

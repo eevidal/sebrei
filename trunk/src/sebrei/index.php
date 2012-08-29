@@ -79,9 +79,7 @@ include('header.php');
 		 <li><a href="printers_rule_price.php">Actualizar reglas de precio</a></li>
 
 
-        </ul>
-
-              <ul>
+    <li>--------------------------</li>
 
 	
                 <li><a href="../clipsFiles">Ver archivos Clips</a></li>

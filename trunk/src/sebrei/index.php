@@ -80,6 +80,15 @@ include('header.php');
 
 
         </ul>
+
+              <ul>
+
+	
+                <li><a href="../clipsFiles">Ver archivos Clips</a></li>
+
+
+
+        </ul>
   </p>
 
 </fieldset>
